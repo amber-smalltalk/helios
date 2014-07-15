@@ -71,7 +71,7 @@ $1=_st($2).__comma($3);
 return $1;
 }, function($ctx1) {$ctx1.fill(self,"listCssClassForItem:",{anObject:anObject},globals.HLMultiSelectToolListWidget)})},
 args: ["anObject"],
-source: "listCssClassForItem: anObject\x0a\x09^(super listCssClassForItem: anObject), ((self isSelected: anObject)\x0a\x09\x09ifTrue: [' active']\x0a\x09\x09ifFalse: ['']).\x0a\x09",
+source: "listCssClassForItem: anObject\x0a\x09^(super listCssClassForItem: anObject), ((self isSelected: anObject)\x0a\x09\x09ifTrue: [' active']\x0a\x09\x09ifFalse: ['']).",
 messageSends: [",", "listCssClassForItem:", "ifTrue:ifFalse:", "isSelected:"],
 referencedClasses: []
 }),
@@ -228,7 +228,7 @@ $1=self["@items"];
 return $1;
 }, function($ctx1) {$ctx1.fill(self,"initializeItems",{},globals.HLSUnitClassesListWidget)})},
 args: [],
-source: "initializeItems\x0a\x09^items := model testClasses ",
+source: "initializeItems\x0a\x09^items := model testClasses",
 messageSends: ["testClasses"],
 referencedClasses: []
 }),
@@ -705,7 +705,7 @@ listItem=self._findListItemFor_(_st(anAnnouncement)._item());
 _st(listItem)._addClass_("active");
 return self}, function($ctx1) {$ctx1.fill(self,"onPackageSelected:",{anAnnouncement:anAnnouncement,listItem:listItem},globals.HLSUnitPackagesListWidget)})},
 args: ["anAnnouncement"],
-source: "onPackageSelected: anAnnouncement\x0a\x09| listItem |\x0a\x09listItem := self findListItemFor: anAnnouncement item.\x0a\x09listItem addClass: 'active'.\x0a\x09",
+source: "onPackageSelected: anAnnouncement\x0a\x09| listItem |\x0a\x09listItem := self findListItemFor: anAnnouncement item.\x0a\x09listItem addClass: 'active'.",
 messageSends: ["findListItemFor:", "item", "addClass:"],
 referencedClasses: []
 }),
@@ -888,7 +888,7 @@ $1=$2;
 return $1;
 }, function($ctx1) {$ctx1.fill(self,"failuresWidget",{},globals.HLSUnit)})},
 args: [],
-source: "failuresWidget\x0a\x09^ failuresWidget ifNil: [\x0a\x09\x09failuresWidget := HLSUnitFailuresListWidget on: self model.\x0a\x09\x09failuresWidget next: self errorsWidget]\x0a\x09",
+source: "failuresWidget\x0a\x09^ failuresWidget ifNil: [\x0a\x09\x09failuresWidget := HLSUnitFailuresListWidget on: self model.\x0a\x09\x09failuresWidget next: self errorsWidget]",
 messageSends: ["ifNil:", "on:", "model", "next:", "errorsWidget"],
 referencedClasses: ["HLSUnitFailuresListWidget"]
 }),
@@ -902,9 +902,9 @@ fn: function (){
 var self=this;
 function $HLSUnitModel(){return globals.HLSUnitModel||(typeof HLSUnitModel=="undefined"?nil:HLSUnitModel)}
 return smalltalk.withContext(function($ctx1) { 
-var $2,$1;
+var $2,$1,$receiver;
 $2=self["@model"];
-if(($receiver = $2) == nil || $receiver == null){
+if(($receiver = $2) == null || $receiver.isNil){
 self["@model"]=_st($HLSUnitModel())._new();
 $1=self["@model"];
 } else {
@@ -1166,7 +1166,7 @@ return self._selectClass_(each);
 }, function($ctx2) {$ctx2.fillBlock({each:each},$ctx1,1)})}));
 return self}, function($ctx1) {$ctx1.fill(self,"invertSelectedClasses",{},globals.HLSUnitModel)})},
 args: [],
-source: "invertSelectedClasses\x0a\x09self testClasses do: [:each | \x0a\x09\x09(self unfilteredSelectedClasses includes: each)\x0a\x09\x09\x09ifTrue: [ self unselectClass: each ]\x0a\x09\x09\x09ifFalse: [ self selectClass: each ]].\x0a\x09",
+source: "invertSelectedClasses\x0a\x09self testClasses do: [:each | \x0a\x09\x09(self unfilteredSelectedClasses includes: each)\x0a\x09\x09\x09ifTrue: [ self unselectClass: each ]\x0a\x09\x09\x09ifFalse: [ self selectClass: each ]].",
 messageSends: ["do:", "testClasses", "ifTrue:ifFalse:", "includes:", "unfilteredSelectedClasses", "unselectClass:", "selectClass:"],
 referencedClasses: []
 }),
@@ -1191,7 +1191,7 @@ return self._selectPackage_(each);
 }, function($ctx2) {$ctx2.fillBlock({each:each},$ctx1,1)})}));
 return self}, function($ctx1) {$ctx1.fill(self,"invertSelectedPackages",{},globals.HLSUnitModel)})},
 args: [],
-source: "invertSelectedPackages\x0a\x09self testPackages do: [:each | \x0a\x09\x09(self selectedPackages includes: each)\x0a\x09\x09\x09ifTrue: [ self unselectPackage: each ]\x0a\x09\x09\x09ifFalse: [ self selectPackage: each ]].\x0a\x09",
+source: "invertSelectedPackages\x0a\x09self testPackages do: [:each | \x0a\x09\x09(self selectedPackages includes: each)\x0a\x09\x09\x09ifTrue: [ self unselectPackage: each ]\x0a\x09\x09\x09ifFalse: [ self selectPackage: each ]].",
 messageSends: ["do:", "testPackages", "ifTrue:ifFalse:", "includes:", "selectedPackages", "unselectPackage:", "selectPackage:"],
 referencedClasses: []
 }),
@@ -1250,7 +1250,7 @@ return self._selectClass_(each);
 }, function($ctx2) {$ctx2.fillBlock({each:each},$ctx1,1)})}));
 return self}, function($ctx1) {$ctx1.fill(self,"selectAllClasses",{},globals.HLSUnitModel)})},
 args: [],
-source: "selectAllClasses\x0a\x09self testClasses do: [:each | self selectClass: each].\x0a\x09",
+source: "selectAllClasses\x0a\x09self testClasses do: [:each | self selectClass: each].",
 messageSends: ["do:", "testClasses", "selectClass:"],
 referencedClasses: []
 }),
@@ -1340,9 +1340,9 @@ fn: function (){
 var self=this;
 function $Set(){return globals.Set||(typeof Set=="undefined"?nil:Set)}
 return smalltalk.withContext(function($ctx1) { 
-var $2,$1;
+var $2,$1,$receiver;
 $2=self["@selectedPackages"];
-if(($receiver = $2) == nil || $receiver == null){
+if(($receiver = $2) == null || $receiver.isNil){
 self["@selectedPackages"]=_st($Set())._new();
 $1=self["@selectedPackages"];
 } else {
@@ -1430,7 +1430,7 @@ $1=_st(stream)._contents();
 return $1;
 }, function($ctx1) {$ctx1.fill(self,"testClasses",{stream:stream},globals.HLSUnitModel)})},
 args: [],
-source: "testClasses\x0a\x09\x22Answer all concrete subclasses of TestCase in selected packages\x22\x0a\x09\x0a\x09| stream |\x0a\x09stream := Array new writeStream.\x0a\x09self selectedPackages do: [ :package |\x0a\x09\x09stream nextPutAll: (package classes select:  [ :each |\x0a\x09\x09\x09each isTestClass ] ) ].\x0a\x09^ stream contents\x0a\x09",
+source: "testClasses\x0a\x09\x22Answer all concrete subclasses of TestCase in selected packages\x22\x0a\x09\x0a\x09| stream |\x0a\x09stream := Array new writeStream.\x0a\x09self selectedPackages do: [ :package |\x0a\x09\x09stream nextPutAll: (package classes select:  [ :each |\x0a\x09\x09\x09each isTestClass ] ) ].\x0a\x09^ stream contents",
 messageSends: ["writeStream", "new", "do:", "selectedPackages", "nextPutAll:", "select:", "classes", "isTestClass", "contents"],
 referencedClasses: ["Array"]
 }),
@@ -1637,7 +1637,7 @@ return smalltalk.withContext(function($ctx1) {
 self._performFailure_(anObject);
 return self}, function($ctx1) {$ctx1.fill(self,"reselectItem:",{anObject:anObject},globals.HLSUnitResultListWidget)})},
 args: ["anObject"],
-source: "reselectItem: anObject\x0a\x09self performFailure: anObject ",
+source: "reselectItem: anObject\x0a\x09self performFailure: anObject",
 messageSends: ["performFailure:"],
 referencedClasses: []
 }),
@@ -1720,7 +1720,7 @@ globals.HLSUnitFailuresListWidget);
 
 
 smalltalk.addClass('HLSUnitResultStatus', globals.HLWidget, ['model'], 'Helios-SUnit');
-globals.HLSUnitResultStatus.comment="I display the status of the previous test run\x0a\x0a1. How many tests where run.\x0a* How many tests passed.\x0a* How many tests failed.\x0a* How many tests resulted in an error.\x0a";
+globals.HLSUnitResultStatus.comment="I display the status of the previous test run\x0a\x0a1. How many tests where run.\x0a* How many tests passed.\x0a* How many tests failed.\x0a* How many tests resulted in an error.";
 smalltalk.addMethod(
 smalltalk.method({
 selector: "model",
@@ -2061,7 +2061,7 @@ return _st($1)._updateProgress_($2);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)})}))._valueWithTimeout_((10));
 return self}, function($ctx1) {$ctx1.fill(self,"onResultAnnouncement:",{announcement:announcement},globals.HLSUnitResults)})},
 args: ["announcement"],
-source: "onResultAnnouncement: announcement\x0a\x09[self progressBarWidget \x0a\x09\x09updateProgress: (self model testResult runs / self model testResult total * 100) rounded] valueWithTimeout: 10 ",
+source: "onResultAnnouncement: announcement\x0a\x09[self progressBarWidget \x0a\x09\x09updateProgress: (self model testResult runs / self model testResult total * 100) rounded] valueWithTimeout: 10",
 messageSends: ["valueWithTimeout:", "updateProgress:", "progressBarWidget", "rounded", "*", "/", "runs", "testResult", "model", "total"],
 referencedClasses: []
 }),

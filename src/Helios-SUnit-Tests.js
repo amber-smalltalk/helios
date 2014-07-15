@@ -1,4 +1,5 @@
-define("helios/Helios-SUnit-Tests", ["amber_vm/smalltalk", "amber_vm/nil", "amber_vm/_st", "amber_vm/globals", "amber_core/SUnit"], function(smalltalk,nil,_st, globals){
+define("helios/Helios-SUnit-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){
+var smalltalk=$boot.vm,nil=$boot.nil,_st=$boot.asReceiver,globals=$boot.globals;
 smalltalk.addPackage('Helios-SUnit-Tests');
 smalltalk.packages["Helios-SUnit-Tests"].transport = {"type":"amd","amdNamespace":"helios"};
 
@@ -40,7 +41,7 @@ _st(self["@model"])._selectPackage_(self._thisPackage());
 self._assert_(_st(_st(self["@model"])._testClasses())._includes_(self._class()));
 return self}, function($ctx1) {$ctx1.fill(self,"testClassBecomesAvailable",{},globals.HLSUnitModelTest)})},
 args: [],
-source: "testClassBecomesAvailable\x0a\x09self assert: model testClasses isEmpty.\x0a\x09model selectPackage: self thisPackage.\x0a\x09self assert: (model testClasses includes: self class).\x0a\x09\x0a\x09",
+source: "testClassBecomesAvailable\x0a\x09self assert: model testClasses isEmpty.\x0a\x09model selectPackage: self thisPackage.\x0a\x09self assert: (model testClasses includes: self class).",
 messageSends: ["assert:", "isEmpty", "testClasses", "selectPackage:", "thisPackage", "includes:", "class"],
 referencedClasses: []
 }),
@@ -223,7 +224,7 @@ self._assert_equals_(_st(_st(self["@model"])._selectedClasses())._anyOne(),self.
 self._assert_(announcementFired);
 return self}, function($ctx1) {$ctx1.fill(self,"testSelectClass",{announcementFired:announcementFired},globals.HLSUnitModelTest)})},
 args: [],
-source: "testSelectClass\x0a\x09| announcementFired |\x0a\x09model selectPackage: self thisPackage.\x0a\x09self assert: model selectedClasses isEmpty.\x0a\x09model announcer on: HLClassSelected\x0a\x09\x09do: [ announcementFired := true ]\x0a\x09\x09for: self.\x0a\x09model selectClass: self class.\x0a\x09self assert: model selectedClasses anyOne equals: self class.\x0a\x09self assert: announcementFired.\x0a\x09\x0a\x09",
+source: "testSelectClass\x0a\x09| announcementFired |\x0a\x09model selectPackage: self thisPackage.\x0a\x09self assert: model selectedClasses isEmpty.\x0a\x09model announcer on: HLClassSelected\x0a\x09\x09do: [ announcementFired := true ]\x0a\x09\x09for: self.\x0a\x09model selectClass: self class.\x0a\x09self assert: model selectedClasses anyOne equals: self class.\x0a\x09self assert: announcementFired.",
 messageSends: ["selectPackage:", "thisPackage", "assert:", "isEmpty", "selectedClasses", "on:do:for:", "announcer", "selectClass:", "class", "assert:equals:", "anyOne"],
 referencedClasses: ["HLClassSelected"]
 }),
@@ -286,7 +287,7 @@ _st(self["@model"])._unselectPackage_(self._thisPackage());
 self._assert_(_st(_st(self["@model"])._selectedClasses())._isEmpty());
 return self}, function($ctx1) {$ctx1.fill(self,"testSelectedClassNotListedIfPackageUnselected",{},globals.HLSUnitModelTest)})},
 args: [],
-source: "testSelectedClassNotListedIfPackageUnselected\x0a\x09model selectPackage: self thisPackage.\x0a\x09model selectClass: self class.\x0a\x09self assert: model selectedClasses anyOne equals: self class.\x0a\x09model unselectPackage: self thisPackage.\x0a\x09self assert: model selectedClasses isEmpty.\x0a\x09",
+source: "testSelectedClassNotListedIfPackageUnselected\x0a\x09model selectPackage: self thisPackage.\x0a\x09model selectClass: self class.\x0a\x09self assert: model selectedClasses anyOne equals: self class.\x0a\x09model unselectPackage: self thisPackage.\x0a\x09self assert: model selectedClasses isEmpty.",
 messageSends: ["selectPackage:", "thisPackage", "selectClass:", "class", "assert:equals:", "anyOne", "selectedClasses", "unselectPackage:", "assert:", "isEmpty"],
 referencedClasses: []
 }),
@@ -308,7 +309,7 @@ self._deny_(_st(_st(self["@model"])._testClasses())._includes_(notATestClass));
 _st($Smalltalk())._removeClass_(notATestClass);
 return self}, function($ctx1) {$ctx1.fill(self,"testTestClassHasOnlyTestClasses",{notATestClass:notATestClass},globals.HLSUnitModelTest)})},
 args: [],
-source: "testTestClassHasOnlyTestClasses\x0a\x09| notATestClass |\x0a\x09notATestClass := Object subclass: #HLNotATestClass\x0a\x09\x09instanceVariableNames: ''\x0a\x09\x09package: self class category.\x0a\x09model selectPackage: self thisPackage.\x0a\x09self deny: (model testClasses includes: notATestClass).\x0a\x09Smalltalk removeClass: notATestClass.\x0a\x09\x0a\x09",
+source: "testTestClassHasOnlyTestClasses\x0a\x09| notATestClass |\x0a\x09notATestClass := Object subclass: #HLNotATestClass\x0a\x09\x09instanceVariableNames: ''\x0a\x09\x09package: self class category.\x0a\x09model selectPackage: self thisPackage.\x0a\x09self deny: (model testClasses includes: notATestClass).\x0a\x09Smalltalk removeClass: notATestClass.",
 messageSends: ["subclass:instanceVariableNames:package:", "category", "class", "selectPackage:", "thisPackage", "deny:", "includes:", "testClasses", "removeClass:"],
 referencedClasses: ["Object", "Smalltalk"]
 }),
@@ -364,7 +365,7 @@ $ctx1.sendIdx["assert:"]=1;
 self._assert_(announcementFired);
 return self}, function($ctx1) {$ctx1.fill(self,"testUnselectClass",{announcementFired:announcementFired},globals.HLSUnitModelTest)})},
 args: [],
-source: "testUnselectClass\x0a\x09| announcementFired |\x0a\x09model selectPackage: self thisPackage.\x0a\x09model selectClass: self class.\x0a\x09model announcer on: HLClassUnselected\x0a\x09\x09do: [ announcementFired := true ]\x0a\x09\x09for: self.\x0a\x09model unselectClass: self class.\x0a\x09self assert: model selectedClasses isEmpty.\x0a\x09self assert: announcementFired\x0a\x09\x0a\x09",
+source: "testUnselectClass\x0a\x09| announcementFired |\x0a\x09model selectPackage: self thisPackage.\x0a\x09model selectClass: self class.\x0a\x09model announcer on: HLClassUnselected\x0a\x09\x09do: [ announcementFired := true ]\x0a\x09\x09for: self.\x0a\x09model unselectClass: self class.\x0a\x09self assert: model selectedClasses isEmpty.\x0a\x09self assert: announcementFired",
 messageSends: ["selectPackage:", "thisPackage", "selectClass:", "class", "on:do:for:", "announcer", "unselectClass:", "assert:", "isEmpty", "selectedClasses"],
 referencedClasses: ["HLClassUnselected"]
 }),

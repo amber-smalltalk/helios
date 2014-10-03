@@ -12,8 +12,8 @@
     "amber": ">=0.12.6",
     "jquery": ">=1.7.0",
     "jquery-ui": ">=1.9.2",
-    "bootstrap2.3.2": "~2.3.2",
-    "codemirror": "~3.24.0",
-    "showdown": "~0.3.1"
+    "bootstrap2.3.2": "^2.3.2",
+    "codemirror": "^3.24.0",
+    "showdown": "^0.3.1"
   }
 }

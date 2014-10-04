@@ -11,7 +11,7 @@
 
     <div id="includes">
       <script type='text/javascript'>
-        var base = decodeURIComponent(window.location.search.slice(1));
+        var base = decodeURIComponent(window.location.search.slice(1)).replace(/\/$/, "");
         var script = document.createElement("script");
         script.src = base + "/config.js";
         document.getElementsByTagName("head")[0].appendChild(script);
@@ -19,7 +19,6 @@
           if (typeof require !== "undefined") {
             clearInterval(__interval);
             require.baseUrl = base;
-            var amberPath = base + "/" + require.paths.amber;
             require.callback = function () {
               require(["helios/set"], function (smalltalk) {
                 window.onbeforeunload = function() {
@@ -31,7 +30,7 @@
               });
             };
             script = document.createElement("script");
-            script.src = "node_modules/requirejs/require.js";
+            script.src = base + "/" + require.paths.requireJS + ".js";
             document.getElementsByTagName("head")[0].appendChild(script);
           }
         }, 200);

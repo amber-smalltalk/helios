@@ -71,6 +71,8 @@ module.exports = function(grunt) {
       }
     },
 
+    amdconfig: {helios: {dest: 'config.js'}},
+
     execute: {
       test_runner: {
         src: ['test_runner.js']

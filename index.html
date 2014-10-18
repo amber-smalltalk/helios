@@ -20,13 +20,13 @@
             clearInterval(__interval);
             require.baseUrl = base;
             require.callback = function () {
-              require(["helios/set"], function (smalltalk) {
+              require(["helios/set"], function (amber) {
                 window.onbeforeunload = function() {
                   return 'Do you want to close Amber? All uncommitted changes will be lost.';
                 };
 
-                smalltalk.initialize({'transport.defaultAmdNamespace': "amber_core"});
-                smalltalk.globals.HLManager._setup();
+                amber.initialize({'transport.defaultAmdNamespace': "amber_core"});
+                amber.globals.HLManager._setup();
               });
             };
             script = document.createElement("script");

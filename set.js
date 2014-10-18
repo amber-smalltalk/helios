@@ -13,4 +13,4 @@ define([
     'css!./resources/helios',
 	'css!./resources/helios-niflheim',
     'css!./resources/niflheim'
-], function (smalltalk) { return smalltalk; });
+], function (amber) { return amber; });

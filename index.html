@@ -19,7 +19,7 @@
           if (typeof require !== "undefined") {
             clearInterval(__interval);
             require.baseUrl = base;
-            require.paths['helios/app'] = require.paths['helios/index'].replace("/index", "/app");
+            require.paths['helios/app'] = require.paths['helios/index'].replace("index", "app");
             require.callback = function () {
               require(["helios/app"], function (amber) {
                 window.onbeforeunload = function() {

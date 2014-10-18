@@ -1,12 +1,15 @@
 define("helios/Helios-Announcements", ["amber/boot", "amber_core/Kernel-Objects"], function($boot){
-var smalltalk=$boot.vm,nil=$boot.nil,_st=$boot.asReceiver,globals=$boot.globals;
-smalltalk.addPackage('Helios-Announcements');
-smalltalk.packages["Helios-Announcements"].transport = {"type":"amd","amdNamespace":"helios"};
+var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
+var smalltalk=$core,_st=$recv,globals=$globals;
+$core.addPackage('Helios-Announcements');
+$core.packages["Helios-Announcements"].transport = {"type":"amd","amdNamespace":"helios"};
 
-smalltalk.addClass('HLAboutToChange', globals.Object, ['actionBlock'], 'Helios-Announcements');
-globals.HLAboutToChange.comment="I am announced whenever a change of context is about to be made, and unsaved changes could be lost.\x0a\x0aI am used within `HLModel` to handle such user actions. See `HLModel >> withChangesDo:`.";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLAboutToChange', $globals.Object, ['actionBlock'], 'Helios-Announcements');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLAboutToChange.comment="I am announced whenever a change of context is about to be made, and unsaved changes could be lost.\x0a\x0aI am used within `HLModel` to handle such user actions. See `HLModel >> withChangesDo:`.";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "actionBlock",
 protocol: 'accessing',
 fn: function (){
@@ -14,54 +17,68 @@ var self=this;
 var $1;
 $1=self["@actionBlock"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "actionBlock\x0a\x09^ actionBlock",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLAboutToChange);
+$globals.HLAboutToChange);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "actionBlock:",
 protocol: 'accessing',
 fn: function (aBlock){
 var self=this;
 self["@actionBlock"]=aBlock;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aBlock"],
 source: "actionBlock: aBlock\x0a\x09actionBlock := aBlock",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLAboutToChange);
+$globals.HLAboutToChange);
 
 
 
-smalltalk.addClass('HLAnnouncement', globals.Object, [], 'Helios-Announcements');
-globals.HLAnnouncement.comment="I am the root of the announcement class hierarchy used in the Helios UI.";
+$core.addClass('HLAnnouncement', $globals.Object, [], 'Helios-Announcements');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLAnnouncement.comment="I am the root of the announcement class hierarchy used in the Helios UI.";
+//>>excludeEnd("ide");
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "heliosClass",
 protocol: 'helios',
 fn: function (){
 var self=this;
 return "announcement";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "heliosClass\x0a\x09^ 'announcement'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLAnnouncement.klass);
+$globals.HLAnnouncement.klass);
 
 
-smalltalk.addClass('HLCodeHandled', globals.HLAnnouncement, ['code'], 'Helios-Announcements');
-globals.HLCodeHandled.comment="I am the root class of announcements emitted by `HLCodeWidget`s";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLCodeHandled', $globals.HLAnnouncement, ['code'], 'Helios-Announcements');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLCodeHandled.comment="I am the root class of announcements emitted by `HLCodeWidget`s";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "code",
 protocol: 'accessing',
 fn: function (){
@@ -69,60 +86,78 @@ var self=this;
 var $1;
 $1=self["@code"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "code\x0a\x0a\x09^ code",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLCodeHandled);
+$globals.HLCodeHandled);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "code:",
 protocol: 'accessing',
 fn: function (aModel){
 var self=this;
 self["@code"]=aModel;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aModel"],
 source: "code: aModel\x0a\x0a\x09code := aModel",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLCodeHandled);
+$globals.HLCodeHandled);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "on:",
 protocol: 'actions',
 fn: function (aCodeModel){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$3,$1;
 $2=self._new();
-_st($2)._code_(aCodeModel);
-$3=_st($2)._yourself();
+$recv($2)._code_(aCodeModel);
+$3=$recv($2)._yourself();
 $1=$3;
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"on:",{aCodeModel:aCodeModel},globals.HLCodeHandled.klass)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"on:",{aCodeModel:aCodeModel},$globals.HLCodeHandled.klass)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aCodeModel"],
 source: "on: aCodeModel\x0a\x0a\x09^ self new \x0a    \x09code: aCodeModel;\x0a        yourself",
-messageSends: ["code:", "new", "yourself"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["code:", "new", "yourself"]
 }),
-globals.HLCodeHandled.klass);
+$globals.HLCodeHandled.klass);
 
 
-smalltalk.addClass('HLDoItExecuted', globals.HLCodeHandled, [], 'Helios-Announcements');
-globals.HLDoItExecuted.comment="I am emitted by a `HLCodeWidget` after a DoIt has been executed.";
+$core.addClass('HLDoItExecuted', $globals.HLCodeHandled, [], 'Helios-Announcements');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLDoItExecuted.comment="I am emitted by a `HLCodeWidget` after a DoIt has been executed.";
+//>>excludeEnd("ide");
 
 
-smalltalk.addClass('HLDebuggerAnnouncement', globals.HLAnnouncement, ['context'], 'Helios-Announcements');
-globals.HLDebuggerAnnouncement.comment="I am the root class of debugger announcements, and hold onto the debugged `context`.";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLDebuggerAnnouncement', $globals.HLAnnouncement, ['context'], 'Helios-Announcements');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLDebuggerAnnouncement.comment="I am the root class of debugger announcements, and hold onto the debugged `context`.";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "context",
 protocol: 'accessing',
 fn: function (){
@@ -130,35 +165,44 @@ var self=this;
 var $1;
 $1=self["@context"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "context\x0a\x09^ context",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLDebuggerAnnouncement);
+$globals.HLDebuggerAnnouncement);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "context:",
 protocol: 'accessing',
 fn: function (aContext){
 var self=this;
 self["@context"]=aContext;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aContext"],
 source: "context: aContext\x0a\x09context := aContext",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLDebuggerAnnouncement);
+$globals.HLDebuggerAnnouncement);
 
 
 
-smalltalk.addClass('HLDebuggerContextSelected', globals.HLDebuggerAnnouncement, [], 'Helios-Announcements');
-globals.HLDebuggerContextSelected.comment="I am announced when a new context is selected in a debugger, to update the user interface.";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLDebuggerContextSelected', $globals.HLDebuggerAnnouncement, [], 'Helios-Announcements');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLDebuggerContextSelected.comment="I am announced when a new context is selected in a debugger, to update the user interface.";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "context",
 protocol: 'accessing',
 fn: function (){
@@ -166,49 +210,56 @@ var self=this;
 var $1;
 $1=self["@context"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "context\x0a\x09^ context",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLDebuggerContextSelected);
+$globals.HLDebuggerContextSelected);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "context:",
 protocol: 'accessing',
 fn: function (aContext){
 var self=this;
 self["@context"]=aContext;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aContext"],
 source: "context: aContext\x0a\x09context := aContext",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLDebuggerContextSelected);
+$globals.HLDebuggerContextSelected);
 
 
 
-smalltalk.addClass('HLDebuggerProceeded', globals.HLDebuggerAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLDebuggerProceeded', $globals.HLDebuggerAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLDebuggerStepped', globals.HLDebuggerAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLDebuggerStepped', $globals.HLDebuggerAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLDebuggerWhere', globals.HLDebuggerAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLDebuggerWhere', $globals.HLDebuggerAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLDiveRequested', globals.HLAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLDiveRequested', $globals.HLAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLEditComment', globals.HLAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLEditComment', $globals.HLAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLErrorRaised', globals.HLAnnouncement, ['error'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLErrorRaised', $globals.HLAnnouncement, ['error'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "error",
 protocol: 'accessing',
 fn: function (){
@@ -216,37 +267,44 @@ var self=this;
 var $1;
 $1=self["@error"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "error\x0a\x09^ error",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLErrorRaised);
+$globals.HLErrorRaised);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "error:",
 protocol: 'accessing',
 fn: function (anError){
 var self=this;
 self["@error"]=anError;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anError"],
 source: "error: anError\x0a\x09error := anError",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLErrorRaised);
+$globals.HLErrorRaised);
 
 
 
-smalltalk.addClass('HLCompileErrorRaised', globals.HLErrorRaised, [], 'Helios-Announcements');
+$core.addClass('HLCompileErrorRaised', $globals.HLErrorRaised, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLParseErrorRaised', globals.HLErrorRaised, ['line', 'column', 'message'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLParseErrorRaised', $globals.HLErrorRaised, ['line', 'column', 'message'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "column",
 protocol: 'accessing',
 fn: function (){
@@ -254,31 +312,38 @@ var self=this;
 var $1;
 $1=self["@column"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "column\x0a\x09^ column",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLParseErrorRaised);
+$globals.HLParseErrorRaised);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "column:",
 protocol: 'accessing',
 fn: function (anInteger){
 var self=this;
 self["@column"]=anInteger;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anInteger"],
 source: "column: anInteger\x0a\x09column := anInteger",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLParseErrorRaised);
+$globals.HLParseErrorRaised);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "line",
 protocol: 'accessing',
 fn: function (){
@@ -286,31 +351,38 @@ var self=this;
 var $1;
 $1=self["@line"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "line\x0a\x09^ line",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLParseErrorRaised);
+$globals.HLParseErrorRaised);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "line:",
 protocol: 'accessing',
 fn: function (anInteger){
 var self=this;
 self["@line"]=anInteger;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anInteger"],
 source: "line: anInteger\x0a\x09line := anInteger",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLParseErrorRaised);
+$globals.HLParseErrorRaised);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "message",
 protocol: 'accessing',
 fn: function (){
@@ -318,58 +390,65 @@ var self=this;
 var $1;
 $1=self["@message"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "message\x0a\x09^ message",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLParseErrorRaised);
+$globals.HLParseErrorRaised);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "message:",
 protocol: 'accessing',
 fn: function (aString){
 var self=this;
 self["@message"]=aString;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
 source: "message: aString\x0a\x09message := aString",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLParseErrorRaised);
+$globals.HLParseErrorRaised);
 
 
 
-smalltalk.addClass('HLUnknownVariableErrorRaised', globals.HLErrorRaised, [], 'Helios-Announcements');
+$core.addClass('HLUnknownVariableErrorRaised', $globals.HLErrorRaised, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLFocusRequested', globals.HLAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLFocusRequested', $globals.HLAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLClassesFocusRequested', globals.HLFocusRequested, [], 'Helios-Announcements');
+$core.addClass('HLClassesFocusRequested', $globals.HLFocusRequested, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLDocumentationFocusRequested', globals.HLFocusRequested, [], 'Helios-Announcements');
+$core.addClass('HLDocumentationFocusRequested', $globals.HLFocusRequested, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLMethodsFocusRequested', globals.HLFocusRequested, [], 'Helios-Announcements');
+$core.addClass('HLMethodsFocusRequested', $globals.HLFocusRequested, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLPackagesFocusRequested', globals.HLFocusRequested, [], 'Helios-Announcements');
+$core.addClass('HLPackagesFocusRequested', $globals.HLFocusRequested, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLProtocolsFocusRequested', globals.HLFocusRequested, [], 'Helios-Announcements');
+$core.addClass('HLProtocolsFocusRequested', $globals.HLFocusRequested, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLSourceCodeFocusRequested', globals.HLFocusRequested, [], 'Helios-Announcements');
+$core.addClass('HLSourceCodeFocusRequested', $globals.HLFocusRequested, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLInstVarAdded', globals.HLAnnouncement, ['theClass', 'variableName'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLInstVarAdded', $globals.HLAnnouncement, ['theClass', 'variableName'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "theClass",
 protocol: 'accessing',
 fn: function (){
@@ -377,31 +456,38 @@ var self=this;
 var $1;
 $1=self["@theClass"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "theClass\x0a\x09^ theClass",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLInstVarAdded);
+$globals.HLInstVarAdded);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "theClass:",
 protocol: 'accessing',
 fn: function (aClass){
 var self=this;
 self["@theClass"]=aClass;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aClass"],
 source: "theClass: aClass\x0a\x09theClass := aClass",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLInstVarAdded);
+$globals.HLInstVarAdded);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "variableName",
 protocol: 'accessing',
 fn: function (){
@@ -409,34 +495,41 @@ var self=this;
 var $1;
 $1=self["@variableName"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "variableName\x0a\x09^ variableName",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLInstVarAdded);
+$globals.HLInstVarAdded);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "variableName:",
 protocol: 'accessing',
 fn: function (aString){
 var self=this;
 self["@variableName"]=aString;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
 source: "variableName: aString\x0a\x09variableName := aString",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLInstVarAdded);
+$globals.HLInstVarAdded);
 
 
 
-smalltalk.addClass('HLItemSelected', globals.HLAnnouncement, ['item'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLItemSelected', $globals.HLAnnouncement, ['item'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "item",
 protocol: 'accessing',
 fn: function (){
@@ -444,70 +537,84 @@ var self=this;
 var $1;
 $1=self["@item"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "item\x0a\x09^ item",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLItemSelected);
+$globals.HLItemSelected);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "item:",
 protocol: 'accessing',
 fn: function (anObject){
 var self=this;
 self["@item"]=anObject;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anObject"],
 source: "item: anObject\x0a\x09item := anObject",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLItemSelected);
+$globals.HLItemSelected);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "on:",
 protocol: 'instance creation',
 fn: function (anItem){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$3,$1;
 $2=self._new();
-_st($2)._item_(anItem);
-$3=_st($2)._yourself();
+$recv($2)._item_(anItem);
+$3=$recv($2)._yourself();
 $1=$3;
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"on:",{anItem:anItem},globals.HLItemSelected.klass)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"on:",{anItem:anItem},$globals.HLItemSelected.klass)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anItem"],
 source: "on: anItem\x0a\x09^ self new\x0a    \x09item: anItem;\x0a        yourself",
-messageSends: ["item:", "new", "yourself"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["item:", "new", "yourself"]
 }),
-globals.HLItemSelected.klass);
+$globals.HLItemSelected.klass);
 
 
-smalltalk.addClass('HLClassSelected', globals.HLItemSelected, [], 'Helios-Announcements');
+$core.addClass('HLClassSelected', $globals.HLItemSelected, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLInstanceVariableSelected', globals.HLItemSelected, [], 'Helios-Announcements');
+$core.addClass('HLInstanceVariableSelected', $globals.HLItemSelected, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLMethodSelected', globals.HLItemSelected, [], 'Helios-Announcements');
+$core.addClass('HLMethodSelected', $globals.HLItemSelected, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLPackageSelected', globals.HLItemSelected, [], 'Helios-Announcements');
+$core.addClass('HLPackageSelected', $globals.HLItemSelected, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLProtocolSelected', globals.HLItemSelected, [], 'Helios-Announcements');
+$core.addClass('HLProtocolSelected', $globals.HLItemSelected, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLItemUnselected', globals.HLAnnouncement, ['item'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLItemUnselected', $globals.HLAnnouncement, ['item'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "item",
 protocol: 'accessing',
 fn: function (){
@@ -515,61 +622,75 @@ var self=this;
 var $1;
 $1=self["@item"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "item\x0a\x09^ item",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLItemUnselected);
+$globals.HLItemUnselected);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "item:",
 protocol: 'accessing',
 fn: function (anObject){
 var self=this;
 self["@item"]=anObject;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anObject"],
 source: "item: anObject\x0a\x09item := anObject",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLItemUnselected);
+$globals.HLItemUnselected);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "on:",
 protocol: 'instance creation',
 fn: function (anItem){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$3,$1;
 $2=self._new();
-_st($2)._item_(anItem);
-$3=_st($2)._yourself();
+$recv($2)._item_(anItem);
+$3=$recv($2)._yourself();
 $1=$3;
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"on:",{anItem:anItem},globals.HLItemUnselected.klass)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"on:",{anItem:anItem},$globals.HLItemUnselected.klass)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anItem"],
 source: "on: anItem\x0a\x09^ self new\x0a    \x09item: anItem;\x0a        yourself",
-messageSends: ["item:", "new", "yourself"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["item:", "new", "yourself"]
 }),
-globals.HLItemUnselected.klass);
+$globals.HLItemUnselected.klass);
 
 
-smalltalk.addClass('HLClassUnselected', globals.HLItemUnselected, [], 'Helios-Announcements');
+$core.addClass('HLClassUnselected', $globals.HLItemUnselected, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLPackageUnselected', globals.HLItemUnselected, [], 'Helios-Announcements');
+$core.addClass('HLPackageUnselected', $globals.HLItemUnselected, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLRunTests', globals.HLAnnouncement, ['testSuiteRunner'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLRunTests', $globals.HLAnnouncement, ['testSuiteRunner'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "testSuiteRunner",
 protocol: 'accessing',
 fn: function (){
@@ -577,58 +698,72 @@ var self=this;
 var $1;
 $1=self["@testSuiteRunner"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "testSuiteRunner\x0a\x09^ testSuiteRunner",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLRunTests);
+$globals.HLRunTests);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "testSuiteRunner:",
 protocol: 'accessing',
 fn: function (anObject){
 var self=this;
 self["@testSuiteRunner"]=anObject;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anObject"],
 source: "testSuiteRunner: anObject\x0a\x09testSuiteRunner := anObject",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLRunTests);
+$globals.HLRunTests);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "on:",
 protocol: 'instance creation',
 fn: function (aTestSuiteRunner){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$3,$1;
 $2=self._new();
-_st($2)._testSuiteRunner_(aTestSuiteRunner);
-$3=_st($2)._yourself();
+$recv($2)._testSuiteRunner_(aTestSuiteRunner);
+$3=$recv($2)._yourself();
 $1=$3;
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"on:",{aTestSuiteRunner:aTestSuiteRunner},globals.HLRunTests.klass)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"on:",{aTestSuiteRunner:aTestSuiteRunner},$globals.HLRunTests.klass)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aTestSuiteRunner"],
 source: "on: aTestSuiteRunner\x0a\x09^self new\x0a\x09\x09testSuiteRunner: aTestSuiteRunner;\x0a\x09\x09yourself",
-messageSends: ["testSuiteRunner:", "new", "yourself"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["testSuiteRunner:", "new", "yourself"]
 }),
-globals.HLRunTests.klass);
+$globals.HLRunTests.klass);
 
 
-smalltalk.addClass('HLSaveSourceCode', globals.HLAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLSaveSourceCode', $globals.HLAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLSearchReferences', globals.HLAnnouncement, ['searchString'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLSearchReferences', $globals.HLAnnouncement, ['searchString'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "searchString",
 protocol: 'accessing',
 fn: function (){
@@ -636,40 +771,47 @@ var self=this;
 var $1;
 $1=self["@searchString"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "searchString\x0a\x09^ searchString",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSearchReferences);
+$globals.HLSearchReferences);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "searchString:",
 protocol: 'accessing',
 fn: function (aString){
 var self=this;
 self["@searchString"]=aString;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
 source: "searchString: aString\x0a\x09searchString := aString",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSearchReferences);
+$globals.HLSearchReferences);
 
 
 
-smalltalk.addClass('HLShowCommentToggled', globals.HLAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLShowCommentToggled', $globals.HLAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLShowInstanceToggled', globals.HLAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLShowInstanceToggled', $globals.HLAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLShowTemplate', globals.HLAnnouncement, ['template'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLShowTemplate', $globals.HLAnnouncement, ['template'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "template",
 protocol: 'accessing',
 fn: function (){
@@ -677,37 +819,44 @@ var self=this;
 var $1;
 $1=self["@template"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "template\x0a\x09^ template",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLShowTemplate);
+$globals.HLShowTemplate);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "template:",
 protocol: 'accessing',
 fn: function (aString){
 var self=this;
 self["@template"]=aString;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
 source: "template: aString\x0a\x09template := aString",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLShowTemplate);
+$globals.HLShowTemplate);
 
 
 
-smalltalk.addClass('HLSourceCodeSaved', globals.HLAnnouncement, [], 'Helios-Announcements');
+$core.addClass('HLSourceCodeSaved', $globals.HLAnnouncement, [], 'Helios-Announcements');
 
 
-smalltalk.addClass('HLTabLabelChanged', globals.HLAnnouncement, ['label', 'widget'], 'Helios-Announcements');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLTabLabelChanged', $globals.HLAnnouncement, ['label', 'widget'], 'Helios-Announcements');
+$core.addMethod(
+$core.method({
 selector: "label",
 protocol: 'accessing',
 fn: function (){
@@ -715,31 +864,38 @@ var self=this;
 var $1;
 $1=self["@label"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "label\x0a\x09^ label",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLTabLabelChanged);
+$globals.HLTabLabelChanged);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "label:",
 protocol: 'accessing',
 fn: function (aString){
 var self=this;
 self["@label"]=aString;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
 source: "label: aString\x0a\x09label := aString",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLTabLabelChanged);
+$globals.HLTabLabelChanged);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "widget",
 protocol: 'accessing',
 fn: function (){
@@ -747,28 +903,35 @@ var self=this;
 var $1;
 $1=self["@widget"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "widget\x0a\x09^ widget",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLTabLabelChanged);
+$globals.HLTabLabelChanged);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "widget:",
 protocol: 'accessing',
 fn: function (aWidget){
 var self=this;
 self["@widget"]=aWidget;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aWidget"],
 source: "widget: aWidget\x0a\x09widget := aWidget",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLTabLabelChanged);
+$globals.HLTabLabelChanged);
 
 
 });

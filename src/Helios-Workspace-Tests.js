@@ -1,31 +1,44 @@
 define("helios/Helios-Workspace-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){
-var smalltalk=$boot.vm,nil=$boot.nil,_st=$boot.asReceiver,globals=$boot.globals;
-smalltalk.addPackage('Helios-Workspace-Tests');
-smalltalk.packages["Helios-Workspace-Tests"].transport = {"type":"amd","amdNamespace":"helios"};
+var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
+var smalltalk=$core,_st=$recv,globals=$globals;
+$core.addPackage('Helios-Workspace-Tests');
+$core.packages["Helios-Workspace-Tests"].transport = {"type":"amd","amdNamespace":"helios"};
 
-smalltalk.addClass('HLCodeWidgetTest', globals.TestCase, [], 'Helios-Workspace-Tests');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLCodeWidgetTest', $globals.TestCase, [], 'Helios-Workspace-Tests');
+$core.addMethod(
+$core.method({
 selector: "testKeyMap",
 protocol: 'tests',
 fn: function (){
 var self=this;
-function $HLCodeWidget(){return globals.HLCodeWidget||(typeof HLCodeWidget=="undefined"?nil:HLCodeWidget)}
-function $HashedCollection(){return globals.HashedCollection||(typeof HashedCollection=="undefined"?nil:HashedCollection)}
-return smalltalk.withContext(function($ctx1) { 
+function $HLCodeWidget(){return $globals.HLCodeWidget||(typeof HLCodeWidget=="undefined"?nil:HLCodeWidget)}
+function $HashedCollection(){return $globals.HashedCollection||(typeof HashedCollection=="undefined"?nil:HashedCollection)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1;
-$1=_st(_st($HLCodeWidget())._pcKeyMap())._isKindOf_($HashedCollection());
+$1=$recv($recv($HLCodeWidget())._pcKeyMap())._isKindOf_($HashedCollection());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["isKindOf:"]=1;
+//>>excludeEnd("ctx");
 self._assert_($1);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["assert:"]=1;
-self._assert_(_st(_st($HLCodeWidget())._macKeyMap())._isKindOf_($HashedCollection()));
-return self}, function($ctx1) {$ctx1.fill(self,"testKeyMap",{},globals.HLCodeWidgetTest)})},
+//>>excludeEnd("ctx");
+self._assert_($recv($recv($HLCodeWidget())._macKeyMap())._isKindOf_($HashedCollection()));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"testKeyMap",{},$globals.HLCodeWidgetTest)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "testKeyMap\x0a\x09\x22Key maps are a collection of associations.\x22\x0a\x09self assert: (HLCodeWidget pcKeyMap isKindOf: HashedCollection).\x0a\x09self assert: (HLCodeWidget macKeyMap isKindOf: HashedCollection)",
-messageSends: ["assert:", "isKindOf:", "pcKeyMap", "macKeyMap"],
-referencedClasses: ["HLCodeWidget", "HashedCollection"]
+referencedClasses: ["HLCodeWidget", "HashedCollection"],
+//>>excludeEnd("ide");
+messageSends: ["assert:", "isKindOf:", "pcKeyMap", "macKeyMap"]
 }),
-globals.HLCodeWidgetTest);
+$globals.HLCodeWidgetTest);
 
 
 });

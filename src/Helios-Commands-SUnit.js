@@ -1,487 +1,628 @@
 define("helios/Helios-Commands-SUnit", ["amber/boot", "helios/Helios-Commands-Tools"], function($boot){
-var smalltalk=$boot.vm,nil=$boot.nil,_st=$boot.asReceiver,globals=$boot.globals;
-smalltalk.addPackage('Helios-Commands-SUnit');
-smalltalk.packages["Helios-Commands-SUnit"].transport = {"type":"amd","amdNamespace":"helios"};
+var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
+var smalltalk=$core,_st=$recv,globals=$globals;
+$core.addPackage('Helios-Commands-SUnit');
+$core.packages["Helios-Commands-SUnit"].transport = {"type":"amd","amdNamespace":"helios"};
 
-smalltalk.addClass('HLSUnitCommand', globals.HLToolCommand, [], 'Helios-Commands-SUnit');
-globals.HLSUnitCommand.comment="I group the commands pertaining to Helios-SUnit (`HLSUnitModel`)";
+$core.addClass('HLSUnitCommand', $globals.HLToolCommand, [], 'Helios-Commands-SUnit');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLSUnitCommand.comment="I group the commands pertaining to Helios-SUnit (`HLSUnitModel`)";
+//>>excludeEnd("ide");
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "isValidFor:",
 protocol: 'testing',
 fn: function (aModel){
 var self=this;
-function $HLSUnitModel(){return globals.HLSUnitModel||(typeof HLSUnitModel=="undefined"?nil:HLSUnitModel)}
-return smalltalk.withContext(function($ctx1) { 
+function $HLSUnitModel(){return $globals.HLSUnitModel||(typeof HLSUnitModel=="undefined"?nil:HLSUnitModel)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1;
-$1=_st(aModel)._isKindOf_($HLSUnitModel());
+$1=$recv(aModel)._isKindOf_($HLSUnitModel());
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"isValidFor:",{aModel:aModel},globals.HLSUnitCommand.klass)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"isValidFor:",{aModel:aModel},$globals.HLSUnitCommand.klass)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aModel"],
 source: "isValidFor: aModel\x0a\x09^ aModel isKindOf: HLSUnitModel",
-messageSends: ["isKindOf:"],
-referencedClasses: ["HLSUnitModel"]
+referencedClasses: ["HLSUnitModel"],
+//>>excludeEnd("ide");
+messageSends: ["isKindOf:"]
 }),
-globals.HLSUnitCommand.klass);
+$globals.HLSUnitCommand.klass);
 
 
-smalltalk.addClass('HLSUnitInvertSelectedCommand', globals.HLSUnitCommand, [], 'Helios-Commands-SUnit');
-globals.HLSUnitInvertSelectedCommand.comment="I group the commands that invert selections";
+$core.addClass('HLSUnitInvertSelectedCommand', $globals.HLSUnitCommand, [], 'Helios-Commands-SUnit');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLSUnitInvertSelectedCommand.comment="I group the commands that invert selections";
+//>>excludeEnd("ide");
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "key",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "i";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "key\x0a\x09^ 'i'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedCommand.klass);
+$globals.HLSUnitInvertSelectedCommand.klass);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "label",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Invert selection";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "label\x0a\x09^'Invert selection'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedCommand.klass);
+$globals.HLSUnitInvertSelectedCommand.klass);
 
 
-smalltalk.addClass('HLSUnitInvertSelectedClassesCommand', globals.HLSUnitInvertSelectedCommand, [], 'Helios-Commands-SUnit');
-globals.HLSUnitInvertSelectedClassesCommand.comment="Invert the currently selected classes on a `HLSUnitModel`";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLSUnitInvertSelectedClassesCommand', $globals.HLSUnitInvertSelectedCommand, [], 'Helios-Commands-SUnit');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLSUnitInvertSelectedClassesCommand.comment="Invert the currently selected classes on a `HLSUnitModel`";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "category",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Classes";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "category\x0a\x09^'Classes'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedClassesCommand);
+$globals.HLSUnitInvertSelectedClassesCommand);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-_st(self._model())._invertSelectedClasses();
-return self}, function($ctx1) {$ctx1.fill(self,"execute",{},globals.HLSUnitInvertSelectedClassesCommand)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(self._model())._invertSelectedClasses();
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLSUnitInvertSelectedClassesCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "execute\x0a\x09self model invertSelectedClasses",
-messageSends: ["invertSelectedClasses", "model"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["invertSelectedClasses", "model"]
 }),
-globals.HLSUnitInvertSelectedClassesCommand);
+$globals.HLSUnitInvertSelectedClassesCommand);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "isActive",
 protocol: 'testing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1;
-$1=_st(_st(self["@model"])._selectedPackages())._notEmpty();
+$1=$recv($recv(self["@model"])._selectedPackages())._notEmpty();
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"isActive",{},globals.HLSUnitInvertSelectedClassesCommand)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"isActive",{},$globals.HLSUnitInvertSelectedClassesCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "isActive\x0a\x09^model selectedPackages notEmpty",
-messageSends: ["notEmpty", "selectedPackages"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["notEmpty", "selectedPackages"]
 }),
-globals.HLSUnitInvertSelectedClassesCommand);
+$globals.HLSUnitInvertSelectedClassesCommand);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "key",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "c";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "key\x0a\x09^ 'c'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedClassesCommand.klass);
+$globals.HLSUnitInvertSelectedClassesCommand.klass);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "label",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Invert selected classes";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "label\x0a\x09^ 'Invert selected classes'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedClassesCommand.klass);
+$globals.HLSUnitInvertSelectedClassesCommand.klass);
 
 
-smalltalk.addClass('HLSUnitInvertSelectedPackagesCommand', globals.HLSUnitInvertSelectedCommand, [], 'Helios-Commands-SUnit');
-globals.HLSUnitInvertSelectedPackagesCommand.comment="Invert the currently selected packages on a `HLSUnitModel`";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLSUnitInvertSelectedPackagesCommand', $globals.HLSUnitInvertSelectedCommand, [], 'Helios-Commands-SUnit');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLSUnitInvertSelectedPackagesCommand.comment="Invert the currently selected packages on a `HLSUnitModel`";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "category",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Packages";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "category\x0a\x09^'Packages'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedPackagesCommand);
+$globals.HLSUnitInvertSelectedPackagesCommand);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-_st(self._model())._invertSelectedPackages();
-return self}, function($ctx1) {$ctx1.fill(self,"execute",{},globals.HLSUnitInvertSelectedPackagesCommand)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(self._model())._invertSelectedPackages();
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLSUnitInvertSelectedPackagesCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "execute\x0a\x09self model invertSelectedPackages",
-messageSends: ["invertSelectedPackages", "model"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["invertSelectedPackages", "model"]
 }),
-globals.HLSUnitInvertSelectedPackagesCommand);
+$globals.HLSUnitInvertSelectedPackagesCommand);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "isActive",
 protocol: 'testing',
 fn: function (){
 var self=this;
 return true;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "isActive\x0a\x09^true",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedPackagesCommand);
+$globals.HLSUnitInvertSelectedPackagesCommand);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "key",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "p";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "key\x0a\x09^ 'p'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedPackagesCommand.klass);
+$globals.HLSUnitInvertSelectedPackagesCommand.klass);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "label",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Invert selected packages";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "label\x0a\x09^ 'Invert selected packages'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitInvertSelectedPackagesCommand.klass);
+$globals.HLSUnitInvertSelectedPackagesCommand.klass);
 
 
-smalltalk.addClass('HLSUnitRunTests', globals.HLSUnitCommand, [], 'Helios-Commands-SUnit');
-globals.HLSUnitRunTests.comment="Run the test cases in the currently selected classes on a `HLSUnitModel`";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLSUnitRunTests', $globals.HLSUnitCommand, [], 'Helios-Commands-SUnit');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLSUnitRunTests.comment="Run the test cases in the currently selected classes on a `HLSUnitModel`";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-_st(self._model())._runTests();
-return self}, function($ctx1) {$ctx1.fill(self,"execute",{},globals.HLSUnitRunTests)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(self._model())._runTests();
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLSUnitRunTests)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "execute\x0a\x09self model runTests",
-messageSends: ["runTests", "model"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["runTests", "model"]
 }),
-globals.HLSUnitRunTests);
+$globals.HLSUnitRunTests);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "isActive",
 protocol: 'testing',
 fn: function (){
 var self=this;
 return true;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "isActive\x0a\x09^true",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitRunTests);
+$globals.HLSUnitRunTests);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "key",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "r";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "key\x0a\x09^'r'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitRunTests.klass);
+$globals.HLSUnitRunTests.klass);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "label",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Run Tests";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "label\x0a\x09^'Run Tests'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitRunTests.klass);
+$globals.HLSUnitRunTests.klass);
 
 
-smalltalk.addClass('HLSUnitSelectAllCommand', globals.HLSUnitCommand, [], 'Helios-Commands-SUnit');
-globals.HLSUnitSelectAllCommand.comment="I group the select all commands";
+$core.addClass('HLSUnitSelectAllCommand', $globals.HLSUnitCommand, [], 'Helios-Commands-SUnit');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLSUnitSelectAllCommand.comment="I group the select all commands";
+//>>excludeEnd("ide");
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "key",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "a";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "key\x0a\x09^ 'a'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllCommand.klass);
+$globals.HLSUnitSelectAllCommand.klass);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "label",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Select all";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "label\x0a\x09^ 'Select all'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllCommand.klass);
+$globals.HLSUnitSelectAllCommand.klass);
 
 
-smalltalk.addClass('HLSUnitSelectAllClassesCommand', globals.HLSUnitSelectAllCommand, [], 'Helios-Commands-SUnit');
-globals.HLSUnitSelectAllClassesCommand.comment="Select all available test classes based on what packages are selected on a `HLSUnitModel`";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLSUnitSelectAllClassesCommand', $globals.HLSUnitSelectAllCommand, [], 'Helios-Commands-SUnit');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLSUnitSelectAllClassesCommand.comment="Select all available test classes based on what packages are selected on a `HLSUnitModel`";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "category",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Classes";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "category\x0a\x09^'Classes'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllClassesCommand);
+$globals.HLSUnitSelectAllClassesCommand);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-_st(self._model())._selectAllClasses();
-return self}, function($ctx1) {$ctx1.fill(self,"execute",{},globals.HLSUnitSelectAllClassesCommand)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(self._model())._selectAllClasses();
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLSUnitSelectAllClassesCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "execute\x0a\x09self model selectAllClasses",
-messageSends: ["selectAllClasses", "model"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["selectAllClasses", "model"]
 }),
-globals.HLSUnitSelectAllClassesCommand);
+$globals.HLSUnitSelectAllClassesCommand);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "isActive",
 protocol: 'testing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1;
-$1=_st(_st(self["@model"])._selectedPackages())._notEmpty();
+$1=$recv($recv(self["@model"])._selectedPackages())._notEmpty();
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"isActive",{},globals.HLSUnitSelectAllClassesCommand)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"isActive",{},$globals.HLSUnitSelectAllClassesCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "isActive\x0a\x09^model selectedPackages notEmpty",
-messageSends: ["notEmpty", "selectedPackages"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["notEmpty", "selectedPackages"]
 }),
-globals.HLSUnitSelectAllClassesCommand);
+$globals.HLSUnitSelectAllClassesCommand);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "key",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "c";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "key\x0a\x09^ 'c'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllClassesCommand.klass);
+$globals.HLSUnitSelectAllClassesCommand.klass);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "label",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Select all classes";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "label\x0a\x09^ 'Select all classes'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllClassesCommand.klass);
+$globals.HLSUnitSelectAllClassesCommand.klass);
 
 
-smalltalk.addClass('HLSUnitSelectAllPackagesCommand', globals.HLSUnitSelectAllCommand, [], 'Helios-Commands-SUnit');
-globals.HLSUnitSelectAllPackagesCommand.comment="Select all packages with test cases on a `HLSUnitModel`";
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLSUnitSelectAllPackagesCommand', $globals.HLSUnitSelectAllCommand, [], 'Helios-Commands-SUnit');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLSUnitSelectAllPackagesCommand.comment="Select all packages with test cases on a `HLSUnitModel`";
+//>>excludeEnd("ide");
+$core.addMethod(
+$core.method({
 selector: "category",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Packages";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "category\x0a\x09^'Packages'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllPackagesCommand);
+$globals.HLSUnitSelectAllPackagesCommand);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-_st(self._model())._selectAllPackages();
-return self}, function($ctx1) {$ctx1.fill(self,"execute",{},globals.HLSUnitSelectAllPackagesCommand)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(self._model())._selectAllPackages();
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLSUnitSelectAllPackagesCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "execute\x0a\x09self model selectAllPackages",
-messageSends: ["selectAllPackages", "model"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["selectAllPackages", "model"]
 }),
-globals.HLSUnitSelectAllPackagesCommand);
+$globals.HLSUnitSelectAllPackagesCommand);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "isActive",
 protocol: 'testing',
 fn: function (){
 var self=this;
 return true;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "isActive\x0a\x09^true",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllPackagesCommand);
+$globals.HLSUnitSelectAllPackagesCommand);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "key",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "p";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "key\x0a\x09^ 'p'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllPackagesCommand.klass);
+$globals.HLSUnitSelectAllPackagesCommand.klass);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "label",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "Select all packages";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "label\x0a\x09^ 'Select all packages'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSUnitSelectAllPackagesCommand.klass);
+$globals.HLSUnitSelectAllPackagesCommand.klass);
 
 });

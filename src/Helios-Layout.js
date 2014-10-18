@@ -1,30 +1,39 @@
 define("helios/Helios-Layout", ["amber/boot", "helios/Helios-Core", "amber_core/Web", "amber_core/Kernel-Objects"], function($boot){
-var smalltalk=$boot.vm,nil=$boot.nil,_st=$boot.asReceiver,globals=$boot.globals;
-smalltalk.addPackage('Helios-Layout');
-smalltalk.packages["Helios-Layout"].transport = {"type":"amd","amdNamespace":"helios"};
+var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
+var smalltalk=$core,_st=$recv,globals=$globals;
+$core.addPackage('Helios-Layout');
+$core.packages["Helios-Layout"].transport = {"type":"amd","amdNamespace":"helios"};
 
-smalltalk.addClass('HLContainer', globals.HLWidget, ['splitter'], 'Helios-Layout');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLContainer', $globals.HLWidget, ['splitter'], 'Helios-Layout');
+$core.addMethod(
+$core.method({
 selector: "renderOn:",
 protocol: 'rendering',
 fn: function (html){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1,$2;
-$1=_st(html)._div();
-_st($1)._class_("tool_container");
-$2=_st($1)._with_(self._splitter());
-return self}, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html},globals.HLContainer)})},
+$1=$recv(html)._div();
+$recv($1)._class_("tool_container");
+$2=$recv($1)._with_(self._splitter());
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html},$globals.HLContainer)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
 source: "renderOn: html\x0a\x09html div \x0a    \x09class: 'tool_container'; \x0a        with: self splitter",
-messageSends: ["class:", "div", "with:", "splitter"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["class:", "div", "with:", "splitter"]
 }),
-globals.HLContainer);
+$globals.HLContainer);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "splitter",
 protocol: 'accessing',
 fn: function (){
@@ -32,70 +41,87 @@ var self=this;
 var $1;
 $1=self["@splitter"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "splitter\x0a\x09^ splitter",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLContainer);
+$globals.HLContainer);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "splitter:",
 protocol: 'accessing',
 fn: function (aSplitter){
 var self=this;
 self["@splitter"]=aSplitter;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aSplitter"],
 source: "splitter: aSplitter\x0a\x09splitter := aSplitter",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLContainer);
+$globals.HLContainer);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "with:",
 protocol: 'instance creation',
 fn: function (aSplitter){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$3,$1;
 $2=self._new();
-_st($2)._splitter_(aSplitter);
-$3=_st($2)._yourself();
+$recv($2)._splitter_(aSplitter);
+$3=$recv($2)._yourself();
 $1=$3;
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"with:",{aSplitter:aSplitter},globals.HLContainer.klass)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"with:",{aSplitter:aSplitter},$globals.HLContainer.klass)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aSplitter"],
 source: "with: aSplitter\x0a\x09^ self new \x0a    \x09splitter: aSplitter; \x0a        yourself",
-messageSends: ["splitter:", "new", "yourself"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["splitter:", "new", "yourself"]
 }),
-globals.HLContainer.klass);
+$globals.HLContainer.klass);
 
 
-smalltalk.addClass('HLSplitter', globals.Widget, ['firstWidget', 'secondWidget', 'firstPane', 'secondPane', 'splitter'], 'Helios-Layout');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLSplitter', $globals.Widget, ['firstWidget', 'secondWidget', 'firstPane', 'secondPane', 'splitter'], 'Helios-Layout');
+$core.addMethod(
+$core.method({
 selector: "cssClass",
 protocol: 'accessing',
 fn: function (){
 var self=this;
 return "splitter";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "cssClass\x0a\x09^ 'splitter'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "firstWidget",
 protocol: 'accessing',
 fn: function (){
@@ -103,118 +129,164 @@ var self=this;
 var $1;
 $1=self["@firstWidget"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "firstWidget\x0a\x09^ firstWidget",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "firstWidget:",
 protocol: 'accessing',
 fn: function (aWidget){
 var self=this;
 self["@firstWidget"]=aWidget;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aWidget"],
 source: "firstWidget: aWidget\x0a\x09firstWidget := aWidget",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "isHeliosSplitter",
 protocol: 'testing',
 fn: function (){
 var self=this;
 return true;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "isHeliosSplitter\x0a\x09^ true",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "panesCssClass",
 protocol: 'rendering',
 fn: function (){
 var self=this;
 return "panes";
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "panesCssClass\x0a\x09^ 'panes'",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "renderOn:",
 protocol: 'rendering',
 fn: function (html){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1,$3,$4,$5,$6,$7,$2;
-$1=_st(html)._div();
+$1=$recv(html)._div();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["div"]=1;
-_st($1)._class_(self._panesCssClass());
+//>>excludeEnd("ctx");
+$recv($1)._class_(self._panesCssClass());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["class:"]=1;
-$2=_st($1)._with_((function(){
-return smalltalk.withContext(function($ctx2) {
-$3=_st(html)._div();
+//>>excludeEnd("ctx");
+$2=$recv($1)._with_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+$3=$recv(html)._div();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["div"]=2;
-_st($3)._class_("pane");
+//>>excludeEnd("ctx");
+$recv($3)._class_("pane");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["class:"]=2;
-$4=_st($3)._with_(self._firstWidget());
+//>>excludeEnd("ctx");
+$4=$recv($3)._with_(self._firstWidget());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["with:"]=2;
+//>>excludeEnd("ctx");
 self["@firstPane"]=$4;
 self["@firstPane"];
-$5=_st(html)._div();
+$5=$recv(html)._div();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["div"]=3;
-self["@splitter"]=_st($5)._class_(self._cssClass());
+//>>excludeEnd("ctx");
+self["@splitter"]=$recv($5)._class_(self._cssClass());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["class:"]=3;
+//>>excludeEnd("ctx");
 self["@splitter"];
-$6=_st(html)._div();
-_st($6)._class_("pane");
-$7=_st($6)._with_(self._secondWidget());
+$6=$recv(html)._div();
+$recv($6)._class_("pane");
+$7=$recv($6)._with_(self._secondWidget());
 self["@secondPane"]=$7;
 return self["@secondPane"];
-}, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)})}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["with:"]=1;
+//>>excludeEnd("ctx");
 self._setupSplitter();
-return self}, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html},globals.HLSplitter)})},
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html},$globals.HLSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
 source: "renderOn: html\x0a\x09html div class: self panesCssClass; with: [\x0a\x09\x09firstPane := html div class: 'pane'; with: self firstWidget.\x0a    \x09splitter := html div class: self cssClass.\x0a    \x09secondPane := html div class: 'pane'; with: self secondWidget ].\x0a        \x0a\x09self setupSplitter",
-messageSends: ["class:", "div", "panesCssClass", "with:", "firstWidget", "cssClass", "secondWidget", "setupSplitter"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["class:", "div", "panesCssClass", "with:", "firstWidget", "cssClass", "secondWidget", "setupSplitter"]
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "resize",
 protocol: 'rendering',
 fn: function (){
 var self=this;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "resize",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "secondWidget",
 protocol: 'accessing',
 fn: function (){
@@ -222,383 +294,596 @@ var self=this;
 var $1;
 $1=self["@secondWidget"];
 return $1;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "secondWidget\x0a\x09^ secondWidget",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "secondWidget:",
 protocol: 'accessing',
 fn: function (aWidget){
 var self=this;
 self["@secondWidget"]=aWidget;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aWidget"],
 source: "secondWidget: aWidget\x0a\x09secondWidget := aWidget",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "setupSplitter",
 protocol: 'rendering',
 fn: function (){
 var self=this;
-return self},
+return self;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "setupSplitter",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.HLSplitter);
+$globals.HLSplitter);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "with:with:",
 protocol: 'instance creation',
 fn: function (aWidget,anotherWidget){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$3,$1;
 $2=self._new();
-_st($2)._firstWidget_(aWidget);
-_st($2)._secondWidget_(anotherWidget);
-$3=_st($2)._yourself();
+$recv($2)._firstWidget_(aWidget);
+$recv($2)._secondWidget_(anotherWidget);
+$3=$recv($2)._yourself();
 $1=$3;
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"with:with:",{aWidget:aWidget,anotherWidget:anotherWidget},globals.HLSplitter.klass)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"with:with:",{aWidget:aWidget,anotherWidget:anotherWidget},$globals.HLSplitter.klass)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aWidget", "anotherWidget"],
 source: "with: aWidget with: anotherWidget\x0a\x09^ self new\x0a    \x09\x09firstWidget: aWidget;\x0a            secondWidget: anotherWidget;\x0a            yourself",
-messageSends: ["firstWidget:", "new", "secondWidget:", "yourself"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["firstWidget:", "new", "secondWidget:", "yourself"]
 }),
-globals.HLSplitter.klass);
+$globals.HLSplitter.klass);
 
 
-smalltalk.addClass('HLHorizontalSplitter', globals.HLSplitter, [], 'Helios-Layout');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLHorizontalSplitter', $globals.HLSplitter, [], 'Helios-Layout');
+$core.addMethod(
+$core.method({
 selector: "cssClass",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$1;
-$2=($ctx1.supercall = true, globals.HLHorizontalSplitter.superclass.fn.prototype._cssClass.apply(_st(self), []));
+$2=(
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.supercall = true, 
+//>>excludeEnd("ctx");
+$globals.HLHorizontalSplitter.superclass.fn.prototype._cssClass.apply($recv(self), []));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
-$1=_st($2).__comma(" horizontal");
+//>>excludeEnd("ctx");;
+$1=$recv($2).__comma(" horizontal");
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"cssClass",{},globals.HLHorizontalSplitter)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"cssClass",{},$globals.HLHorizontalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "cssClass\x0a\x09^ super cssClass, ' horizontal'",
-messageSends: [",", "cssClass"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: [",", "cssClass"]
 }),
-globals.HLHorizontalSplitter);
+$globals.HLHorizontalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "panesCssClass",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$1;
-$2=($ctx1.supercall = true, globals.HLHorizontalSplitter.superclass.fn.prototype._panesCssClass.apply(_st(self), []));
+$2=(
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.supercall = true, 
+//>>excludeEnd("ctx");
+$globals.HLHorizontalSplitter.superclass.fn.prototype._panesCssClass.apply($recv(self), []));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
-$1=_st($2).__comma(" horizontal");
+//>>excludeEnd("ctx");;
+$1=$recv($2).__comma(" horizontal");
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"panesCssClass",{},globals.HLHorizontalSplitter)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"panesCssClass",{},$globals.HLHorizontalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "panesCssClass\x0a\x09^ super panesCssClass, ' horizontal'",
-messageSends: [",", "panesCssClass"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: [",", "panesCssClass"]
 }),
-globals.HLHorizontalSplitter);
+$globals.HLHorizontalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "resize",
 protocol: 'actions',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-self._resize_(_st(_st(self["@splitter"])._asJQuery())._css_("top"));
-return self}, function($ctx1) {$ctx1.fill(self,"resize",{},globals.HLHorizontalSplitter)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+self._resize_($recv($recv(self["@splitter"])._asJQuery())._css_("top"));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"resize",{},$globals.HLHorizontalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "resize\x0a\x09self resize: (splitter asJQuery css: 'top')",
-messageSends: ["resize:", "css:", "asJQuery"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["resize:", "css:", "asJQuery"]
 }),
-globals.HLHorizontalSplitter);
+$globals.HLHorizontalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "resize:",
 protocol: 'actions',
 fn: function (anInteger){
 var self=this;
 var container,size,offset,percentage;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1,$3,$2,$6,$7,$5,$4,$8,$10,$9,$11,$14,$13,$12;
-$1=_st(self["@firstPane"])._asJQuery();
+$1=$recv(self["@firstPane"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=1;
-container=_st($1)._parent();
-$3=_st(self["@firstPane"])._asJQuery();
+//>>excludeEnd("ctx");
+container=$recv($1)._parent();
+$3=$recv(self["@firstPane"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=2;
-$2=_st($3)._offset();
-offset=_st($2)._top();
-size=_st(container)._height();
+//>>excludeEnd("ctx");
+$2=$recv($3)._offset();
+offset=$recv($2)._top();
+size=$recv(container)._height();
 $6=size;
-$7=_st(anInteger).__minus(offset);
+$7=$recv(anInteger).__minus(offset);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["-"]=2;
-$5=_st($6).__minus($7);
+//>>excludeEnd("ctx");
+$5=$recv($6).__minus($7);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["-"]=1;
-$4=_st($5).__slash(size);
-percentage=_st($4).__star((100));
-percentage=(80)._min_(_st(percentage)._max_((20)));
-$8=_st(self["@firstPane"])._asJQuery();
+//>>excludeEnd("ctx");
+$4=$recv($5).__slash(size);
+percentage=$recv($4).__star((100));
+percentage=(80)._min_($recv(percentage)._max_((20)));
+$8=$recv(self["@firstPane"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=3;
-$10=_st(percentage)._asString();
+//>>excludeEnd("ctx");
+$10=$recv(percentage)._asString();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asString"]=1;
-$9=_st($10).__comma("%");
+//>>excludeEnd("ctx");
+$9=$recv($10).__comma("%");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx[","]=1;
-_st($8)._css_put_("bottom",$9);
+//>>excludeEnd("ctx");
+$recv($8)._css_put_("bottom",$9);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["css:put:"]=1;
-$11=_st(self["@splitter"])._asJQuery();
+//>>excludeEnd("ctx");
+$11=$recv(self["@splitter"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=4;
+//>>excludeEnd("ctx");
 $14=(100).__minus(percentage);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["-"]=3;
-$13=_st($14)._asString();
+//>>excludeEnd("ctx");
+$13=$recv($14)._asString();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asString"]=2;
-$12=_st($13).__comma("%");
+//>>excludeEnd("ctx");
+$12=$recv($13).__comma("%");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx[","]=2;
-_st($11)._css_put_("top",$12);
+//>>excludeEnd("ctx");
+$recv($11)._css_put_("top",$12);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["css:put:"]=2;
-_st(_st(self["@secondPane"])._asJQuery())._css_put_("top",_st(_st((100).__minus(percentage))._asString()).__comma("%"));
-return self}, function($ctx1) {$ctx1.fill(self,"resize:",{anInteger:anInteger,container:container,size:size,offset:offset,percentage:percentage},globals.HLHorizontalSplitter)})},
+//>>excludeEnd("ctx");
+$recv($recv(self["@secondPane"])._asJQuery())._css_put_("top",$recv($recv((100).__minus(percentage))._asString()).__comma("%"));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"resize:",{anInteger:anInteger,container:container,size:size,offset:offset,percentage:percentage},$globals.HLHorizontalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anInteger"],
 source: "resize: anInteger\x0a\x09| container size offset percentage |\x0a    \x0a    container := firstPane asJQuery parent.\x0a\x09offset := firstPane asJQuery offset top.\x0a    size := container height.\x0a\x09\x0a\x09percentage := (size - (anInteger - offset)) / size * 100.\x0a\x09percentage := 80 min: (percentage max: 20).\x0a\x09\x0a    firstPane asJQuery css: 'bottom' put: percentage asString, '%'.\x0a\x09\x0a\x09splitter asJQuery css: 'top' put: (100 - percentage) asString, '%'.\x0a\x09secondPane asJQuery css: 'top' put: (100 - percentage) asString, '%'",
-messageSends: ["parent", "asJQuery", "top", "offset", "height", "*", "/", "-", "min:", "max:", "css:put:", ",", "asString"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["parent", "asJQuery", "top", "offset", "height", "*", "/", "-", "min:", "max:", "css:put:", ",", "asString"]
 }),
-globals.HLHorizontalSplitter);
+$globals.HLHorizontalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "setupSplitter",
 protocol: 'rendering',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1;
-$1=_st(self["@splitter"])._asJQuery();
+$1=$recv(self["@splitter"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=1;
-_st($1)._draggable_(globals.HashedCollection._newFromPairs_(["axis","y","containment",_st(_st(self["@splitter"])._asJQuery())._parent(),"helper","clone","start",(function(e,ui){
-return smalltalk.withContext(function($ctx2) {
-return self._startResizing_(_st(ui)._helper());
-}, function($ctx2) {$ctx2.fillBlock({e:e,ui:ui},$ctx1,1)})}),"drag",(function(e,ui){
-return smalltalk.withContext(function($ctx2) {
-return self._resize_(_st(_st(ui)._offset())._top());
-}, function($ctx2) {$ctx2.fillBlock({e:e,ui:ui},$ctx1,2)})})]));
-return self}, function($ctx1) {$ctx1.fill(self,"setupSplitter",{},globals.HLHorizontalSplitter)})},
+//>>excludeEnd("ctx");
+$recv($1)._draggable_($globals.HashedCollection._newFromPairs_(["axis","y","containment",$recv($recv(self["@splitter"])._asJQuery())._parent(),"helper","clone","start",(function(e,ui){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return self._startResizing_($recv(ui)._helper());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({e:e,ui:ui},$ctx1,1)});
+//>>excludeEnd("ctx");
+}),"drag",(function(e,ui){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return self._resize_($recv($recv(ui)._offset())._top());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({e:e,ui:ui},$ctx1,2)});
+//>>excludeEnd("ctx");
+})]));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"setupSplitter",{},$globals.HLHorizontalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "setupSplitter\x0a\x09splitter asJQuery draggable: #{ \x0a    \x09'axis' -> 'y'. \x0a        'containment' -> splitter asJQuery parent.\x0a        'helper' -> 'clone'.\x0a        'start' -> [ :e :ui | self startResizing: ui helper ].\x0a        'drag' -> [ :e :ui | self resize: ui offset top ] }",
-messageSends: ["draggable:", "asJQuery", "parent", "startResizing:", "helper", "resize:", "top", "offset"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["draggable:", "asJQuery", "parent", "startResizing:", "helper", "resize:", "top", "offset"]
 }),
-globals.HLHorizontalSplitter);
+$globals.HLHorizontalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "startResizing:",
 protocol: 'actions',
 fn: function (aSplitter){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-_st(aSplitter)._width_(_st(_st(self["@splitter"])._asJQuery())._width());
-return self}, function($ctx1) {$ctx1.fill(self,"startResizing:",{aSplitter:aSplitter},globals.HLHorizontalSplitter)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(aSplitter)._width_($recv($recv(self["@splitter"])._asJQuery())._width());
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"startResizing:",{aSplitter:aSplitter},$globals.HLHorizontalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aSplitter"],
 source: "startResizing: aSplitter\x0a\x09aSplitter width: splitter asJQuery width",
-messageSends: ["width:", "width", "asJQuery"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["width:", "width", "asJQuery"]
 }),
-globals.HLHorizontalSplitter);
+$globals.HLHorizontalSplitter);
 
 
 
-smalltalk.addClass('HLVerticalSplitter', globals.HLSplitter, [], 'Helios-Layout');
-smalltalk.addMethod(
-smalltalk.method({
+$core.addClass('HLVerticalSplitter', $globals.HLSplitter, [], 'Helios-Layout');
+$core.addMethod(
+$core.method({
 selector: "cssClass",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$1;
-$2=($ctx1.supercall = true, globals.HLVerticalSplitter.superclass.fn.prototype._cssClass.apply(_st(self), []));
+$2=(
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.supercall = true, 
+//>>excludeEnd("ctx");
+$globals.HLVerticalSplitter.superclass.fn.prototype._cssClass.apply($recv(self), []));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
-$1=_st($2).__comma(" vertical");
+//>>excludeEnd("ctx");;
+$1=$recv($2).__comma(" vertical");
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"cssClass",{},globals.HLVerticalSplitter)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"cssClass",{},$globals.HLVerticalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "cssClass\x0a\x09^ super cssClass, ' vertical'",
-messageSends: [",", "cssClass"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: [",", "cssClass"]
 }),
-globals.HLVerticalSplitter);
+$globals.HLVerticalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "panesCssClass",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $2,$1;
-$2=($ctx1.supercall = true, globals.HLVerticalSplitter.superclass.fn.prototype._panesCssClass.apply(_st(self), []));
+$2=(
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.supercall = true, 
+//>>excludeEnd("ctx");
+$globals.HLVerticalSplitter.superclass.fn.prototype._panesCssClass.apply($recv(self), []));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
-$1=_st($2).__comma(" vertical");
+//>>excludeEnd("ctx");;
+$1=$recv($2).__comma(" vertical");
 return $1;
-}, function($ctx1) {$ctx1.fill(self,"panesCssClass",{},globals.HLVerticalSplitter)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"panesCssClass",{},$globals.HLVerticalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "panesCssClass\x0a\x09^ super panesCssClass, ' vertical'",
-messageSends: [",", "panesCssClass"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: [",", "panesCssClass"]
 }),
-globals.HLVerticalSplitter);
+$globals.HLVerticalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "resize",
 protocol: 'actions',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-self._resize_(_st(_st(self["@splitter"])._asJQuery())._css_("left"));
-return self}, function($ctx1) {$ctx1.fill(self,"resize",{},globals.HLVerticalSplitter)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+self._resize_($recv($recv(self["@splitter"])._asJQuery())._css_("left"));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"resize",{},$globals.HLVerticalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "resize\x0a\x09self resize: (splitter asJQuery css: 'left')",
-messageSends: ["resize:", "css:", "asJQuery"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["resize:", "css:", "asJQuery"]
 }),
-globals.HLVerticalSplitter);
+$globals.HLVerticalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "resize:",
 protocol: 'actions',
 fn: function (anInteger){
 var self=this;
 var container,size,offset,percentage;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1,$3,$2,$6,$7,$5,$4,$8,$10,$9,$11,$14,$13,$12;
-$1=_st(self["@firstPane"])._asJQuery();
+$1=$recv(self["@firstPane"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=1;
-container=_st($1)._parent();
-$3=_st(self["@firstPane"])._asJQuery();
+//>>excludeEnd("ctx");
+container=$recv($1)._parent();
+$3=$recv(self["@firstPane"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=2;
-$2=_st($3)._offset();
-offset=_st($2)._left();
-size=_st(container)._width();
+//>>excludeEnd("ctx");
+$2=$recv($3)._offset();
+offset=$recv($2)._left();
+size=$recv(container)._width();
 $6=size;
-$7=_st(anInteger).__minus(offset);
+$7=$recv(anInteger).__minus(offset);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["-"]=2;
-$5=_st($6).__minus($7);
+//>>excludeEnd("ctx");
+$5=$recv($6).__minus($7);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["-"]=1;
-$4=_st($5).__slash(size);
-percentage=_st($4).__star((100));
-percentage=(80)._min_(_st(percentage)._max_((20)));
-$8=_st(self["@firstPane"])._asJQuery();
+//>>excludeEnd("ctx");
+$4=$recv($5).__slash(size);
+percentage=$recv($4).__star((100));
+percentage=(80)._min_($recv(percentage)._max_((20)));
+$8=$recv(self["@firstPane"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=3;
-$10=_st(percentage)._asString();
+//>>excludeEnd("ctx");
+$10=$recv(percentage)._asString();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asString"]=1;
-$9=_st($10).__comma("%");
+//>>excludeEnd("ctx");
+$9=$recv($10).__comma("%");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx[","]=1;
-_st($8)._css_put_("right",$9);
+//>>excludeEnd("ctx");
+$recv($8)._css_put_("right",$9);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["css:put:"]=1;
-$11=_st(self["@splitter"])._asJQuery();
+//>>excludeEnd("ctx");
+$11=$recv(self["@splitter"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=4;
+//>>excludeEnd("ctx");
 $14=(100).__minus(percentage);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["-"]=3;
-$13=_st($14)._asString();
+//>>excludeEnd("ctx");
+$13=$recv($14)._asString();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asString"]=2;
-$12=_st($13).__comma("%");
+//>>excludeEnd("ctx");
+$12=$recv($13).__comma("%");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx[","]=2;
-_st($11)._css_put_("left",$12);
+//>>excludeEnd("ctx");
+$recv($11)._css_put_("left",$12);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["css:put:"]=2;
-_st(_st(self["@secondPane"])._asJQuery())._css_put_("left",_st(_st((100).__minus(percentage))._asString()).__comma("%"));
-return self}, function($ctx1) {$ctx1.fill(self,"resize:",{anInteger:anInteger,container:container,size:size,offset:offset,percentage:percentage},globals.HLVerticalSplitter)})},
+//>>excludeEnd("ctx");
+$recv($recv(self["@secondPane"])._asJQuery())._css_put_("left",$recv($recv((100).__minus(percentage))._asString()).__comma("%"));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"resize:",{anInteger:anInteger,container:container,size:size,offset:offset,percentage:percentage},$globals.HLVerticalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anInteger"],
 source: "resize: anInteger\x0a\x09| container size offset percentage |\x0a    \x0a    container := firstPane asJQuery parent.\x0a\x09offset := firstPane asJQuery offset left.\x0a    size := container width.\x0a\x09\x0a\x09percentage := (size - (anInteger - offset)) / size * 100.\x0a\x09percentage := 80 min: (percentage max: 20).\x0a\x09\x0a    firstPane asJQuery css: 'right' put: percentage asString, '%'.\x0a\x09\x0a\x09splitter asJQuery css: 'left' put: (100 - percentage) asString, '%'.\x0a\x09secondPane asJQuery css: 'left' put: (100 - percentage) asString, '%'",
-messageSends: ["parent", "asJQuery", "left", "offset", "width", "*", "/", "-", "min:", "max:", "css:put:", ",", "asString"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["parent", "asJQuery", "left", "offset", "width", "*", "/", "-", "min:", "max:", "css:put:", ",", "asString"]
 }),
-globals.HLVerticalSplitter);
+$globals.HLVerticalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "setupSplitter",
 protocol: 'rendering',
 fn: function (){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
 var $1;
-$1=_st(self["@splitter"])._asJQuery();
+$1=$recv(self["@splitter"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asJQuery"]=1;
-_st($1)._draggable_(globals.HashedCollection._newFromPairs_(["axis","x","containment",_st(_st(self["@splitter"])._asJQuery())._parent(),"helper","clone","start",(function(e,ui){
-return smalltalk.withContext(function($ctx2) {
-return self._startResizing_(_st(ui)._helper());
-}, function($ctx2) {$ctx2.fillBlock({e:e,ui:ui},$ctx1,1)})}),"drag",(function(e,ui){
-return smalltalk.withContext(function($ctx2) {
-return self._resize_(_st(_st(ui)._offset())._left());
-}, function($ctx2) {$ctx2.fillBlock({e:e,ui:ui},$ctx1,2)})})]));
-return self}, function($ctx1) {$ctx1.fill(self,"setupSplitter",{},globals.HLVerticalSplitter)})},
+//>>excludeEnd("ctx");
+$recv($1)._draggable_($globals.HashedCollection._newFromPairs_(["axis","x","containment",$recv($recv(self["@splitter"])._asJQuery())._parent(),"helper","clone","start",(function(e,ui){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return self._startResizing_($recv(ui)._helper());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({e:e,ui:ui},$ctx1,1)});
+//>>excludeEnd("ctx");
+}),"drag",(function(e,ui){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return self._resize_($recv($recv(ui)._offset())._left());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({e:e,ui:ui},$ctx1,2)});
+//>>excludeEnd("ctx");
+})]));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"setupSplitter",{},$globals.HLVerticalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "setupSplitter\x0a\x09splitter asJQuery draggable: #{ \x0a    \x09'axis' -> 'x'. \x0a        'containment' -> splitter asJQuery parent.\x0a        'helper' -> 'clone'.\x0a        'start' -> [ :e :ui | self startResizing: ui helper ].\x0a        'drag' -> [ :e :ui | self resize: (ui offset left) ] }",
-messageSends: ["draggable:", "asJQuery", "parent", "startResizing:", "helper", "resize:", "left", "offset"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["draggable:", "asJQuery", "parent", "startResizing:", "helper", "resize:", "left", "offset"]
 }),
-globals.HLVerticalSplitter);
+$globals.HLVerticalSplitter);
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "startResizing:",
 protocol: 'actions',
 fn: function (aSplitter){
 var self=this;
-return smalltalk.withContext(function($ctx1) { 
-_st(aSplitter)._height_(_st(_st(self["@splitter"])._asJQuery())._height());
-return self}, function($ctx1) {$ctx1.fill(self,"startResizing:",{aSplitter:aSplitter},globals.HLVerticalSplitter)})},
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(aSplitter)._height_($recv($recv(self["@splitter"])._asJQuery())._height());
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"startResizing:",{aSplitter:aSplitter},$globals.HLVerticalSplitter)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aSplitter"],
 source: "startResizing: aSplitter\x0a\x09aSplitter height: splitter asJQuery height",
-messageSends: ["height:", "height", "asJQuery"],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["height:", "height", "asJQuery"]
 }),
-globals.HLVerticalSplitter);
+$globals.HLVerticalSplitter);
 
 
-smalltalk.addMethod(
-smalltalk.method({
+$core.addMethod(
+$core.method({
 selector: "isHeliosSplitter",
 protocol: '*Helios-Layout',
 fn: function (){
 var self=this;
 return false;
+
 },
+//>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
 source: "isHeliosSplitter\x0a\x09^ false",
-messageSends: [],
-referencedClasses: []
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
-globals.Object);
+$globals.Object);
 
 });

@@ -9,7 +9,7 @@
     "tests"
   ],
   "dependencies": {
-    "amber": ">=0.12.6",
+    "amber": ">=0.13.1",
     "jquery": ">=1.7.0",
     "jquery-ui": ">=1.9.2",
     "bootstrap2.3.2": "^2.3.2",

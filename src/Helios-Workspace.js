@@ -755,7 +755,7 @@ function $Smalltalk(){return $globals.Smalltalk||(typeof Smalltalk=="undefined"?
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
 var $2,$1;
-$1=$recv($recv($recv($recv($recv($Smalltalk())._vm())._allSelectors())._asArray())._select_((function(each){
+$1=$recv($recv($recv($recv($recv($Smalltalk())._core())._allSelectors())._asArray())._select_((function(each){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -783,10 +783,10 @@ return $1;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anEditor", "aToken"],
-source: "messageHintFor: anEditor token: aToken\x0a\x09^ (Smalltalk vm allSelectors asArray \x0a\x09\x09select: [ :each | each includesSubString: aToken string ])\x0a\x09\x09reject: [ :each | each = aToken string ]",
+source: "messageHintFor: anEditor token: aToken\x0a\x09^ (Smalltalk core allSelectors asArray \x0a\x09\x09select: [ :each | each includesSubString: aToken string ])\x0a\x09\x09reject: [ :each | each = aToken string ]",
 referencedClasses: ["Smalltalk"],
 //>>excludeEnd("ide");
-messageSends: ["reject:", "select:", "asArray", "allSelectors", "vm", "includesSubString:", "string", "="]
+messageSends: ["reject:", "select:", "asArray", "allSelectors", "core", "includesSubString:", "string", "="]
 }),
 $globals.HLCodeWidget);
 

@@ -239,7 +239,7 @@ setEditorOn: aTextarea
 !HLCodeWidget methodsFor: 'hints'!
 
 messageHintFor: anEditor token: aToken
-	^ (Smalltalk vm allSelectors asArray 
+	^ (Smalltalk core allSelectors asArray 
 		select: [ :each | each includesSubString: aToken string ])
 		reject: [ :each | each = aToken string ]
 !

@@ -353,7 +353,7 @@ updateState
 !HLCodeWidget class methodsFor: 'accessing'!
 
 codeMirror
-	^ require value: 'codemirror3/lib/codemirror'
+	^ require value: 'codemirror/lib/codemirror'
 !
 
 keyMap

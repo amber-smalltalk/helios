@@ -1666,7 +1666,7 @@ var self=this;
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv(require)._value_("codemirror3/lib/codemirror");
+$1=$recv(require)._value_("codemirror/lib/codemirror");
 return $1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"codeMirror",{},$globals.HLCodeWidget.klass)});
@@ -1674,7 +1674,7 @@ return $1;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "codeMirror\x0a\x09^ require value: 'codemirror3/lib/codemirror'",
+source: "codeMirror\x0a\x09^ require value: 'codemirror/lib/codemirror'",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["value:"]

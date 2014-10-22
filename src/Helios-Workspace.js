@@ -1523,7 +1523,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-self['@editor'] = CodeMirror.fromTextArea(aTextarea, self._editorOptions());
+self['@editor'] = self._class()._codeMirror().fromTextArea(aTextarea, self._editorOptions());
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"setEditorOn:",{aTextarea:aTextarea},$globals.HLCodeWidget)});
@@ -1531,7 +1531,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aTextarea"],
-source: "setEditorOn: aTextarea\x0a\x09<self['@editor'] = CodeMirror.fromTextArea(aTextarea, self._editorOptions())>",
+source: "setEditorOn: aTextarea\x0a\x09<self['@editor'] = self._class()._codeMirror().fromTextArea(aTextarea, self._editorOptions())>",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []
@@ -1658,21 +1658,46 @@ $globals.HLCodeWidget);
 
 $core.addMethod(
 $core.method({
+selector: "codeMirror",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+var $1;
+$1=$recv(require)._value_("codemirror3/lib/codemirror");
+return $1;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"codeMirror",{},$globals.HLCodeWidget.klass)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "codeMirror\x0a\x09^ require value: 'codemirror3/lib/codemirror'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["value:"]
+}),
+$globals.HLCodeWidget.klass);
+
+$core.addMethod(
+$core.method({
 selector: "hintFor:options:",
 protocol: 'hints',
 fn: function (anEditor,options){
 var self=this;
-var cursor,token,completions;
-function $CodeMirror(){return $globals.CodeMirror||(typeof CodeMirror=="undefined"?nil:CodeMirror)}
+var cursor,token,completions,codeMirror;
 function $HLCodeWidget(){return $globals.HLCodeWidget||(typeof HLCodeWidget=="undefined"?nil:HLCodeWidget)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
 var $1,$4,$3,$2,$5,$7,$9,$10,$8,$6;
+codeMirror=self._codeMirror();
 cursor=$recv(anEditor)._getCursor();
 token=$recv(anEditor)._getTokenAt_(cursor);
 $1=token;
-$4=$recv($CodeMirror())._basicAt_("innerMode");
+$4=$recv(codeMirror)._basicAt_("innerMode");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["basicAt:"]=1;
 //>>excludeEnd("ctx");
@@ -1689,7 +1714,7 @@ completions=$recv($HLCodeWidget())._variableHintFor_token_(anEditor,token);
 completions=$recv($HLCodeWidget())._messageHintFor_token_(anEditor,token);
 };
 $7=completions;
-$9=$recv($CodeMirror())._basicAt_("Pos");
+$9=$recv(codeMirror)._basicAt_("Pos");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["basicAt:"]=2;
 //>>excludeEnd("ctx");
@@ -1701,18 +1726,18 @@ $8=$recv($9)._value_value_($10,$recv(token)._end());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["value:value:"]=2;
 //>>excludeEnd("ctx");
-$6=$globals.HashedCollection._newFromPairs_(["list",$7,"from",$8,"to",$recv($recv($CodeMirror())._basicAt_("Pos"))._value_value_($recv(cursor)._line(),$recv(token)._start())]);
+$6=$globals.HashedCollection._newFromPairs_(["list",$7,"from",$8,"to",$recv($recv(codeMirror)._basicAt_("Pos"))._value_value_($recv(cursor)._line(),$recv(token)._start())]);
 return $6;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx1) {$ctx1.fill(self,"hintFor:options:",{anEditor:anEditor,options:options,cursor:cursor,token:token,completions:completions},$globals.HLCodeWidget.klass)});
+}, function($ctx1) {$ctx1.fill(self,"hintFor:options:",{anEditor:anEditor,options:options,cursor:cursor,token:token,completions:completions,codeMirror:codeMirror},$globals.HLCodeWidget.klass)});
 //>>excludeEnd("ctx");
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anEditor", "options"],
-source: "hintFor: anEditor options: options\x0a\x09| cursor token completions |\x0a\x09\x0a\x09cursor := anEditor getCursor.\x0a\x09token := anEditor getTokenAt: cursor.\x0a\x09token at: 'state' put: ((CodeMirror basicAt: 'innerMode')\x0a\x09\x09value: anEditor getMode value: (token at: 'state')) state.\x0a\x09\x0a\x09completions := token type = 'variable' \x0a\x09\x09ifTrue: [ HLCodeWidget variableHintFor: anEditor token: token ]\x0a\x09\x09ifFalse: [ HLCodeWidget messageHintFor: anEditor token: token ].\x0a\x09\x0a\x09^ #{\x0a\x09\x09'list' -> completions.\x0a\x09\x09'from' -> ((CodeMirror basicAt: 'Pos') value: cursor line value: token end).\x0a\x09\x09'to' -> ((CodeMirror basicAt: 'Pos') value: cursor line value: token start)\x0a\x09}",
-referencedClasses: ["CodeMirror", "HLCodeWidget"],
+source: "hintFor: anEditor options: options\x0a\x09| cursor token completions codeMirror |\x0a\x09\x0a\x09codeMirror := self codeMirror.\x0a\x09cursor := anEditor getCursor.\x0a\x09token := anEditor getTokenAt: cursor.\x0a\x09token at: 'state' put: ((codeMirror basicAt: 'innerMode')\x0a\x09\x09value: anEditor getMode value: (token at: 'state')) state.\x0a\x09\x0a\x09completions := token type = 'variable' \x0a\x09\x09ifTrue: [ HLCodeWidget variableHintFor: anEditor token: token ]\x0a\x09\x09ifFalse: [ HLCodeWidget messageHintFor: anEditor token: token ].\x0a\x09\x0a\x09^ #{\x0a\x09\x09'list' -> completions.\x0a\x09\x09'from' -> ((codeMirror basicAt: 'Pos') value: cursor line value: token end).\x0a\x09\x09'to' -> ((codeMirror basicAt: 'Pos') value: cursor line value: token start)\x0a\x09}",
+referencedClasses: ["HLCodeWidget"],
 //>>excludeEnd("ide");
-messageSends: ["getCursor", "getTokenAt:", "at:put:", "state", "value:value:", "basicAt:", "getMode", "at:", "ifTrue:ifFalse:", "=", "type", "variableHintFor:token:", "messageHintFor:token:", "line", "end", "start"]
+messageSends: ["codeMirror", "getCursor", "getTokenAt:", "at:put:", "state", "value:value:", "basicAt:", "getMode", "at:", "ifTrue:ifFalse:", "=", "type", "variableHintFor:token:", "messageHintFor:token:", "line", "end", "start"]
 }),
 $globals.HLCodeWidget.klass);
 
@@ -1856,10 +1881,11 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
- 
-		CodeMirror.keyMap.default.fallthrough = ["basic"];
-		CodeMirror.commands.autocomplete = function(cm) {
-			CodeMirror.showHint(cm, self._hintFor_options_);
+
+		var codeMirror = self._codeMirror();
+		codeMirror.keyMap.default.fallthrough = ["basic"];
+		codeMirror.commands.autocomplete = function(cm) {
+			codeMirror.showHint(cm, self._hintFor_options_);
 		}
 	;
 return self;
@@ -1869,7 +1895,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "setupCodeMirror\x0a\x09< \x0a\x09\x09CodeMirror.keyMap.default.fallthrough = [\x22basic\x22];\x0a\x09\x09CodeMirror.commands.autocomplete = function(cm) {\x0a\x09\x09\x09CodeMirror.showHint(cm, self._hintFor_options_);\x0a\x09\x09}\x0a\x09>",
+source: "setupCodeMirror\x0a\x09<\x0a\x09\x09var codeMirror = self._codeMirror();\x0a\x09\x09codeMirror.keyMap.default.fallthrough = [\x22basic\x22];\x0a\x09\x09codeMirror.commands.autocomplete = function(cm) {\x0a\x09\x09\x09codeMirror.showHint(cm, self._hintFor_options_);\x0a\x09\x09}\x0a\x09>",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []
@@ -1882,12 +1908,11 @@ selector: "setupCommands",
 protocol: 'initialization',
 fn: function (){
 var self=this;
-function $CodeMirror(){return $globals.CodeMirror||(typeof CodeMirror=="undefined"?nil:CodeMirror)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
 var $1,$2,$3,$4,$5,$6;
-$1=$recv($CodeMirror())._basicAt_("commands");
+$1=$recv(self._codeMirror())._basicAt_("commands");
 $recv($1)._at_put_("doIt",(function(cm){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
@@ -1968,10 +1993,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "setupCommands\x0a\x09(CodeMirror basicAt: 'commands') \x0a\x09\x09at: 'doIt' put: [ :cm | cm amberCodeWidget doIt ];\x0a\x09\x09at: 'inspectIt' put: [ :cm | cm amberCodeWidget inspectIt ];\x0a\x09\x09at: 'printIt' put: [ :cm | cm amberCodeWidget printIt ];\x0a\x09\x09at: 'saveIt' put: [ :cm | cm amberCodeWidget saveIt ];\x0a\x09\x09at: 'browseIt' put: [ :cm | cm amberCodeWidget browseIt ]",
-referencedClasses: ["CodeMirror"],
+source: "setupCommands\x0a\x09(self codeMirror basicAt: 'commands') \x0a\x09\x09at: 'doIt' put: [ :cm | cm amberCodeWidget doIt ];\x0a\x09\x09at: 'inspectIt' put: [ :cm | cm amberCodeWidget inspectIt ];\x0a\x09\x09at: 'printIt' put: [ :cm | cm amberCodeWidget printIt ];\x0a\x09\x09at: 'saveIt' put: [ :cm | cm amberCodeWidget saveIt ];\x0a\x09\x09at: 'browseIt' put: [ :cm | cm amberCodeWidget browseIt ]",
+referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["at:put:", "basicAt:", "doIt", "amberCodeWidget", "inspectIt", "printIt", "saveIt", "browseIt"]
+messageSends: ["at:put:", "basicAt:", "codeMirror", "doIt", "amberCodeWidget", "inspectIt", "printIt", "saveIt", "browseIt"]
 }),
 $globals.HLCodeWidget.klass);
 
@@ -1984,7 +2009,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-CodeMirror.keyMap['Amber'] = self._keyMap();
+self._codeMirror().keyMap['Amber'] = self._keyMap();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"setupKeyMaps",{},$globals.HLCodeWidget.klass)});
@@ -1992,7 +2017,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "setupKeyMaps\x0a\x09<CodeMirror.keyMap['Amber'] = self._keyMap()>",
+source: "setupKeyMaps\x0a\x09<self._codeMirror().keyMap['Amber'] = self._keyMap()>",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []

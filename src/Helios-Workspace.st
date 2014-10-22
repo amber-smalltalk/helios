@@ -233,7 +233,7 @@ saveIt
 !
 
 setEditorOn: aTextarea
-	<self['@editor'] = CodeMirror.fromTextArea(aTextarea, self._editorOptions())>
+	<self['@editor'] = self._class()._codeMirror().fromTextArea(aTextarea, self._editorOptions())>
 ! !
 
 !HLCodeWidget methodsFor: 'hints'!
@@ -352,6 +352,10 @@ updateState
 
 !HLCodeWidget class methodsFor: 'accessing'!
 
+codeMirror
+	^ require value: 'codemirror3/lib/codemirror'
+!
+
 keyMap
 	^ HLManager current keyBinder systemIsMac
 		ifTrue: [ self macKeyMap ]
@@ -425,11 +429,12 @@ pcKeyMap
 !HLCodeWidget class methodsFor: 'hints'!
 
 hintFor: anEditor options: options
-	| cursor token completions |
+	| cursor token completions codeMirror |
 	
+	codeMirror := self codeMirror.
 	cursor := anEditor getCursor.
 	token := anEditor getTokenAt: cursor.
-	token at: 'state' put: ((CodeMirror basicAt: 'innerMode')
+	token at: 'state' put: ((codeMirror basicAt: 'innerMode')
 		value: anEditor getMode value: (token at: 'state')) state.
 	
 	completions := token type = 'variable' 
@@ -438,8 +443,8 @@ hintFor: anEditor options: options
 	
 	^ #{
 		'list' -> completions.
-		'from' -> ((CodeMirror basicAt: 'Pos') value: cursor line value: token end).
-		'to' -> ((CodeMirror basicAt: 'Pos') value: cursor line value: token start)
+		'from' -> ((codeMirror basicAt: 'Pos') value: cursor line value: token end).
+		'to' -> ((codeMirror basicAt: 'Pos') value: cursor line value: token start)
 	}
 !
 
@@ -464,16 +469,17 @@ initialize
 !
 
 setupCodeMirror
-	< 
-		CodeMirror.keyMap.default.fallthrough = ["basic"];
-		CodeMirror.commands.autocomplete = function(cm) {
-			CodeMirror.showHint(cm, self._hintFor_options_);
+	<
+		var codeMirror = self._codeMirror();
+		codeMirror.keyMap.default.fallthrough = ["basic"];
+		codeMirror.commands.autocomplete = function(cm) {
+			codeMirror.showHint(cm, self._hintFor_options_);
 		}
 	>
 !
 
 setupCommands
-	(CodeMirror basicAt: 'commands') 
+	(self codeMirror basicAt: 'commands') 
 		at: 'doIt' put: [ :cm | cm amberCodeWidget doIt ];
 		at: 'inspectIt' put: [ :cm | cm amberCodeWidget inspectIt ];
 		at: 'printIt' put: [ :cm | cm amberCodeWidget printIt ];
@@ -482,7 +488,7 @@ setupCommands
 !
 
 setupKeyMaps
-	<CodeMirror.keyMap['Amber'] = self._keyMap()>
+	<self._codeMirror().keyMap['Amber'] = self._keyMap()>
 ! !
 
 HLCodeWidget subclass: #HLNavigationCodeWidget

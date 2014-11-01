@@ -261,12 +261,14 @@ HLToolModel subclass: #HLBrowserModel
 !HLBrowserModel methodsFor: 'accessing'!
 
 showComment
-	^ showComment ifNil: [ true ]
+	^ showComment ifNil: [ 
+		showComment := 'helios.browser.showComment' settingValueIfAbsent: true ]
 !
 
 showComment: aBoolean
 	self withChangesDo: [
 		showComment := aBoolean.
+		'helios.browser.showComment' settingValue: aBoolean.
 		self announcer announce: HLShowCommentToggled new ]
 !
 

@@ -1305,7 +1305,8 @@ return $core.withContext(function($ctx1) {
 var $2,$1,$receiver;
 $2=self["@showComment"];
 if(($receiver = $2) == null || $receiver.isNil){
-$1=true;
+self["@showComment"]="helios.browser.showComment"._settingValueIfAbsent_(true);
+$1=self["@showComment"];
 } else {
 $1=$2;
 };
@@ -1316,10 +1317,10 @@ return $1;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "showComment\x0a\x09^ showComment ifNil: [ true ]",
+source: "showComment\x0a\x09^ showComment ifNil: [ \x0a\x09\x09showComment := 'helios.browser.showComment' settingValueIfAbsent: true ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["ifNil:"]
+messageSends: ["ifNil:", "settingValueIfAbsent:"]
 }),
 $globals.HLBrowserModel);
 
@@ -1339,6 +1340,7 @@ return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
 self["@showComment"]=aBoolean;
 self["@showComment"];
+"helios.browser.showComment"._settingValue_(aBoolean);
 return $recv(self._announcer())._announce_($recv($HLShowCommentToggled())._new());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
@@ -1351,10 +1353,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aBoolean"],
-source: "showComment: aBoolean\x0a\x09self withChangesDo: [\x0a\x09\x09showComment := aBoolean.\x0a\x09\x09self announcer announce: HLShowCommentToggled new ]",
+source: "showComment: aBoolean\x0a\x09self withChangesDo: [\x0a\x09\x09showComment := aBoolean.\x0a\x09\x09'helios.browser.showComment' settingValue: aBoolean.\x0a\x09\x09self announcer announce: HLShowCommentToggled new ]",
 referencedClasses: ["HLShowCommentToggled"],
 //>>excludeEnd("ide");
-messageSends: ["withChangesDo:", "announce:", "announcer", "new"]
+messageSends: ["withChangesDo:", "settingValue:", "announce:", "announcer", "new"]
 }),
 $globals.HLBrowserModel);
 

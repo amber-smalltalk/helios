@@ -1420,7 +1420,9 @@ current
 setup
 	self current 
 		setup;
-		appendToJQuery: 'body' asJQuery
+		appendToJQuery: 'body' asJQuery.
+		
+	window onbeforeunload:[ 'Do you want to close Amber? All uncommitted changes will be lost.' ]
 ! !
 
 !HLManager class methodsFor: 'instance creation'!

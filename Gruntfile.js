@@ -23,7 +23,7 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['amberc:all']);
   grunt.registerTask('test', ['amberc:test_runner', 'execute:test_runner', 'clean:test_runner']);
-  grunt.registerTask('devel', ['amdconfig:amber']);
+  grunt.registerTask('devel', ['amdconfig:helios']);
 
   // Project configuration.
   grunt.initConfig({

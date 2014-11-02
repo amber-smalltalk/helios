@@ -157,7 +157,7 @@ body[id="helios"] .dialog .nav a span.inspector {
   background-image: url('inspector.png');
 }
 body[id="helios"] .navbar-fixed-top .navbar-inner {
-  min-height: 24px;
+  min-height: 46px;
   border-bottom: 1px solid #666;
   box-shadow: inset 0px 2px 2px #aaa;
   background: #bababa;
@@ -313,7 +313,7 @@ body[id="helios"] .sunit.status.error {
 }
 body[id="helios"] .tool_container {
   position: absolute;
-  top: 23px;
+  top: 47px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -466,7 +466,7 @@ body[id="helios"] .tool_container .pane .nav-pills i.warning {
 body[id="helios"] .tool_container .pane .nav-pills i.uncommented {
   background-image: url('uncommented.png');
 }
-body[id="helios"] .tool_container .list-label {
+body[id="helios"] .tool_container .list-label .toolbar {
   font-size: 11px;
   border-radius: 0;
   border-bottom: 1px solid #999;
@@ -483,6 +483,10 @@ body[id="helios"] .tool_container .list-label {
   line-height: 14px;
   height: 15px;
   text-shadow: 0 1px 0 #eee;
+}
+body[id="helios"] .toolbar {
+  position: relative;
+  z-index: 9999;
 }
 body[id="helios"] .tool_container .list-label .btn-group.cog {
   position: absolute;
@@ -940,3 +944,10 @@ body[id="helios"] .hl_debugger .head h2 {
 body[id="helios"] .progress {
   border-radius: 0;
 }
+
+/* shame */
+
+.main-tabs {
+	top: 23px;
+}
+

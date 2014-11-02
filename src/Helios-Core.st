@@ -1181,7 +1181,7 @@ renderContentOn: html
 ! !
 
 HLWidget subclass: #HLManager
-	instanceVariableNames: 'tabsWidget environment history announcer'
+	instanceVariableNames: 'topBarWidget tabsWidget environment history announcer'
 	package: 'Helios-Core'!
 
 !HLManager methodsFor: 'accessing'!
@@ -1244,6 +1244,10 @@ tabs
 
 tabsWidget
 	^ tabsWidget ifNil: [ tabsWidget := HLTabsWidget new ]
+!
+
+topBarWidget
+	^ topBarWidget ifNil: [ topBarWidget := HLTopBarWidget new ]
 ! !
 
 !HLManager methodsFor: 'actions'!
@@ -1377,6 +1381,7 @@ setupTheme
 !HLManager methodsFor: 'rendering'!
 
 renderContentOn: html
+	html with: self topBarWidget.
 	html with: self tabsWidget.
 	html with: HLWelcomeWidget new
 ! !
@@ -2237,7 +2242,8 @@ renderContentOn: html
 			class: 'navbar-inner';
 			with: [ self renderTabsOn: html ] ].
 			
-	self renderAddOn: html
+	"obsolete
+	self renderAddOn: html"
 !
 
 renderTab: aTab on: html
@@ -2287,6 +2293,45 @@ isSelectionDisabled
 ! !
 
 HLTabsWidget class instanceVariableNames: 'current'!
+
+HLWidget subclass: #HLTopBarWidget
+	instanceVariableNames: 'inputView'
+	package: 'Helios-Core'!
+
+!HLTopBarWidget methodsFor: 'reactions'!
+
+onSearchKeyUp: anEvent
+
+	anEvent keyCode = 13 ifTrue:[
+		self search: inputView asJQuery val ]
+!
+
+search: aString
+
+	HLReferences openAsTab search: aString
+! !
+
+!HLTopBarWidget methodsFor: 'rendering'!
+
+renderContentOn: html
+	html div 
+		class: 'toolbar';
+		with: [ html div 
+			"class: 'navbar-inner';"
+			with: [ 
+				inputView := html input
+					at: 'placeholder' put: 'Search classes, senders and more..';
+					onKeyUp: [ :ev | self onSearchKeyUp: ev ];
+					value: ''.
+
+				html div
+					class: 'buttons_bar';
+					with: [
+						html button class: 'button'; onClick: [ HLBrowser openAsTab ]; with: 'Browser'.
+						html button class: 'button'; onClick: [ HLWorkspace openAsTab ]; with: 'Workspace'.
+						html button class: 'button'; onClick: [ HLSUnit openAsTab ]; with: 'Tests' ].
+			] ].
+! !
 
 HLWidget subclass: #HLWelcomeWidget
 	instanceVariableNames: ''

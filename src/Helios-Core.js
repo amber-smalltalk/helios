@@ -5117,7 +5117,7 @@ $globals.HLInformationWidget);
 
 
 
-$core.addClass('HLManager', $globals.HLWidget, ['tabsWidget', 'environment', 'history', 'announcer'], 'Helios-Core');
+$core.addClass('HLManager', $globals.HLWidget, ['topBarWidget', 'tabsWidget', 'environment', 'history', 'announcer'], 'Helios-Core');
 $core.addMethod(
 $core.method({
 selector: "activate:",
@@ -5786,9 +5786,13 @@ function $HLWelcomeWidget(){return $globals.HLWelcomeWidget||(typeof HLWelcomeWi
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-$recv(html)._with_(self._tabsWidget());
+$recv(html)._with_(self._topBarWidget());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["with:"]=1;
+//>>excludeEnd("ctx");
+$recv(html)._with_(self._tabsWidget());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["with:"]=2;
 //>>excludeEnd("ctx");
 $recv(html)._with_($recv($HLWelcomeWidget())._new());
 return self;
@@ -5798,10 +5802,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09html with: self tabsWidget.\x0a\x09html with: HLWelcomeWidget new",
+source: "renderContentOn: html\x0a\x09html with: self topBarWidget.\x0a\x09html with: self tabsWidget.\x0a\x09html with: HLWelcomeWidget new",
 referencedClasses: ["HLWelcomeWidget"],
 //>>excludeEnd("ide");
-messageSends: ["with:", "tabsWidget", "new"]
+messageSends: ["with:", "topBarWidget", "tabsWidget", "new"]
 }),
 $globals.HLManager);
 
@@ -6122,6 +6126,38 @@ return $1;
 args: [],
 source: "tabsWidget\x0a\x09^ tabsWidget ifNil: [ tabsWidget := HLTabsWidget new ]",
 referencedClasses: ["HLTabsWidget"],
+//>>excludeEnd("ide");
+messageSends: ["ifNil:", "new"]
+}),
+$globals.HLManager);
+
+$core.addMethod(
+$core.method({
+selector: "topBarWidget",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+function $HLTopBarWidget(){return $globals.HLTopBarWidget||(typeof HLTopBarWidget=="undefined"?nil:HLTopBarWidget)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+var $2,$1,$receiver;
+$2=self["@topBarWidget"];
+if(($receiver = $2) == null || $receiver.isNil){
+self["@topBarWidget"]=$recv($HLTopBarWidget())._new();
+$1=self["@topBarWidget"];
+} else {
+$1=$2;
+};
+return $1;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"topBarWidget",{},$globals.HLManager)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "topBarWidget\x0a\x09^ topBarWidget ifNil: [ topBarWidget := HLTopBarWidget new ]",
+referencedClasses: ["HLTopBarWidget"],
 //>>excludeEnd("ide");
 messageSends: ["ifNil:", "new"]
 }),
@@ -9728,7 +9764,6 @@ return $4;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["with:"]=1;
 //>>excludeEnd("ctx");
-self._renderAddOn_(html);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderContentOn:",{html:html},$globals.HLTabsWidget)});
@@ -9736,10 +9771,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'navbar navbar-fixed-top';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09class: 'navbar-inner';\x0a\x09\x09\x09with: [ self renderTabsOn: html ] ].\x0a\x09\x09\x09\x0a\x09self renderAddOn: html",
+source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'navbar navbar-fixed-top';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09class: 'navbar-inner';\x0a\x09\x09\x09with: [ self renderTabsOn: html ] ].\x0a\x09\x09\x09\x0a\x09\x22obsolete\x0a\x09self renderAddOn: html\x22",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "with:", "renderTabsOn:", "renderAddOn:"]
+messageSends: ["class:", "div", "with:", "renderTabsOn:"]
 }),
 $globals.HLTabsWidget);
 
@@ -10124,6 +10159,223 @@ $globals.HLTabsWidget);
 
 
 $globals.HLTabsWidget.klass.iVarNames = ['current'];
+
+$core.addClass('HLTopBarWidget', $globals.HLWidget, ['inputView'], 'Helios-Core');
+$core.addMethod(
+$core.method({
+selector: "onSearchKeyUp:",
+protocol: 'reactions',
+fn: function (anEvent){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+var $1;
+$1=$recv($recv(anEvent)._keyCode()).__eq((13));
+if($core.assert($1)){
+self._search_($recv($recv(self["@inputView"])._asJQuery())._val());
+};
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"onSearchKeyUp:",{anEvent:anEvent},$globals.HLTopBarWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["anEvent"],
+source: "onSearchKeyUp: anEvent\x0a\x0a\x09anEvent keyCode = 13 ifTrue:[\x0a\x09\x09self search: inputView asJQuery val ]",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["ifTrue:", "=", "keyCode", "search:", "val", "asJQuery"]
+}),
+$globals.HLTopBarWidget);
+
+$core.addMethod(
+$core.method({
+selector: "renderContentOn:",
+protocol: 'rendering',
+fn: function (html){
+var self=this;
+function $HLBrowser(){return $globals.HLBrowser||(typeof HLBrowser=="undefined"?nil:HLBrowser)}
+function $HLWorkspace(){return $globals.HLWorkspace||(typeof HLWorkspace=="undefined"?nil:HLWorkspace)}
+function $HLSUnit(){return $globals.HLSUnit||(typeof HLSUnit=="undefined"?nil:HLSUnit)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+var $1,$3,$4,$5,$6,$8,$9,$10,$11,$12,$13,$7,$2;
+$1=$recv(html)._div();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["div"]=1;
+//>>excludeEnd("ctx");
+$recv($1)._class_("toolbar");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["class:"]=1;
+//>>excludeEnd("ctx");
+$2=$recv($1)._with_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+$3=$recv(html)._div();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["div"]=2;
+//>>excludeEnd("ctx");
+return $recv($3)._with_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx3) {
+//>>excludeEnd("ctx");
+$4=$recv(html)._input();
+$recv($4)._at_put_("placeholder","Search classes, senders and more..");
+$recv($4)._onKeyUp_((function(ev){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx4) {
+//>>excludeEnd("ctx");
+return self._onSearchKeyUp_(ev);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx4) {$ctx4.fillBlock({ev:ev},$ctx3,3)});
+//>>excludeEnd("ctx");
+}));
+$5=$recv($4)._value_("");
+self["@inputView"]=$5;
+self["@inputView"];
+$6=$recv(html)._div();
+$recv($6)._class_("buttons_bar");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["class:"]=2;
+//>>excludeEnd("ctx");
+$7=$recv($6)._with_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx4) {
+//>>excludeEnd("ctx");
+$8=$recv(html)._button();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["button"]=1;
+//>>excludeEnd("ctx");
+$recv($8)._class_("button");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["class:"]=3;
+//>>excludeEnd("ctx");
+$recv($8)._onClick_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx5) {
+//>>excludeEnd("ctx");
+return $recv($HLBrowser())._openAsTab();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx5.sendIdx["openAsTab"]=1;
+//>>excludeEnd("ctx");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx5) {$ctx5.fillBlock({},$ctx4,5)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["onClick:"]=1;
+//>>excludeEnd("ctx");
+$9=$recv($8)._with_("Browser");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["with:"]=4;
+//>>excludeEnd("ctx");
+$9;
+$10=$recv(html)._button();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["button"]=2;
+//>>excludeEnd("ctx");
+$recv($10)._class_("button");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["class:"]=4;
+//>>excludeEnd("ctx");
+$recv($10)._onClick_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx5) {
+//>>excludeEnd("ctx");
+return $recv($HLWorkspace())._openAsTab();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx5.sendIdx["openAsTab"]=2;
+//>>excludeEnd("ctx");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx5) {$ctx5.fillBlock({},$ctx4,6)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["onClick:"]=2;
+//>>excludeEnd("ctx");
+$11=$recv($10)._with_("Workspace");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["with:"]=5;
+//>>excludeEnd("ctx");
+$11;
+$12=$recv(html)._button();
+$recv($12)._class_("button");
+$recv($12)._onClick_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx5) {
+//>>excludeEnd("ctx");
+return $recv($HLSUnit())._openAsTab();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx5) {$ctx5.fillBlock({},$ctx4,7)});
+//>>excludeEnd("ctx");
+}));
+$13=$recv($12)._with_("Tests");
+return $13;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx4) {$ctx4.fillBlock({},$ctx3,4)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["with:"]=3;
+//>>excludeEnd("ctx");
+return $7;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx3) {$ctx3.fillBlock({},$ctx2,2)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["with:"]=2;
+//>>excludeEnd("ctx");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["with:"]=1;
+//>>excludeEnd("ctx");
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"renderContentOn:",{html:html},$globals.HLTopBarWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["html"],
+source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'toolbar';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09\x22class: 'navbar-inner';\x22\x0a\x09\x09\x09with: [ \x0a\x09\x09\x09\x09inputView := html input\x0a\x09\x09\x09\x09\x09at: 'placeholder' put: 'Search classes, senders and more..';\x0a\x09\x09\x09\x09\x09onKeyUp: [ :ev | self onSearchKeyUp: ev ];\x0a\x09\x09\x09\x09\x09value: ''.\x0a\x0a\x09\x09\x09\x09html div\x0a\x09\x09\x09\x09\x09class: 'buttons_bar';\x0a\x09\x09\x09\x09\x09with: [\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLBrowser openAsTab ]; with: 'Browser'.\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLWorkspace openAsTab ]; with: 'Workspace'.\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLSUnit openAsTab ]; with: 'Tests' ].\x0a\x09\x09\x09] ].\x0a\x09\x09\x09",
+referencedClasses: ["HLBrowser", "HLWorkspace", "HLSUnit"],
+//>>excludeEnd("ide");
+messageSends: ["class:", "div", "with:", "at:put:", "input", "onKeyUp:", "onSearchKeyUp:", "value:", "button", "onClick:", "openAsTab"]
+}),
+$globals.HLTopBarWidget);
+
+$core.addMethod(
+$core.method({
+selector: "search:",
+protocol: 'reactions',
+fn: function (aString){
+var self=this;
+function $HLReferences(){return $globals.HLReferences||(typeof HLReferences=="undefined"?nil:HLReferences)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv($recv($HLReferences())._openAsTab())._search_(aString);
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"search:",{aString:aString},$globals.HLTopBarWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["aString"],
+source: "search: aString\x0a\x0a\x09HLReferences openAsTab search: aString",
+referencedClasses: ["HLReferences"],
+//>>excludeEnd("ide");
+messageSends: ["search:", "openAsTab"]
+}),
+$globals.HLTopBarWidget);
+
+
 
 $core.addClass('HLWelcomeWidget', $globals.HLWidget, [], 'Helios-Core');
 $core.addMethod(

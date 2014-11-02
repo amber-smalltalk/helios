@@ -170,6 +170,7 @@ selectedClass
 !
 
 selectedClass: aClass
+
 	(self selectedClass = aClass and: [ aClass isNil ]) 
 		ifTrue: [ ^ self ].
 	

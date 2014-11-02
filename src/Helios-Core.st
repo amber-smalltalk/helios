@@ -268,9 +268,9 @@ commitPackageOnSuccess: aBlock onError: anotherBlock
 
 copyClassTo: aClassName
 	self withChangesDo: [ 
-		self environment 
-			copyClass: self selectedClass theNonMetaClass
-			to: aClassName ]
+		self selectedClass: (self environment 
+								copyClass: self selectedClass theNonMetaClass
+								to: aClassName) ]
 !
 
 moveClassToPackage: aPackageName
@@ -892,7 +892,6 @@ onItemDoubleClicked: anEvent on: anObject
 	"The item that this widget has rendered for anObject has been double clicked."
 
 	"no-op"
-	console log: anObject
 ! !
 
 !HLListWidget methodsFor: 'rendering'!

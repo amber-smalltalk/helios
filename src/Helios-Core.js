@@ -692,7 +692,7 @@ self._withChangesDo_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-return $recv(self._environment())._copyClass_to_($recv(self._selectedClass())._theNonMetaClass(),aClassName);
+return self._selectedClass_($recv(self._environment())._copyClass_to_($recv(self._selectedClass())._theNonMetaClass(),aClassName));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
@@ -704,10 +704,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aClassName"],
-source: "copyClassTo: aClassName\x0a\x09self withChangesDo: [ \x0a\x09\x09self environment \x0a\x09\x09\x09copyClass: self selectedClass theNonMetaClass\x0a\x09\x09\x09to: aClassName ]",
+source: "copyClassTo: aClassName\x0a\x09self withChangesDo: [ \x0a\x09\x09self selectedClass: (self environment \x0a\x09\x09\x09\x09\x09\x09\x09\x09copyClass: self selectedClass theNonMetaClass\x0a\x09\x09\x09\x09\x09\x09\x09\x09to: aClassName) ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["withChangesDo:", "copyClass:to:", "environment", "theNonMetaClass", "selectedClass"]
+messageSends: ["withChangesDo:", "selectedClass:", "copyClass:to:", "environment", "theNonMetaClass", "selectedClass"]
 }),
 $globals.HLToolModel);
 
@@ -3487,21 +3487,15 @@ selector: "onItemDoubleClicked:on:",
 protocol: 'reactions',
 fn: function (anEvent,anObject){
 var self=this;
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
-//>>excludeEnd("ctx");
-$recv(console)._log_(anObject);
 return self;
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx1) {$ctx1.fill(self,"onItemDoubleClicked:on:",{anEvent:anEvent,anObject:anObject},$globals.HLListWidget)});
-//>>excludeEnd("ctx");
+
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anEvent", "anObject"],
-source: "onItemDoubleClicked: anEvent on: anObject \x0a\x09\x22The item that this widget has rendered for anObject has been double clicked.\x22\x0a\x0a\x09\x22no-op\x22\x0a\x09console log: anObject",
+source: "onItemDoubleClicked: anEvent on: anObject \x0a\x09\x22The item that this widget has rendered for anObject has been double clicked.\x22\x0a\x0a\x09\x22no-op\x22",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["log:"]
+messageSends: []
 }),
 $globals.HLListWidget);
 

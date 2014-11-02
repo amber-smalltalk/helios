@@ -216,6 +216,12 @@ label
 
 !HLClassReferencesListWidget methodsFor: 'reactions'!
 
+onItemDoubleClicked: anEvent on: anObject 
+	"The item that this widget has rendered for anObject has been double clicked."
+
+	HLBrowser openAsTab openMethod: anObject
+!
+
 onSearchReferences: aString
 	self selectItem: nil.
 	self items: (self model classReferencesOf: aString).

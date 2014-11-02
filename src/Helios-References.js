@@ -899,6 +899,31 @@ $globals.HLClassReferencesListWidget);
 
 $core.addMethod(
 $core.method({
+selector: "onItemDoubleClicked:on:",
+protocol: 'reactions',
+fn: function (anEvent,anObject){
+var self=this;
+function $HLBrowser(){return $globals.HLBrowser||(typeof HLBrowser=="undefined"?nil:HLBrowser)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv($recv($HLBrowser())._openAsTab())._openMethod_(anObject);
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"onItemDoubleClicked:on:",{anEvent:anEvent,anObject:anObject},$globals.HLClassReferencesListWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["anEvent", "anObject"],
+source: "onItemDoubleClicked: anEvent on: anObject \x0a\x09\x22The item that this widget has rendered for anObject has been double clicked.\x22\x0a\x0a\x09HLBrowser openAsTab openMethod: anObject",
+referencedClasses: ["HLBrowser"],
+//>>excludeEnd("ide");
+messageSends: ["openMethod:", "openAsTab"]
+}),
+$globals.HLClassReferencesListWidget);
+
+$core.addMethod(
+$core.method({
 selector: "onSearchReferences:",
 protocol: 'reactions',
 fn: function (aString){

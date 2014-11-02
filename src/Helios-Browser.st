@@ -694,33 +694,41 @@ onShowInstanceToggled
 renderButtonsOn: html
 	| checkbox |
 	
-	html div 
-        class: 'btn-group';
-		with: [ 
-           	html button 
-                class: (String streamContents: [ :str |
-                	str nextPutAll: 'btn'.
-                    self showInstance ifTrue: [ 
-                    	str nextPutAll: ' active' ] ]);
-  				with: 'Instance';
-                onClick: [ self showInstance: true ].
-  			html button
-  				class: (String streamContents: [ :str |
-                	str nextPutAll: 'btn'.
-                    self showClass ifTrue: [ 
-                    	str nextPutAll: ' active' ] ]);
-  				with: 'Class';
-				onClick: [ self showInstance: false ] ].
-		html label 
-			class: 'checkbox';
-			with: [
-				checkbox := html input
-					type: 'checkbox';
-					onClick: [ self toggleShowComment ].
-				html with: 'Doc' ].
+	html div
+		class: 'classes-list-controls';
+		with: [
+			
+			html div 
+       			class: 'btn-group';
+				with: [ 
+					html button 
+						class: (String streamContents: [ :str |
+							str nextPutAll: 'btn'.
+							self showInstance ifTrue: [ 
+							str nextPutAll: ' active' ] ]);
+						with: 'Instance';
+						onClick: [ self showInstance: true ].
 				
-		self showComment ifTrue: [
-			checkbox at: 'checked' put: 'checked' ]
+  					html button
+  						class: (String streamContents: [ :str |
+                			str nextPutAll: 'btn'.
+		                    self showClass ifTrue: [ 
+        		            	str nextPutAll: ' active' ] ]);
+  						with: 'Class';
+						onClick: [ self showInstance: false ]
+			].
+
+			html label 
+				class: 'checkbox';
+				with: [
+					checkbox := html input
+						type: 'checkbox';
+						onClick: [ self toggleShowComment ].
+			html with: 'Doc' ].
+	].
+			
+	self showComment ifTrue: [
+		checkbox at: 'checked' put: 'checked' ]
 !
 
 renderItem: aClass level: anInteger on: html

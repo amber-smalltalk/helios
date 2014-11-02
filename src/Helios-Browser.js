@@ -2589,9 +2589,12 @@ function $String(){return $globals.String||(typeof String=="undefined"?nil:Strin
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-var $1,$3,$4,$6,$5,$7,$8,$9,$10,$2,$11,$13,$14,$12,$15;
+var $1,$3,$5,$6,$8,$7,$9,$10,$11,$12,$4,$13,$15,$16,$14,$2,$17;
 $1=$recv(html)._div();
-$recv($1)._class_("btn-group");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["div"]=1;
+//>>excludeEnd("ctx");
+$recv($1)._class_("classes-list-controls");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["class:"]=1;
 //>>excludeEnd("ctx");
@@ -2599,94 +2602,139 @@ $2=$recv($1)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-$3=$recv(html)._button();
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["button"]=1;
-//>>excludeEnd("ctx");
-$4=$3;
-$5=$recv($String())._streamContents_((function(str){
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx3) {
-//>>excludeEnd("ctx");
-$recv(str)._nextPutAll_("btn");
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx3.sendIdx["nextPutAll:"]=1;
-//>>excludeEnd("ctx");
-$6=self._showInstance();
-if($core.assert($6)){
-return $recv(str)._nextPutAll_(" active");
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx3.sendIdx["nextPutAll:"]=2;
-//>>excludeEnd("ctx");
-};
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx3) {$ctx3.fillBlock({str:str},$ctx2,2)});
-//>>excludeEnd("ctx");
-}));
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["streamContents:"]=1;
-//>>excludeEnd("ctx");
-$recv($4)._class_($5);
+$3=$recv(html)._div();
+$recv($3)._class_("btn-group");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["class:"]=2;
 //>>excludeEnd("ctx");
-$recv($3)._with_("Instance");
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["with:"]=2;
-//>>excludeEnd("ctx");
-$7=$recv($3)._onClick_((function(){
+$4=$recv($3)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-return self._showInstance_(true);
+$5=$recv(html)._button();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx3.sendIdx["showInstance:"]=1;
+$ctx3.sendIdx["button"]=1;
 //>>excludeEnd("ctx");
+$6=$5;
+$7=$recv($String())._streamContents_((function(str){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx3) {$ctx3.fillBlock({},$ctx2,4)});
-//>>excludeEnd("ctx");
-}));
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["onClick:"]=1;
-//>>excludeEnd("ctx");
-$7;
-$8=$recv(html)._button();
-$recv($8)._class_($recv($String())._streamContents_((function(str){
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx3) {
+return $core.withContext(function($ctx4) {
 //>>excludeEnd("ctx");
 $recv(str)._nextPutAll_("btn");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx3.sendIdx["nextPutAll:"]=3;
+$ctx4.sendIdx["nextPutAll:"]=1;
 //>>excludeEnd("ctx");
-$9=self._showClass();
-if($core.assert($9)){
+$8=self._showInstance();
+if($core.assert($8)){
 return $recv(str)._nextPutAll_(" active");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["nextPutAll:"]=2;
+//>>excludeEnd("ctx");
 };
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx3) {$ctx3.fillBlock({str:str},$ctx2,5)});
-//>>excludeEnd("ctx");
-})));
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["class:"]=3;
-//>>excludeEnd("ctx");
-$recv($8)._with_("Class");
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["with:"]=3;
-//>>excludeEnd("ctx");
-$10=$recv($8)._onClick_((function(){
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx3) {
-//>>excludeEnd("ctx");
-return self._showInstance_(false);
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx3) {$ctx3.fillBlock({},$ctx2,7)});
+}, function($ctx4) {$ctx4.fillBlock({str:str},$ctx3,3)});
 //>>excludeEnd("ctx");
 }));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["onClick:"]=2;
+$ctx3.sendIdx["streamContents:"]=1;
 //>>excludeEnd("ctx");
-return $10;
+$recv($6)._class_($7);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["class:"]=3;
+//>>excludeEnd("ctx");
+$recv($5)._with_("Instance");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["with:"]=3;
+//>>excludeEnd("ctx");
+$9=$recv($5)._onClick_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx4) {
+//>>excludeEnd("ctx");
+return self._showInstance_(true);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["showInstance:"]=1;
+//>>excludeEnd("ctx");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx4) {$ctx4.fillBlock({},$ctx3,5)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["onClick:"]=1;
+//>>excludeEnd("ctx");
+$9;
+$10=$recv(html)._button();
+$recv($10)._class_($recv($String())._streamContents_((function(str){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx4) {
+//>>excludeEnd("ctx");
+$recv(str)._nextPutAll_("btn");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx4.sendIdx["nextPutAll:"]=3;
+//>>excludeEnd("ctx");
+$11=self._showClass();
+if($core.assert($11)){
+return $recv(str)._nextPutAll_(" active");
+};
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx4) {$ctx4.fillBlock({str:str},$ctx3,6)});
+//>>excludeEnd("ctx");
+})));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["class:"]=4;
+//>>excludeEnd("ctx");
+$recv($10)._with_("Class");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["with:"]=4;
+//>>excludeEnd("ctx");
+$12=$recv($10)._onClick_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx4) {
+//>>excludeEnd("ctx");
+return self._showInstance_(false);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx4) {$ctx4.fillBlock({},$ctx3,8)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["onClick:"]=2;
+//>>excludeEnd("ctx");
+return $12;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx3) {$ctx3.fillBlock({},$ctx2,2)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["with:"]=2;
+//>>excludeEnd("ctx");
+$4;
+$13=$recv(html)._label();
+$recv($13)._class_("checkbox");
+$14=$recv($13)._with_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx3) {
+//>>excludeEnd("ctx");
+$15=$recv(html)._input();
+$recv($15)._type_("checkbox");
+$16=$recv($15)._onClick_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx4) {
+//>>excludeEnd("ctx");
+return self._toggleShowComment();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx4) {$ctx4.fillBlock({},$ctx3,10)});
+//>>excludeEnd("ctx");
+}));
+checkbox=$16;
+checkbox;
+return $recv(html)._with_("Doc");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx3) {$ctx3.fillBlock({},$ctx2,9)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["with:"]=5;
+//>>excludeEnd("ctx");
+return $14;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
@@ -2694,35 +2742,8 @@ return $10;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["with:"]=1;
 //>>excludeEnd("ctx");
-$11=$recv(html)._label();
-$recv($11)._class_("checkbox");
-$12=$recv($11)._with_((function(){
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx2) {
-//>>excludeEnd("ctx");
-$13=$recv(html)._input();
-$recv($13)._type_("checkbox");
-$14=$recv($13)._onClick_((function(){
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx3) {
-//>>excludeEnd("ctx");
-return self._toggleShowComment();
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx3) {$ctx3.fillBlock({},$ctx2,9)});
-//>>excludeEnd("ctx");
-}));
-checkbox=$14;
-checkbox;
-return $recv(html)._with_("Doc");
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx2) {$ctx2.fillBlock({},$ctx1,8)});
-//>>excludeEnd("ctx");
-}));
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.sendIdx["with:"]=4;
-//>>excludeEnd("ctx");
-$15=self._showComment();
-if($core.assert($15)){
+$17=self._showComment();
+if($core.assert($17)){
 $recv(checkbox)._at_put_("checked","checked");
 };
 return self;
@@ -2732,7 +2753,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderButtonsOn: html\x0a\x09| checkbox |\x0a\x09\x0a\x09html div \x0a        class: 'btn-group';\x0a\x09\x09with: [ \x0a           \x09html button \x0a                class: (String streamContents: [ :str |\x0a                \x09str nextPutAll: 'btn'.\x0a                    self showInstance ifTrue: [ \x0a                    \x09str nextPutAll: ' active' ] ]);\x0a  \x09\x09\x09\x09with: 'Instance';\x0a                onClick: [ self showInstance: true ].\x0a  \x09\x09\x09html button\x0a  \x09\x09\x09\x09class: (String streamContents: [ :str |\x0a                \x09str nextPutAll: 'btn'.\x0a                    self showClass ifTrue: [ \x0a                    \x09str nextPutAll: ' active' ] ]);\x0a  \x09\x09\x09\x09with: 'Class';\x0a\x09\x09\x09\x09onClick: [ self showInstance: false ] ].\x0a\x09\x09html label \x0a\x09\x09\x09class: 'checkbox';\x0a\x09\x09\x09with: [\x0a\x09\x09\x09\x09checkbox := html input\x0a\x09\x09\x09\x09\x09type: 'checkbox';\x0a\x09\x09\x09\x09\x09onClick: [ self toggleShowComment ].\x0a\x09\x09\x09\x09html with: 'Doc' ].\x0a\x09\x09\x09\x09\x0a\x09\x09self showComment ifTrue: [\x0a\x09\x09\x09checkbox at: 'checked' put: 'checked' ]",
+source: "renderButtonsOn: html\x0a\x09| checkbox |\x0a\x09\x0a\x09html div\x0a\x09\x09class: 'classes-list-controls';\x0a\x09\x09with: [\x0a\x09\x09\x09\x0a\x09\x09\x09html div \x0a       \x09\x09\x09class: 'btn-group';\x0a\x09\x09\x09\x09with: [ \x0a\x09\x09\x09\x09\x09html button \x0a\x09\x09\x09\x09\x09\x09class: (String streamContents: [ :str |\x0a\x09\x09\x09\x09\x09\x09\x09str nextPutAll: 'btn'.\x0a\x09\x09\x09\x09\x09\x09\x09self showInstance ifTrue: [ \x0a\x09\x09\x09\x09\x09\x09\x09str nextPutAll: ' active' ] ]);\x0a\x09\x09\x09\x09\x09\x09with: 'Instance';\x0a\x09\x09\x09\x09\x09\x09onClick: [ self showInstance: true ].\x0a\x09\x09\x09\x09\x0a  \x09\x09\x09\x09\x09html button\x0a  \x09\x09\x09\x09\x09\x09class: (String streamContents: [ :str |\x0a                \x09\x09\x09str nextPutAll: 'btn'.\x0a\x09\x09                    self showClass ifTrue: [ \x0a        \x09\x09            \x09str nextPutAll: ' active' ] ]);\x0a  \x09\x09\x09\x09\x09\x09with: 'Class';\x0a\x09\x09\x09\x09\x09\x09onClick: [ self showInstance: false ]\x0a\x09\x09\x09].\x0a\x0a\x09\x09\x09html label \x0a\x09\x09\x09\x09class: 'checkbox';\x0a\x09\x09\x09\x09with: [\x0a\x09\x09\x09\x09\x09checkbox := html input\x0a\x09\x09\x09\x09\x09\x09type: 'checkbox';\x0a\x09\x09\x09\x09\x09\x09onClick: [ self toggleShowComment ].\x0a\x09\x09\x09html with: 'Doc' ].\x0a\x09].\x0a\x09\x09\x09\x0a\x09self showComment ifTrue: [\x0a\x09\x09checkbox at: 'checked' put: 'checked' ]",
 referencedClasses: ["String"],
 //>>excludeEnd("ide");
 messageSends: ["class:", "div", "with:", "button", "streamContents:", "nextPutAll:", "ifTrue:", "showInstance", "onClick:", "showInstance:", "showClass", "label", "type:", "input", "toggleShowComment", "showComment", "at:put:"]

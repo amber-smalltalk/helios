@@ -2510,10 +2510,11 @@ selector: "onDoubleClick:on:",
 protocol: 'reactions',
 fn: function (anEvent,aClass){
 var self=this;
+function $HLBrowser(){return $globals.HLBrowser||(typeof HLBrowser=="undefined"?nil:HLBrowser)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-$recv(console)._log_(aClass);
+$recv($recv($HLBrowser())._openAsTab())._openClassNamed_($recv(aClass)._name());
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"onDoubleClick:on:",{anEvent:anEvent,aClass:aClass},$globals.HLClassesListWidget)});
@@ -2521,10 +2522,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anEvent", "aClass"],
-source: "onDoubleClick: anEvent on: aClass\x0a\x0a\x09console log: aClass",
-referencedClasses: [],
+source: "onDoubleClick: anEvent on: aClass\x0a\x0a\x09HLBrowser openAsTab openClassNamed: aClass name\x0a\x0a\x09",
+referencedClasses: ["HLBrowser"],
 //>>excludeEnd("ide");
-messageSends: ["log:"]
+messageSends: ["openClassNamed:", "openAsTab", "name"]
 }),
 $globals.HLClassesListWidget);
 

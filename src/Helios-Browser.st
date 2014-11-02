@@ -676,7 +676,7 @@ onClassesFocusRequested
 
 onDoubleClick: anEvent on: aClass
 
-	console log: aClass
+	HLBrowser openAsTab openClassNamed: aClass name
 !
 
 onPackageSelected: anAnnouncement

@@ -2506,6 +2506,30 @@ $globals.HLClassesListWidget);
 
 $core.addMethod(
 $core.method({
+selector: "onDoubleClick:on:",
+protocol: 'reactions',
+fn: function (anEvent,aClass){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(console)._log_(aClass);
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"onDoubleClick:on:",{anEvent:anEvent,aClass:aClass},$globals.HLClassesListWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["anEvent", "aClass"],
+source: "onDoubleClick: anEvent on: aClass\x0a\x0a\x09console log: aClass",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["log:"]
+}),
+$globals.HLClassesListWidget);
+
+$core.addMethod(
+$core.method({
 selector: "onPackageSelected:",
 protocol: 'reactions',
 fn: function (anAnnouncement){
@@ -2766,11 +2790,11 @@ selector: "renderItem:level:on:",
 protocol: 'rendering',
 fn: function (aClass,anInteger,html){
 var self=this;
-var li;
+var li,a;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-var $1,$2,$4,$5,$3;
+var $1,$2,$4,$6,$5,$3;
 li=$recv(html)._li();
 $1=$recv(li)._asJQuery();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -2801,12 +2825,26 @@ $5=$recv($4)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-return self._reactivateListItem_($recv(li)._asJQuery());
+$6=$recv(li)._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["asJQuery"]=2;
+//>>excludeEnd("ctx");
+return self._reactivateListItem_($6);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx3) {$ctx3.fillBlock({},$ctx2,3)});
 //>>excludeEnd("ctx");
 }));
-return $5;
+a=$5;
+a;
+return $recv($recv(a)._asJQuery())._dblclick_((function(ev){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx3) {
+//>>excludeEnd("ctx");
+return self._onDoubleClick_on_(ev,aClass);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx3) {$ctx3.fillBlock({ev:ev},$ctx2,4)});
+//>>excludeEnd("ctx");
+}));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
@@ -2820,20 +2858,20 @@ return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
 return self._renderItem_level_on_(each,$recv(anInteger).__plus((1)),html);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx2) {$ctx2.fillBlock({each:each},$ctx1,4)});
+}, function($ctx2) {$ctx2.fillBlock({each:each},$ctx1,5)});
 //>>excludeEnd("ctx");
 }));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx1) {$ctx1.fill(self,"renderItem:level:on:",{aClass:aClass,anInteger:anInteger,html:html,li:li},$globals.HLClassesListWidget)});
+}, function($ctx1) {$ctx1.fill(self,"renderItem:level:on:",{aClass:aClass,anInteger:anInteger,html:html,li:li,a:a},$globals.HLClassesListWidget)});
 //>>excludeEnd("ctx");
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aClass", "anInteger", "html"],
-source: "renderItem: aClass level: anInteger on: html\x0a\x09| li |\x0a    \x0a\x09li := html li.\x0a\x09li asJQuery data: 'item' put: aClass.\x0a    li\x0a\x09\x09class: (self listCssClassForItem: aClass);\x0a\x09\x09with: [ \x0a        \x09html a\x0a            \x09with: [ \x0a            \x09\x09(html tag: 'i') class: (self cssClassForItem: aClass).\x0a  \x09\x09\x09\x09\x09self renderItemLabel: aClass level: anInteger on: html ];\x0a\x09\x09\x09\x09onClick: [\x0a                  \x09self reactivateListItem: li asJQuery ] ].\x0a                    \x0a    (self getChildrenOf: aClass) do: [ :each |\x0a    \x09self renderItem: each level: anInteger + 1 on: html ]",
+source: "renderItem: aClass level: anInteger on: html\x0a\x09| li a |\x0a    \x0a\x09li := html li.\x0a\x09li asJQuery data: 'item' put: aClass.\x0a    li\x0a\x09\x09class: (self listCssClassForItem: aClass);\x0a\x09\x09with: [ \x0a        \x09a := html a\x0a            \x09with: [ \x0a            \x09\x09(html tag: 'i') class: (self cssClassForItem: aClass).\x0a  \x09\x09\x09\x09\x09self renderItemLabel: aClass level: anInteger on: html ];\x0a\x09\x09\x09\x09onClick: [\x0a                  \x09self reactivateListItem: li asJQuery ].\x0a\x09\x09\x09a asJQuery dblclick: [ :ev | self onDoubleClick: ev on: aClass ]\x0a\x09].\x0a                    \x0a    (self getChildrenOf: aClass) do: [ :each |\x0a    \x09self renderItem: each level: anInteger + 1 on: html ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["li", "data:put:", "asJQuery", "class:", "listCssClassForItem:", "with:", "a", "tag:", "cssClassForItem:", "renderItemLabel:level:on:", "onClick:", "reactivateListItem:", "do:", "getChildrenOf:", "renderItem:level:on:", "+"]
+messageSends: ["li", "data:put:", "asJQuery", "class:", "listCssClassForItem:", "with:", "a", "tag:", "cssClassForItem:", "renderItemLabel:level:on:", "onClick:", "reactivateListItem:", "dblclick:", "onDoubleClick:on:", "do:", "getChildrenOf:", "renderItem:level:on:", "+"]
 }),
 $globals.HLClassesListWidget);
 

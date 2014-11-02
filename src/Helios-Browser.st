@@ -674,6 +674,11 @@ onClassesFocusRequested
 	self focus
 !
 
+onDoubleClick: anEvent on: aClass
+
+	console log: aClass
+!
+
 onPackageSelected: anAnnouncement
     self selectedItem: nil.
     
@@ -732,19 +737,21 @@ renderButtonsOn: html
 !
 
 renderItem: aClass level: anInteger on: html
-	| li |
+	| li a |
     
 	li := html li.
 	li asJQuery data: 'item' put: aClass.
     li
 		class: (self listCssClassForItem: aClass);
 		with: [ 
-        	html a
+        	a := html a
             	with: [ 
             		(html tag: 'i') class: (self cssClassForItem: aClass).
   					self renderItemLabel: aClass level: anInteger on: html ];
 				onClick: [
-                  	self reactivateListItem: li asJQuery ] ].
+                  	self reactivateListItem: li asJQuery ].
+			a asJQuery dblclick: [ :ev | self onDoubleClick: ev on: aClass ]
+	].
                     
     (self getChildrenOf: aClass) do: [ :each |
     	self renderItem: each level: anInteger + 1 on: html ]

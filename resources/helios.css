@@ -972,8 +972,3 @@ body[id="helios"] .tool_container .splitter.horizontal {
 	display: inline-block;
 	z-index: 9999;
 }
-
-/*.classes-list-controls.btn, .classes-list-controls.checkbox, .classes-list-controls input {
-	z-index: 9999;
-}
-*/

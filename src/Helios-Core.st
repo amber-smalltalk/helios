@@ -2320,6 +2320,7 @@ renderContentOn: html
 			"class: 'navbar-inner';"
 			with: [ 
 				inputView := html input
+					class: 'search';
 					at: 'placeholder' put: 'Search classes, senders and more..';
 					onKeyUp: [ :ev | self onSearchKeyUp: ev ];
 					value: ''.

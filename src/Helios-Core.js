@@ -10223,6 +10223,10 @@ return $recv($3)._with_((function(){
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
 $4=$recv(html)._input();
+$recv($4)._class_("search");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["class:"]=2;
+//>>excludeEnd("ctx");
 $recv($4)._at_put_("placeholder","Search classes, senders and more..");
 $recv($4)._onKeyUp_((function(ev){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -10239,7 +10243,7 @@ self["@inputView"];
 $6=$recv(html)._div();
 $recv($6)._class_("buttons_bar");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx3.sendIdx["class:"]=2;
+$ctx3.sendIdx["class:"]=3;
 //>>excludeEnd("ctx");
 $7=$recv($6)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -10251,7 +10255,7 @@ $ctx4.sendIdx["button"]=1;
 //>>excludeEnd("ctx");
 $recv($8)._class_("button");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx4.sendIdx["class:"]=3;
+$ctx4.sendIdx["class:"]=4;
 //>>excludeEnd("ctx");
 $recv($8)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -10279,7 +10283,7 @@ $ctx4.sendIdx["button"]=2;
 //>>excludeEnd("ctx");
 $recv($10)._class_("button");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx4.sendIdx["class:"]=4;
+$ctx4.sendIdx["class:"]=5;
 //>>excludeEnd("ctx");
 $recv($10)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -10343,10 +10347,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'toolbar';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09\x22class: 'navbar-inner';\x22\x0a\x09\x09\x09with: [ \x0a\x09\x09\x09\x09inputView := html input\x0a\x09\x09\x09\x09\x09at: 'placeholder' put: 'Search classes, senders and more..';\x0a\x09\x09\x09\x09\x09onKeyUp: [ :ev | self onSearchKeyUp: ev ];\x0a\x09\x09\x09\x09\x09value: ''.\x0a\x0a\x09\x09\x09\x09html div\x0a\x09\x09\x09\x09\x09class: 'buttons_bar';\x0a\x09\x09\x09\x09\x09with: [\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLBrowser openAsTab ]; with: 'Browser'.\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLWorkspace openAsTab ]; with: 'Workspace'.\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLSUnit openAsTab ]; with: 'Tests' ].\x0a\x09\x09\x09] ].\x0a\x09\x09\x09",
+source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'toolbar';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09\x22class: 'navbar-inner';\x22\x0a\x09\x09\x09with: [ \x0a\x09\x09\x09\x09inputView := html input\x0a\x09\x09\x09\x09\x09class: 'search';\x0a\x09\x09\x09\x09\x09at: 'placeholder' put: 'Search classes, senders and more..';\x0a\x09\x09\x09\x09\x09onKeyUp: [ :ev | self onSearchKeyUp: ev ];\x0a\x09\x09\x09\x09\x09value: ''.\x0a\x0a\x09\x09\x09\x09html div\x0a\x09\x09\x09\x09\x09class: 'buttons_bar';\x0a\x09\x09\x09\x09\x09with: [\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLBrowser openAsTab ]; with: 'Browser'.\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLWorkspace openAsTab ]; with: 'Workspace'.\x0a\x09\x09\x09\x09\x09\x09html button class: 'button'; onClick: [ HLSUnit openAsTab ]; with: 'Tests' ].\x0a\x09\x09\x09] ].\x0a\x09\x09\x09",
 referencedClasses: ["HLBrowser", "HLWorkspace", "HLSUnit"],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "with:", "at:put:", "input", "onKeyUp:", "onSearchKeyUp:", "value:", "button", "onClick:", "openAsTab"]
+messageSends: ["class:", "div", "with:", "input", "at:put:", "onKeyUp:", "onSearchKeyUp:", "value:", "button", "onClick:", "openAsTab"]
 }),
 $globals.HLTopBarWidget);
 

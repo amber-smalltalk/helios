@@ -951,3 +951,7 @@ body[id="helios"] .progress {
 	top: 23px;
 }
 
+input.search {
+	position: relative;
+	z-index: 9999;
+}

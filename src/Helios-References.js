@@ -710,6 +710,31 @@ $globals.HLReferencesListWidget);
 
 $core.addMethod(
 $core.method({
+selector: "onItemDoubleClicked:on:",
+protocol: 'reactions',
+fn: function (anEvent,aReferencedMethod){
+var self=this;
+function $HLBrowser(){return $globals.HLBrowser||(typeof HLBrowser=="undefined"?nil:HLBrowser)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv($recv($HLBrowser())._openAsTab())._openMethod_($recv($recv(aReferencedMethod)._methodClass())._methodAt_($recv(aReferencedMethod)._selector()));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"onItemDoubleClicked:on:",{anEvent:anEvent,aReferencedMethod:aReferencedMethod},$globals.HLReferencesListWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["anEvent", "aReferencedMethod"],
+source: "onItemDoubleClicked: anEvent on: aReferencedMethod \x0a\x09\x22The item that this widget has rendered for aReferencedMethod has been double clicked.\x22\x0a\x0a\x09HLBrowser openAsTab openMethod: (aReferencedMethod methodClass methodAt: aReferencedMethod selector)",
+referencedClasses: ["HLBrowser"],
+//>>excludeEnd("ide");
+messageSends: ["openMethod:", "openAsTab", "methodAt:", "methodClass", "selector"]
+}),
+$globals.HLReferencesListWidget);
+
+$core.addMethod(
+$core.method({
 selector: "onMethodSelected:",
 protocol: 'reactions',
 fn: function (aMethod){
@@ -901,21 +926,21 @@ $core.addMethod(
 $core.method({
 selector: "onItemDoubleClicked:on:",
 protocol: 'reactions',
-fn: function (anEvent,anObject){
+fn: function (anEvent,aCompiledMethod){
 var self=this;
 function $HLBrowser(){return $globals.HLBrowser||(typeof HLBrowser=="undefined"?nil:HLBrowser)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-$recv($recv($HLBrowser())._openAsTab())._openMethod_(anObject);
+$recv($recv($HLBrowser())._openAsTab())._openMethod_(aCompiledMethod);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx1) {$ctx1.fill(self,"onItemDoubleClicked:on:",{anEvent:anEvent,anObject:anObject},$globals.HLClassReferencesListWidget)});
+}, function($ctx1) {$ctx1.fill(self,"onItemDoubleClicked:on:",{anEvent:anEvent,aCompiledMethod:aCompiledMethod},$globals.HLClassReferencesListWidget)});
 //>>excludeEnd("ctx");
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
-args: ["anEvent", "anObject"],
-source: "onItemDoubleClicked: anEvent on: anObject \x0a\x09\x22The item that this widget has rendered for anObject has been double clicked.\x22\x0a\x0a\x09HLBrowser openAsTab openMethod: anObject",
+args: ["anEvent", "aCompiledMethod"],
+source: "onItemDoubleClicked: anEvent on: aCompiledMethod \x0a\x09\x22The item that this widget has rendered for aCompiledMethod has been double clicked.\x22\x0a\x0a\x09HLBrowser openAsTab openMethod: aCompiledMethod",
 referencedClasses: ["HLBrowser"],
 //>>excludeEnd("ide");
 messageSends: ["openMethod:", "openAsTab"]

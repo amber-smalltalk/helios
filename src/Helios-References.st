@@ -177,6 +177,12 @@ selectItem: aMethod
 
 !HLReferencesListWidget methodsFor: 'reactions'!
 
+onItemDoubleClicked: anEvent on: aReferencedMethod 
+	"The item that this widget has rendered for aReferencedMethod has been double clicked."
+
+	HLBrowser openAsTab openMethod: (aReferencedMethod methodClass methodAt: aReferencedMethod selector)
+!
+
 onMethodSelected: aMethod
 	aMethod ifNil: [ ^ self ].
 	self items detect: [ :each | each = aMethod selector ] ifNone: [ ^ self ].
@@ -216,10 +222,10 @@ label
 
 !HLClassReferencesListWidget methodsFor: 'reactions'!
 
-onItemDoubleClicked: anEvent on: anObject 
-	"The item that this widget has rendered for anObject has been double clicked."
+onItemDoubleClicked: anEvent on: aCompiledMethod 
+	"The item that this widget has rendered for aCompiledMethod has been double clicked."
 
-	HLBrowser openAsTab openMethod: anObject
+	HLBrowser openAsTab openMethod: aCompiledMethod
 !
 
 onSearchReferences: aString

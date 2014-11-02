@@ -3483,6 +3483,30 @@ $globals.HLListWidget);
 
 $core.addMethod(
 $core.method({
+selector: "onItemDoubleClicked:on:",
+protocol: 'reactions',
+fn: function (anEvent,anObject){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv(console)._log_(anObject);
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"onItemDoubleClicked:on:",{anEvent:anEvent,anObject:anObject},$globals.HLListWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["anEvent", "anObject"],
+source: "onItemDoubleClicked: anEvent on: anObject \x0a\x09\x22The item that this widget has rendered for anObject has been double clicked.\x22\x0a\x0a\x09\x22no-op\x22\x0a\x09console log: anObject",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["log:"]
+}),
+$globals.HLListWidget);
+
+$core.addMethod(
+$core.method({
 selector: "positionOf:",
 protocol: 'accessing',
 fn: function (aListItem){
@@ -3659,11 +3683,11 @@ selector: "renderItem:on:",
 protocol: 'rendering',
 fn: function (anObject,html){
 var self=this;
-var li;
+var li,a;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-var $1,$2,$4,$5,$3;
+var $1,$2,$4,$6,$5,$3;
 li=$recv(html)._li();
 $1=$recv(li)._asJQuery();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -3694,12 +3718,26 @@ $5=$recv($4)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-return self._reactivateListItem_($recv(li)._asJQuery());
+$6=$recv(li)._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["asJQuery"]=2;
+//>>excludeEnd("ctx");
+return self._reactivateListItem_($6);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx3) {$ctx3.fillBlock({},$ctx2,3)});
 //>>excludeEnd("ctx");
 }));
-return $5;
+a=$5;
+a;
+return $recv($recv(a)._asJQuery())._dblclick_((function(ev){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx3) {
+//>>excludeEnd("ctx");
+return self._onItemDoubleClicked_on_(ev,anObject);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx3) {$ctx3.fillBlock({ev:ev},$ctx2,4)});
+//>>excludeEnd("ctx");
+}));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
@@ -3709,15 +3747,15 @@ $ctx1.sendIdx["with:"]=1;
 //>>excludeEnd("ctx");
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx1) {$ctx1.fill(self,"renderItem:on:",{anObject:anObject,html:html,li:li},$globals.HLListWidget)});
+}, function($ctx1) {$ctx1.fill(self,"renderItem:on:",{anObject:anObject,html:html,li:li,a:a},$globals.HLListWidget)});
 //>>excludeEnd("ctx");
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anObject", "html"],
-source: "renderItem: anObject on: html\x0a\x09| li |\x0a    \x0a\x09li := html li.\x0a\x09li asJQuery data: 'item' put: anObject.\x0a    li\x0a\x09\x09class: (self listCssClassForItem: anObject);\x0a        with: [ \x0a        \x09html a\x0a            \x09with: [ \x0a            \x09\x09(html tag: 'i') class: (self cssClassForItem: anObject).\x0a  \x09\x09\x09\x09\x09self renderItemLabel: anObject on: html ];\x0a\x09\x09\x09\x09onClick: [\x0a                  \x09self reactivateListItem: li asJQuery ] ]",
+source: "renderItem: anObject on: html\x0a\x09| li a |\x0a    \x0a\x09li := html li.\x0a\x09li asJQuery data: 'item' put: anObject.\x0a    li\x0a\x09\x09class: (self listCssClassForItem: anObject);\x0a        with: [ \x0a        \x09a := html a\x0a            \x09with: [ \x0a            \x09\x09(html tag: 'i') class: (self cssClassForItem: anObject).\x0a  \x09\x09\x09\x09\x09self renderItemLabel: anObject on: html ];\x0a\x09\x09\x09\x09onClick: [ self reactivateListItem: li asJQuery ].\x0a\x09\x09\x09a asJQuery dblclick: [ :ev | self onItemDoubleClicked: ev on: anObject ].\x0a\x09\x09]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["li", "data:put:", "asJQuery", "class:", "listCssClassForItem:", "with:", "a", "tag:", "cssClassForItem:", "renderItemLabel:on:", "onClick:", "reactivateListItem:"]
+messageSends: ["li", "data:put:", "asJQuery", "class:", "listCssClassForItem:", "with:", "a", "tag:", "cssClassForItem:", "renderItemLabel:on:", "onClick:", "reactivateListItem:", "dblclick:", "onItemDoubleClicked:on:"]
 }),
 $globals.HLListWidget);
 

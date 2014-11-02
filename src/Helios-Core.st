@@ -886,6 +886,15 @@ setupKeyBindings
         	self reselectItem: self selectedItem ] ]
 ! !
 
+!HLListWidget methodsFor: 'reactions'!
+
+onItemDoubleClicked: anEvent on: anObject 
+	"The item that this widget has rendered for anObject has been double clicked."
+
+	"no-op"
+	console log: anObject
+! !
+
 !HLListWidget methodsFor: 'rendering'!
 
 renderButtonsOn: html
@@ -903,19 +912,20 @@ renderContentOn: html
 !
 
 renderItem: anObject on: html
-	| li |
+	| li a |
     
 	li := html li.
 	li asJQuery data: 'item' put: anObject.
     li
 		class: (self listCssClassForItem: anObject);
         with: [ 
-        	html a
+        	a := html a
             	with: [ 
             		(html tag: 'i') class: (self cssClassForItem: anObject).
   					self renderItemLabel: anObject on: html ];
-				onClick: [
-                  	self reactivateListItem: li asJQuery ] ]
+				onClick: [ self reactivateListItem: li asJQuery ].
+			a asJQuery dblclick: [ :ev | self onItemDoubleClicked: ev on: anObject ].
+		]
 !
 
 renderItemLabel: anObject on: html

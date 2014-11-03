@@ -53,7 +53,7 @@ module.exports = function(grunt) {
           'src/Helios-Transcript.st', 'src/Helios-Workspace.st', 'src/Helios-Debugger.st',
           'src/Helios-SUnit.st',
           // list all tests in dependency order
-          'src/Helios-Workspace-Tests.st', 'src/Helios-SUnit-Tests.st'
+          'src/Helios-Browser-Tests.st', 'src/Helios-Workspace-Tests.st', 'src/Helios-SUnit-Tests.st'
         ],
         libraries: ['Web', 'SUnit'],
         amd_namespace: 'helios',

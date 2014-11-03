@@ -1501,15 +1501,12 @@ function $HLClassSelected(){return $globals.HLClassSelected||(typeof HLClassSele
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-var $3,$2,$1,$4,$6,$5,$7,$receiver;
+var $3,$2,$1,$5,$4,$6,$receiver;
 $3=self._selectedClass();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["selectedClass"]=1;
 //>>excludeEnd("ctx");
 $2=$recv($3).__eq(aClass);
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.sendIdx["="]=1;
-//>>excludeEnd("ctx");
 $1=$recv($2)._and_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
@@ -1526,25 +1523,18 @@ self._withChangesDo_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-$4=$recv(self["@selectedClass"]).__eq(aClass);
-if($core.assert($4)){
-self._selectedProtocol_(nil);
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["selectedProtocol:"]=1;
-//>>excludeEnd("ctx");
-};
 if(($receiver = aClass) == null || $receiver.isNil){
 self["@selectedClass"]=nil;
 self["@selectedClass"];
 } else {
-$6=$recv(aClass)._theNonMetaClass();
+$5=$recv(aClass)._theNonMetaClass();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["theNonMetaClass"]=1;
 //>>excludeEnd("ctx");
-$5=$recv($6)._package();
-self._selectedPackage_($5);
-$7=self._showInstance();
-if($core.assert($7)){
+$4=$recv($5)._package();
+self._selectedPackage_($4);
+$6=self._showInstance();
+if($core.assert($6)){
 self["@selectedClass"]=$recv(aClass)._theNonMetaClass();
 self["@selectedClass"];
 } else {
@@ -1552,7 +1542,9 @@ self["@selectedClass"]=$recv(aClass)._theMetaClass();
 self["@selectedClass"];
 };
 };
-self._selectedProtocol_(nil);
+self["@selectedProtocol"]=nil;
+self["@selectedProtocol"];
+self._selectedProtocol_(self._allProtocol());
 return $recv(self._announcer())._announce_($recv($HLClassSelected())._on_(self._selectedClass()));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,3)});
@@ -1565,10 +1557,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aClass"],
-source: "selectedClass: aClass\x0a\x09(self selectedClass = aClass and: [ aClass isNil ]) \x0a\x09\x09ifTrue: [ ^ self ].\x0a\x09\x0a\x09self withChangesDo: [\x0a\x09\x09selectedClass = aClass ifTrue: [ \x0a\x09\x09\x09self selectedProtocol: nil ].\x0a    \x0a\x09\x09aClass \x0a   \x09\x09\x09ifNil: [ selectedClass := nil ]\x0a    \x09\x09ifNotNil: [\x0a\x09\x09\x09\x09self selectedPackage: aClass theNonMetaClass package.\x0a\x09\x09\x09\x09self showInstance \x0a   \x09\x09\x09\x09\x09ifTrue: [ selectedClass := aClass theNonMetaClass ]\x0a     \x09\x09\x09\x09ifFalse: [ selectedClass := aClass theMetaClass ] ].\x0a\x09\x09self selectedProtocol: nil.\x0a\x09\x09self announcer announce: (HLClassSelected on: self selectedClass) ]",
+source: "selectedClass: aClass\x0a\x09(self selectedClass = aClass and: [ aClass isNil ]) \x0a\x09\x09ifTrue: [ ^ self ].\x0a\x09\x0a\x09self withChangesDo: [\x0a\x09\x09aClass \x0a   \x09\x09\x09ifNil: [ selectedClass := nil ]\x0a    \x09\x09ifNotNil: [\x0a\x09\x09\x09\x09self selectedPackage: aClass theNonMetaClass package.\x0a\x09\x09\x09\x09self showInstance \x0a   \x09\x09\x09\x09\x09ifTrue: [ selectedClass := aClass theNonMetaClass ]\x0a     \x09\x09\x09\x09ifFalse: [ selectedClass := aClass theMetaClass ] ].\x0a\x09\x09selectedProtocol := nil.\x0a\x09\x09self selectedProtocol: self allProtocol.\x0a\x09\x09self announcer announce: (HLClassSelected on: self selectedClass) ]",
 referencedClasses: ["HLClassSelected"],
 //>>excludeEnd("ide");
-messageSends: ["ifTrue:", "and:", "=", "selectedClass", "isNil", "withChangesDo:", "selectedProtocol:", "ifNil:ifNotNil:", "selectedPackage:", "package", "theNonMetaClass", "ifTrue:ifFalse:", "showInstance", "theMetaClass", "announce:", "announcer", "on:"]
+messageSends: ["ifTrue:", "and:", "=", "selectedClass", "isNil", "withChangesDo:", "ifNil:ifNotNil:", "selectedPackage:", "package", "theNonMetaClass", "ifTrue:ifFalse:", "showInstance", "theMetaClass", "selectedProtocol:", "allProtocol", "announce:", "announcer", "on:"]
 }),
 $globals.HLToolModel);
 

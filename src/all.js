@@ -9,6 +9,7 @@ define([
 	'./Helios-Layout',
 	'./Helios-KeyBindings',
 	'./Helios-Browser',
+	'./Helios-Browser-Tests',
 	'./Helios-Workspace',
 	'./Helios-Transcript',
 	'./Helios-SUnit',

@@ -22,10 +22,6 @@
             require.paths['helios/app'] = require.paths['helios/index'].replace("index", "app");
             require.callback = function () {
               require(["helios/app"], function (amber) {
-                window.onbeforeunload = function() {
-                  return 'Do you want to close Amber? All uncommitted changes will be lost.';
-                };
-
                 amber.initialize({'transport.defaultAmdNamespace': "amber_core"});
                 amber.globals.HLManager._setup();
               });

@@ -6185,10 +6185,17 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-var $1,$2;
+var $1,$2,$3;
 $1=self._current();
 $recv($1)._setup();
 $2=$recv($1)._appendToJQuery_("body"._asJQuery());
+$3="helios.confirmOnExit"._settingValueIfAbsent_(true);
+if($core.assert($3)){
+$recv(window)._onbeforeunload_((function(){
+return "Do you want to close Amber? All uncommitted changes will be lost.";
+
+}));
+};
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"setup",{},$globals.HLManager.klass)});
@@ -6196,10 +6203,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "setup\x0a\x09self current \x0a\x09\x09setup;\x0a\x09\x09appendToJQuery: 'body' asJQuery",
+source: "setup\x0a\x09self current \x0a\x09\x09setup;\x0a\x09\x09appendToJQuery: 'body' asJQuery.\x0a\x09\x0a\x09('helios.confirmOnExit' settingValueIfAbsent: true) ifTrue: [\x0a\x09\x09window onbeforeunload: [ 'Do you want to close Amber? All uncommitted changes will be lost.' ] ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["setup", "current", "appendToJQuery:", "asJQuery"]
+messageSends: ["setup", "current", "appendToJQuery:", "asJQuery", "ifTrue:", "settingValueIfAbsent:", "onbeforeunload:"]
 }),
 $globals.HLManager.klass);
 

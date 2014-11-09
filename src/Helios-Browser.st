@@ -47,6 +47,7 @@ openMethod: aCompiledMethod
 		"Workaround for the package selection announcement when the package list is focused"	
 		focusOnSourceCode;
 		selectedPackage: aCompiledMethod methodClass package;
+		showInstance: aCompiledMethod methodClass isMetaclass not;
 		selectedClass: aCompiledMethod methodClass;
 		selectedProtocol: aCompiledMethod protocol;
 		selectedMethod: aCompiledMethod;

@@ -268,7 +268,8 @@ copyClassTo: aClassName
 	self withChangesDo: [ 
 		self environment 
 			copyClass: self selectedClass theNonMetaClass
-			to: aClassName ]
+			to: aClassName.
+		self selectedClass: (self environment classNamed: aClassName) ]
 !
 
 moveClassToPackage: aPackageName

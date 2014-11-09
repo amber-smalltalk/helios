@@ -349,7 +349,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-var $1,$2,$4,$3,$5;
+var $1,$2,$4,$3,$5,$8,$7,$6,$9;
 $1=self._model();
 $recv($1)._focusOnSourceCode();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -362,10 +362,18 @@ $ctx1.sendIdx["methodClass"]=1;
 //>>excludeEnd("ctx");
 $3=$recv($4)._package();
 $recv($2)._selectedPackage_($3);
+$5=$1;
+$8=$recv(aCompiledMethod)._methodClass();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["methodClass"]=2;
+//>>excludeEnd("ctx");
+$7=$recv($8)._isMetaclass();
+$6=$recv($7)._not();
+$recv($5)._showInstance_($6);
 $recv($1)._selectedClass_($recv(aCompiledMethod)._methodClass());
 $recv($1)._selectedProtocol_($recv(aCompiledMethod)._protocol());
 $recv($1)._selectedMethod_(aCompiledMethod);
-$5=$recv($1)._focusOnSourceCode();
+$9=$recv($1)._focusOnSourceCode();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"openMethod:",{aCompiledMethod:aCompiledMethod},$globals.HLBrowser)});
@@ -373,10 +381,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aCompiledMethod"],
-source: "openMethod: aCompiledMethod\x0a\x09self model\x0a\x09\x09\x22Workaround for the package selection announcement when the package list is focused\x22\x09\x0a\x09\x09focusOnSourceCode;\x0a\x09\x09selectedPackage: aCompiledMethod methodClass package;\x0a\x09\x09selectedClass: aCompiledMethod methodClass;\x0a\x09\x09selectedProtocol: aCompiledMethod protocol;\x0a\x09\x09selectedMethod: aCompiledMethod;\x0a\x09\x09focusOnSourceCode",
+source: "openMethod: aCompiledMethod\x0a\x09self model\x0a\x09\x09\x22Workaround for the package selection announcement when the package list is focused\x22\x09\x0a\x09\x09focusOnSourceCode;\x0a\x09\x09selectedPackage: aCompiledMethod methodClass package;\x0a\x09\x09showInstance: aCompiledMethod methodClass isMetaclass not;\x0a\x09\x09selectedClass: aCompiledMethod methodClass;\x0a\x09\x09selectedProtocol: aCompiledMethod protocol;\x0a\x09\x09selectedMethod: aCompiledMethod;\x0a\x09\x09focusOnSourceCode",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["focusOnSourceCode", "model", "selectedPackage:", "package", "methodClass", "selectedClass:", "selectedProtocol:", "protocol", "selectedMethod:"]
+messageSends: ["focusOnSourceCode", "model", "selectedPackage:", "package", "methodClass", "showInstance:", "not", "isMetaclass", "selectedClass:", "selectedProtocol:", "protocol", "selectedMethod:"]
 }),
 $globals.HLBrowser);
 

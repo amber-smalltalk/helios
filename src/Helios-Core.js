@@ -688,11 +688,17 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
+var $1;
 self._withChangesDo_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-return $recv(self._environment())._copyClass_to_($recv(self._selectedClass())._theNonMetaClass(),aClassName);
+$1=self._environment();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["environment"]=1;
+//>>excludeEnd("ctx");
+$recv($1)._copyClass_to_($recv(self._selectedClass())._theNonMetaClass(),aClassName);
+return self._selectedClass_($recv(self._environment())._classNamed_(aClassName));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
@@ -704,10 +710,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aClassName"],
-source: "copyClassTo: aClassName\x0a\x09self withChangesDo: [ \x0a\x09\x09self environment \x0a\x09\x09\x09copyClass: self selectedClass theNonMetaClass\x0a\x09\x09\x09to: aClassName ]",
+source: "copyClassTo: aClassName\x0a\x09self withChangesDo: [ \x0a\x09\x09self environment \x0a\x09\x09\x09copyClass: self selectedClass theNonMetaClass\x0a\x09\x09\x09to: aClassName.\x0a\x09\x09self selectedClass: (self environment classNamed: aClassName) ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["withChangesDo:", "copyClass:to:", "environment", "theNonMetaClass", "selectedClass"]
+messageSends: ["withChangesDo:", "copyClass:to:", "environment", "theNonMetaClass", "selectedClass", "selectedClass:", "classNamed:"]
 }),
 $globals.HLToolModel);
 

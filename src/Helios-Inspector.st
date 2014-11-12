@@ -153,6 +153,11 @@ variables
 
 !HLInspectorVariablesWidget methodsFor: 'actions'!
 
+bindKeys
+	self wrapper asJQuery
+		keydown: [ :e | self handleKeyDown: e ]
+!
+
 dive
 	self announcer announce: HLDiveRequested new
 !
@@ -175,6 +180,19 @@ defaultItems
 
 !HLInspectorVariablesWidget methodsFor: 'reactions'!
 
+handleKeyDown: anEvent
+
+	(anEvent keyCode = 66 and: [
+	anEvent ctrlKey or: [
+	anEvent metaKey ] ]) ifTrue: [
+		(inspector model instVarObjectAt: selectedItem) browse ].
+
+	(anEvent keyCode = 73 and: [
+	anEvent ctrlKey or: [
+	anEvent metaKey ] ]) ifTrue: [
+		self dive ].
+!
+
 selectItem: anObject
 	super selectItem: anObject.
     self model selectedInstVar: anObject
@@ -192,7 +210,9 @@ renderButtonsOn: html
 renderContentOn: html
 	self renderHeadOn: html.
 	super renderContentOn: html.
-	self wrapper onDblClick: [ self dive ]
+	self wrapper onDblClick: [ self dive ].
+	
+	self bindKeys
 !
 
 renderHeadOn: html

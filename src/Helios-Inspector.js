@@ -555,6 +555,38 @@ $globals.HLInspectorVariablesWidget);
 
 $core.addMethod(
 $core.method({
+selector: "bindKeys",
+protocol: 'actions',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+$recv($recv(self._wrapper())._asJQuery())._keydown_((function(e){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return self._handleKeyDown_(e);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({e:e},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"bindKeys",{},$globals.HLInspectorVariablesWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "bindKeys\x0a\x09self wrapper asJQuery\x0a\x09\x09keydown: [ :e | self handleKeyDown: e ] ",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["keydown:", "asJQuery", "wrapper", "handleKeyDown:"]
+}),
+$globals.HLInspectorVariablesWidget);
+
+$core.addMethod(
+$core.method({
 selector: "defaultItems",
 protocol: 'defaults',
 fn: function (){
@@ -600,6 +632,91 @@ source: "dive\x0a\x09self announcer announce: HLDiveRequested new",
 referencedClasses: ["HLDiveRequested"],
 //>>excludeEnd("ide");
 messageSends: ["announce:", "announcer", "new"]
+}),
+$globals.HLInspectorVariablesWidget);
+
+$core.addMethod(
+$core.method({
+selector: "handleKeyDown:",
+protocol: 'reactions',
+fn: function (anEvent){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) { 
+//>>excludeEnd("ctx");
+var $3,$2,$4,$1,$5;
+$3=$recv(anEvent)._keyCode();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["keyCode"]=1;
+//>>excludeEnd("ctx");
+$2=$recv($3).__eq((66));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["="]=1;
+//>>excludeEnd("ctx");
+$1=$recv($2)._and_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+$4=$recv(anEvent)._ctrlKey();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["ctrlKey"]=1;
+//>>excludeEnd("ctx");
+return $recv($4)._or_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx3) {
+//>>excludeEnd("ctx");
+return $recv(anEvent)._metaKey();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx3.sendIdx["metaKey"]=1;
+//>>excludeEnd("ctx");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx3) {$ctx3.fillBlock({},$ctx2,2)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["or:"]=1;
+//>>excludeEnd("ctx");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["and:"]=1;
+//>>excludeEnd("ctx");
+if($core.assert($1)){
+$recv($recv($recv(self["@inspector"])._model())._instVarObjectAt_(self["@selectedItem"]))._browse();
+};
+$5=$recv($recv($recv(anEvent)._keyCode()).__eq((73)))._and_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return $recv($recv(anEvent)._ctrlKey())._or_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx3) {
+//>>excludeEnd("ctx");
+return $recv(anEvent)._metaKey();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx3) {$ctx3.fillBlock({},$ctx2,5)});
+//>>excludeEnd("ctx");
+}));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,4)});
+//>>excludeEnd("ctx");
+}));
+if($core.assert($5)){
+self._dive();
+};
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"handleKeyDown:",{anEvent:anEvent},$globals.HLInspectorVariablesWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["anEvent"],
+source: "handleKeyDown: anEvent\x0a\x0a\x09(anEvent keyCode = 66 and: [\x0a\x09anEvent ctrlKey or: [\x0a\x09anEvent metaKey ] ]) ifTrue: [\x0a\x09\x09(inspector model instVarObjectAt: selectedItem) browse ].\x0a\x0a\x09(anEvent keyCode = 73 and: [\x0a\x09anEvent ctrlKey or: [\x0a\x09anEvent metaKey ] ]) ifTrue: [\x0a\x09\x09self dive ].\x0a\x09\x09\x0a\x09",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["ifTrue:", "and:", "=", "keyCode", "or:", "ctrlKey", "metaKey", "browse", "instVarObjectAt:", "model", "dive"]
 }),
 $globals.HLInspectorVariablesWidget);
 
@@ -792,6 +909,7 @@ return self._dive();
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
 }));
+self._bindKeys();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderContentOn:",{html:html},$globals.HLInspectorVariablesWidget)});
@@ -799,10 +917,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09self renderHeadOn: html.\x0a\x09super renderContentOn: html.\x0a\x09self wrapper onDblClick: [ self dive ]",
+source: "renderContentOn: html\x0a\x09self renderHeadOn: html.\x0a\x09super renderContentOn: html.\x0a\x09self wrapper onDblClick: [ self dive ].\x0a\x09\x0a\x09self bindKeys",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["renderHeadOn:", "renderContentOn:", "onDblClick:", "wrapper", "dive"]
+messageSends: ["renderHeadOn:", "renderContentOn:", "onDblClick:", "wrapper", "dive", "bindKeys"]
 }),
 $globals.HLInspectorVariablesWidget);
 

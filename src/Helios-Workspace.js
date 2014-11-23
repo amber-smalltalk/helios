@@ -1883,7 +1883,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 
 		var codeMirror = self._codeMirror();
-		codeMirror.keyMap.default.fallthrough = ["basic"];
+		codeMirror.keyMap["default"].fallthrough = ["basic"];
 		codeMirror.commands.autocomplete = function(cm) {
 			codeMirror.showHint(cm, self._hintFor_options_.bind(self));
 		}
@@ -1895,7 +1895,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "setupCodeMirror\x0a\x09<\x0a\x09\x09var codeMirror = self._codeMirror();\x0a\x09\x09codeMirror.keyMap.default.fallthrough = [\x22basic\x22];\x0a\x09\x09codeMirror.commands.autocomplete = function(cm) {\x0a\x09\x09\x09codeMirror.showHint(cm, self._hintFor_options_.bind(self));\x0a\x09\x09}\x0a\x09>",
+source: "setupCodeMirror\x0a\x09<\x0a\x09\x09var codeMirror = self._codeMirror();\x0a\x09\x09codeMirror.keyMap[\x22default\x22].fallthrough = [\x22basic\x22];\x0a\x09\x09codeMirror.commands.autocomplete = function(cm) {\x0a\x09\x09\x09codeMirror.showHint(cm, self._hintFor_options_.bind(self));\x0a\x09\x09}\x0a\x09>",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []

@@ -471,7 +471,7 @@ initialize
 setupCodeMirror
 	<
 		var codeMirror = self._codeMirror();
-		codeMirror.keyMap.default.fallthrough = ["basic"];
+		codeMirror.keyMap["default"].fallthrough = ["basic"];
 		codeMirror.commands.autocomplete = function(cm) {
 			codeMirror.showHint(cm, self._hintFor_options_.bind(self));
 		}

@@ -1,6 +1,5 @@
 define("helios/Helios-Layout", ["amber/boot", "helios/Helios-Core", "amber_core/Web", "amber_core/Kernel-Objects"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
-var smalltalk=$core,_st=$recv,globals=$globals;
 $core.addPackage('Helios-Layout');
 $core.packages["Helios-Layout"].transport = {"type":"amd","amdNamespace":"helios"};
 
@@ -12,7 +11,7 @@ protocol: 'rendering',
 fn: function (html){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$2;
 $1=$recv(html)._div();
@@ -79,7 +78,7 @@ protocol: 'instance creation',
 fn: function (aSplitter){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$3,$1;
 $2=self._new();
@@ -202,7 +201,7 @@ protocol: 'rendering',
 fn: function (html){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$3,$4,$5,$6,$7,$2;
 $1=$recv(html)._div();
@@ -350,7 +349,7 @@ protocol: 'instance creation',
 fn: function (aWidget,anotherWidget){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$3,$1;
 $2=self._new();
@@ -381,7 +380,7 @@ protocol: 'accessing',
 fn: function (){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$1;
 $2=(
@@ -414,7 +413,7 @@ protocol: 'accessing',
 fn: function (){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$1;
 $2=(
@@ -447,7 +446,7 @@ protocol: 'actions',
 fn: function (){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 self._resize_($recv($recv(self["@splitter"])._asJQuery())._css_("top"));
 return self;
@@ -472,7 +471,7 @@ fn: function (anInteger){
 var self=this;
 var container,size,offset,percentage;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$3,$2,$6,$7,$5,$4,$8,$10,$9,$11,$14,$13,$12;
 $1=$recv(self["@firstPane"])._asJQuery();
@@ -557,7 +556,7 @@ protocol: 'rendering',
 fn: function (){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
 $1=$recv(self["@splitter"])._asJQuery();
@@ -602,7 +601,7 @@ protocol: 'actions',
 fn: function (aSplitter){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 $recv(aSplitter)._width_($recv($recv(self["@splitter"])._asJQuery())._width());
 return self;
@@ -629,7 +628,7 @@ protocol: 'accessing',
 fn: function (){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$1;
 $2=(
@@ -662,7 +661,7 @@ protocol: 'accessing',
 fn: function (){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$1;
 $2=(
@@ -695,7 +694,7 @@ protocol: 'actions',
 fn: function (){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 self._resize_($recv($recv(self["@splitter"])._asJQuery())._css_("left"));
 return self;
@@ -720,7 +719,7 @@ fn: function (anInteger){
 var self=this;
 var container,size,offset,percentage;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$3,$2,$6,$7,$5,$4,$8,$10,$9,$11,$14,$13,$12;
 $1=$recv(self["@firstPane"])._asJQuery();
@@ -805,7 +804,7 @@ protocol: 'rendering',
 fn: function (){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
 $1=$recv(self["@splitter"])._asJQuery();
@@ -850,7 +849,7 @@ protocol: 'actions',
 fn: function (aSplitter){
 var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 $recv(aSplitter)._height_($recv($recv(self["@splitter"])._asJQuery())._height());
 return self;

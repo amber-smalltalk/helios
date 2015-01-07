@@ -1,6 +1,5 @@
 define("helios/Helios-Exceptions", ["amber/boot", "amber_core/Kernel-Exceptions"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
-var smalltalk=$core,_st=$recv,globals=$globals;
 $core.addPackage('Helios-Exceptions');
 $core.packages["Helios-Exceptions"].transport = {"type":"amd","amdNamespace":"helios"};
 

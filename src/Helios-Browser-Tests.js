@@ -1,6 +1,5 @@
 define("helios/Helios-Browser-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
-var smalltalk=$core,_st=$recv,globals=$globals;
 $core.addPackage('Helios-Browser-Tests');
 $core.packages["Helios-Browser-Tests"].transport = {"type":"amd","amdNamespace":"helios"};
 
@@ -16,7 +15,7 @@ fn: function (){
 var self=this;
 function $HLBrowserModel(){return $globals.HLBrowserModel||(typeof HLBrowserModel=="undefined"?nil:HLBrowserModel)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 self["@browser"]=$recv($HLBrowserModel())._new();
 return self;
@@ -41,7 +40,7 @@ fn: function (){
 var self=this;
 function $Object(){return $globals.Object||(typeof Object=="undefined"?nil:Object)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$1;
 $2=$recv(self["@browser"])._selectedProtocol();
@@ -77,7 +76,7 @@ function $HLProtocolSelected(){return $globals.HLProtocolSelected||(typeof HLPro
 function $Object(){return $globals.Object||(typeof Object=="undefined"?nil:Object)}
 function $ProtoObject(){return $globals.ProtoObject||(typeof ProtoObject=="undefined"?nil:ProtoObject)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx1) { 
+return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 protocolSelectedCalled=(0);
 $recv($recv(self["@browser"])._announcer())._on_do_for_($HLProtocolSelected(),(function(){

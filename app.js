@@ -9,8 +9,6 @@ define([
     'css!codemirror/lib/codemirror',
     'css!codemirror/addon/hint/show-hint',
     'jquery-ui',
-    'amber_core/Examples',
-    'amber_core/Benchfib',
     'bootstrap2.3.2/js/bootstrap',
     './showdown',
     './all',

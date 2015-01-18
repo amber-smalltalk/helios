@@ -1432,7 +1432,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
 $recv(self._announcer())._announce_($recv($HLSourceCodeSaved())._new());
-$1=self._shouldCompileClassDefinition_(aString);
+$1=self._shouldCompileDefinition_(aString);
 if($core.assert($1)){
 self._compileClassDefinition_(aString);
 } else {
@@ -1445,10 +1445,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
-source: "save: aString\x0a\x09self announcer announce: HLSourceCodeSaved new.\x0a\x09\x0a\x09(self shouldCompileClassDefinition: aString)\x0a\x09\x09ifTrue: [ self compileClassDefinition: aString ]\x0a\x09\x09ifFalse: [ self compileMethod: aString ]",
+source: "save: aString\x0a\x09self announcer announce: HLSourceCodeSaved new.\x0a\x09\x0a\x09(self shouldCompileDefinition: aString)\x0a\x09\x09ifTrue: [ self compileClassDefinition: aString ]\x0a\x09\x09ifFalse: [ self compileMethod: aString ]",
 referencedClasses: ["HLSourceCodeSaved"],
 //>>excludeEnd("ide");
-messageSends: ["announce:", "announcer", "new", "ifTrue:ifFalse:", "shouldCompileClassDefinition:", "compileClassDefinition:", "compileMethod:"]
+messageSends: ["announce:", "announcer", "new", "ifTrue:ifFalse:", "shouldCompileDefinition:", "compileClassDefinition:", "compileMethod:"]
 }),
 $globals.HLToolModel);
 
@@ -1779,7 +1779,7 @@ $globals.HLToolModel);
 
 $core.addMethod(
 $core.method({
-selector: "shouldCompileClassDefinition:",
+selector: "shouldCompileDefinition:",
 protocol: 'testing',
 fn: function (aString){
 var self=this;
@@ -1798,12 +1798,12 @@ return $recv(aString)._match_("^\x5cs*[A-Z]");
 }));
 return $1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx1) {$ctx1.fill(self,"shouldCompileClassDefinition:",{aString:aString},$globals.HLToolModel)});
+}, function($ctx1) {$ctx1.fill(self,"shouldCompileDefinition:",{aString:aString},$globals.HLToolModel)});
 //>>excludeEnd("ctx");
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
-source: "shouldCompileClassDefinition: aString\x0a\x09^ self selectedClass isNil or: [\x0a\x09\x09aString match: '^\x5cs*[A-Z]' ]",
+source: "shouldCompileDefinition: aString\x0a\x09^ self selectedClass isNil or: [\x0a\x09\x09aString match: '^\x5cs*[A-Z]' ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["or:", "isNil", "selectedClass", "match:"]

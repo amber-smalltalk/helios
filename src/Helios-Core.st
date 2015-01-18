@@ -246,7 +246,7 @@ addInstVarNamed: aString
 save: aString
 	self announcer announce: HLSourceCodeSaved new.
 	
-	(self shouldCompileClassDefinition: aString)
+	(self shouldCompileDefinition: aString)
 		ifTrue: [ self compileClassDefinition: aString ]
 		ifFalse: [ self compileMethod: aString ]
 !
@@ -461,7 +461,7 @@ isToolModel
 	^ true
 !
 
-shouldCompileClassDefinition: aString
+shouldCompileDefinition: aString
 	^ self selectedClass isNil or: [
 		aString match: '^\s*[A-Z]' ]
 ! !

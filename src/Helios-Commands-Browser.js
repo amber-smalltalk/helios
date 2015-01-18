@@ -1,6 +1,7 @@
 define("helios/Helios-Commands-Browser", ["amber/boot", "helios/Helios-Commands-Tools"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Commands-Browser');
+$core.packages["Helios-Commands-Browser"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Commands-Browser"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLBrowserCommand', $globals.HLToolCommand, [], 'Helios-Commands-Browser');

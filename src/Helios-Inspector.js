@@ -1,6 +1,7 @@
 define("helios/Helios-Inspector", ["amber/boot", "helios/Helios-Core"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Inspector');
+$core.packages["Helios-Inspector"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Inspector"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLInspectorDisplayWidget', $globals.HLNavigationListWidget, ['inspector'], 'Helios-Inspector');

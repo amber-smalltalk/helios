@@ -1,6 +1,7 @@
 define("helios/Helios-Layout", ["amber/boot", "helios/Helios-Core", "amber_core/Web", "amber_core/Kernel-Objects"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Layout');
+$core.packages["Helios-Layout"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Layout"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLContainer', $globals.HLWidget, ['splitter'], 'Helios-Layout');

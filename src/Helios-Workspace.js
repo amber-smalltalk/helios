@@ -1,6 +1,7 @@
 define("helios/Helios-Workspace", ["amber/boot", "amber_core/Kernel-Objects", "helios/Helios-Core"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Workspace');
+$core.packages["Helios-Workspace"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Workspace"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLCodeModel', $globals.Object, ['announcer', 'environment', 'receiver'], 'Helios-Workspace');

@@ -1,6 +1,7 @@
 define("helios/Helios-Browser", ["amber/boot", "helios/Helios-Core", "amber_core/Kernel-Objects"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Browser');
+$core.packages["Helios-Browser"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Browser"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLBrowser', $globals.HLWidget, ['model', 'packagesListWidget', 'classesListWidget', 'protocolsListWidget', 'methodsListWidget', 'sourceWidget', 'bottomDiv'], 'Helios-Browser');

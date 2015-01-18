@@ -1,6 +1,7 @@
 define("helios/Helios-SUnit", ["amber/boot", "helios/Helios-Core"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-SUnit');
+$core.packages["Helios-SUnit"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-SUnit"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLMultiSelectToolListWidget', $globals.HLToolListWidget, [], 'Helios-SUnit');

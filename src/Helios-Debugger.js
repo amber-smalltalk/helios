@@ -1,6 +1,7 @@
 define("helios/Helios-Debugger", ["amber/boot", "amber_core/Kernel-Objects", "helios/Helios-Core", "helios/Helios-Workspace"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Debugger');
+$core.packages["Helios-Debugger"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Debugger"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLContextInspectorDecorator', $globals.Object, ['context'], 'Helios-Debugger');

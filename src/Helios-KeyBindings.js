@@ -1,6 +1,7 @@
 define("helios/Helios-KeyBindings", ["amber/boot", "amber_core/Kernel-Objects", "helios/Helios-Core"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-KeyBindings');
+$core.packages["Helios-KeyBindings"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-KeyBindings"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLBinding', $globals.Object, ['key', 'label'], 'Helios-KeyBindings');

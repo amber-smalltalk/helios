@@ -1,6 +1,7 @@
 define("helios/Helios-Announcements", ["amber/boot", "amber_core/Kernel-Objects"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Announcements');
+$core.packages["Helios-Announcements"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Announcements"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLAboutToChange', $globals.Object, ['actionBlock'], 'Helios-Announcements');

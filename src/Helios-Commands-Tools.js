@@ -1,6 +1,7 @@
 define("helios/Helios-Commands-Tools", ["amber/boot", "helios/Helios-Commands-Core"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Commands-Tools');
+$core.packages["Helios-Commands-Tools"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Commands-Tools"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLToolCommand', $globals.HLModelCommand, [], 'Helios-Commands-Tools');

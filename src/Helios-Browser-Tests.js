@@ -1,6 +1,7 @@
 define("helios/Helios-Browser-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Browser-Tests');
+$core.packages["Helios-Browser-Tests"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Browser-Tests"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLBrowserTest', $globals.TestCase, ['browser'], 'Helios-Browser-Tests');

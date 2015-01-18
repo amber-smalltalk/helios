@@ -1,6 +1,7 @@
 define("helios/Helios-Helpers", ["amber/boot", "amber_core/Kernel-Objects"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Helpers');
+$core.packages["Helios-Helpers"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Helpers"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLClassifier', $globals.Object, ['next', 'method'], 'Helios-Helpers');

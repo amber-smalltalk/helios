@@ -1,6 +1,7 @@
 define("helios/Helios-Transcript", ["amber/boot", "helios/Helios-Core", "amber_core/Kernel-Objects"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Transcript');
+$core.packages["Helios-Transcript"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Transcript"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLTranscript', $globals.HLWidget, ['textarea'], 'Helios-Transcript');

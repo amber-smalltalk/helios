@@ -1,6 +1,7 @@
 define("helios/Helios-SUnit-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-SUnit-Tests');
+$core.packages["Helios-SUnit-Tests"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-SUnit-Tests"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLSUnitModelTest', $globals.TestCase, ['model'], 'Helios-SUnit-Tests');

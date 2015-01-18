@@ -1,6 +1,7 @@
 define("helios/Helios-Commands-Core", ["amber/boot", "amber_core/Kernel-Objects"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Commands-Core');
+$core.packages["Helios-Commands-Core"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Commands-Core"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLCommand', $globals.Object, ['input'], 'Helios-Commands-Core');

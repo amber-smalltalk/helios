@@ -1,6 +1,7 @@
 define("helios/Helios-Commands-SUnit", ["amber/boot", "helios/Helios-Commands-Tools"], function($boot){
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Commands-SUnit');
+$core.packages["Helios-Commands-SUnit"].innerEval = function (expr) { return eval(expr); };
 $core.packages["Helios-Commands-SUnit"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLSUnitCommand', $globals.HLToolCommand, [], 'Helios-Commands-SUnit');

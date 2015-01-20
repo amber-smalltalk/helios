@@ -10,7 +10,7 @@ There are two ways how to contribute. In both way you need to fork this repo fir
 
 First way is by cloning your fork and setting it up (have `node` and `npm` installed,
 have `bower`, `grunt-cli` and `amber-cli` npm packages installed globally,
-then run `npm install` and `bower install` in the project directory,
+then run `npm install`, `bower install` and `grunt devel` in the project directory,
 after what you can go the classical Amber project way of running `amber serve` from CLI
 and go to `http://localhost:4000/` in the browser). This way you can only contribute
 to Helios itself.

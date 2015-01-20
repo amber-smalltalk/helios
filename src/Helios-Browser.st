@@ -453,7 +453,11 @@ I render a list of classes in the selected package.!
 !HLClassesListWidget methodsFor: 'accessing'!
 
 cssClassForItem: aClass
-	^ aClass theNonMetaClass heliosClass
+	| nonMeta |
+	nonMeta := aClass theNonMetaClass.
+	(nonMeta respondsTo: #classTag)
+		ifTrue: [ ^ nonMeta classTag ]
+		ifFalse: [ ^ nonMeta heliosClass ]
 !
 
 getChildrenOf: aClass

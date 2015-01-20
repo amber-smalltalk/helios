@@ -278,22 +278,31 @@ selector: "cssClassForItem:",
 protocol: 'accessing',
 fn: function (aClass){
 var self=this;
+var nonMeta;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv($recv(aClass)._theNonMetaClass())._heliosClass();
-return $1;
+var $1,$2,$3;
+nonMeta=$recv(aClass)._theNonMetaClass();
+$1=$recv(nonMeta)._respondsTo_("classTag");
+if($core.assert($1)){
+$2=$recv(nonMeta)._classTag();
+return $2;
+} else {
+$3=$recv(nonMeta)._heliosClass();
+return $3;
+};
+return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx1) {$ctx1.fill(self,"cssClassForItem:",{aClass:aClass},$globals.HLSUnitClassesListWidget)});
+}, function($ctx1) {$ctx1.fill(self,"cssClassForItem:",{aClass:aClass,nonMeta:nonMeta},$globals.HLSUnitClassesListWidget)});
 //>>excludeEnd("ctx");
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aClass"],
-source: "cssClassForItem: aClass\x09\x0a\x09^ aClass theNonMetaClass heliosClass",
+source: "cssClassForItem: aClass\x0a\x09| nonMeta |\x0a\x09nonMeta := aClass theNonMetaClass.\x0a\x09(nonMeta respondsTo: #classTag)\x0a\x09\x09ifTrue: [ ^ nonMeta classTag ]\x0a\x09\x09ifFalse: [ ^ nonMeta heliosClass ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["heliosClass", "theNonMetaClass"]
+messageSends: ["theNonMetaClass", "ifTrue:ifFalse:", "respondsTo:", "classTag", "heliosClass"]
 }),
 $globals.HLSUnitClassesListWidget);
 

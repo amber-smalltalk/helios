@@ -71,8 +71,12 @@ buttonsDivCssClass
 	^ 'buttons_bar'
 !
 
-cssClassForItem: aClass	
-	^ aClass theNonMetaClass heliosClass
+cssClassForItem: aClass
+	| nonMeta |
+	nonMeta := aClass theNonMetaClass.
+	(nonMeta respondsTo: #classTag)
+		ifTrue: [ ^ nonMeta classTag ]
+		ifFalse: [ ^ nonMeta heliosClass ]
 !
 
 items

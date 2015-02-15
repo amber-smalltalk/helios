@@ -1,6 +1,6 @@
 {
   "name": "helios",
-  "version": "0.3.4",
+  "version": "0.4.0-0",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -9,7 +9,7 @@
     "tests"
   ],
   "dependencies": {
-    "amber": ">=0.13.2",
+    "amber": ">=0.14.10-0",
     "jquery": ">=1.7.0",
     "jquery-ui": ">=1.9.2",
     "bootstrap2.3.2": "^2.3.2",

@@ -5451,7 +5451,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-$recv(parent)._onunload_((function(){
+$recv(parent)._at_put_("onunload",(function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -5468,10 +5468,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["parent"],
-source: "handleLossOfEnvironmentWithParent: parent\x0a\x09parent onunload: [ \x0a\x09\x09self removeBeforeUnloadMessage.\x0a\x09\x09window close ]",
+source: "handleLossOfEnvironmentWithParent: parent\x0a\x09parent at: 'onunload' put: [ \x0a\x09\x09self removeBeforeUnloadMessage.\x0a\x09\x09window close ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["onunload:", "removeBeforeUnloadMessage", "close"]
+messageSends: ["at:put:", "removeBeforeUnloadMessage", "close"]
 }),
 $globals.HLManager);
 

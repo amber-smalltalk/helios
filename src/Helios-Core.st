@@ -1278,7 +1278,7 @@ confirm: aString ifTrue: aBlock ifFalse: anotherBlock
 !
 
 handleLossOfEnvironmentWithParent: parent
-	parent onunload: [ 
+	parent at: 'onunload' put: [ 
 		self removeBeforeUnloadMessage.
 		window close ]
 !

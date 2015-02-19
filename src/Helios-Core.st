@@ -1277,6 +1277,12 @@ confirm: aString ifTrue: aBlock ifFalse: anotherBlock
 		show
 !
 
+handleLossOfEnvironmentWithParent: parent
+	parent onunload: [ 
+		self removeBeforeUnloadMessage.
+		window close ]
+!
+
 inform: aString
 	HLInformationWidget new
 		informationString: aString;
@@ -1285,6 +1291,10 @@ inform: aString
 
 removeActiveTab
 	self tabsWidget removeActiveTab
+!
+
+removeBeforeUnloadMessage
+	<window.onbeforeunload = null>
 !
 
 removeTabForWidget: aWidget
@@ -1319,6 +1329,8 @@ defaultEnvironment
 	[ parentSmalltalkGlobals := ((parent at: 'requirejs') value: 'amber/boot') at: 'globals' ]
 	on: Error do: [ parentSmalltalkGlobals := (parent at: 'requirejs') value: 'amber_vm/globals' ].
 	parentSmalltalkGlobals ifNil: [ ^ Environment new ].
+	
+	self handleLossOfEnvironmentWithParent: parent.
 	
 	^ (parentSmalltalkGlobals at: 'Environment') new
 ! !

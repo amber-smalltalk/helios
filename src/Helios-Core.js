@@ -5376,6 +5376,7 @@ return $8;
 } else {
 $7;
 };
+self._handleLossOfEnvironmentWithParent_(parent);
 $9=$recv($recv(parentSmalltalkGlobals)._at_("Environment"))._new();
 return $9;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -5384,10 +5385,10 @@ return $9;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "defaultEnvironment\x0a\x09\x22If helios is loaded from within a frame, answer the parent window environment\x22\x0a\x09\x0a\x09| parent parentSmalltalkGlobals |\x0a\x09\x0a\x09parent := window opener ifNil: [ window parent ].\x0a\x09parent ifNil: [ ^ Environment new ].\x0a\x09\x0a\x09[ parentSmalltalkGlobals := ((parent at: 'requirejs') value: 'amber/boot') at: 'globals' ]\x0a\x09on: Error do: [ parentSmalltalkGlobals := (parent at: 'requirejs') value: 'amber_vm/globals' ].\x0a\x09parentSmalltalkGlobals ifNil: [ ^ Environment new ].\x0a\x09\x0a\x09^ (parentSmalltalkGlobals at: 'Environment') new",
+source: "defaultEnvironment\x0a\x09\x22If helios is loaded from within a frame, answer the parent window environment\x22\x0a\x09\x0a\x09| parent parentSmalltalkGlobals |\x0a\x09\x0a\x09parent := window opener ifNil: [ window parent ].\x0a\x09parent ifNil: [ ^ Environment new ].\x0a\x09\x0a\x09[ parentSmalltalkGlobals := ((parent at: 'requirejs') value: 'amber/boot') at: 'globals' ]\x0a\x09on: Error do: [ parentSmalltalkGlobals := (parent at: 'requirejs') value: 'amber_vm/globals' ].\x0a\x09parentSmalltalkGlobals ifNil: [ ^ Environment new ].\x0a\x09\x0a\x09self handleLossOfEnvironmentWithParent: parent.\x0a\x09\x0a\x09^ (parentSmalltalkGlobals at: 'Environment') new",
 referencedClasses: ["Environment", "Error"],
 //>>excludeEnd("ide");
-messageSends: ["ifNil:", "opener", "parent", "new", "on:do:", "at:", "value:"]
+messageSends: ["ifNil:", "opener", "parent", "new", "on:do:", "at:", "value:", "handleLossOfEnvironmentWithParent:"]
 }),
 $globals.HLManager);
 
@@ -5438,6 +5439,39 @@ source: "environment: anEnvironment\x0a\x09environment := anEnvironment",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []
+}),
+$globals.HLManager);
+
+$core.addMethod(
+$core.method({
+selector: "handleLossOfEnvironmentWithParent:",
+protocol: 'actions',
+fn: function (parent){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+$recv(parent)._onunload_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+self._removeBeforeUnloadMessage();
+return $recv(window)._close();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"handleLossOfEnvironmentWithParent:",{parent:parent},$globals.HLManager)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["parent"],
+source: "handleLossOfEnvironmentWithParent: parent\x0a\x09parent onunload: [ \x0a\x09\x09self removeBeforeUnloadMessage.\x0a\x09\x09window close ]",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["onunload:", "removeBeforeUnloadMessage", "close"]
 }),
 $globals.HLManager);
 
@@ -5747,6 +5781,30 @@ source: "removeActiveTab\x0a\x09self tabsWidget removeActiveTab",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["removeActiveTab", "tabsWidget"]
+}),
+$globals.HLManager);
+
+$core.addMethod(
+$core.method({
+selector: "removeBeforeUnloadMessage",
+protocol: 'actions',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+window.onbeforeunload = null;
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"removeBeforeUnloadMessage",{},$globals.HLManager)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "removeBeforeUnloadMessage\x0a\x09<window.onbeforeunload = null>",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
 $globals.HLManager);
 

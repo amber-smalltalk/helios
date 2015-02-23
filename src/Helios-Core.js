@@ -5115,7 +5115,10 @@ $globals.HLInformationWidget);
 
 
 
-$core.addClass('HLManager', $globals.HLWidget, ['tabsWidget', 'environment', 'history', 'announcer'], 'Helios-Core');
+$core.addClass('HLManager', $globals.HLWidget, ['tabsWidget', 'environment', 'history', 'announcer', 'rendered'], 'Helios-Core');
+//>>excludeStart("ide", pragmas.excludeIdeData);
+$globals.HLManager.comment="HLManager is the entry point Class of Helios.\x0a\x0aIts `singleton` instance is created on startup, and rendered on body.";
+//>>excludeEnd("ide");
 $core.addMethod(
 $core.method({
 selector: "activate:",
@@ -5556,6 +5559,38 @@ $globals.HLManager);
 
 $core.addMethod(
 $core.method({
+selector: "initialize",
+protocol: 'initialization',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+(
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.supercall = true, 
+//>>excludeEnd("ctx");
+$globals.HLManager.superclass.fn.prototype._initialize.apply($recv(self), []));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.supercall = false;
+//>>excludeEnd("ctx");;
+self["@rendered"]=false;
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"initialize",{},$globals.HLManager)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "initialize\x0a\x09super initialize.\x0a\x09rendered := false",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["initialize"]
+}),
+$globals.HLManager);
+
+$core.addMethod(
+$core.method({
 selector: "keyBinder",
 protocol: 'accessing',
 fn: function (){
@@ -5847,6 +5882,8 @@ $recv(html)._with_(self._tabsWidget());
 $ctx1.sendIdx["with:"]=1;
 //>>excludeEnd("ctx");
 $recv(html)._with_($recv($HLWelcomeWidget())._new());
+self._renderDefaultTabs();
+self["@rendered"]=true;
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderContentOn:",{html:html},$globals.HLManager)});
@@ -5854,10 +5891,44 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09html with: self tabsWidget.\x0a\x09html with: HLWelcomeWidget new",
+source: "renderContentOn: html\x0a\x09html with: self tabsWidget.\x0a\x09html with: HLWelcomeWidget new.\x0a\x09\x0a\x09self renderDefaultTabs.\x0a\x09rendered := true",
 referencedClasses: ["HLWelcomeWidget"],
 //>>excludeEnd("ide");
-messageSends: ["with:", "tabsWidget", "new"]
+messageSends: ["with:", "tabsWidget", "new", "renderDefaultTabs"]
+}),
+$globals.HLManager);
+
+$core.addMethod(
+$core.method({
+selector: "renderDefaultTabs",
+protocol: 'rendering',
+fn: function (){
+var self=this;
+function $HLWorkspace(){return $globals.HLWorkspace||(typeof HLWorkspace=="undefined"?nil:HLWorkspace)}
+function $HLBrowser(){return $globals.HLBrowser||(typeof HLBrowser=="undefined"?nil:HLBrowser)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1;
+$1=self["@rendered"];
+if(!$core.assert($1)){
+$recv($HLWorkspace())._openAsTab();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["openAsTab"]=1;
+//>>excludeEnd("ctx");
+$recv($HLBrowser())._openAsTab();
+};
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"renderDefaultTabs",{},$globals.HLManager)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "renderDefaultTabs\x0a\x09rendered ifFalse: [\x0a\x09\x09HLWorkspace openAsTab.\x0a\x09\x09HLBrowser openAsTab ]",
+referencedClasses: ["HLWorkspace", "HLBrowser"],
+//>>excludeEnd("ide");
+messageSends: ["ifFalse:", "openAsTab"]
 }),
 $globals.HLManager);
 

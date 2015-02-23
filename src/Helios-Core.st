@@ -1180,8 +1180,12 @@ renderContentOn: html
 ! !
 
 HLWidget subclass: #HLManager
-	instanceVariableNames: 'tabsWidget environment history announcer'
+	instanceVariableNames: 'tabsWidget environment history announcer rendered'
 	package: 'Helios-Core'!
+!HLManager commentStamp!
+HLManager is the entry point Class of Helios.
+
+Its `singleton` instance is created on startup, and rendered on body.!
 
 !HLManager methodsFor: 'accessing'!
 
@@ -1337,6 +1341,11 @@ defaultEnvironment
 
 !HLManager methodsFor: 'initialization'!
 
+initialize
+	super initialize.
+	rendered := false
+!
+
 setup
 	self 
 		registerServices;
@@ -1389,7 +1398,16 @@ setupTheme
 
 renderContentOn: html
 	html with: self tabsWidget.
-	html with: HLWelcomeWidget new
+	html with: HLWelcomeWidget new.
+	
+	self renderDefaultTabs.
+	rendered := true
+!
+
+renderDefaultTabs
+	rendered ifFalse: [
+		HLWorkspace openAsTab.
+		HLBrowser openAsTab ]
 ! !
 
 !HLManager methodsFor: 'services'!

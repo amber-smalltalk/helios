@@ -8642,12 +8642,12 @@ selector: "ghostText",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-return "Search...";
+return "Search... (Ctrl+F)";
 
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "ghostText\x0a\x09^ 'Search...'",
+source: "ghostText\x0a\x09^ 'Search... (Ctrl+F)'",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []

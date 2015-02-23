@@ -1992,7 +1992,7 @@ HLWidget subclass: #HLSpotlightWidget
 !HLSpotlightWidget methodsFor: 'accessing'!
 
 ghostText
-	^ 'Search...'
+	^ 'Search... (Ctrl+F)'
 !
 
 inputCompletion

@@ -1490,6 +1490,31 @@ $globals.HLKeyBinder);
 
 $core.addMethod(
 $core.method({
+selector: "activateSpotlight",
+protocol: 'actions',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1;
+$1=$recv(".spotlight"._asJQuery())._focus();
+return $1;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"activateSpotlight",{},$globals.HLKeyBinder)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "activateSpotlight\x0a\x09^ '.spotlight' asJQuery focus",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["focus", "asJQuery"]
+}),
+$globals.HLKeyBinder);
+
+$core.addMethod(
+$core.method({
 selector: "activationKey",
 protocol: 'accessing',
 fn: function (){
@@ -1823,12 +1848,34 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2;
-$1=$recv($recv(event)._which()).__eq(self._activationKey());
+var $2,$1,$3,$4,$5;
+$2=$recv(event)._which();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["which"]=1;
+//>>excludeEnd("ctx");
+$1=$recv($2).__eq(self._activationKey());
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["="]=1;
+//>>excludeEnd("ctx");
 if($core.assert($1)){
-$2=$recv(event)._ctrlKey();
-if($core.assert($2)){
+$3=$recv(event)._ctrlKey();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["ctrlKey"]=1;
+//>>excludeEnd("ctx");
+if($core.assert($3)){
 self._activate();
+$recv(event)._preventDefault();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["preventDefault"]=1;
+//>>excludeEnd("ctx");
+return false;
+};
+};
+$4=$recv($recv(event)._which()).__eq(self._spotlightActivationKey());
+if($core.assert($4)){
+$5=$recv(event)._ctrlKey();
+if($core.assert($5)){
+self._activateSpotlight();
 $recv(event)._preventDefault();
 return false;
 };
@@ -1840,10 +1887,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["event"],
-source: "handleInactiveKeyDown: event\x0a\x09event which = self activationKey ifTrue: [\x0a    \x09event ctrlKey ifTrue: [\x0a\x09\x09\x09self activate. \x0a            event preventDefault. \x0a            ^ false ] ]",
+source: "handleInactiveKeyDown: event\x0a\x09event which = self activationKey ifTrue: [\x0a    \x09event ctrlKey ifTrue: [\x0a\x09\x09\x09self activate. \x0a            event preventDefault. \x0a            ^ false ] ].\x0a\x09\x09\x09\x0a\x09event which = self spotlightActivationKey ifTrue: [\x0a    \x09event ctrlKey ifTrue: [\x0a\x09\x09\x09self activateSpotlight. \x0a            event preventDefault. \x0a            ^ false ] ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["ifTrue:", "=", "which", "activationKey", "ctrlKey", "activate", "preventDefault"]
+messageSends: ["ifTrue:", "=", "which", "activationKey", "ctrlKey", "activate", "preventDefault", "spotlightActivationKey", "activateSpotlight"]
 }),
 $globals.HLKeyBinder);
 
@@ -2044,6 +2091,24 @@ source: "setupEvents\x0a\x09'body' asJQuery keydown: [ :event | self handleKeyDo
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["keydown:", "asJQuery", "handleKeyDown:"]
+}),
+$globals.HLKeyBinder);
+
+$core.addMethod(
+$core.method({
+selector: "spotlightActivationKey",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+return (70);
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "spotlightActivationKey\x0a\x09\x22f\x22\x0a\x09^ 70",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
 }),
 $globals.HLKeyBinder);
 

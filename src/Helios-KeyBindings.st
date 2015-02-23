@@ -378,12 +378,21 @@ helper
 
 selectedBinding
 	^ selectedBinding ifNil: [ self bindings ]
+!
+
+spotlightActivationKey
+	"f"
+	^ 70
 ! !
 
 !HLKeyBinder methodsFor: 'actions'!
 
 activate
 	self helper show
+!
+
+activateSpotlight
+	^ '.spotlight' asJQuery focus
 !
 
 applyBinding: aBinding
@@ -456,6 +465,12 @@ handleInactiveKeyDown: event
 	event which = self activationKey ifTrue: [
     	event ctrlKey ifTrue: [
 			self activate. 
+            event preventDefault. 
+            ^ false ] ].
+			
+	event which = self spotlightActivationKey ifTrue: [
+    	event ctrlKey ifTrue: [
+			self activateSpotlight. 
             event preventDefault. 
             ^ false ] ]
 !

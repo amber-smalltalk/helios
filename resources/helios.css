@@ -271,6 +271,10 @@ body[id="helios"] .spotlight {
   width: 200px;
   box-shadow: inset 0 0 2px 0 #ddd;
 }
+body[id="helios"] .spotlight:focus {
+  box-shadow: inset 0 0 2px 0 #08c;
+  border-color: #08c;
+}
 body[id="helios"] .nav-pills > .active > a {
   background-color: #ddd;
   color: #fff;

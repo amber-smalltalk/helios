@@ -1985,6 +1985,42 @@ default
 	^ default ifNil: [ default := self new ]
 ! !
 
+HLWidget subclass: #HLSpotlightWidget
+	instanceVariableNames: 'input'
+	package: 'Helios-Core'!
+
+!HLSpotlightWidget methodsFor: 'accessing'!
+
+ghostText
+	^ 'Search...'
+!
+
+inputCompletion
+	^ self manager environment availableClassNames, self manager environment allSelectors
+! !
+
+!HLSpotlightWidget methodsFor: 'actions'!
+
+search: aString
+	aString ifNotEmpty: [
+		Finder findString: aString ]
+! !
+
+!HLSpotlightWidget methodsFor: 'rendering'!
+
+renderContentOn: html
+	input := html input
+		class: 'spotlight';
+		placeholder: self ghostText;
+		onKeyDown: [ :event | 
+			event which = 13 ifTrue: [
+				self search: input asJQuery val ] ]
+		yourself.
+			
+	input asJQuery 
+		typeahead: #{ 'source' -> self inputCompletion }.
+! !
+
 HLWidget subclass: #HLTabWidget
 	instanceVariableNames: 'widget label root'
 	package: 'Helios-Core'!
@@ -2111,7 +2147,7 @@ on: aWidget labelled: aString
 ! !
 
 HLWidget subclass: #HLTabsWidget
-	instanceVariableNames: 'tabs activeTab history selectionDisabled'
+	instanceVariableNames: 'tabs activeTab history selectionDisabled spotlight'
 	package: 'Helios-Core'!
 
 !HLTabsWidget methodsFor: 'accessing'!
@@ -2128,8 +2164,12 @@ history: aCollection
 	history := aCollection
 !
 
+spotlight
+	^ spotlight ifNil: [ spotlight := HLSpotlightWidget new ]
+!
+
 tabWidth
-	^ (window asJQuery width - 90) / self tabs size
+	^ (window asJQuery width - 250) / self tabs size
 !
 
 tabs
@@ -2269,6 +2309,7 @@ renderContentOn: html
 			class: 'navbar-inner';
 			with: [ self renderTabsOn: html ] ].
 			
+	html with: self spotlight.
 	self renderAddOn: html
 !
 

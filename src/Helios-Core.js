@@ -8635,6 +8635,140 @@ messageSends: ["ifNil:", "new"]
 $globals.HLProgressBarWidget.klass);
 
 
+$core.addClass('HLSpotlightWidget', $globals.HLWidget, ['input'], 'Helios-Core');
+$core.addMethod(
+$core.method({
+selector: "ghostText",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+return "Search...";
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "ghostText\x0a\x09^ 'Search...'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
+}),
+$globals.HLSpotlightWidget);
+
+$core.addMethod(
+$core.method({
+selector: "inputCompletion",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $4,$3,$2,$1;
+$4=self._manager();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["manager"]=1;
+//>>excludeEnd("ctx");
+$3=$recv($4)._environment();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["environment"]=1;
+//>>excludeEnd("ctx");
+$2=$recv($3)._availableClassNames();
+$1=$recv($2).__comma($recv($recv(self._manager())._environment())._allSelectors());
+return $1;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"inputCompletion",{},$globals.HLSpotlightWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "inputCompletion\x0a\x09^ self manager environment availableClassNames, self manager environment allSelectors",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: [",", "availableClassNames", "environment", "manager", "allSelectors"]
+}),
+$globals.HLSpotlightWidget);
+
+$core.addMethod(
+$core.method({
+selector: "renderContentOn:",
+protocol: 'rendering',
+fn: function (html){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1,$3,$5,$4,$2;
+$1=$recv(html)._input();
+$recv($1)._class_("spotlight");
+$recv($1)._placeholder_(self._ghostText());
+$2=$recv($1)._onKeyDown_($recv((function(event){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+$3=$recv($recv(event)._which()).__eq((13));
+if($core.assert($3)){
+$5=$recv(self["@input"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["asJQuery"]=1;
+//>>excludeEnd("ctx");
+$4=$recv($5)._val();
+return self._search_($4);
+};
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({event:event},$ctx1,1)});
+//>>excludeEnd("ctx");
+}))._yourself());
+self["@input"]=$2;
+$recv($recv(self["@input"])._asJQuery())._typeahead_($globals.HashedCollection._newFromPairs_(["source",self._inputCompletion()]));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"renderContentOn:",{html:html},$globals.HLSpotlightWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["html"],
+source: "renderContentOn: html\x0a\x09input := html input\x0a\x09\x09class: 'spotlight';\x0a\x09\x09placeholder: self ghostText;\x0a\x09\x09onKeyDown: [ :event | \x0a\x09\x09\x09event which = 13 ifTrue: [\x0a\x09\x09\x09\x09self search: input asJQuery val ] ]\x0a\x09\x09yourself.\x0a\x09\x09\x09\x0a\x09input asJQuery \x0a\x09\x09typeahead: #{ 'source' -> self inputCompletion }.",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["class:", "input", "placeholder:", "ghostText", "onKeyDown:", "yourself", "ifTrue:", "=", "which", "search:", "val", "asJQuery", "typeahead:", "inputCompletion"]
+}),
+$globals.HLSpotlightWidget);
+
+$core.addMethod(
+$core.method({
+selector: "search:",
+protocol: 'actions',
+fn: function (aString){
+var self=this;
+function $Finder(){return $globals.Finder||(typeof Finder=="undefined"?nil:Finder)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+$recv(aString)._ifNotEmpty_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return $recv($Finder())._findString_(aString);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"search:",{aString:aString},$globals.HLSpotlightWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["aString"],
+source: "search: aString\x0a\x09aString ifNotEmpty: [\x0a\x09\x09Finder findString: aString ]",
+referencedClasses: ["Finder"],
+//>>excludeEnd("ide");
+messageSends: ["ifNotEmpty:", "findString:"]
+}),
+$globals.HLSpotlightWidget);
+
+
+
 $core.addClass('HLTabWidget', $globals.HLWidget, ['widget', 'label', 'root'], 'Helios-Core');
 //>>excludeStart("ide", pragmas.excludeIdeData);
 $globals.HLTabWidget.comment="I am a widget specialized into building another widget as an Helios tab.\x0a\x0aI should not be used directly, `HLWidget class >> #openAsTab` should be used instead.\x0a\x0a## Example\x0a\x0a    HLWorkspace openAsTab";
@@ -9207,7 +9341,7 @@ messageSends: ["widget:", "new", "label:", "yourself"]
 $globals.HLTabWidget.klass);
 
 
-$core.addClass('HLTabsWidget', $globals.HLWidget, ['tabs', 'activeTab', 'history', 'selectionDisabled'], 'Helios-Core');
+$core.addClass('HLTabsWidget', $globals.HLWidget, ['tabs', 'activeTab', 'history', 'selectionDisabled', 'spotlight'], 'Helios-Core');
 $core.addMethod(
 $core.method({
 selector: "activate:",
@@ -9854,6 +9988,9 @@ return self._renderTabsOn_(html);
 }, function($ctx3) {$ctx3.fillBlock({},$ctx2,2)});
 //>>excludeEnd("ctx");
 }));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["with:"]=2;
+//>>excludeEnd("ctx");
 return $4;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
@@ -9862,6 +9999,7 @@ return $4;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["with:"]=1;
 //>>excludeEnd("ctx");
+$recv(html)._with_(self._spotlight());
 self._renderAddOn_(html);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -9870,10 +10008,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'navbar navbar-fixed-top';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09class: 'navbar-inner';\x0a\x09\x09\x09with: [ self renderTabsOn: html ] ].\x0a\x09\x09\x09\x0a\x09self renderAddOn: html",
+source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'navbar navbar-fixed-top';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09class: 'navbar-inner';\x0a\x09\x09\x09with: [ self renderTabsOn: html ] ].\x0a\x09\x09\x09\x0a\x09html with: self spotlight.\x0a\x09self renderAddOn: html",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "with:", "renderTabsOn:", "renderAddOn:"]
+messageSends: ["class:", "div", "with:", "renderTabsOn:", "spotlight", "renderAddOn:"]
 }),
 $globals.HLTabsWidget);
 
@@ -10169,6 +10307,38 @@ $globals.HLTabsWidget);
 
 $core.addMethod(
 $core.method({
+selector: "spotlight",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+function $HLSpotlightWidget(){return $globals.HLSpotlightWidget||(typeof HLSpotlightWidget=="undefined"?nil:HLSpotlightWidget)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $2,$1,$receiver;
+$2=self["@spotlight"];
+if(($receiver = $2) == null || $receiver.isNil){
+self["@spotlight"]=$recv($HLSpotlightWidget())._new();
+$1=self["@spotlight"];
+} else {
+$1=$2;
+};
+return $1;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"spotlight",{},$globals.HLTabsWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "spotlight\x0a\x09^ spotlight ifNil: [ spotlight := HLSpotlightWidget new ]",
+referencedClasses: ["HLSpotlightWidget"],
+//>>excludeEnd("ide");
+messageSends: ["ifNil:", "new"]
+}),
+$globals.HLTabsWidget);
+
+$core.addMethod(
+$core.method({
 selector: "tabWidth",
 protocol: 'accessing',
 fn: function (){
@@ -10177,7 +10347,7 @@ var self=this;
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv($recv($recv($recv(window)._asJQuery())._width()).__minus((90))).__slash($recv(self._tabs())._size());
+$1=$recv($recv($recv($recv(window)._asJQuery())._width()).__minus((250))).__slash($recv(self._tabs())._size());
 return $1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"tabWidth",{},$globals.HLTabsWidget)});
@@ -10185,7 +10355,7 @@ return $1;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "tabWidth\x0a\x09^ (window asJQuery width - 90) / self tabs size",
+source: "tabWidth\x0a\x09^ (window asJQuery width - 250) / self tabs size",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["/", "-", "width", "asJQuery", "size", "tabs"]

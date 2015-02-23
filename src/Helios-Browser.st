@@ -263,7 +263,7 @@ HLToolModel subclass: #HLBrowserModel
 
 showComment
 	^ showComment ifNil: [ 
-		showComment := 'helios.browser.showComment' settingValueIfAbsent: true ]
+		showComment := 'helios.browser.showComment' settingValueIfAbsent: false ]
 !
 
 showComment: aBoolean

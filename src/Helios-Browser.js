@@ -1313,7 +1313,7 @@ return $core.withContext(function($ctx1) {
 var $2,$1,$receiver;
 $2=self["@showComment"];
 if(($receiver = $2) == null || $receiver.isNil){
-self["@showComment"]="helios.browser.showComment"._settingValueIfAbsent_(true);
+self["@showComment"]="helios.browser.showComment"._settingValueIfAbsent_(false);
 $1=self["@showComment"];
 } else {
 $1=$2;
@@ -1325,7 +1325,7 @@ return $1;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "showComment\x0a\x09^ showComment ifNil: [ \x0a\x09\x09showComment := 'helios.browser.showComment' settingValueIfAbsent: true ]",
+source: "showComment\x0a\x09^ showComment ifNil: [ \x0a\x09\x09showComment := 'helios.browser.showComment' settingValueIfAbsent: false ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["ifNil:", "settingValueIfAbsent:"]

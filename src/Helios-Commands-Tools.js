@@ -2293,6 +2293,191 @@ messageSends: []
 $globals.HLRenameClassCommand.klass);
 
 
+$core.addClass('HLRenamePackageCommand', $globals.HLRenameCommand, [], 'Helios-Commands-Tools');
+$core.addMethod(
+$core.method({
+selector: "category",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+return "Packages";
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "category\x0a\x09^ 'Packages'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
+}),
+$globals.HLRenamePackageCommand);
+
+$core.addMethod(
+$core.method({
+selector: "defaultInput",
+protocol: 'defaults',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1;
+$1=$recv($recv(self._model())._selectedPackage())._name();
+return $1;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"defaultInput",{},$globals.HLRenamePackageCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "defaultInput\x0a\x09^ self model selectedPackage name",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["name", "selectedPackage", "model"]
+}),
+$globals.HLRenamePackageCommand);
+
+$core.addMethod(
+$core.method({
+selector: "displayLabel",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+return "Rename package to:";
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "displayLabel\x0a\x09^ 'Rename package to:'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
+}),
+$globals.HLRenamePackageCommand);
+
+$core.addMethod(
+$core.method({
+selector: "execute",
+protocol: 'executing',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+$recv(self._model())._renamePackageTo_(self._input());
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLRenamePackageCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "execute\x0a\x09self model renamePackageTo: self input",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["renamePackageTo:", "model", "input"]
+}),
+$globals.HLRenamePackageCommand);
+
+$core.addMethod(
+$core.method({
+selector: "isActive",
+protocol: 'testing',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1;
+$1=$recv($recv(self._model())._selectedPackage())._notNil();
+return $1;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"isActive",{},$globals.HLRenamePackageCommand)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "isActive\x0a\x09^ self model selectedPackage notNil",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["notNil", "selectedPackage", "model"]
+}),
+$globals.HLRenamePackageCommand);
+
+$core.addMethod(
+$core.method({
+selector: "isInputRequired",
+protocol: 'testing',
+fn: function (){
+var self=this;
+return true;
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "isInputRequired\x0a\x09^ true",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
+}),
+$globals.HLRenamePackageCommand);
+
+
+$core.addMethod(
+$core.method({
+selector: "key",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+return "p";
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "key\x0a\x09^ 'p'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
+}),
+$globals.HLRenamePackageCommand.klass);
+
+$core.addMethod(
+$core.method({
+selector: "label",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+return "Rename package";
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "label\x0a\x09^ 'Rename package'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
+}),
+$globals.HLRenamePackageCommand.klass);
+
+$core.addMethod(
+$core.method({
+selector: "menuLabel",
+protocol: 'accessing',
+fn: function (){
+var self=this;
+return "Rename package...";
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "menuLabel\x0a\x09^ 'Rename package...'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
+}),
+$globals.HLRenamePackageCommand.klass);
+
+
 $core.addClass('HLRenameProtocolCommand', $globals.HLRenameCommand, [], 'Helios-Commands-Tools');
 $core.addMethod(
 $core.method({

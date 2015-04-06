@@ -1390,6 +1390,38 @@ $globals.HLToolModel);
 
 $core.addMethod(
 $core.method({
+selector: "renamePackageTo:",
+protocol: 'commands actions',
+fn: function (aPackageName){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+self._withChangesDo_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return $recv(self._environment())._renamePackage_to_($recv(self._selectedPackage())._name(),aPackageName);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"renamePackageTo:",{aPackageName:aPackageName},$globals.HLToolModel)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["aPackageName"],
+source: "renamePackageTo: aPackageName\x0a\x09self withChangesDo: [\x0a\x09\x09self environment\x0a\x09\x09\x09renamePackage: self selectedPackage name\x0a\x09\x09\x09to: aPackageName ]",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["withChangesDo:", "renamePackage:to:", "environment", "name", "selectedPackage"]
+}),
+$globals.HLToolModel);
+
+$core.addMethod(
+$core.method({
 selector: "renameProtocolTo:",
 protocol: 'commands actions',
 fn: function (aString){
@@ -1709,7 +1741,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aPackage"],
-source: "selectedPackage: aPackage\x0a\x09selectedPackage = aPackage ifTrue: [ ^ self ].\x0a    \x0a\x09self withChangesDo: [\x0a\x09\x09selectedPackage := aPackage.\x0a\x09\x09self selectedClass: nil.\x0a\x09\x09self announcer announce: (HLPackageSelected on: aPackage) ]",
+source: "selectedPackage: aPackage\x0a\x09selectedPackage = aPackage ifTrue: [ ^ self ].\x0a\x0a\x09self withChangesDo: [\x0a\x09\x09selectedPackage := aPackage.\x0a\x09\x09self selectedClass: nil.\x0a\x09\x09self announcer announce: (HLPackageSelected on: aPackage) ]",
 referencedClasses: ["HLPackageSelected"],
 //>>excludeEnd("ide");
 messageSends: ["ifTrue:", "=", "withChangesDo:", "selectedClass:", "announce:", "announcer", "on:"]

@@ -213,7 +213,7 @@ selectedPackage
 
 selectedPackage: aPackage
 	selectedPackage = aPackage ifTrue: [ ^ self ].
-    
+
 	self withChangesDo: [
 		selectedPackage := aPackage.
 		self selectedClass: nil.
@@ -330,6 +330,13 @@ renameClassTo: aClassName
 		self environment 
 			renameClass: self selectedClass theNonMetaClass
 			to: aClassName ]
+!
+
+renamePackageTo: aPackageName
+	self withChangesDo: [
+		self environment
+			renamePackage: self selectedPackage name
+			to: aPackageName ]
 !
 
 renameProtocolTo: aString

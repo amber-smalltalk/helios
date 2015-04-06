@@ -660,6 +660,56 @@ menuLabel
 	^ 'Rename class...'
 ! !
 
+HLRenameCommand subclass: #HLRenamePackageCommand
+	instanceVariableNames: ''
+	package: 'Helios-Commands-Tools'!
+
+!HLRenamePackageCommand methodsFor: 'accessing'!
+
+category
+	^ 'Packages'
+!
+
+displayLabel
+	^ 'Rename package to:'
+! !
+
+!HLRenamePackageCommand methodsFor: 'defaults'!
+
+defaultInput
+	^ self model selectedPackage name
+! !
+
+!HLRenamePackageCommand methodsFor: 'executing'!
+
+execute
+	self model renamePackageTo: self input
+! !
+
+!HLRenamePackageCommand methodsFor: 'testing'!
+
+isActive
+	^ self model selectedPackage notNil
+!
+
+isInputRequired
+	^ true
+! !
+
+!HLRenamePackageCommand class methodsFor: 'accessing'!
+
+key
+	^ 'p'
+!
+
+label
+	^ 'Rename package'
+!
+
+menuLabel
+	^ 'Rename package...'
+! !
+
 HLRenameCommand subclass: #HLRenameProtocolCommand
 	instanceVariableNames: ''
 	package: 'Helios-Commands-Tools'!

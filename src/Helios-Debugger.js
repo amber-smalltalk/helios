@@ -1946,7 +1946,7 @@ $3=$recv(html)._button();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["button"]=1;
 //>>excludeEnd("ctx");
-$recv($3)._class_("btn restart");
+$recv($3)._class_("btn btn-default restart");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["class:"]=2;
 //>>excludeEnd("ctx");
@@ -1971,7 +1971,7 @@ $5=$recv(html)._button();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["button"]=2;
 //>>excludeEnd("ctx");
-$recv($5)._class_("btn where");
+$recv($5)._class_("btn btn-default where");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["class:"]=3;
 //>>excludeEnd("ctx");
@@ -1996,7 +1996,7 @@ $7=$recv(html)._button();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["button"]=3;
 //>>excludeEnd("ctx");
-$recv($7)._class_("btn stepOver");
+$recv($7)._class_("btn btn-default stepOver");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["class:"]=4;
 //>>excludeEnd("ctx");
@@ -2018,7 +2018,7 @@ $ctx2.sendIdx["onClick:"]=3;
 //>>excludeEnd("ctx");
 $8;
 $9=$recv(html)._button();
-$recv($9)._class_("btn proceed");
+$recv($9)._class_("btn btn-default proceed");
 $recv($9)._with_("Proceed");
 $10=$recv($9)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -2044,7 +2044,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderButtonsOn: html\x0a\x09html div \x0a\x09\x09class: 'debugger_bar'; \x0a\x09\x09with: [\x0a\x09\x09\x09html button \x0a\x09\x09\x09\x09class: 'btn restart';\x0a\x09\x09\x09\x09with: 'Restart';\x0a\x09\x09\x09\x09onClick: [ self restart ].\x0a\x09\x09\x09html button \x0a\x09\x09\x09\x09class: 'btn where';\x0a\x09\x09\x09\x09with: 'Where';\x0a\x09\x09\x09\x09onClick: [ self where ].\x0a\x09\x09\x09html button \x0a\x09\x09\x09\x09class: 'btn stepOver';\x0a\x09\x09\x09\x09with: 'Step over';\x0a\x09\x09\x09\x09onClick: [ self stepOver ].\x0a\x09\x09\x09html button \x0a\x09\x09\x09\x09class: 'btn proceed';\x0a\x09\x09\x09\x09with: 'Proceed';\x0a\x09\x09\x09\x09onClick: [ self proceed ] ]",
+source: "renderButtonsOn: html\x0a\x09html div \x0a\x09\x09class: 'debugger_bar'; \x0a\x09\x09with: [\x0a\x09\x09\x09html button \x0a\x09\x09\x09\x09class: 'btn btn-default restart';\x0a\x09\x09\x09\x09with: 'Restart';\x0a\x09\x09\x09\x09onClick: [ self restart ].\x0a\x09\x09\x09html button \x0a\x09\x09\x09\x09class: 'btn btn-default where';\x0a\x09\x09\x09\x09with: 'Where';\x0a\x09\x09\x09\x09onClick: [ self where ].\x0a\x09\x09\x09html button \x0a\x09\x09\x09\x09class: 'btn btn-default stepOver';\x0a\x09\x09\x09\x09with: 'Step over';\x0a\x09\x09\x09\x09onClick: [ self stepOver ].\x0a\x09\x09\x09html button \x0a\x09\x09\x09\x09class: 'btn btn-default proceed';\x0a\x09\x09\x09\x09with: 'Proceed';\x0a\x09\x09\x09\x09onClick: [ self proceed ] ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["class:", "div", "with:", "button", "onClick:", "restart", "where", "stepOver", "proceed"]

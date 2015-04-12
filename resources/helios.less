@@ -125,19 +125,32 @@ body[id="helios"] {
 		}
 	}
 
-	.btn, .btn-group > .btn, .btn-group > .dropdown-menu {
+	.btn.btn-default, .btn-group > .btn.btn-default, .btn-group > .dropdown-menu {
 		padding: 2px 8px;
 	}
 
 	.navbar-fixed-top {
 		font-size: 11px;
 		line-height: 16px;
-		
+		min-height: 24px;
+		margin: 0;
+		border: 0;
+
+		.navbar-header {
+			border: 0;
+			height: 100%;
+			width: 100%;
+			//border-bottom: 1px solid #666;
+			box-shadow: inset 0px 2px 2px #aaa;
+			background: #bababa;
+		}
+
 		ul {
 			width: 100%;
 		}
 	}
 
+	// content of top navigation tabs
 	.navbar-fixed-top a span,
 	.dialog .nav a span {
 		padding: 1px;
@@ -148,6 +161,18 @@ body[id="helios"] {
 		height: 22px;
 	}
 
+	.navbar-fixed-top i {
+		opacity: 0.4;
+		margin-right: 5px;
+		height: 12px;
+		margin-top: 0;
+	}
+
+	.navbar-fixed-top .active i {
+		opacity: 0.6;
+	}
+
+	// close icon on top navigation tabs
 	.navbar-fixed-top i.close {
 		width: 14px;
 		height: 16px;
@@ -158,6 +183,7 @@ body[id="helios"] {
 		margin-top: 4px;
 	}
 
+	// images for top navigation tabs
 	.navbar-fixed-top a,
 	.dialog .nav a {
 
@@ -185,21 +211,6 @@ body[id="helios"] {
 		}
 	}
 
-	.navbar-fixed-top .navbar-inner {
-		min-height: 24px;
-		border-bottom: 1px solid #666;
-		box-shadow: inset 0px 2px 2px #aaa;
-		background: #bababa;
-	}
-
-	.navbar .nav {
-		> li {
-			line-height: 16px;
-			text-align: center;
-			max-width: 300px;
-		}
-	}
-
 	.new_tab {
 		width: 20px;
 		height: 24px;
@@ -222,6 +233,8 @@ body[id="helios"] {
 			left: auto;
 			float: right;
 			right: 0;
+			margin: 0;
+			border: 0;
 		}
 	}
 
@@ -230,7 +243,19 @@ body[id="helios"] {
 		text-align: left;
 	}
 
-	.navbar .nav > li > a {
+	.navbar-nav {
+		border: 0;
+		> li {
+			line-height: 16px;
+			text-align: center;
+			max-width: 300px;
+		}
+		.ui-sortable-handle a {
+			border: 0;
+		}
+	}
+
+	.navbar-nav > li > a {
 		line-height: 22px;
 		padding: 0px 8px;
 		font-size: 11px;
@@ -248,7 +273,7 @@ body[id="helios"] {
 		background: transparent;
 	}
 
-	.navbar .nav > li > a:hover {
+	.navbar-nav > li > a:hover {
 		color: #333;
 		background-image: linear-gradient(top, #cfcfcf, #c0c0c0);
 		background-image: -webkit-linear-gradient(top, #cfcfcf, #c0c0c0);
@@ -258,10 +283,10 @@ body[id="helios"] {
 		box-shadow: 0 0 0;
 	}
 
-	.navbar .nav > .active > a,
-	.navbar .nav > .active > a:hover,
-	.navbar .nav > .active > a:focus,
-	.navbar .nav .ui-sortable-helper a {
+	.navbar-nav > .active > a,
+	.navbar-nav > .active > a:hover,
+	.navbar-nav > .active > a:focus,
+	.navbar-nav .ui-sortable-handle a {
 		color: #444;
 		background-image: linear-gradient(top, #dfdfdf, #d0d0d0);
 		background-image: -webkit-linear-gradient(top, #dfdfdf, #d0d0d0);
@@ -271,21 +296,11 @@ body[id="helios"] {
 		box-shadow: 0 0 0;
 	}
 
-	.navbar .nav .ui-sortable-helper a {
+	.navbar-nav .ui-sortable-handle a {
 		border-left: 1px solid #777;
 	}
 
-	.navbar-fixed-top i {
-		opacity: 0.4;
-		margin-right: 5px;
-		height: 12px;
-		margin-top: 0;
-	}
-
-	.navbar-fixed-top .active i {
-		opacity: 0.6;
-	}
-
+	// package/class/category/methods lists
 	.nav-pills.nav-stacked > li > a {
 		border-radius: 0;
 		-webkit-border-radius: 0;
@@ -307,10 +322,15 @@ body[id="helios"] {
 		margin: 3px;
 	}
 
+	// this is the spotlight searchbox
+	.twitter-typeahead {
+		float: right;
+		right: 26px;
+	}
+
         .spotlight {
 		position: fixed;
 		top: 1px;
-		right: 26px;
 		z-index: 1100;
 		border: 1px solid #999;
 		font-size: 11px;
@@ -339,7 +359,6 @@ body[id="helios"] {
 	.nav-pills > .active > a:hover,
 	.dropdown-menu li > a:hover,
 	.dropdown-menu li > a:focus,
-	.dropdown-submenu:hover > a,
 	.dropdown-menu .active > a,
 	.dropdown-menu .active > a:hover,
 	.CodeMirror-hint-active {
@@ -598,6 +617,7 @@ body[id="helios"] {
 
 	.tool_container .list-label .btn-group > .dropdown-menu {
 		padding: 0;
+		margin: 0;
 		font-size: 11px;
 	}
 
@@ -605,7 +625,7 @@ body[id="helios"] {
 		margin-top: 1px;
 	}
 
-	.tool_container .list-label .cog .btn.dropdown-toggle {
+	.tool_container .list-label .cog .btn.btn-default.dropdown-toggle {
 		padding: 0;
 		margin: 0;
 		line-height: 12px;
@@ -652,7 +672,8 @@ body[id="helios"] {
 		vertical-align: top;
 		text-shadow: #ddd 0px 1px 0px;
 		color: #222;
-
+		margin-top: 0px;
+		margin-bottom: 0px;
 	}
 
 	.tool_container .panes .pane .pane_actions label input {
@@ -662,7 +683,8 @@ body[id="helios"] {
 		margin-right: 5px;
 	}
 
-	.tool_container .panes .pane .pane_actions .btn {
+	.tool_container .panes .pane .pane_actions .btn-group .btn.btn-default,
+	.pane_actions.form-group .btn.btn-default {
 		background: transparent;
 		border: 0;
 		font-size: 11px;
@@ -675,15 +697,18 @@ body[id="helios"] {
 		/* min-width: 50px; */
 	}
 
-	.tool_container .panes .pane .pane_actions .btn:hover {
+	.tool_container .panes .pane .pane_actions .btn.btn-default:hover,
+	.pane_actions.form-group .btn.btn-default:hover {
 		background-color: #bbb;
 	}
 
-	.tool_container .panes .pane .pane_actions .btn-group .btn:hover {
+	.tool_container .panes .pane .pane_actions .btn-group .btn.btn-default:hover,
+	.pane_actions.form-group .btn.btn-default:hover {
 		background-color: transparent;
 	}
 
-	.tool_container .panes .pane .pane_actions .btn-group .btn.active {
+	.tool_container .panes .pane .pane_actions .btn-group .btn.btn-default.active,
+	.pane_actions.form-group .btn.btn-default {
 		text-shadow: #ddd 0px 1px 0px;
 		color: #222;
 		background: #bbb;
@@ -736,7 +761,7 @@ body[id="helios"] {
 			background: #eee;
 		}
 
-		.label {
+		.label.label-default {
 			padding: 1px 4px;
 			font-family: Menlo, Monaco, "Lucida Console", Courier, monospace;
 			background: transparent;
@@ -791,7 +816,8 @@ body[id="helios"] {
 			line-height: 1em;
 		}
 
-		.error .help-inline,
+		// similar but not equivalent
+		.error .help-block,
 		.error input {
 			color: #B91010;
 			font-weight: bold;
@@ -895,8 +921,7 @@ body[id="helios"] {
 		}
 
 		.hl_widget {
-
-			.form-actions {
+			.form-group {
 				padding: 0;
 				border: 0;
 			}
@@ -939,7 +964,7 @@ body[id="helios"] {
 		.progress {
 			height: 5px;
 
-			.bar {
+			.progress-bar {
 				background-color: #e9eaf5;
 				background-image: -webkit-linear-gradient(top, #B1BDD5, #8999b8);
 				background-image: -moz-linear-gradient(top, #B1BDD5, #8999b8);

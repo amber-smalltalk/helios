@@ -703,17 +703,18 @@ renderButtonsOn: html
 	
 	html div 
         class: 'btn-group';
-		with: [ 
+		at: 'role' put: 'group';
+		with: [
            	html button 
                 class: (String streamContents: [ :str |
-                	str nextPutAll: 'btn'.
+                	str nextPutAll: 'btn btn-default'.
                     self showInstance ifTrue: [ 
                     	str nextPutAll: ' active' ] ]);
   				with: 'Instance';
                 onClick: [ self showInstance: true ].
   			html button
   				class: (String streamContents: [ :str |
-                	str nextPutAll: 'btn'.
+                	str nextPutAll: 'btn btn-default'.
                     self showClass ifTrue: [ 
                     	str nextPutAll: ' active' ] ]);
   				with: 'Class';

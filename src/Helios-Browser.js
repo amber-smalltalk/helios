@@ -2614,6 +2614,10 @@ $recv($1)._class_("btn-group");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["class:"]=1;
 //>>excludeEnd("ctx");
+$recv($1)._at_put_("role","group");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["at:put:"]=1;
+//>>excludeEnd("ctx");
 $2=$recv($1)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
@@ -2627,7 +2631,7 @@ $5=$recv($String())._streamContents_((function(str){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-$recv(str)._nextPutAll_("btn");
+$recv(str)._nextPutAll_("btn btn-default");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["nextPutAll:"]=1;
 //>>excludeEnd("ctx");
@@ -2674,7 +2678,7 @@ $recv($8)._class_($recv($String())._streamContents_((function(str){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-$recv(str)._nextPutAll_("btn");
+$recv(str)._nextPutAll_("btn btn-default");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["nextPutAll:"]=3;
 //>>excludeEnd("ctx");
@@ -2751,10 +2755,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderButtonsOn: html\x0a\x09| checkbox |\x0a\x09\x0a\x09html div \x0a        class: 'btn-group';\x0a\x09\x09with: [ \x0a           \x09html button \x0a                class: (String streamContents: [ :str |\x0a                \x09str nextPutAll: 'btn'.\x0a                    self showInstance ifTrue: [ \x0a                    \x09str nextPutAll: ' active' ] ]);\x0a  \x09\x09\x09\x09with: 'Instance';\x0a                onClick: [ self showInstance: true ].\x0a  \x09\x09\x09html button\x0a  \x09\x09\x09\x09class: (String streamContents: [ :str |\x0a                \x09str nextPutAll: 'btn'.\x0a                    self showClass ifTrue: [ \x0a                    \x09str nextPutAll: ' active' ] ]);\x0a  \x09\x09\x09\x09with: 'Class';\x0a\x09\x09\x09\x09onClick: [ self showInstance: false ] ].\x0a\x09\x09html label \x0a\x09\x09\x09class: 'checkbox';\x0a\x09\x09\x09with: [\x0a\x09\x09\x09\x09checkbox := html input\x0a\x09\x09\x09\x09\x09type: 'checkbox';\x0a\x09\x09\x09\x09\x09onClick: [ self toggleShowComment ].\x0a\x09\x09\x09\x09html with: 'Doc' ].\x0a\x09\x09\x09\x09\x0a\x09\x09self showComment ifTrue: [\x0a\x09\x09\x09checkbox at: 'checked' put: 'checked' ]",
+source: "renderButtonsOn: html\x0a\x09| checkbox |\x0a\x09\x0a\x09html div \x0a        class: 'btn-group';\x0a\x09\x09at: 'role' put: 'group';\x0a\x09\x09with: [\x0a           \x09html button \x0a                class: (String streamContents: [ :str |\x0a                \x09str nextPutAll: 'btn btn-default'.\x0a                    self showInstance ifTrue: [ \x0a                    \x09str nextPutAll: ' active' ] ]);\x0a  \x09\x09\x09\x09with: 'Instance';\x0a                onClick: [ self showInstance: true ].\x0a  \x09\x09\x09html button\x0a  \x09\x09\x09\x09class: (String streamContents: [ :str |\x0a                \x09str nextPutAll: 'btn btn-default'.\x0a                    self showClass ifTrue: [ \x0a                    \x09str nextPutAll: ' active' ] ]);\x0a  \x09\x09\x09\x09with: 'Class';\x0a\x09\x09\x09\x09onClick: [ self showInstance: false ] ].\x0a\x09\x09html label \x0a\x09\x09\x09class: 'checkbox';\x0a\x09\x09\x09with: [\x0a\x09\x09\x09\x09checkbox := html input\x0a\x09\x09\x09\x09\x09type: 'checkbox';\x0a\x09\x09\x09\x09\x09onClick: [ self toggleShowComment ].\x0a\x09\x09\x09\x09html with: 'Doc' ].\x0a\x09\x09\x09\x09\x0a\x09\x09self showComment ifTrue: [\x0a\x09\x09\x09checkbox at: 'checked' put: 'checked' ]",
 referencedClasses: ["String"],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "with:", "button", "streamContents:", "nextPutAll:", "ifTrue:", "showInstance", "onClick:", "showInstance:", "showClass", "label", "type:", "input", "toggleShowComment", "showComment", "at:put:"]
+messageSends: ["class:", "div", "at:put:", "with:", "button", "streamContents:", "nextPutAll:", "ifTrue:", "showInstance", "onClick:", "showInstance:", "showClass", "label", "type:", "input", "toggleShowComment", "showComment"]
 }),
 $globals.HLClassesListWidget);
 

@@ -184,7 +184,7 @@ selectItem: anObject
 
 renderButtonsOn: html
 	diveButton := html button 
-		class: 'btn';
+		class: 'btn btn-default';
 		with: 'Dive'; 
 		onClick: [ self dive ]
 !

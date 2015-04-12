@@ -8,11 +8,14 @@ define([
     'css!codemirror/theme/ambiance',
     'css!codemirror/lib/codemirror',
     'css!codemirror/addon/hint/show-hint',
+    'jquery',
+    'typeahead',
     'jquery-ui',
-    'bootstrap2.3.2/js/bootstrap',
+    'bootstrap/dist/js/bootstrap',
+    'css!bootstrap/dist/css/bootstrap',
     './showdown',
     './all',
     'css!./resources/helios',
-	'css!./resources/helios-niflheim',
+    'css!./resources/helios-niflheim',
     'css!./resources/niflheim'
 ], function (amber) { return amber; });

@@ -1,0 +1,11 @@
+{
+    "paths": {
+        "typeahead": "dist/typeahead.jquery"
+    },
+    "shim": {
+        "typeahead": {
+            "deps": [ "jquery" ],
+            "exports": "jQuery.fn.typeahead"
+        }
+    }
+}

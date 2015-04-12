@@ -755,7 +755,7 @@ activeItemCssClass
 !
 
 buttonsDivCssClass
-	^ 'pane_actions form-actions'
+	^ 'pane_actions form-group'
 !
 
 cssClassForItem: anObject
@@ -1079,9 +1079,9 @@ renderMenuOn: html
 		class: 'btn-group cog';
 		with: [
 			html a
-				class: 'btn dropdown-toggle';
+				class: 'btn btn-default dropdown-toggle';
 				at: 'data-toggle' put: 'dropdown';
-				with: [ (html tag: 'i') class: 'icon-chevron-down' ].
+				with: [ (html tag: 'i') class: 'glyphicon glyphicon-chevron-down' ].
 		html ul 
 			class: 'dropdown-menu pull-right';
 			with: [ 
@@ -2267,7 +2267,7 @@ removeTabForWidget: aWidget
 !
 
 updateTabsOrder
-	tabs := '.main-tabs li' asJQuery toArray 
+	tabs := '.nav-tabs li' asJQuery toArray
 		collect: [ :each | each at: 'tab-data' ]
 ! !
 
@@ -2313,7 +2313,8 @@ renderContentOn: html
 	html div 
 		class: 'navbar navbar-fixed-top';
 		with: [ html div 
-			class: 'navbar-inner';
+			class: 'navbar-header';
+			at: 'role' put: 'tabpanel';
 			with: [ self renderTabsOn: html ] ].
 			
 	html with: self spotlight.
@@ -2333,7 +2334,8 @@ renderTab: aTab on: html
 				html span 
 					class: aTab cssClass;
 					title: aTab label;
-					with: aTab label ] ];
+					with: aTab label ];
+			at: 'role' put: 'tab'];
 		onClick: [ aTab activate ].
 	
 	(li asJQuery get: 0) at: 'tab-data' put: aTab
@@ -2342,7 +2344,8 @@ renderTab: aTab on: html
 renderTabsOn: html
 	| ul |
 	ul := html ul 
-		class: 'nav main-tabs';
+		class: 'nav navbar-nav nav-tabs';
+		at: 'role' put: 'tablist';
 		with: [ 
         	self tabs do: [ :each |
 				self renderTab: each on: html ] ].

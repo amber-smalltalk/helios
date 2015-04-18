@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "amber": ">=0.14.14",
+    "amber-contrib-web": ">=0.1.0",
     "jquery": ">=1.7.0",
     "jquery-ui": ">=1.9.2",
     "bootstrap2.3.2": "^2.3.2",

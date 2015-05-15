@@ -8,7 +8,6 @@ define([
     'css!codemirror/theme/ambiance',
     'css!codemirror/lib/codemirror',
     'css!codemirror/addon/hint/show-hint',
-    'jquery',
     'typeahead',
     'jquery-ui',
     'bootstrap/dist/js/bootstrap',

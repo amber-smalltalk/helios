@@ -16,9 +16,10 @@ module.exports = function(grunt) {
   var path = require('path');
 
   // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-execute');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-execute');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('amber-dev');
 
   // Default task.
@@ -90,6 +91,16 @@ module.exports = function(grunt) {
 
     clean: {
       test_runner: ['test_runner.js']
+    },
+
+    watch: {
+      less: {
+        files: ['resources/*.less'],
+        tasks: ['less'],
+        options: {
+          spawn: false
+        }
+      }
     }
   });
 

@@ -2490,7 +2490,7 @@ $recv($1)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-return $recv($recv(html)._tag_("i"))._class_("icon-remove");
+return $recv($recv(html)._tag_("i"))._class_("glyphicon glyphicon-remove");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");

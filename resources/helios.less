@@ -132,17 +132,28 @@ body[id="helios"] {
 	.navbar-fixed-top {
 		font-size: 11px;
 		line-height: 16px;
-		min-height: 24px;
+		min-height: 25px;
 		margin: 0;
 		border: 0;
 
 		.navbar-header {
 			border: 0;
-			height: 100%;
+			height: 25px;
 			width: 100%;
-			//border-bottom: 1px solid #666;
+			border-bottom: 1px solid #666;
 			box-shadow: inset 0px 2px 2px #aaa;
 			background: #bababa;
+			.nav-tabs {
+				height: 24px;
+			}
+			.nav-tabs > li > a {
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				border-radius: 0;
+				//border: 0;
+				margin: 0;
+				height: 24px;
+			}
 		}
 
 		ul {
@@ -251,7 +262,9 @@ body[id="helios"] {
 			max-width: 300px;
 		}
 		.ui-sortable-handle a {
+			height: 24px;
 			border: 0;
+			border-left: 1px solid #777;
 		}
 	}
 
@@ -273,6 +286,17 @@ body[id="helios"] {
 		background: transparent;
 	}
 
+	.navbar-nav .ui-sortable-handle.inactive a {
+		color: #222;
+		background-image: linear-gradient(top, #bfbfbf, #b0b0b0);
+		background-image: -webkit-linear-gradient(top, #bfbfbf, #b0b0b0);
+		background-image: -moz-linear-gradient(top, #bfbfbf, #b0b0b0);
+		background-image: -o-linear-gradient(top, #bfbfbf, #b0b0b0);
+		text-shadow: 0 1px 0 #ddd;
+		box-shadow: 0 0 0;
+	}
+
+	.navbar-nav > .inactive > a:hover,
 	.navbar-nav > li > a:hover {
 		color: #333;
 		background-image: linear-gradient(top, #cfcfcf, #c0c0c0);
@@ -296,7 +320,7 @@ body[id="helios"] {
 		box-shadow: 0 0 0;
 	}
 
-	.navbar-nav .ui-sortable-handle a {
+	.nav.navbar-nav .ui-sortable-handle a {
 		border-left: 1px solid #777;
 	}
 
@@ -747,6 +771,7 @@ body[id="helios"] {
 			padding: 0;
 			display: inline-block;
 			width: 50%;
+			height: 20px;
 
 			strong {
 				display: inline-block;
@@ -761,9 +786,11 @@ body[id="helios"] {
 			background: #eee;
 		}
 
-		.label.label-default {
+		.label {
 			padding: 1px 4px;
 			font-family: Menlo, Monaco, "Lucida Console", Courier, monospace;
+			font-size: 100%;
+			line-height: 14px;
 			background: transparent;
 			color: #0E4561;
 			text-shadow: none;

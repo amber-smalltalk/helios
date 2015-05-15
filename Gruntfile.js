@@ -17,11 +17,12 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-execute');
   grunt.loadNpmTasks('amber-dev');
 
   // Default task.
-  grunt.registerTask('default', ['amberc:all']);
+  grunt.registerTask('default', ['less', 'amberc:all']);
   grunt.registerTask('test', ['amberc:test_runner', 'execute:test_runner', 'clean:test_runner']);
   grunt.registerTask('devel', ['amdconfig:helios']);
 
@@ -35,11 +36,18 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // task configuration
+    less: {
+      development: {
+        files: {
+          'resources/helios.css': 'resources/helios.less'
+        }
+      }
+    },
+
     amberc: {
       options: {
         amber_dir: findAmberPath(['../..', 'bower_components/amber']),
         library_dirs: ['src'],
-        closure_jar: ''
       },
       all: {
         output_dir : 'src',

@@ -102,14 +102,35 @@ body[id="helios"] .buttons_bar .button {
   font-size: 12px;
   min-width: 0;
 }
-body[id="helios"] .btn,
-body[id="helios"] .btn-group > .btn,
+body[id="helios"] .btn.btn-default,
+body[id="helios"] .btn-group > .btn.btn-default,
 body[id="helios"] .btn-group > .dropdown-menu {
   padding: 2px 8px;
 }
 body[id="helios"] .navbar-fixed-top {
   font-size: 11px;
   line-height: 16px;
+  min-height: 25px;
+  margin: 0;
+  border: 0;
+}
+body[id="helios"] .navbar-fixed-top .navbar-header {
+  border: 0;
+  height: 25px;
+  width: 100%;
+  border-bottom: 1px solid #666;
+  box-shadow: inset 0px 2px 2px #aaa;
+  background: #bababa;
+}
+body[id="helios"] .navbar-fixed-top .navbar-header .nav-tabs {
+  height: 24px;
+}
+body[id="helios"] .navbar-fixed-top .navbar-header .nav-tabs > li > a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin: 0;
+  height: 24px;
 }
 body[id="helios"] .navbar-fixed-top ul {
   width: 100%;
@@ -122,6 +143,15 @@ body[id="helios"] .dialog .nav a span {
   background-repeat: no-repeat;
   background-position: 0px center;
   height: 22px;
+}
+body[id="helios"] .navbar-fixed-top i {
+  opacity: 0.4;
+  margin-right: 5px;
+  height: 12px;
+  margin-top: 0;
+}
+body[id="helios"] .navbar-fixed-top .active i {
+  opacity: 0.6;
 }
 body[id="helios"] .navbar-fixed-top i.close {
   width: 14px;
@@ -156,17 +186,6 @@ body[id="helios"] .navbar-fixed-top a span.inspector,
 body[id="helios"] .dialog .nav a span.inspector {
   background-image: url('inspector.png');
 }
-body[id="helios"] .navbar-fixed-top .navbar-inner {
-  min-height: 24px;
-  border-bottom: 1px solid #666;
-  box-shadow: inset 0px 2px 2px #aaa;
-  background: #bababa;
-}
-body[id="helios"] .navbar .nav > li {
-  line-height: 16px;
-  text-align: center;
-  max-width: 300px;
-}
 body[id="helios"] .new_tab {
   width: 20px;
   height: 24px;
@@ -187,12 +206,27 @@ body[id="helios"] .new_tab .dropdown-menu {
   left: auto;
   float: right;
   right: 0;
+  margin: 0;
+  border: 0;
 }
 body[id="helios"] .dropdown-menu {
   min-width: 0;
   text-align: left;
 }
-body[id="helios"] .navbar .nav > li > a {
+body[id="helios"] .navbar-nav {
+  border: 0;
+}
+body[id="helios"] .navbar-nav > li {
+  line-height: 16px;
+  text-align: center;
+  max-width: 300px;
+}
+body[id="helios"] .navbar-nav .ui-sortable-handle a {
+  height: 24px;
+  border: 0;
+  border-left: 1px solid #777;
+}
+body[id="helios"] .navbar-nav > li > a {
   line-height: 22px;
   padding: 0px 8px;
   font-size: 11px;
@@ -200,14 +234,24 @@ body[id="helios"] .navbar .nav > li > a {
   text-shadow: #ddd 0px 1px 0px;
   color: #222;
 }
-body[id="helios"] .navbar .nav > li > a span {
+body[id="helios"] .navbar-nav > li > a span {
   display: block;
   overflow: hidden;
 }
 body[id="helios"] .nav > li > a:hover {
   background: transparent;
 }
-body[id="helios"] .navbar .nav > li > a:hover {
+body[id="helios"] .navbar-nav .ui-sortable-handle.inactive a {
+  color: #222;
+  background-image: linear-gradient(top, #bfbfbf, #b0b0b0);
+  background-image: -webkit-linear-gradient(top, #bfbfbf, #b0b0b0);
+  background-image: -moz-linear-gradient(top, #bfbfbf, #b0b0b0);
+  background-image: -o-linear-gradient(top, #bfbfbf, #b0b0b0);
+  text-shadow: 0 1px 0 #ddd;
+  box-shadow: 0 0 0;
+}
+body[id="helios"] .navbar-nav > .inactive > a:hover,
+body[id="helios"] .navbar-nav > li > a:hover {
   color: #333;
   background-image: linear-gradient(top, #cfcfcf, #c0c0c0);
   background-image: -webkit-linear-gradient(top, #cfcfcf, #c0c0c0);
@@ -216,10 +260,10 @@ body[id="helios"] .navbar .nav > li > a:hover {
   text-shadow: 0 1px 0 #ddd;
   box-shadow: 0 0 0;
 }
-body[id="helios"] .navbar .nav > .active > a,
-body[id="helios"] .navbar .nav > .active > a:hover,
-body[id="helios"] .navbar .nav > .active > a:focus,
-body[id="helios"] .navbar .nav .ui-sortable-helper a {
+body[id="helios"] .navbar-nav > .active > a,
+body[id="helios"] .navbar-nav > .active > a:hover,
+body[id="helios"] .navbar-nav > .active > a:focus,
+body[id="helios"] .navbar-nav .ui-sortable-handle a {
   color: #444;
   background-image: linear-gradient(top, #dfdfdf, #d0d0d0);
   background-image: -webkit-linear-gradient(top, #dfdfdf, #d0d0d0);
@@ -228,17 +272,8 @@ body[id="helios"] .navbar .nav .ui-sortable-helper a {
   text-shadow: 0 1px 0 #ddd;
   box-shadow: 0 0 0;
 }
-body[id="helios"] .navbar .nav .ui-sortable-helper a {
+body[id="helios"] .nav.navbar-nav .ui-sortable-handle a {
   border-left: 1px solid #777;
-}
-body[id="helios"] .navbar-fixed-top i {
-  opacity: 0.4;
-  margin-right: 5px;
-  height: 12px;
-  margin-top: 0;
-}
-body[id="helios"] .navbar-fixed-top .active i {
-  opacity: 0.6;
 }
 body[id="helios"] .nav-pills.nav-stacked > li > a {
   border-radius: 0;
@@ -259,10 +294,18 @@ body[id="helios"] .dropdown-menu {
   padding: 0;
   margin: 3px;
 }
-body[id="helios"] .spotlight {
-  position: fixed;
+body[id="helios"] .twitter-typeahead {
+  float: right;
   top: 1px;
   right: 26px;
+  height: 22px;
+}
+body[id="helios"] .typeahead {
+  position: fixed;
+  top: 0px;
+  float: right;
+  right: 0px;
+  height: 100%;
   z-index: 1100;
   border: 1px solid #999;
   font-size: 11px;
@@ -271,9 +314,26 @@ body[id="helios"] .spotlight {
   width: 200px;
   box-shadow: inset 0 0 2px 0 #ddd;
 }
-body[id="helios"] .spotlight:focus {
+body[id="helios"] .typeahead:focus {
   box-shadow: inset 0 0 2px 0 #08c;
   border-color: #08c;
+}
+body[id="helios"] .tt-dropdown-menu {
+  background-color: #ddd;
+  width: 300px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+body[id="helios"] .tt-hint {
+  color: #999;
+}
+body[id="helios"] .tt-suggestion p {
+  margin: 2px;
+  font-size: 11px;
+}
+body[id="helios"] .tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
 }
 body[id="helios"] .nav-pills > .active > a {
   background-color: #ddd;
@@ -287,7 +347,6 @@ body[id="helios"] .focused .nav-pills > .active > a,
 body[id="helios"] .nav-pills > .active > a:hover,
 body[id="helios"] .dropdown-menu li > a:hover,
 body[id="helios"] .dropdown-menu li > a:focus,
-body[id="helios"] .dropdown-submenu:hover > a,
 body[id="helios"] .dropdown-menu .active > a,
 body[id="helios"] .dropdown-menu .active > a:hover,
 body[id="helios"] .CodeMirror-hint-active {
@@ -513,12 +572,13 @@ body[id="helios"] .tool_container .list-label .btn-group.open .dropdown-toggle {
 }
 body[id="helios"] .tool_container .list-label .btn-group > .dropdown-menu {
   padding: 0;
+  margin: 0;
   font-size: 11px;
 }
 body[id="helios"] .tool_container .list-label .btn-group.cog i {
   margin-top: 1px;
 }
-body[id="helios"] .tool_container .list-label .cog .btn.dropdown-toggle {
+body[id="helios"] .tool_container .list-label .cog .btn.btn-default.dropdown-toggle {
   padding: 0;
   margin: 0;
   line-height: 12px;
@@ -561,6 +621,8 @@ body[id="helios"] .tool_container .panes .pane .pane_actions label {
   vertical-align: top;
   text-shadow: #ddd 0px 1px 0px;
   color: #222;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 body[id="helios"] .tool_container .panes .pane .pane_actions label input {
   float: none;
@@ -568,7 +630,8 @@ body[id="helios"] .tool_container .panes .pane .pane_actions label input {
   margin-top: 2px;
   margin-right: 5px;
 }
-body[id="helios"] .tool_container .panes .pane .pane_actions .btn {
+body[id="helios"] .tool_container .panes .pane .pane_actions .btn-group .btn.btn-default,
+body[id="helios"] .pane_actions.form-group .btn.btn-default {
   background: transparent;
   border: 0;
   font-size: 11px;
@@ -580,13 +643,16 @@ body[id="helios"] .tool_container .panes .pane .pane_actions .btn {
   vertical-align: top;
   /* min-width: 50px; */
 }
-body[id="helios"] .tool_container .panes .pane .pane_actions .btn:hover {
+body[id="helios"] .tool_container .panes .pane .pane_actions .btn.btn-default:hover,
+body[id="helios"] .pane_actions.form-group .btn.btn-default:hover {
   background-color: #bbb;
 }
-body[id="helios"] .tool_container .panes .pane .pane_actions .btn-group .btn:hover {
+body[id="helios"] .tool_container .panes .pane .pane_actions .btn-group .btn.btn-default:hover,
+body[id="helios"] .pane_actions.form-group .btn.btn-default:hover {
   background-color: transparent;
 }
-body[id="helios"] .tool_container .panes .pane .pane_actions .btn-group .btn.active {
+body[id="helios"] .tool_container .panes .pane .pane_actions .btn-group .btn.btn-default.active,
+body[id="helios"] .pane_actions.form-group .btn.btn-default {
   text-shadow: #ddd 0px 1px 0px;
   color: #222;
   background: #bbb;
@@ -621,6 +687,7 @@ body[id="helios"] .key_helper .command {
   padding: 0;
   display: inline-block;
   width: 50%;
+  height: 20px;
 }
 body[id="helios"] .key_helper .command strong {
   display: inline-block;
@@ -635,6 +702,8 @@ body[id="helios"] .key_helper #binding-helper-main {
 body[id="helios"] .key_helper .label {
   padding: 1px 4px;
   font-family: Menlo, Monaco, "Lucida Console", Courier, monospace;
+  font-size: 100%;
+  line-height: 14px;
   background: transparent;
   color: #0E4561;
   text-shadow: none;
@@ -681,7 +750,7 @@ body[id="helios"] .key_helper input {
   margin: 2px 4px;
   line-height: 1em;
 }
-body[id="helios"] .key_helper .error .help-inline,
+body[id="helios"] .key_helper .error .help-block,
 body[id="helios"] .key_helper .error input {
   color: #B91010;
   font-weight: bold;
@@ -770,8 +839,8 @@ body[id="helios"] .confirmation .head,
 body[id="helios"] .dialog .head {
   display: block;
 }
-body[id="helios"] .confirmation .hl_widget .form-actions,
-body[id="helios"] .dialog .hl_widget .form-actions {
+body[id="helios"] .confirmation .hl_widget .form-group,
+body[id="helios"] .dialog .hl_widget .form-group {
   padding: 0;
   border: 0;
 }
@@ -813,8 +882,8 @@ body[id="helios"] .confirmation .progress,
 body[id="helios"] .dialog .progress {
   height: 5px;
 }
-body[id="helios"] .confirmation .progress .bar,
-body[id="helios"] .dialog .progress .bar {
+body[id="helios"] .confirmation .progress .progress-bar,
+body[id="helios"] .dialog .progress .progress-bar {
   background-color: #e9eaf5;
   background-image: -webkit-linear-gradient(top, #b1bdd5, #8999b8);
   background-image: -moz-linear-gradient(top, #b1bdd5, #8999b8);

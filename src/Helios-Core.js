@@ -3162,12 +3162,12 @@ selector: "buttonsDivCssClass",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-return "pane_actions form-actions";
+return "pane_actions form-group";
 
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "buttonsDivCssClass\x0a\x09^ 'pane_actions form-actions'",
+source: "buttonsDivCssClass\x0a\x09^ 'pane_actions form-group'",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []
@@ -4634,7 +4634,7 @@ $4=$recv(html)._a();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["a"]=1;
 //>>excludeEnd("ctx");
-$recv($4)._class_("btn dropdown-toggle");
+$recv($4)._class_("btn btn-default dropdown-toggle");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["class:"]=2;
 //>>excludeEnd("ctx");
@@ -4643,7 +4643,7 @@ $5=$recv($4)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-return $recv($recv(html)._tag_("i"))._class_("icon-chevron-down");
+return $recv($recv(html)._tag_("i"))._class_("glyphicon glyphicon-chevron-down");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["class:"]=3;
 //>>excludeEnd("ctx");
@@ -4714,7 +4714,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderMenuOn: html\x0a\x09| commands |\x0a\x09\x0a\x09commands := self menuCommands.\x0a\x09commands isEmpty ifTrue: [ ^ self ].\x0a\x09\x0a\x09html div \x0a\x09\x09class: 'btn-group cog';\x0a\x09\x09with: [\x0a\x09\x09\x09html a\x0a\x09\x09\x09\x09class: 'btn dropdown-toggle';\x0a\x09\x09\x09\x09at: 'data-toggle' put: 'dropdown';\x0a\x09\x09\x09\x09with: [ (html tag: 'i') class: 'icon-chevron-down' ].\x0a\x09\x09html ul \x0a\x09\x09\x09class: 'dropdown-menu pull-right';\x0a\x09\x09\x09with: [ \x0a\x09\x09\x09\x09self menuCommands do: [ :each | \x0a\x09\x09\x09\x09\x09html li with: [ html a \x0a\x09\x09\x09\x09\x09\x09with: each menuLabel;\x0a\x09\x09\x09\x09\x09\x09onClick: [ self execute: each ] ] ] ] ]",
+source: "renderMenuOn: html\x0a\x09| commands |\x0a\x09\x0a\x09commands := self menuCommands.\x0a\x09commands isEmpty ifTrue: [ ^ self ].\x0a\x09\x0a\x09html div \x0a\x09\x09class: 'btn-group cog';\x0a\x09\x09with: [\x0a\x09\x09\x09html a\x0a\x09\x09\x09\x09class: 'btn btn-default dropdown-toggle';\x0a\x09\x09\x09\x09at: 'data-toggle' put: 'dropdown';\x0a\x09\x09\x09\x09with: [ (html tag: 'i') class: 'glyphicon glyphicon-chevron-down' ].\x0a\x09\x09html ul \x0a\x09\x09\x09class: 'dropdown-menu pull-right';\x0a\x09\x09\x09with: [ \x0a\x09\x09\x09\x09self menuCommands do: [ :each | \x0a\x09\x09\x09\x09\x09html li with: [ html a \x0a\x09\x09\x09\x09\x09\x09with: each menuLabel;\x0a\x09\x09\x09\x09\x09\x09onClick: [ self execute: each ] ] ] ] ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["menuCommands", "ifTrue:", "isEmpty", "class:", "div", "with:", "a", "at:put:", "tag:", "ul", "do:", "li", "menuLabel", "onClick:", "execute:"]
@@ -8670,6 +8670,40 @@ $globals.HLProgressBarWidget.klass);
 $core.addClass('HLSpotlightWidget', $globals.HLWidget, ['input'], 'Helios-Core');
 $core.addMethod(
 $core.method({
+selector: "findMatches:andRender:",
+protocol: 'actions',
+fn: function (aQueryString,aRenderCallback){
+var self=this;
+var matches;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+matches=$recv(self._inputCompletion())._select_((function(each){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return $recv(each)._match_(aQueryString);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({each:each},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+$recv(aRenderCallback)._value_(matches);
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"findMatches:andRender:",{aQueryString:aQueryString,aRenderCallback:aRenderCallback,matches:matches},$globals.HLSpotlightWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["aQueryString", "aRenderCallback"],
+source: "findMatches: aQueryString andRender: aRenderCallback\x0a\x09| matches |\x0a\x09matches := self inputCompletion select: [ :each | each match: aQueryString ].\x0a\x09aRenderCallback value: matches",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["select:", "inputCompletion", "match:", "value:"]
+}),
+$globals.HLSpotlightWidget);
+
+$core.addMethod(
+$core.method({
 selector: "ghostText",
 protocol: 'accessing',
 fn: function (){
@@ -8731,7 +8765,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$3,$5,$4,$2;
 $1=$recv(html)._input();
-$recv($1)._class_("spotlight");
+$recv($1)._class_("spotlight typeahead");
 $recv($1)._placeholder_(self._ghostText());
 $2=$recv($1)._onKeyDown_($recv((function(event){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -8751,7 +8785,23 @@ return self._search_($4);
 //>>excludeEnd("ctx");
 }))._yourself());
 self["@input"]=$2;
-$recv($recv(self["@input"])._asJQuery())._typeahead_($globals.HashedCollection._newFromPairs_(["source",self._inputCompletion()]));
+$recv($recv(self["@input"])._asJQuery())._typeahead_value_($globals.HashedCollection._newFromPairs_(["hint",true]),$globals.HashedCollection._newFromPairs_(["name","classesAndSelectors","displayKey",(function(suggestion){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return $recv(suggestion)._asString();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({suggestion:suggestion},$ctx1,3)});
+//>>excludeEnd("ctx");
+}),"source",(function(query,callback){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return self._findMatches_andRender_(query,callback);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({query:query,callback:callback},$ctx1,4)});
+//>>excludeEnd("ctx");
+})]));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderContentOn:",{html:html},$globals.HLSpotlightWidget)});
@@ -8759,10 +8809,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09input := html input\x0a\x09\x09class: 'spotlight';\x0a\x09\x09placeholder: self ghostText;\x0a\x09\x09onKeyDown: [ :event | \x0a\x09\x09\x09event which = 13 ifTrue: [\x0a\x09\x09\x09\x09self search: input asJQuery val ] ]\x0a\x09\x09yourself.\x0a\x09\x09\x09\x0a\x09input asJQuery \x0a\x09\x09typeahead: #{ 'source' -> self inputCompletion }.",
+source: "renderContentOn: html\x0a\x09input := html input\x0a\x09\x09class: 'spotlight typeahead';\x0a\x09\x09placeholder: self ghostText;\x0a\x09\x09onKeyDown: [ :event | \x0a\x09\x09\x09event which = 13 ifTrue: [\x0a\x09\x09\x09\x09self search: input asJQuery val ] ]\x0a\x09\x09yourself.\x0a\x09\x09\x09\x0a\x09input asJQuery \x0a\x09\x09typeahead: #{ 'hint' -> true }\x0a\x09\x09value: #{ 'name' -> 'classesAndSelectors'.\x0a\x09\x09\x09'displayKey' -> [ :suggestion | suggestion asString ].\x0a\x09\x09\x09'source' -> [ :query :callback | self findMatches: query andRender: callback ]}.\x0a\x09\x09\x22use additional datasets for grouping into classes and selectors\x22",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "input", "placeholder:", "ghostText", "onKeyDown:", "yourself", "ifTrue:", "=", "which", "search:", "val", "asJQuery", "typeahead:", "inputCompletion"]
+messageSends: ["class:", "input", "placeholder:", "ghostText", "onKeyDown:", "yourself", "ifTrue:", "=", "which", "search:", "val", "asJQuery", "typeahead:value:", "asString", "findMatches:andRender:"]
 }),
 $globals.HLSpotlightWidget);
 
@@ -8792,7 +8842,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
-source: "search: aString\x0a\x09aString ifNotEmpty: [\x0a\x09\x09Finder findString: aString ]",
+source: "search: aString\x0a\x09\x22open a new Browser pointing to aString\x22\x0a\x09aString ifNotEmpty: [\x0a\x09\x09Finder findString: aString ]",
 referencedClasses: ["Finder"],
 //>>excludeEnd("ide");
 messageSends: ["ifNotEmpty:", "findString:"]
@@ -10010,7 +10060,8 @@ $2=$recv($1)._with_((function(){
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
 $3=$recv(html)._div();
-$recv($3)._class_("navbar-inner");
+$recv($3)._class_("navbar-header");
+$recv($3)._at_put_("role","tabpanel");
 $4=$recv($3)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
@@ -10040,10 +10091,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'navbar navbar-fixed-top';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09class: 'navbar-inner';\x0a\x09\x09\x09with: [ self renderTabsOn: html ] ].\x0a\x09\x09\x09\x0a\x09html with: self spotlight.\x0a\x09self renderAddOn: html",
+source: "renderContentOn: html\x0a\x09html div \x0a\x09\x09class: 'navbar navbar-fixed-top';\x0a\x09\x09with: [ html div \x0a\x09\x09\x09class: 'navbar-header';\x0a\x09\x09\x09at: 'role' put: 'tabpanel';\x0a\x09\x09\x09with: [ self renderTabsOn: html ] ].\x0a\x09\x09\x09\x0a\x09html with: self spotlight.\x0a\x09self renderAddOn: html",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "with:", "renderTabsOn:", "spotlight", "renderAddOn:"]
+messageSends: ["class:", "div", "with:", "at:put:", "renderTabsOn:", "spotlight", "renderAddOn:"]
 }),
 $globals.HLTabsWidget);
 
@@ -10057,7 +10108,7 @@ var li;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$3,$4,$6,$5,$7,$8,$9,$10,$11,$12;
+var $1,$2,$3,$4,$6,$5,$7,$8,$9,$10,$11,$12,$13,$14;
 $1=$recv(html)._li();
 $2=$1;
 $3=$recv("width: ".__comma($recv(self._tabWidth())._asString())).__comma("px");
@@ -10080,15 +10131,16 @@ $recv($1)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-return $recv($recv(html)._a())._with_((function(){
+$7=$recv(html)._a();
+$recv($7)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-$7=$recv($recv(html)._tag_("i"))._class_("close");
+$8=$recv($recv(html)._tag_("i"))._class_("close");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["class:"]=2;
 //>>excludeEnd("ctx");
-$recv($7)._onClick_((function(){
+$recv($8)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx4) {
 //>>excludeEnd("ctx");
@@ -10100,16 +10152,16 @@ return self._removeTab_(aTab);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["onClick:"]=1;
 //>>excludeEnd("ctx");
-$8=$recv(html)._span();
-$recv($8)._class_($recv(aTab)._cssClass());
-$9=$8;
-$10=$recv(aTab)._label();
+$9=$recv(html)._span();
+$recv($9)._class_($recv(aTab)._cssClass());
+$10=$9;
+$11=$recv(aTab)._label();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["label"]=1;
 //>>excludeEnd("ctx");
-$recv($9)._title_($10);
-$11=$recv($8)._with_($recv(aTab)._label());
-return $11;
+$recv($10)._title_($11);
+$12=$recv($9)._with_($recv(aTab)._label());
+return $12;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx3) {$ctx3.fillBlock({},$ctx2,4)});
 //>>excludeEnd("ctx");
@@ -10117,6 +10169,11 @@ return $11;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["with:"]=2;
 //>>excludeEnd("ctx");
+$13=$recv($7)._at_put_("role","tab");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["at:put:"]=1;
+//>>excludeEnd("ctx");
+return $13;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,3)});
 //>>excludeEnd("ctx");
@@ -10124,7 +10181,7 @@ $ctx2.sendIdx["with:"]=2;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["with:"]=1;
 //>>excludeEnd("ctx");
-$12=$recv($1)._onClick_((function(){
+$14=$recv($1)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -10133,7 +10190,7 @@ return $recv(aTab)._activate();
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,6)});
 //>>excludeEnd("ctx");
 }));
-li=$12;
+li=$14;
 $recv($recv($recv(li)._asJQuery())._get_((0)))._at_put_("tab-data",aTab);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -10142,10 +10199,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aTab", "html"],
-source: "renderTab: aTab on: html\x0a\x09| li |\x0a\x09li := html li \x0a\x09\x09style: 'width: ', self tabWidth asString, 'px';\x0a\x09\x09class: (aTab isActive ifTrue: [ 'tab active' ] ifFalse: [ 'tab inactive' ]);\x0a\x09\x09with: [\x0a\x09\x09\x09html a\x0a\x09\x09\x09with: [\x0a\x09\x09\x09\x09((html tag: 'i') class: 'close')\x0a\x09\x09\x09\x09\x09onClick: [ self removeTab: aTab ].\x0a\x09\x09\x09\x09html span \x0a\x09\x09\x09\x09\x09class: aTab cssClass;\x0a\x09\x09\x09\x09\x09title: aTab label;\x0a\x09\x09\x09\x09\x09with: aTab label ] ];\x0a\x09\x09onClick: [ aTab activate ].\x0a\x09\x0a\x09(li asJQuery get: 0) at: 'tab-data' put: aTab",
+source: "renderTab: aTab on: html\x0a\x09| li |\x0a\x09li := html li \x0a\x09\x09style: 'width: ', self tabWidth asString, 'px';\x0a\x09\x09class: (aTab isActive ifTrue: [ 'tab active' ] ifFalse: [ 'tab inactive' ]);\x0a\x09\x09with: [\x0a\x09\x09\x09html a\x0a\x09\x09\x09with: [\x0a\x09\x09\x09\x09((html tag: 'i') class: 'close')\x0a\x09\x09\x09\x09\x09onClick: [ self removeTab: aTab ].\x0a\x09\x09\x09\x09html span \x0a\x09\x09\x09\x09\x09class: aTab cssClass;\x0a\x09\x09\x09\x09\x09title: aTab label;\x0a\x09\x09\x09\x09\x09with: aTab label ];\x0a\x09\x09\x09at: 'role' put: 'tab'];\x0a\x09\x09onClick: [ aTab activate ].\x0a\x09\x0a\x09(li asJQuery get: 0) at: 'tab-data' put: aTab",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["style:", "li", ",", "asString", "tabWidth", "class:", "ifTrue:ifFalse:", "isActive", "with:", "a", "onClick:", "tag:", "removeTab:", "span", "cssClass", "title:", "label", "activate", "at:put:", "get:", "asJQuery"]
+messageSends: ["style:", "li", ",", "asString", "tabWidth", "class:", "ifTrue:ifFalse:", "isActive", "with:", "a", "onClick:", "tag:", "removeTab:", "span", "cssClass", "title:", "label", "at:put:", "activate", "get:", "asJQuery"]
 }),
 $globals.HLTabsWidget);
 
@@ -10161,7 +10218,8 @@ return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$2;
 $1=$recv(html)._ul();
-$recv($1)._class_("nav main-tabs");
+$recv($1)._class_("nav navbar-nav nav-tabs");
+$recv($1)._at_put_("role","tablist");
 $2=$recv($1)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
@@ -10220,10 +10278,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderTabsOn: html\x0a\x09| ul |\x0a\x09ul := html ul \x0a\x09\x09class: 'nav main-tabs';\x0a\x09\x09with: [ \x0a        \x09self tabs do: [ :each |\x0a\x09\x09\x09\x09self renderTab: each on: html ] ].\x0a\x09\x09\x0a\x09ul asJQuery sortable: #{\x0a\x09\x09'containment' -> 'parent'.\x0a\x09\x09'start' -> [ self disableSelection ].\x0a\x09\x09'stop' -> [ [ self enableSelection] valueWithTimeout: 300 ].\x0a\x09\x09'update' -> [ self updateTabsOrder ]\x0a\x09}",
+source: "renderTabsOn: html\x0a\x09| ul |\x0a\x09ul := html ul \x0a\x09\x09class: 'nav navbar-nav nav-tabs';\x0a\x09\x09at: 'role' put: 'tablist';\x0a\x09\x09with: [ \x0a        \x09self tabs do: [ :each |\x0a\x09\x09\x09\x09self renderTab: each on: html ] ].\x0a\x09\x09\x0a\x09ul asJQuery sortable: #{\x0a\x09\x09'containment' -> 'parent'.\x0a\x09\x09'start' -> [ self disableSelection ].\x0a\x09\x09'stop' -> [ [ self enableSelection] valueWithTimeout: 300 ].\x0a\x09\x09'update' -> [ self updateTabsOrder ]\x0a\x09}",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "ul", "with:", "do:", "tabs", "renderTab:on:", "sortable:", "asJQuery", "disableSelection", "valueWithTimeout:", "enableSelection", "updateTabsOrder"]
+messageSends: ["class:", "ul", "at:put:", "with:", "do:", "tabs", "renderTab:on:", "sortable:", "asJQuery", "disableSelection", "valueWithTimeout:", "enableSelection", "updateTabsOrder"]
 }),
 $globals.HLTabsWidget);
 
@@ -10435,7 +10493,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-self["@tabs"]=$recv($recv(".main-tabs li"._asJQuery())._toArray())._collect_((function(each){
+self["@tabs"]=$recv($recv(".nav-tabs li"._asJQuery())._toArray())._collect_((function(each){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -10451,7 +10509,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "updateTabsOrder\x0a\x09tabs := '.main-tabs li' asJQuery toArray \x0a\x09\x09collect: [ :each | each at: 'tab-data' ]",
+source: "updateTabsOrder\x0a\x09tabs := '.nav-tabs li' asJQuery toArray\x0a\x09\x09collect: [ :each | each at: 'tab-data' ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["collect:", "toArray", "asJQuery", "at:"]

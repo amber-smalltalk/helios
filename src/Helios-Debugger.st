@@ -524,19 +524,19 @@ renderButtonsOn: html
 		class: 'debugger_bar'; 
 		with: [
 			html button 
-				class: 'btn restart';
+				class: 'btn btn-default restart';
 				with: 'Restart';
 				onClick: [ self restart ].
 			html button 
-				class: 'btn where';
+				class: 'btn btn-default where';
 				with: 'Where';
 				onClick: [ self where ].
 			html button 
-				class: 'btn stepOver';
+				class: 'btn btn-default stepOver';
 				with: 'Step over';
 				onClick: [ self stepOver ].
 			html button 
-				class: 'btn proceed';
+				class: 'btn btn-default proceed';
 				with: 'Proceed';
 				onClick: [ self proceed ] ]
 ! !

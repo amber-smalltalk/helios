@@ -599,7 +599,7 @@ renderBindingGroup: aBindingGroup on: html
 renderCloseOn: html
 	html a
 		class: 'close';
-		with: [ (html tag: 'i') class: 'icon-remove' ];
+		with: [ (html tag: 'i') class: 'glyphicon glyphicon-remove' ];
 		onClick: [ self keyBinder deactivate ]
 !
 

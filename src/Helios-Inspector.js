@@ -739,7 +739,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$2;
 $1=$recv(html)._button();
-$recv($1)._class_("btn");
+$recv($1)._class_("btn btn-default");
 $recv($1)._with_("Dive");
 $2=$recv($1)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -758,7 +758,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderButtonsOn: html\x0a\x09diveButton := html button \x0a\x09\x09class: 'btn';\x0a\x09\x09with: 'Dive'; \x0a\x09\x09onClick: [ self dive ]",
+source: "renderButtonsOn: html\x0a\x09diveButton := html button \x0a\x09\x09class: 'btn btn-default';\x0a\x09\x09with: 'Dive'; \x0a\x09\x09onClick: [ self dive ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["class:", "button", "with:", "onClick:", "dive"]

@@ -17,6 +17,6 @@
     "codemirror": "^4.7.0",
     "showdown": "^0.5.0",
     "require-css": "^0.1.2",
-    "typeahead.js": "~0.10.5"
+    "typeahead.js": "^0.10.5"
   }
 }

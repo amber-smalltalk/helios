@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     amberc: {
       options: {
         amber_dir: findAmberPath(['../..', 'bower_components/amber']),
-        library_dirs: ['src'],
+        library_dirs: ['src', 'bower_components/amber-contrib-web/src']
       },
       all: {
         output_dir : 'src',

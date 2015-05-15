@@ -2511,7 +2511,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderCloseOn: html\x0a\x09html a\x0a\x09\x09class: 'close';\x0a\x09\x09with: [ (html tag: 'i') class: 'icon-remove' ];\x0a\x09\x09onClick: [ self keyBinder deactivate ]",
+source: "renderCloseOn: html\x0a\x09html a\x0a\x09\x09class: 'close';\x0a\x09\x09with: [ (html tag: 'i') class: 'glyphicon glyphicon-remove' ];\x0a\x09\x09onClick: [ self keyBinder deactivate ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["class:", "a", "with:", "tag:", "onClick:", "deactivate", "keyBinder"]

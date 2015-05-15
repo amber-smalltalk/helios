@@ -2008,7 +2008,14 @@ inputCompletion
 
 !HLSpotlightWidget methodsFor: 'actions'!
 
+findMatches: aQueryString andRender: aRenderCallback
+	| matches |
+	matches := self inputCompletion select: [ :each | each match: aQueryString ].
+	aRenderCallback value: matches
+!
+
 search: aString
+	"open a new Browser pointing to aString"
 	aString ifNotEmpty: [
 		Finder findString: aString ]
 ! !
@@ -2017,7 +2024,7 @@ search: aString
 
 renderContentOn: html
 	input := html input
-		class: 'spotlight';
+		class: 'spotlight typeahead';
 		placeholder: self ghostText;
 		onKeyDown: [ :event | 
 			event which = 13 ifTrue: [
@@ -2025,7 +2032,11 @@ renderContentOn: html
 		yourself.
 			
 	input asJQuery 
-		typeahead: #{ 'source' -> self inputCompletion }.
+		typeahead: #{ 'hint' -> true }
+		value: #{ 'name' -> 'classesAndSelectors'.
+			'displayKey' -> [ :suggestion | suggestion asString ].
+			'source' -> [ :query :callback | self findMatches: query andRender: callback ]}.
+		"use additional datasets for grouping into classes and selectors"
 ! !
 
 HLWidget subclass: #HLTabWidget

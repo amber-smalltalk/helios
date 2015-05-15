@@ -296,11 +296,16 @@ body[id="helios"] .dropdown-menu {
 }
 body[id="helios"] .twitter-typeahead {
   float: right;
-  right: 26px;
-}
-body[id="helios"] .spotlight {
-  position: fixed;
   top: 1px;
+  right: 26px;
+  height: 22px;
+}
+body[id="helios"] .typeahead {
+  position: fixed;
+  top: 0px;
+  float: right;
+  right: 0px;
+  height: 100%;
   z-index: 1100;
   border: 1px solid #999;
   font-size: 11px;
@@ -309,9 +314,26 @@ body[id="helios"] .spotlight {
   width: 200px;
   box-shadow: inset 0 0 2px 0 #ddd;
 }
-body[id="helios"] .spotlight:focus {
+body[id="helios"] .typeahead:focus {
   box-shadow: inset 0 0 2px 0 #08c;
   border-color: #08c;
+}
+body[id="helios"] .tt-dropdown-menu {
+  background-color: #ddd;
+  width: 300px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+body[id="helios"] .tt-hint {
+  color: #999;
+}
+body[id="helios"] .tt-suggestion p {
+  margin: 2px;
+  font-size: 11px;
+}
+body[id="helios"] .tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
 }
 body[id="helios"] .nav-pills > .active > a {
   background-color: #ddd;

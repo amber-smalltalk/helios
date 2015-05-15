@@ -347,14 +347,21 @@ body[id="helios"] {
 	}
 
 	// this is the spotlight searchbox
+	// it is a span created around the actual
+	// typahead inputs
 	.twitter-typeahead {
 		float: right;
+		top: 1px;
 		right: 26px;
+		height: 22px;
 	}
 
-        .spotlight {
+	.typeahead {
 		position: fixed;
-		top: 1px;
+		top: 0px;
+		float: right;
+		right: 0px;
+		height: 100%;
 		z-index: 1100;
 		border: 1px solid #999;
 		font-size: 11px;
@@ -368,6 +375,24 @@ body[id="helios"] {
                   border-color: #08c;
                 }
         }
+
+	.tt-dropdown-menu {
+		background-color: #ddd;
+		width: 300px;
+		max-height: 350px;
+		overflow-y: auto;
+	}
+	.tt-hint {
+		color: #999;
+	}
+	.tt-suggestion p {
+		margin: 2px;
+		font-size: 11px;
+	}
+	.tt-suggestion.tt-cursor {
+		color: #fff;
+		background-color: #0097cf;
+	}
 
 	.nav-pills > .active > a {
 		background-color: #ddd;
@@ -849,12 +874,6 @@ body[id="helios"] {
 			color: #B91010;
 			font-weight: bold;
 		}
-
-		// .typeahead.dropdown-menu {
-		// 	position: fixed !important;
-		// 	top: auto !important;
-		// 	bottom: 30px !important;
-		// }
 
 		#cog-helper {
 			position: fixed;

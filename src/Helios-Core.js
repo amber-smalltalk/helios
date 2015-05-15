@@ -8670,6 +8670,40 @@ $globals.HLProgressBarWidget.klass);
 $core.addClass('HLSpotlightWidget', $globals.HLWidget, ['input'], 'Helios-Core');
 $core.addMethod(
 $core.method({
+selector: "findMatches:andRender:",
+protocol: 'actions',
+fn: function (aQueryString,aRenderCallback){
+var self=this;
+var matches;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+matches=$recv(self._inputCompletion())._select_((function(each){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return $recv(each)._match_(aQueryString);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({each:each},$ctx1,1)});
+//>>excludeEnd("ctx");
+}));
+$recv(aRenderCallback)._value_(matches);
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"findMatches:andRender:",{aQueryString:aQueryString,aRenderCallback:aRenderCallback,matches:matches},$globals.HLSpotlightWidget)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["aQueryString", "aRenderCallback"],
+source: "findMatches: aQueryString andRender: aRenderCallback\x0a\x09| matches |\x0a\x09matches := self inputCompletion select: [ :each | each match: aQueryString ].\x0a\x09aRenderCallback value: matches",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["select:", "inputCompletion", "match:", "value:"]
+}),
+$globals.HLSpotlightWidget);
+
+$core.addMethod(
+$core.method({
 selector: "ghostText",
 protocol: 'accessing',
 fn: function (){
@@ -8731,7 +8765,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$3,$5,$4,$2;
 $1=$recv(html)._input();
-$recv($1)._class_("spotlight");
+$recv($1)._class_("spotlight typeahead");
 $recv($1)._placeholder_(self._ghostText());
 $2=$recv($1)._onKeyDown_($recv((function(event){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -8751,7 +8785,23 @@ return self._search_($4);
 //>>excludeEnd("ctx");
 }))._yourself());
 self["@input"]=$2;
-$recv($recv(self["@input"])._asJQuery())._typeahead_($globals.HashedCollection._newFromPairs_(["source",self._inputCompletion()]));
+$recv($recv(self["@input"])._asJQuery())._typeahead_value_($globals.HashedCollection._newFromPairs_(["hint",true]),$globals.HashedCollection._newFromPairs_(["name","classesAndSelectors","displayKey",(function(suggestion){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return $recv(suggestion)._asString();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({suggestion:suggestion},$ctx1,3)});
+//>>excludeEnd("ctx");
+}),"source",(function(query,callback){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return self._findMatches_andRender_(query,callback);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({query:query,callback:callback},$ctx1,4)});
+//>>excludeEnd("ctx");
+})]));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderContentOn:",{html:html},$globals.HLSpotlightWidget)});
@@ -8759,10 +8809,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09input := html input\x0a\x09\x09class: 'spotlight';\x0a\x09\x09placeholder: self ghostText;\x0a\x09\x09onKeyDown: [ :event | \x0a\x09\x09\x09event which = 13 ifTrue: [\x0a\x09\x09\x09\x09self search: input asJQuery val ] ]\x0a\x09\x09yourself.\x0a\x09\x09\x09\x0a\x09input asJQuery \x0a\x09\x09typeahead: #{ 'source' -> self inputCompletion }.",
+source: "renderContentOn: html\x0a\x09input := html input\x0a\x09\x09class: 'spotlight typeahead';\x0a\x09\x09placeholder: self ghostText;\x0a\x09\x09onKeyDown: [ :event | \x0a\x09\x09\x09event which = 13 ifTrue: [\x0a\x09\x09\x09\x09self search: input asJQuery val ] ]\x0a\x09\x09yourself.\x0a\x09\x09\x09\x0a\x09input asJQuery \x0a\x09\x09typeahead: #{ 'hint' -> true }\x0a\x09\x09value: #{ 'name' -> 'classesAndSelectors'.\x0a\x09\x09\x09'displayKey' -> [ :suggestion | suggestion asString ].\x0a\x09\x09\x09'source' -> [ :query :callback | self findMatches: query andRender: callback ]}.\x0a\x09\x09\x22use additional datasets for grouping into classes and selectors\x22",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "input", "placeholder:", "ghostText", "onKeyDown:", "yourself", "ifTrue:", "=", "which", "search:", "val", "asJQuery", "typeahead:", "inputCompletion"]
+messageSends: ["class:", "input", "placeholder:", "ghostText", "onKeyDown:", "yourself", "ifTrue:", "=", "which", "search:", "val", "asJQuery", "typeahead:value:", "asString", "findMatches:andRender:"]
 }),
 $globals.HLSpotlightWidget);
 
@@ -8792,7 +8842,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
-source: "search: aString\x0a\x09aString ifNotEmpty: [\x0a\x09\x09Finder findString: aString ]",
+source: "search: aString\x0a\x09\x22open a new Browser pointing to aString\x22\x0a\x09aString ifNotEmpty: [\x0a\x09\x09Finder findString: aString ]",
 referencedClasses: ["Finder"],
 //>>excludeEnd("ide");
 messageSends: ["ifNotEmpty:", "findString:"]

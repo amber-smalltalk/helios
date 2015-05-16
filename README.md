@@ -22,11 +22,11 @@ Helios development setup
 
 There are two ways how to contribute. Both ways require forking this repo first and fetching all required packages via NPM and Bower.
 
-# `git clone https://github.com/amber-smalltalk/helios.git`
-# `cd helios`
-# `npm install`
-# `bower install`
-# `grunt devel`
+* `git clone https://github.com/amber-smalltalk/helios.git`
+* `cd helios`
+* `npm install`
+* `bower install`
+* `grunt devel`
 
 If you only want to contribute to Helios itself you can now run Helios as a regular Amber application by executing
 

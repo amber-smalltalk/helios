@@ -1,4 +1,4 @@
-define("helios/Helios-Workspace-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){
+define("helios/Helios-Workspace-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Workspace-Tests');
 $core.packages["Helios-Workspace-Tests"].innerEval = function (expr) { return eval(expr); };

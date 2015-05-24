@@ -1,4 +1,4 @@
-define("helios/Helios-References", ["amber/boot", "amber_core/Kernel-Objects", "helios/Helios-Core"], function($boot){
+define("helios/Helios-References", ["amber/boot", "amber_core/Kernel-Objects", "helios/Helios-Core"], function($boot){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-References');
 $core.packages["Helios-References"].innerEval = function (expr) { return eval(expr); };

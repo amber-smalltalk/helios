@@ -1,4 +1,4 @@
-define("helios/Helios-Inspector", ["amber/boot", "helios/Helios-Core"], function($boot){
+define("helios/Helios-Inspector", ["amber/boot", "helios/Helios-Core"], function($boot){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Inspector');
 $core.packages["Helios-Inspector"].innerEval = function (expr) { return eval(expr); };

@@ -1,4 +1,4 @@
-define("helios/Helios-Commands-Core", ["amber/boot", "amber_core/Kernel-Objects"], function($boot){
+define("helios/Helios-Commands-Core", ["amber/boot", "amber_core/Kernel-Objects"], function($boot){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Commands-Core');
 $core.packages["Helios-Commands-Core"].innerEval = function (expr) { return eval(expr); };

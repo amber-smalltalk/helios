@@ -1,4 +1,4 @@
-define("helios/Helios-Announcements", ["amber/boot", "amber_core/Kernel-Objects"], function($boot){
+define("helios/Helios-Announcements", ["amber/boot", "amber_core/Kernel-Objects"], function($boot){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Announcements');
 $core.packages["Helios-Announcements"].innerEval = function (expr) { return eval(expr); };

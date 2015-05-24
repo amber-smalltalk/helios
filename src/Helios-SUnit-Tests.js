@@ -1,4 +1,4 @@
-define("helios/Helios-SUnit-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){
+define("helios/Helios-SUnit-Tests", ["amber/boot", "amber_core/SUnit"], function($boot){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-SUnit-Tests');
 $core.packages["Helios-SUnit-Tests"].innerEval = function (expr) { return eval(expr); };

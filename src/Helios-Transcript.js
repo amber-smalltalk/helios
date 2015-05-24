@@ -1,4 +1,4 @@
-define("helios/Helios-Transcript", ["amber/boot", "helios/Helios-Core", "amber_core/Kernel-Objects"], function($boot){
+define("helios/Helios-Transcript", ["amber/boot", "helios/Helios-Core", "amber_core/Kernel-Objects"], function($boot){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Transcript');
 $core.packages["Helios-Transcript"].innerEval = function (expr) { return eval(expr); };

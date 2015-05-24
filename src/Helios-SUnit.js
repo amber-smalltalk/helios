@@ -1,4 +1,4 @@
-define("helios/Helios-SUnit", ["amber/boot", "helios/Helios-Core"], function($boot){
+define("helios/Helios-SUnit", ["amber/boot", "helios/Helios-Core"], function($boot){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-SUnit');
 $core.packages["Helios-SUnit"].innerEval = function (expr) { return eval(expr); };

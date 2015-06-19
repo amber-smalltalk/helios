@@ -1,6 +1,4 @@
 define([
-	'amber/helpers', // pre-fetch, dep of amber/deploy
-	'amber/deploy', // pre-fetch, dep of amber/lang
 	'amber/lang',
     'codemirror/lib/codemirror',
     'codemirror/mode/smalltalk/smalltalk',
@@ -10,8 +8,7 @@ define([
     'css!codemirror/addon/hint/show-hint',
     'typeahead',
     'jquery-ui',
-    'bootstrap/dist/js/bootstrap',
-    'css!bootstrap/dist/css/bootstrap',
+    'bootstrap/js/bootstrap',
     './showdown',
     './all',
     'css!./resources/helios',

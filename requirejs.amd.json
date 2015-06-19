@@ -1,9 +1,5 @@
 {
-    "rjs_comment1": "require.min should be removed",
-    "rjs_comment2": "it's backward compatibility hack if config finds",
-    "rjs_comment3": "support/requirejs before node_modules/requirejs;",
-    "rjs_comment4": "the former will go away in 0.14.0",
     "paths": {
-        "requireJS": [ "require", "require.min" ]
+        "requireJS": "require"
     }
 }

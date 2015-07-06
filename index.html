@@ -11,7 +11,7 @@
 
     <div id="includes">
       <script type='text/javascript'>
-        var base = decodeURIComponent(window.location.search.slice(1)).replace(/\/$/, "");
+        var base = decodeURIComponent(window.location.hash.slice(1)).replace(/\/$/, "");
         var script = document.createElement("script");
         script.src = base + "/config.js";
         document.getElementsByTagName("head")[0].appendChild(script);

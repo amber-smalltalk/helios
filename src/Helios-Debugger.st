@@ -1,4 +1,5 @@
 Smalltalk createPackage: 'Helios-Debugger'!
+(Smalltalk packageAt: 'Helios-Debugger') imports: {'amber_core/Compiler-Interpreter'}!
 Object subclass: #HLContextInspectorDecorator
 	instanceVariableNames: 'context'
 	package: 'Helios-Debugger'!

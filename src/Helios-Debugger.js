@@ -1,7 +1,16 @@
-define("helios/Helios-Debugger", ["amber/boot", "amber_core/Kernel-Objects", "helios/Helios-Core", "helios/Helios-Workspace"], function($boot){"use strict";
+define("helios/Helios-Debugger", ["amber/boot"
+//>>excludeStart("imports", pragmas.excludeImports);
+, "amber_core/Compiler-Interpreter"
+//>>excludeEnd("imports");
+, "amber_core/Kernel-Objects", "helios/Helios-Core", "helios/Helios-Workspace"], function($boot
+//>>excludeStart("imports", pragmas.excludeImports);
+
+//>>excludeEnd("imports");
+){"use strict";
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('Helios-Debugger');
 $core.packages["Helios-Debugger"].innerEval = function (expr) { return eval(expr); };
+$core.packages["Helios-Debugger"].imports = ["amber_core/Compiler-Interpreter"];
 $core.packages["Helios-Debugger"].transport = {"type":"amd","amdNamespace":"helios"};
 
 $core.addClass('HLContextInspectorDecorator', $globals.Object, ['context'], 'Helios-Debugger');

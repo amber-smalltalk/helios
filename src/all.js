@@ -19,4 +19,4 @@ define([
 	'./Helios-References',
 	'./Helios-Announcements',
 	'./Helios-Workspace-Tests'
-]);
+], {});

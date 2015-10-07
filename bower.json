@@ -1,5 +1,6 @@
 {
   "name": "helios",
+  "description": "Helios IDE for Amber Smalltalk",
   "version": "0.5.3",
   "ignore": [
     "**/.*",
@@ -8,6 +9,18 @@
     "test",
     "tests"
   ],
+  "homepage": "https://github.com/amber-smalltalk/helios",
+  "keywords": [
+    "Amber",
+    "Smalltalk",
+    "IDE"
+  ],
+  "license": [
+    "MIT"
+  ],
+  "devDependencies": {
+    "amber": ">=0.14.17"
+  },
   "dependencies": {
     "amber": ">=0.14.14",
     "amber-contrib-web": ">=0.1.0",

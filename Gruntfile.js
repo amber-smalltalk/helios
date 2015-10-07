@@ -13,18 +13,19 @@ function findAmberPath(options) {
 }
 
 module.exports = function (grunt) {
-    var path = require('path');
+    var helpers = require('amber-dev/lib/helpers');
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-execute');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('amber-dev');
 
     // Default task.
-    grunt.registerTask('default', ['less', 'amberc:all']);
-    grunt.registerTask('test', ['amberc:test_runner', 'execute:test_runner', 'clean:test_runner']);
+    grunt.registerTask('default', ['amdconfig:helios', 'less', 'amberc:all']);
+    grunt.registerTask('test', ['amdconfig:helios', 'requirejs:test_runner', 'execute:test_runner', 'clean:test_runner']);
     grunt.registerTask('devel', ['amdconfig:helios']);
 
     // Project configuration.
@@ -48,7 +49,7 @@ module.exports = function (grunt) {
         amberc: {
             options: {
                 amber_dir: findAmberPath(['../..', 'bower_components/amber']),
-                library_dirs: ['src', 'bower_components/amber-contrib-web/src']
+                configFile: "config.js"
             },
             all: {
                 output_dir: 'src',
@@ -64,20 +65,36 @@ module.exports = function (grunt) {
                     // list all tests in dependency order
                     'src/Helios-Browser-Tests.st', 'src/Helios-Workspace-Tests.st', 'src/Helios-SUnit-Tests.st'
                 ],
-                libraries: ['Web', 'SUnit'],
+                libraries: ['amber_core/SUnit', 'amber/web/Web'],
                 amd_namespace: 'helios',
                 jsGlobals: ['navigator']
+            }
+        },
+        requirejs: {
+            options: {
+                useStrict: true
             },
             test_runner: {
-                src: ['node_modules/amber-dev/lib/Test.st'],
-                libraries: [
-                    /* add dependencies packages here */
-                    /* add other code-to-test packages here */
-                    'SUnit',
-                    /* add other test packages here */
-                ],
-                main_class: 'NodeTestRunner',
-                output_name: 'test_runner'
+                options: {
+                    mainConfigFile: "config.js",
+                    rawText: {
+                        "app": "(" + function () {
+                            define(["amber/deploy", "helios/all", "amber_devkit/NodeTestRunner"], function (amber) {
+                                amber.initialize();
+                                amber.globals.NodeTestRunner._main();
+                            });
+                        } + "());"
+                    },
+                    paths: {"amber_devkit": helpers.libPath},
+                    pragmas: {
+                        excludeIdeData: true
+                    },
+                    include: ['config-node', 'app'],
+                    insertRequire: ['app'],
+                    optimize: "none",
+                    wrap: helpers.nodeWrapperWithShebang,
+                    out: "test_runner.js"
+                }
             }
         },
 

@@ -15,9 +15,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv(aModel)._isBrowserModel();
-return $1;
+return $recv(aModel)._isBrowserModel();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"isValidFor:",{aModel:aModel},$globals.HLBrowserCommand.klass)});
 //>>excludeEnd("ctx");
@@ -43,9 +41,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv(aModel)._isBrowserModel();
-return $1;
+return $recv(aModel)._isBrowserModel();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"isValidFor:",{aModel:aModel},$globals.HLBrowserGoToCommand.klass)});
 //>>excludeEnd("ctx");
@@ -508,13 +504,13 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $3,$2,$1;
-$3=self._model();
+var $2,$1;
+$2=self._model();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["model"]=1;
 //>>excludeEnd("ctx");
-$2=$recv($3)._showComment();
-$1=$recv($2)._and_((function(){
+$1=$recv($2)._showComment();
+return $recv($1)._and_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -523,7 +519,6 @@ return $recv($recv(self._model())._selectedClass())._notNil();
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
 }));
-return $1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"isActive",{},$globals.HLEditCommentCommand)});
 //>>excludeEnd("ctx");
@@ -710,7 +705,7 @@ function $HLInitializeGenerator(){return $globals.HLInitializeGenerator||(typeof
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$3,$4,$5;
+var $1,$2,$3;
 $1=self._model();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["model"]=1;
@@ -719,14 +714,13 @@ targetClass=$recv($1)._selectedClass();
 $2=$recv($HLInitializeGenerator())._new();
 $recv($2)._class_(targetClass);
 $recv($2)._generate();
-$3=$recv($2)._output();
-output=$3;
+output=$recv($2)._output();
 $recv(output)._compile();
 first=$recv($recv(output)._sourceCodes())._first();
-$4=self._model();
-$recv($4)._selectedProtocol_($recv(output)._protocol());
-$recv($4)._selectedMethod_($recv(targetClass).__gt_gt($recv(first)._selector()));
-$5=$recv($4)._focusOnSourceCode();
+$3=self._model();
+$recv($3)._selectedProtocol_($recv(output)._protocol());
+$recv($3)._selectedMethod_($recv(targetClass).__gt_gt($recv(first)._selector()));
+$recv($3)._focusOnSourceCode();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"execute",{targetClass:targetClass,output:output,first:first},$globals.HLGenerateAccessorsCommand)});
@@ -794,7 +788,7 @@ function $HLAccessorsGenerator(){return $globals.HLAccessorsGenerator||(typeof H
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$3;
+var $1,$2;
 $1=self._model();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["model"]=1;
@@ -803,8 +797,7 @@ targetClass=$recv($1)._selectedClass();
 $2=$recv($HLAccessorsGenerator())._new();
 $recv($2)._class_(targetClass);
 $recv($2)._generate();
-$3=$recv($2)._output();
-output=$3;
+output=$recv($2)._output();
 $recv(output)._compile();
 $recv(self._model())._selectedProtocol_($recv(output)._protocol());
 return self;

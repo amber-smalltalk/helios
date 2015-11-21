@@ -98,10 +98,10 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2;
+var $1;
 $1=$recv(html)._div();
 $recv($1)._class_("transcript");
-$2=$recv($1)._with_((function(){
+$recv($1)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -326,15 +326,14 @@ function $OrderedCollection(){return $globals.OrderedCollection||(typeof Ordered
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $2,$1,$receiver;
-$2=self["@transcripts"];
-if(($receiver = $2) == null || $receiver.isNil){
-self["@transcripts"]=$recv($OrderedCollection())._new();
+var $1,$receiver;
 $1=self["@transcripts"];
+if(($receiver = $1) == null || $receiver.isNil){
+self["@transcripts"]=$recv($OrderedCollection())._new();
+return self["@transcripts"];
 } else {
-$1=$2;
-};
 return $1;
+};
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"transcripts",{},$globals.HLTranscriptHandler.klass)});
 //>>excludeEnd("ctx");

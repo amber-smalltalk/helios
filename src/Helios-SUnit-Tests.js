@@ -614,9 +614,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv(self._class())._package();
-return $1;
+return $recv(self._class())._package();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"thisPackage",{},$globals.HLSUnitModelTest)});
 //>>excludeEnd("ctx");

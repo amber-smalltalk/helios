@@ -19,9 +19,7 @@ function $HLSUnitModel(){return $globals.HLSUnitModel||(typeof HLSUnitModel=="un
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv(aModel)._isKindOf_($HLSUnitModel());
-return $1;
+return $recv(aModel)._isKindOf_($HLSUnitModel());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"isValidFor:",{aModel:aModel},$globals.HLSUnitCommand.klass)});
 //>>excludeEnd("ctx");
@@ -133,9 +131,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv($recv(self["@model"])._selectedPackages())._notEmpty();
-return $1;
+return $recv($recv(self["@model"])._selectedPackages())._notEmpty();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"isActive",{},$globals.HLSUnitInvertSelectedClassesCommand)});
 //>>excludeEnd("ctx");
@@ -470,9 +466,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv($recv(self["@model"])._selectedPackages())._notEmpty();
-return $1;
+return $recv($recv(self["@model"])._selectedPackages())._notEmpty();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"isActive",{},$globals.HLSUnitSelectAllClassesCommand)});
 //>>excludeEnd("ctx");

@@ -385,43 +385,39 @@ function $HLBindingInput(){return $globals.HLBindingInput||(typeof HLBindingInpu
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$4,$3,$5,$7,$6,$8,$10,$9,$11,$13,$12,$14;
+var $1,$3,$2,$5,$4,$7,$6,$9,$8,$10;
 $1=$recv($HLBindingInput())._new();
-$2=$1;
-$4=self._command();
+$3=self._command();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["command"]=1;
 //>>excludeEnd("ctx");
-$3=$recv($4)._inputLabel();
-$recv($2)._label_($3);
-$5=$1;
-$7=self._command();
+$2=$recv($3)._inputLabel();
+$recv($1)._label_($2);
+$5=self._command();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["command"]=2;
 //>>excludeEnd("ctx");
-$6=$recv($7)._displayLabel();
-$recv($5)._ghostText_($6);
-$8=$1;
-$10=self._command();
+$4=$recv($5)._displayLabel();
+$recv($1)._ghostText_($4);
+$7=self._command();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["command"]=3;
 //>>excludeEnd("ctx");
-$9=$recv($10)._defaultInput();
-$recv($8)._defaultValue_($9);
-$11=$1;
-$13=self._command();
+$6=$recv($7)._defaultInput();
+$recv($1)._defaultValue_($6);
+$9=self._command();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["command"]=4;
 //>>excludeEnd("ctx");
-$12=$recv($13)._inputCompletion();
-$recv($11)._inputCompletion_($12);
+$8=$recv($9)._inputCompletion();
+$recv($1)._inputCompletion_($8);
 $recv($1)._callback_((function(val){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-$14=self._command();
-$recv($14)._input_(val);
-return $recv($14)._execute();
+$10=self._command();
+$recv($10)._input_(val);
+return $recv($10)._execute();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({val:val},$ctx1,1)});
 //>>excludeEnd("ctx");
@@ -450,22 +446,20 @@ function $HLBindingActionInputWidget(){return $globals.HLBindingActionInputWidge
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$4,$3,$5,$7,$6;
+var $1,$3,$2,$5,$4;
 $1=$recv($HLBindingActionInputWidget())._new();
-$2=$1;
-$4=self._command();
+$3=self._command();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["command"]=1;
 //>>excludeEnd("ctx");
-$3=$recv($4)._displayLabel();
-$recv($2)._ghostText_($3);
-$5=$1;
-$7=self._command();
+$2=$recv($3)._displayLabel();
+$recv($1)._ghostText_($2);
+$5=self._command();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["command"]=2;
 //>>excludeEnd("ctx");
-$6=$recv($7)._defaultInput();
-$recv($5)._defaultValue_($6);
+$4=$recv($5)._defaultInput();
+$recv($1)._defaultValue_($4);
 $recv($1)._inputCompletion_($recv(self._command())._inputCompletion());
 $recv($1)._callback_((function(value){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -1274,7 +1268,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$4,$5,$7,$9,$8,$6,$10,$11,$3,$12,$receiver;
+var $1,$2,$4,$6,$8,$7,$5,$9,$10,$3,$11,$receiver;
 $1=self["@wrapper"];
 if(($receiver = $1) == null || $receiver.isNil){
 self["@wrapper"]=$recv(html)._span();
@@ -1297,19 +1291,18 @@ return $core.withContext(function($ctx2) {
 $4=$recv(html)._input();
 $recv($4)._placeholder_(self._ghostText());
 $recv($4)._value_(self._defaultValue());
-$5=$4;
-$6=$recv((function(event){
+$5=$recv((function(event){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-$7=$recv($recv(event)._which()).__eq((13));
-if($core.assert($7)){
-$9=$recv(self["@input"])._asJQuery();
+$6=$recv($recv(event)._which()).__eq((13));
+if($core.assert($6)){
+$8=$recv(self["@input"])._asJQuery();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["asJQuery"]=1;
 //>>excludeEnd("ctx");
-$8=$recv($9)._val();
-return self._evaluate_($8);
+$7=$recv($8)._val();
+return self._evaluate_($7);
 };
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx3) {$ctx3.fillBlock({event:event},$ctx2,3)});
@@ -1318,17 +1311,17 @@ return self._evaluate_($8);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["yourself"]=1;
 //>>excludeEnd("ctx");
-self["@input"]=$recv($5)._onKeyDown_($6);
+self["@input"]=$recv($4)._onKeyDown_($5);
 self["@input"];
-$10=$recv(self["@input"])._asJQuery();
+$9=$recv(self["@input"])._asJQuery();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["asJQuery"]=2;
 //>>excludeEnd("ctx");
-$recv($10)._typeahead_($globals.HashedCollection._newFromPairs_(["source",self._inputCompletion()]));
-$11=$recv(html)._span();
-$recv($11)._class_("help-inline");
-$recv($11)._with_(self._message());
-self["@messageTag"]=$recv($11)._yourself();
+$recv($9)._typeahead_($globals.HashedCollection._newFromPairs_(["source",self._inputCompletion()]));
+$10=$recv(html)._span();
+$recv($10)._class_("help-inline");
+$recv($10)._with_(self._message());
+self["@messageTag"]=$recv($10)._yourself();
 return self["@messageTag"];
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,2)});
@@ -1341,9 +1334,9 @@ $recv((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-$12=$recv(self["@input"])._asJQuery();
-$recv($12)._focus();
-return $recv($12)._select();
+$11=$recv(self["@input"])._asJQuery();
+$recv($11)._focus();
+return $recv($11)._select();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,5)});
 //>>excludeEnd("ctx");
@@ -1606,21 +1599,20 @@ function $HLOpenCommand(){return $globals.HLOpenCommand||(typeof HLOpenCommand==
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$4,$3;
+var $1,$3,$2;
 $1=$recv($HLBindingGroup())._new();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["new"]=1;
 //>>excludeEnd("ctx");
-$2=$1;
-$4=$recv($HLCloseTabCommand())._new();
+$3=$recv($HLCloseTabCommand())._new();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["new"]=2;
 //>>excludeEnd("ctx");
-$3=$recv($4)._asBinding();
+$2=$recv($3)._asBinding();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asBinding"]=1;
 //>>excludeEnd("ctx");
-$recv($2)._add_($3);
+$recv($1)._add_($2);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["add:"]=1;
 //>>excludeEnd("ctx");
@@ -2537,17 +2529,16 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$4,$3,$receiver;
+var $1,$3,$2,$receiver;
 $1=$recv(html)._span();
 $recv($1)._class_("selected");
-$2=$1;
-$4=$recv(self._selectedBinding())._label();
-if(($receiver = $4) == null || $receiver.isNil){
-$3="Action";
+$3=$recv(self._selectedBinding())._label();
+if(($receiver = $3) == null || $receiver.isNil){
+$2="Action";
 } else {
-$3=$4;
+$2=$3;
 };
-$recv($2)._with_($3);
+$recv($1)._with_($2);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderLabelOn:",{html:html},$globals.HLKeyBinderHelperWidget)});

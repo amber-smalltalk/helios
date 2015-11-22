@@ -881,7 +881,7 @@ function $HLParseErrorRaised(){return $globals.HLParseErrorRaised||(typeof HLPar
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$3,$2,$4,$6,$7,$8,$5;
+var $1,$3,$2,$4,$6,$7,$5;
 split=$recv($recv(anError)._messageText())._tokenize_(" : ");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["tokenize:"]=1;
@@ -905,12 +905,11 @@ line=$recv(split)._first();
 column=$recv(split)._second();
 $4=self._announcer();
 $6=$recv($HLParseErrorRaised())._new();
-$7=$6;
-$8=$recv(line)._asNumber();
+$7=$recv(line)._asNumber();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["asNumber"]=1;
 //>>excludeEnd("ctx");
-$recv($7)._line_($8);
+$recv($6)._line_($7);
 $recv($6)._column_($recv(column)._asNumber());
 $recv($6)._message_(messageToInsert);
 $recv($6)._error_(anError);
@@ -9958,22 +9957,20 @@ var li;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$3,$4,$6,$5,$7,$8,$9,$10,$11,$12;
+var $1,$2,$4,$3,$5,$6,$7,$8,$9;
 $1=$recv(html)._li();
-$2=$1;
-$3=$recv("width: ".__comma($recv(self._tabWidth())._asString())).__comma("px");
+$2=$recv("width: ".__comma($recv(self._tabWidth())._asString())).__comma("px");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx[","]=1;
 //>>excludeEnd("ctx");
-$recv($2)._style_($3);
-$4=$1;
-$6=$recv(aTab)._isActive();
-if($core.assert($6)){
-$5="tab active";
+$recv($1)._style_($2);
+$4=$recv(aTab)._isActive();
+if($core.assert($4)){
+$3="tab active";
 } else {
-$5="tab inactive";
+$3="tab inactive";
 };
-$recv($4)._class_($5);
+$recv($1)._class_($3);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["class:"]=1;
 //>>excludeEnd("ctx");
@@ -9981,16 +9978,16 @@ $recv($1)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-$7=$recv(html)._a();
-$recv($7)._with_((function(){
+$5=$recv(html)._a();
+$recv($5)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-$8=$recv($recv(html)._tag_("i"))._class_("close");
+$6=$recv($recv(html)._tag_("i"))._class_("close");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["class:"]=2;
 //>>excludeEnd("ctx");
-$recv($8)._onClick_((function(){
+$recv($6)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx4) {
 //>>excludeEnd("ctx");
@@ -10002,15 +9999,14 @@ return self._removeTab_(aTab);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["onClick:"]=1;
 //>>excludeEnd("ctx");
-$9=$recv(html)._span();
-$recv($9)._class_($recv(aTab)._cssClass());
-$10=$9;
-$11=$recv(aTab)._label();
+$7=$recv(html)._span();
+$recv($7)._class_($recv(aTab)._cssClass());
+$8=$recv(aTab)._label();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["label"]=1;
 //>>excludeEnd("ctx");
-$recv($10)._title_($11);
-return $recv($9)._with_($recv(aTab)._label());
+$recv($7)._title_($8);
+return $recv($7)._with_($recv(aTab)._label());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx3) {$ctx3.fillBlock({},$ctx2,4)});
 //>>excludeEnd("ctx");
@@ -10018,11 +10014,11 @@ return $recv($9)._with_($recv(aTab)._label());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["with:"]=2;
 //>>excludeEnd("ctx");
-$12=$recv($7)._at_put_("role","tab");
+$9=$recv($5)._at_put_("role","tab");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["at:put:"]=1;
 //>>excludeEnd("ctx");
-return $12;
+return $9;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,3)});
 //>>excludeEnd("ctx");

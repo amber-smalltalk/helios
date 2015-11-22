@@ -188,27 +188,25 @@ function $HLDebuggerCodeModel(){return $globals.HLDebuggerCodeModel||(typeof HLD
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$3,$5,$6,$7,$8,$4,$receiver;
+var $1,$2,$4,$5,$6,$3,$receiver;
 $1=self["@codeWidget"];
 if(($receiver = $1) == null || $receiver.isNil){
 $2=$recv($HLDebuggerCodeWidget())._new();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["new"]=1;
 //>>excludeEnd("ctx");
-$3=$2;
-$5=$recv($HLDebuggerCodeModel())._new();
-$6=$5;
-$7=self._model();
+$4=$recv($HLDebuggerCodeModel())._new();
+$5=self._model();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["model"]=1;
 //>>excludeEnd("ctx");
-$recv($6)._debuggerModel_($7);
-$8=$recv($5)._yourself();
+$recv($4)._debuggerModel_($5);
+$6=$recv($4)._yourself();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["yourself"]=1;
 //>>excludeEnd("ctx");
-$4=$8;
-$recv($3)._model_($4);
+$3=$6;
+$recv($2)._model_($3);
 $recv($2)._browserModel_(self._model());
 self["@codeWidget"]=$recv($2)._yourself();
 return self["@codeWidget"];

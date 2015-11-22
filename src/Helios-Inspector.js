@@ -965,15 +965,14 @@ function $HLCodeWidget(){return $globals.HLCodeWidget||(typeof HLCodeWidget=="un
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$4,$3;
+var $1,$3,$2;
 $1=$recv($HLCodeWidget())._new();
-$2=$1;
-$4=self._model();
+$3=self._model();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["model"]=1;
 //>>excludeEnd("ctx");
-$3=$recv($4)._code();
-$recv($2)._model_($3);
+$2=$recv($3)._code();
+$recv($1)._model_($2);
 $recv($1)._receiver_($recv(self._model())._inspectee());
 return $recv($1)._yourself();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);

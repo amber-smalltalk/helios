@@ -1643,14 +1643,13 @@ function $HLConfirmationWidget(){return $globals.HLConfirmationWidget||(typeof H
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$3;
+var $1,$2;
 $1=$recv($HLConfirmationWidget())._new();
-$2=$1;
-$3=$recv("Commit failed for namespace \x22".__comma($recv($recv(self._package())._transport())._namespace())).__comma("\x22. Do you want to commit to another path?");
+$2=$recv("Commit failed for namespace \x22".__comma($recv($recv(self._package())._transport())._namespace())).__comma("\x22. Do you want to commit to another path?");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx[","]=1;
 //>>excludeEnd("ctx");
-$recv($2)._confirmationString_($3);
+$recv($1)._confirmationString_($2);
 $recv($1)._actionBlock_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {

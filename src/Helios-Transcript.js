@@ -45,7 +45,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLTranscript.superclass.fn.prototype._initialize.apply($recv(self), []));
+($globals.HLTranscript.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -169,7 +169,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLTranscript.superclass.fn.prototype._unregister.apply($recv(self), []));
+($globals.HLTranscript.superclass||$boot.dnu).fn.prototype._unregister.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;

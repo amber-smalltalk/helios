@@ -401,7 +401,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLPrefixClassifier.superclass.fn.prototype._initialize.apply($recv(self), []));
+($globals.HLPrefixClassifier.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -615,7 +615,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLGenerationOutput.superclass.fn.prototype._initialize.apply($recv(self), []));
+($globals.HLGenerationOutput.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -848,7 +848,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLMethodClassifier.superclass.fn.prototype._initialize.apply($recv(self), []));
+($globals.HLMethodClassifier.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -994,7 +994,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLMethodGenerator.superclass.fn.prototype._initialize.apply($recv(self), []));
+($globals.HLMethodGenerator.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -1117,7 +1117,7 @@ var $1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLAccessorsGenerator.superclass.fn.prototype._generate.apply($recv(self), []));
+($globals.HLAccessorsGenerator.superclass||$boot.dnu).fn.prototype._generate.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -1250,7 +1250,7 @@ var $1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLInitializeGenerator.superclass.fn.prototype._generate.apply($recv(self), []));
+($globals.HLInitializeGenerator.superclass||$boot.dnu).fn.prototype._generate.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;

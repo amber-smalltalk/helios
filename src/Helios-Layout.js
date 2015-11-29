@@ -377,7 +377,7 @@ $1=(
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLHorizontalSplitter.superclass.fn.prototype._cssClass.apply($recv(self), []));
+($globals.HLHorizontalSplitter.superclass||$boot.dnu).fn.prototype._cssClass.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -409,7 +409,7 @@ $1=(
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLHorizontalSplitter.superclass.fn.prototype._panesCssClass.apply($recv(self), []));
+($globals.HLHorizontalSplitter.superclass||$boot.dnu).fn.prototype._panesCssClass.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -623,7 +623,7 @@ $1=(
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLVerticalSplitter.superclass.fn.prototype._cssClass.apply($recv(self), []));
+($globals.HLVerticalSplitter.superclass||$boot.dnu).fn.prototype._cssClass.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -655,7 +655,7 @@ $1=(
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLVerticalSplitter.superclass.fn.prototype._panesCssClass.apply($recv(self), []));
+($globals.HLVerticalSplitter.superclass||$boot.dnu).fn.prototype._panesCssClass.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;

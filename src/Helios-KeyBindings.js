@@ -767,7 +767,7 @@ $1=(
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLBindingGroup.superclass.fn.prototype._displayLabel.apply($recv(self), []));
+($globals.HLBindingGroup.superclass||$boot.dnu).fn.prototype._displayLabel.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -1894,7 +1894,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLKeyBinder.superclass.fn.prototype._initialize.apply($recv(self), []));
+($globals.HLKeyBinder.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -2086,7 +2086,7 @@ self["@current"]=(
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLKeyBinder.klass.superclass.fn.prototype._new.apply($recv(self), []));
+($globals.HLKeyBinder.klass.superclass||$boot.dnu).fn.prototype._new.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;

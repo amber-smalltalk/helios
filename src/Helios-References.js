@@ -583,7 +583,7 @@ return (
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLReferencesListWidget.superclass.fn.prototype._activateListItem_.apply($recv(self), [anItem]));
+($globals.HLReferencesListWidget.superclass||$boot.dnu).fn.prototype._activateListItem_.apply($recv(self), [anItem]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = false;
 //>>excludeEnd("ctx");;
@@ -810,7 +810,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLReferencesListWidget.superclass.fn.prototype._selectItem_.apply($recv(self), [aMethod]));
+($globals.HLReferencesListWidget.superclass||$boot.dnu).fn.prototype._selectItem_.apply($recv(self), [aMethod]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;

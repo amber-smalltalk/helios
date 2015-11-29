@@ -22,7 +22,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLSUnitModelTest.superclass.fn.prototype._setUp.apply($recv(self), []));
+($globals.HLSUnitModelTest.superclass||$boot.dnu).fn.prototype._setUp.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;

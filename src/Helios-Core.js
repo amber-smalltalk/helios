@@ -3323,7 +3323,7 @@ var $1,$2,$receiver;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLListWidget.superclass.fn.prototype._focus.apply($recv(self), []));
+($globals.HLListWidget.superclass||$boot.dnu).fn.prototype._focus.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -3511,7 +3511,7 @@ var $1,$receiver;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLListWidget.superclass.fn.prototype._refresh.apply($recv(self), []));
+($globals.HLListWidget.superclass||$boot.dnu).fn.prototype._refresh.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4057,7 +4057,7 @@ var $2,$1,$3;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLNavigationListWidget.superclass.fn.prototype._setupKeyBindings.apply($recv(self), []));
+($globals.HLNavigationListWidget.superclass||$boot.dnu).fn.prototype._setupKeyBindings.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4118,7 +4118,7 @@ return (
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLToolListWidget.superclass.fn.prototype._activateListItem_.apply($recv(self), [anItem]));
+($globals.HLToolListWidget.superclass||$boot.dnu).fn.prototype._activateListItem_.apply($recv(self), [anItem]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4157,7 +4157,7 @@ return (
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLToolListWidget.superclass.fn.prototype._activateNextListItem.apply($recv(self), []));
+($globals.HLToolListWidget.superclass||$boot.dnu).fn.prototype._activateNextListItem.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4196,7 +4196,7 @@ return (
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLToolListWidget.superclass.fn.prototype._activatePreviousListItem.apply($recv(self), []));
+($globals.HLToolListWidget.superclass||$boot.dnu).fn.prototype._activatePreviousListItem.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4432,7 +4432,7 @@ return (
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLToolListWidget.superclass.fn.prototype._reactivateListItem_.apply($recv(self), [anItem]));
+($globals.HLToolListWidget.superclass||$boot.dnu).fn.prototype._reactivateListItem_.apply($recv(self), [anItem]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4468,7 +4468,7 @@ self._renderHeadOn_(html);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLToolListWidget.superclass.fn.prototype._renderContentOn_.apply($recv(self), [html]));
+($globals.HLToolListWidget.superclass||$boot.dnu).fn.prototype._renderContentOn_.apply($recv(self), [html]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4656,7 +4656,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLToolListWidget.superclass.fn.prototype._selectedItem_.apply($recv(self), [anItem]));
+($globals.HLToolListWidget.superclass||$boot.dnu).fn.prototype._selectedItem_.apply($recv(self), [anItem]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4689,7 +4689,7 @@ var $2,$1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLToolListWidget.superclass.fn.prototype._unregister.apply($recv(self), []));
+($globals.HLToolListWidget.superclass||$boot.dnu).fn.prototype._unregister.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -4885,7 +4885,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLTabListWidget.superclass.fn.prototype._selectItem_.apply($recv(self), [aTab]));
+($globals.HLTabListWidget.superclass||$boot.dnu).fn.prototype._selectItem_.apply($recv(self), [aTab]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -5514,7 +5514,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLManager.superclass.fn.prototype._initialize.apply($recv(self), []));
+($globals.HLManager.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -7077,7 +7077,7 @@ var $1,$2,$3,$4;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLRequestWidget.superclass.fn.prototype._renderMainOn_.apply($recv(self), [html]));
+($globals.HLRequestWidget.superclass||$boot.dnu).fn.prototype._renderMainOn_.apply($recv(self), [html]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -7362,7 +7362,7 @@ self["@visible"];
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLProgressWidget.superclass.fn.prototype._remove.apply($recv(self), []));
+($globals.HLProgressWidget.superclass||$boot.dnu).fn.prototype._remove.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -7475,7 +7475,7 @@ self["@visible"];
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLProgressWidget.superclass.fn.prototype._show.apply($recv(self), []));
+($globals.HLProgressWidget.superclass||$boot.dnu).fn.prototype._show.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -7774,7 +7774,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLTabSelectionWidget.superclass.fn.prototype._renderContentOn_.apply($recv(self), [html]));
+($globals.HLTabSelectionWidget.superclass||$boot.dnu).fn.prototype._renderContentOn_.apply($recv(self), [html]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -8040,7 +8040,7 @@ var $1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLTabSelectionWidget.superclass.fn.prototype._setupKeyBindings.apply($recv(self), []));
+($globals.HLTabSelectionWidget.superclass||$boot.dnu).fn.prototype._setupKeyBindings.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;

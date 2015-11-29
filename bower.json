@@ -18,11 +18,8 @@
   "license": [
     "MIT"
   ],
-  "devDependencies": {
-    "amber": ">=0.14.17"
-  },
   "dependencies": {
-    "amber": ">=0.14.14",
+    "amber": ">0.14.17",
     "amber-contrib-web": ">=0.1.0",
     "jquery-ui": ">=1.9.2",
     "bootstrap": "^3.3.4",

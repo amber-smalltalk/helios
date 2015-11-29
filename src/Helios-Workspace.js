@@ -1716,7 +1716,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLCodeWidget.klass.superclass.fn.prototype._initialize.apply($recv(self), []));
+($globals.HLCodeWidget.klass.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -2016,7 +2016,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLNavigationCodeWidget.superclass.fn.prototype._configureEditor.apply($recv(self), []));
+($globals.HLNavigationCodeWidget.superclass||$boot.dnu).fn.prototype._configureEditor.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -2049,7 +2049,7 @@ self._methodContents_(aString);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLNavigationCodeWidget.superclass.fn.prototype._contents_.apply($recv(self), [aString]));
+($globals.HLNavigationCodeWidget.superclass||$boot.dnu).fn.prototype._contents_.apply($recv(self), [aString]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -3023,7 +3023,7 @@ return self._saveIt();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLBrowserCodeWidget.superclass.fn.prototype._renderButtonsOn_.apply($recv(self), [html]));
+($globals.HLBrowserCodeWidget.superclass||$boot.dnu).fn.prototype._renderButtonsOn_.apply($recv(self), [html]));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -3079,7 +3079,7 @@ var $2,$1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLBrowserCodeWidget.superclass.fn.prototype._unregsiter.apply($recv(self), []));
+($globals.HLBrowserCodeWidget.superclass||$boot.dnu).fn.prototype._unregsiter.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
@@ -3354,7 +3354,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
 //>>excludeEnd("ctx");
-$globals.HLWorkspace.superclass.fn.prototype._unregister.apply($recv(self), []));
+($globals.HLWorkspace.superclass||$boot.dnu).fn.prototype._unregister.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;

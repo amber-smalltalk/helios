@@ -24,7 +24,7 @@ clear
 
 show: aString
 	textarea ifNotNil: [
- 		textarea asJQuery append: aString asString ]
+ 		textarea append: aString asString ]
 ! !
 
 !HLTranscript methodsFor: 'initialization'!

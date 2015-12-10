@@ -757,9 +757,12 @@ renderItem: aClass on: html
 !
 
 renderItemLabel: aClass level: anInteger on: html
-	html span asJQuery html: (String streamContents: [ :str |
+	| indent |
+	indent := String fromCharCode: 160.
+	indent := indent, indent, indent, indent.
+	html span with: (String streamContents: [ :str |
 		anInteger timesRepeat: [
-			str nextPutAll: '&nbsp;&nbsp;&nbsp;&nbsp;' ].
+			str nextPutAll: indent ].
 			str nextPutAll: aClass name ])
 !
 

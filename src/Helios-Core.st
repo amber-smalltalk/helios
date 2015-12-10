@@ -457,9 +457,7 @@ withHelperLabelled: aString do: aBlock
 	
 	[
 		aBlock value.
-		'#helper' asJQuery remove
-	] 
-		valueWithTimeout: 10
+		'#helper' asJQuery remove ] fork
 ! !
 
 !HLToolModel methodsFor: 'testing'!
@@ -613,9 +611,9 @@ defaultTabLabel
 !HLWidget methodsFor: 'keybindings'!
 
 bindKeyDown: keyDownBlock keyUp: keyUpBlock
-	self wrapper asJQuery
-		keydown: keyDownBlock;
-		keyup: keyUpBlock
+	self wrapper ifNotNil: [ wrapper
+		onKeyDown: keyDownBlock;
+		onKeyUp: keyUpBlock ]
 !
 
 registerBindings
@@ -639,8 +637,8 @@ renderContentOn: html
 renderOn: html
 	wrapper := html div
 		class: self cssClass;
-		yourself.
-    [ :renderer | self renderContentOn: renderer ] appendToJQuery: wrapper asJQuery
+		with: [ self renderContentOn: html ]
+		yourself
 ! !
 
 !HLWidget methodsFor: 'testing'!
@@ -652,10 +650,8 @@ canHaveFocus
 !HLWidget methodsFor: 'updating'!
 
 refresh
-	self wrapper ifNil: [ ^ self ].
-    
-	self wrapper asJQuery empty.
-    [ :html | self renderContentOn: html ] appendToJQuery: self wrapper asJQuery
+	self wrapper
+		ifNotNil: [ :wrap | wrap contents: [ :html | self renderContentOn: html ] ]
 ! !
 
 !HLWidget class methodsFor: 'accessing'!
@@ -724,14 +720,11 @@ renderContentOn: html
 renderOn: html
     wrapper := html div 
     	class: self cssClass;
-		yourself.
-		
-       wrapper with: [ self renderContentOn: html ].
-	
-	wrapper
 		at: 'tabindex' put: '0';
 		onBlur: [ self wrapper asJQuery removeClass: self focusClass ];
-        onFocus: [ self wrapper asJQuery addClass: self focusClass ]
+        onFocus: [ self wrapper asJQuery addClass: self focusClass ];
+		with: [ self renderContentOn: html ];
+		yourself
 ! !
 
 !HLFocusableWidget methodsFor: 'testing'!
@@ -972,11 +965,11 @@ previousFocus
 setupKeyBindings
 	super setupKeyBindings.
 
-	self wrapper asJQuery keydown: [ :e |
+	self wrapper ifNotNil: [ wrapper onKeyDown: [ :e |
         e which = 39 ifTrue: [ 
         	self nextFocus ].
 		e which = 37 ifTrue: [ 
-        	self previousFocus ] ]
+        	self previousFocus ] ] ]
 ! !
 
 HLNavigationListWidget subclass: #HLToolListWidget
@@ -1954,7 +1947,7 @@ evaluateAt: anInteger
 		ifTrue: [ 
 			[ 
 				self workBlock value: (self collection at: anInteger).
-				self evaluateAt: anInteger + 1 ] valueWithTimeout: 10 ]
+				self evaluateAt: anInteger + 1 ] fork ]
 		ifFalse: [ [ self remove ] valueWithTimeout: 500 ]
 !
 
@@ -1976,11 +1969,12 @@ updateProgress: anInteger
 
 renderContentOn: html
 	html span with: self label.
+	console log: 'progress bar: '; log: self label.
 	html div 
 		class: 'progress';
 		with: [
 			bar := html div 
-				class: 'bar';
+				class: 'progress-bar';
 				style: 'width: 0%' ]
 ! !
 
@@ -2349,7 +2343,7 @@ renderTab: aTab on: html
 			at: 'role' put: 'tab'];
 		onClick: [ aTab activate ].
 	
-	(li asJQuery get: 0) at: 'tab-data' put: aTab
+	li element at: 'tab-data' put: aTab
 !
 
 renderTabsOn: html

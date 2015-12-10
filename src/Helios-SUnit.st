@@ -734,7 +734,7 @@ observeModel
 
 onResultAnnouncement: announcement
 	[self progressBarWidget 
-		updateProgress: (self model testResult runs / self model testResult total * 100) rounded] valueWithTimeout: 10
+		updateProgress: (self model testResult runs / self model testResult total * 100) rounded] fork
 !
 
 onRunTests: announcement

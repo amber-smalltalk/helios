@@ -1942,7 +1942,7 @@ return $recv("#helper"._asJQuery())._remove();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,2)});
 //>>excludeEnd("ctx");
-}))._valueWithTimeout_((10));
+}))._fork();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"withHelperLabelled:do:",{aString:aString,aBlock:aBlock},$globals.HLToolModel)});
@@ -1950,10 +1950,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString", "aBlock"],
-source: "withHelperLabelled: aString do: aBlock\x0a\x09\x22TODO: doesn't belong here\x22\x0a\x0a\x09'#helper' asJQuery remove.\x0a\x0a\x09[ :html |\x0a\x09\x09html div \x0a\x09\x09\x09id: 'helper';\x0a\x09\x09\x09with: aString ] appendToJQuery: 'body' asJQuery.\x0a\x09\x0a\x09[\x0a\x09\x09aBlock value.\x0a\x09\x09'#helper' asJQuery remove\x0a\x09] \x0a\x09\x09valueWithTimeout: 10",
+source: "withHelperLabelled: aString do: aBlock\x0a\x09\x22TODO: doesn't belong here\x22\x0a\x0a\x09'#helper' asJQuery remove.\x0a\x0a\x09[ :html |\x0a\x09\x09html div \x0a\x09\x09\x09id: 'helper';\x0a\x09\x09\x09with: aString ] appendToJQuery: 'body' asJQuery.\x0a\x09\x0a\x09[\x0a\x09\x09aBlock value.\x0a\x09\x09'#helper' asJQuery remove ] fork",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["remove", "asJQuery", "appendToJQuery:", "id:", "div", "with:", "valueWithTimeout:", "value"]
+messageSends: ["remove", "asJQuery", "appendToJQuery:", "id:", "div", "with:", "fork", "value"]
 }),
 $globals.HLToolModel);
 
@@ -2029,10 +2029,15 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv(self._wrapper())._asJQuery();
-$recv($1)._keydown_(keyDownBlock);
-$recv($1)._keyup_(keyUpBlock);
+var $1,$2,$receiver;
+$1=self._wrapper();
+if(($receiver = $1) == null || $receiver.isNil){
+$1;
+} else {
+$2=self["@wrapper"];
+$recv($2)._onKeyDown_(keyDownBlock);
+$recv($2)._onKeyUp_(keyUpBlock);
+};
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"bindKeyDown:keyUp:",{keyDownBlock:keyDownBlock,keyUpBlock:keyUpBlock},$globals.HLWidget)});
@@ -2040,10 +2045,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["keyDownBlock", "keyUpBlock"],
-source: "bindKeyDown: keyDownBlock keyUp: keyUpBlock\x0a\x09self wrapper asJQuery\x0a\x09\x09keydown: keyDownBlock;\x0a\x09\x09keyup: keyUpBlock",
+source: "bindKeyDown: keyDownBlock keyUp: keyUpBlock\x0a\x09self wrapper ifNotNil: [ wrapper\x0a\x09\x09onKeyDown: keyDownBlock;\x0a\x09\x09onKeyUp: keyUpBlock ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["keydown:", "asJQuery", "wrapper", "keyup:"]
+messageSends: ["ifNotNil:", "wrapper", "onKeyDown:", "onKeyUp:"]
 }),
 $globals.HLWidget);
 
@@ -2264,26 +2269,14 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$3,$2,$receiver;
+var $1,$receiver;
 $1=self._wrapper();
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.sendIdx["wrapper"]=1;
-//>>excludeEnd("ctx");
 if(($receiver = $1) == null || $receiver.isNil){
-return self;
-} else {
 $1;
-};
-$3=self._wrapper();
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.sendIdx["wrapper"]=2;
-//>>excludeEnd("ctx");
-$2=$recv($3)._asJQuery();
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.sendIdx["asJQuery"]=1;
-//>>excludeEnd("ctx");
-$recv($2)._empty();
-$recv((function(html){
+} else {
+var wrap;
+wrap=$receiver;
+$recv(wrap)._contents_((function(html){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -2291,7 +2284,8 @@ return self._renderContentOn_(html);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({html:html},$ctx1,2)});
 //>>excludeEnd("ctx");
-}))._appendToJQuery_($recv(self._wrapper())._asJQuery());
+}));
+};
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"refresh",{},$globals.HLWidget)});
@@ -2299,10 +2293,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "refresh\x0a\x09self wrapper ifNil: [ ^ self ].\x0a    \x0a\x09self wrapper asJQuery empty.\x0a    [ :html | self renderContentOn: html ] appendToJQuery: self wrapper asJQuery",
+source: "refresh\x0a\x09self wrapper\x0a\x09\x09ifNotNil: [ :wrap | wrap contents: [ :html | self renderContentOn: html ] ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["ifNil:", "wrapper", "empty", "asJQuery", "appendToJQuery:", "renderContentOn:"]
+messageSends: ["ifNotNil:", "wrapper", "contents:", "renderContentOn:"]
 }),
 $globals.HLWidget);
 
@@ -2402,16 +2396,15 @@ return $core.withContext(function($ctx1) {
 var $1;
 $1=$recv(html)._div();
 $recv($1)._class_(self._cssClass());
-self["@wrapper"]=$recv($1)._yourself();
-$recv((function(renderer){
+self["@wrapper"]=$recv($1)._with_($recv((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-return self._renderContentOn_(renderer);
+return self._renderContentOn_(html);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx2) {$ctx2.fillBlock({renderer:renderer},$ctx1,1)});
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
-}))._appendToJQuery_($recv(self["@wrapper"])._asJQuery());
+}))._yourself());
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html},$globals.HLWidget)});
@@ -2419,10 +2412,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderOn: html\x0a\x09wrapper := html div\x0a\x09\x09class: self cssClass;\x0a\x09\x09yourself.\x0a    [ :renderer | self renderContentOn: renderer ] appendToJQuery: wrapper asJQuery",
+source: "renderOn: html\x0a\x09wrapper := html div\x0a\x09\x09class: self cssClass;\x0a\x09\x09with: [ self renderContentOn: html ]\x0a\x09\x09yourself",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "cssClass", "yourself", "appendToJQuery:", "renderContentOn:", "asJQuery"]
+messageSends: ["class:", "div", "cssClass", "with:", "yourself", "renderContentOn:"]
 }),
 $globals.HLWidget);
 
@@ -2845,51 +2838,50 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$4,$3,$5;
+var $1,$3,$2,$4;
 $1=$recv(html)._div();
 $recv($1)._class_(self._cssClass());
-self["@wrapper"]=$recv($1)._yourself();
-$recv(self["@wrapper"])._with_((function(){
+$recv($1)._at_put_("tabindex","0");
+$recv($1)._onBlur_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-return self._renderContentOn_(html);
+$3=self._wrapper();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["wrapper"]=1;
+//>>excludeEnd("ctx");
+$2=$recv($3)._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["asJQuery"]=1;
+//>>excludeEnd("ctx");
+$4=self._focusClass();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["focusClass"]=1;
+//>>excludeEnd("ctx");
+return $recv($2)._removeClass_($4);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
 }));
-$2=self["@wrapper"];
-$recv($2)._at_put_("tabindex","0");
-$recv($2)._onBlur_((function(){
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-return $core.withContext(function($ctx2) {
-//>>excludeEnd("ctx");
-$4=self._wrapper();
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["wrapper"]=1;
-//>>excludeEnd("ctx");
-$3=$recv($4)._asJQuery();
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["asJQuery"]=1;
-//>>excludeEnd("ctx");
-$5=self._focusClass();
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx2.sendIdx["focusClass"]=1;
-//>>excludeEnd("ctx");
-return $recv($3)._removeClass_($5);
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx2) {$ctx2.fillBlock({},$ctx1,2)});
-//>>excludeEnd("ctx");
-}));
-$recv($2)._onFocus_((function(){
+$recv($1)._onFocus_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
 return $recv($recv(self._wrapper())._asJQuery())._addClass_(self._focusClass());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,2)});
+//>>excludeEnd("ctx");
+}));
+$recv($1)._with_((function(){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return self._renderContentOn_(html);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,3)});
 //>>excludeEnd("ctx");
 }));
+self["@wrapper"]=$recv($1)._yourself();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html},$globals.HLFocusableWidget)});
@@ -2897,10 +2889,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderOn: html\x0a    wrapper := html div \x0a    \x09class: self cssClass;\x0a\x09\x09yourself.\x0a\x09\x09\x0a       wrapper with: [ self renderContentOn: html ].\x0a\x09\x0a\x09wrapper\x0a\x09\x09at: 'tabindex' put: '0';\x0a\x09\x09onBlur: [ self wrapper asJQuery removeClass: self focusClass ];\x0a        onFocus: [ self wrapper asJQuery addClass: self focusClass ]",
+source: "renderOn: html\x0a    wrapper := html div \x0a    \x09class: self cssClass;\x0a\x09\x09at: 'tabindex' put: '0';\x0a\x09\x09onBlur: [ self wrapper asJQuery removeClass: self focusClass ];\x0a        onFocus: [ self wrapper asJQuery addClass: self focusClass ];\x0a\x09\x09with: [ self renderContentOn: html ];\x0a\x09\x09yourself",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "cssClass", "yourself", "with:", "renderContentOn:", "at:put:", "onBlur:", "removeClass:", "asJQuery", "wrapper", "focusClass", "onFocus:", "addClass:"]
+messageSends: ["class:", "div", "cssClass", "at:put:", "onBlur:", "removeClass:", "asJQuery", "wrapper", "focusClass", "onFocus:", "addClass:", "with:", "renderContentOn:", "yourself"]
 }),
 $globals.HLFocusableWidget);
 
@@ -4052,7 +4044,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $2,$1,$3;
+var $1,$3,$2,$4,$receiver;
 (
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = true, 
@@ -4061,29 +4053,34 @@ $ctx1.supercall = true,
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
-$recv($recv(self._wrapper())._asJQuery())._keydown_((function(e){
+$1=self._wrapper();
+if(($receiver = $1) == null || $receiver.isNil){
+$1;
+} else {
+$recv(self["@wrapper"])._onKeyDown_((function(e){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-$2=$recv(e)._which();
+$3=$recv(e)._which();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["which"]=1;
 //>>excludeEnd("ctx");
-$1=$recv($2).__eq((39));
+$2=$recv($3).__eq((39));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["="]=1;
 //>>excludeEnd("ctx");
-if($core.assert($1)){
+if($core.assert($2)){
 self._nextFocus();
 };
-$3=$recv($recv(e)._which()).__eq((37));
-if($core.assert($3)){
+$4=$recv($recv(e)._which()).__eq((37));
+if($core.assert($4)){
 return self._previousFocus();
 };
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx2) {$ctx2.fillBlock({e:e},$ctx1,1)});
+}, function($ctx2) {$ctx2.fillBlock({e:e},$ctx1,2)});
 //>>excludeEnd("ctx");
 }));
+};
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"setupKeyBindings",{},$globals.HLNavigationListWidget)});
@@ -4091,10 +4088,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "setupKeyBindings\x0a\x09super setupKeyBindings.\x0a\x0a\x09self wrapper asJQuery keydown: [ :e |\x0a        e which = 39 ifTrue: [ \x0a        \x09self nextFocus ].\x0a\x09\x09e which = 37 ifTrue: [ \x0a        \x09self previousFocus ] ]",
+source: "setupKeyBindings\x0a\x09super setupKeyBindings.\x0a\x0a\x09self wrapper ifNotNil: [ wrapper onKeyDown: [ :e |\x0a        e which = 39 ifTrue: [ \x0a        \x09self nextFocus ].\x0a\x09\x09e which = 37 ifTrue: [ \x0a        \x09self previousFocus ] ] ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["setupKeyBindings", "keydown:", "asJQuery", "wrapper", "ifTrue:", "=", "which", "nextFocus", "previousFocus"]
+messageSends: ["setupKeyBindings", "ifNotNil:", "wrapper", "onKeyDown:", "ifTrue:", "=", "which", "nextFocus", "previousFocus"]
 }),
 $globals.HLNavigationListWidget);
 
@@ -8243,10 +8240,7 @@ return self._evaluateAt_($recv(anInteger).__plus((1)));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,2)});
 //>>excludeEnd("ctx");
-}))._valueWithTimeout_((10));
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.sendIdx["valueWithTimeout:"]=1;
-//>>excludeEnd("ctx");
+}))._fork();
 } else {
 $recv((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -8265,10 +8259,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anInteger"],
-source: "evaluateAt: anInteger\x0a\x09self updateProgress: (anInteger / self collection size) * 100.\x0a\x09anInteger <= self collection size\x0a\x09\x09ifTrue: [ \x0a\x09\x09\x09[ \x0a\x09\x09\x09\x09self workBlock value: (self collection at: anInteger).\x0a\x09\x09\x09\x09self evaluateAt: anInteger + 1 ] valueWithTimeout: 10 ]\x0a\x09\x09ifFalse: [ [ self remove ] valueWithTimeout: 500 ]",
+source: "evaluateAt: anInteger\x0a\x09self updateProgress: (anInteger / self collection size) * 100.\x0a\x09anInteger <= self collection size\x0a\x09\x09ifTrue: [ \x0a\x09\x09\x09[ \x0a\x09\x09\x09\x09self workBlock value: (self collection at: anInteger).\x0a\x09\x09\x09\x09self evaluateAt: anInteger + 1 ] fork ]\x0a\x09\x09ifFalse: [ [ self remove ] valueWithTimeout: 500 ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["updateProgress:", "*", "/", "size", "collection", "ifTrue:ifFalse:", "<=", "valueWithTimeout:", "value:", "workBlock", "at:", "evaluateAt:", "+", "remove"]
+messageSends: ["updateProgress:", "*", "/", "size", "collection", "ifTrue:ifFalse:", "<=", "fork", "value:", "workBlock", "at:", "evaluateAt:", "+", "valueWithTimeout:", "remove"]
 }),
 $globals.HLProgressBarWidget);
 
@@ -8379,26 +8373,37 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2;
-$recv($recv(html)._span())._with_(self._label());
+var $1,$2,$3,$4,$5;
+$1=$recv(html)._span();
+$2=self._label();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["label"]=1;
+//>>excludeEnd("ctx");
+$recv($1)._with_($2);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["with:"]=1;
 //>>excludeEnd("ctx");
-$1=$recv(html)._div();
+$3=console;
+$recv($3)._log_("progress bar: ");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["log:"]=1;
+//>>excludeEnd("ctx");
+$recv($3)._log_(self._label());
+$4=$recv(html)._div();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["div"]=1;
 //>>excludeEnd("ctx");
-$recv($1)._class_("progress");
+$recv($4)._class_("progress");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["class:"]=1;
 //>>excludeEnd("ctx");
-$recv($1)._with_((function(){
+$recv($4)._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-$2=$recv(html)._div();
-$recv($2)._class_("bar");
-self["@bar"]=$recv($2)._style_("width: 0%");
+$5=$recv(html)._div();
+$recv($5)._class_("progress-bar");
+self["@bar"]=$recv($5)._style_("width: 0%");
 return self["@bar"];
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
@@ -8411,10 +8416,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderContentOn: html\x0a\x09html span with: self label.\x0a\x09html div \x0a\x09\x09class: 'progress';\x0a\x09\x09with: [\x0a\x09\x09\x09bar := html div \x0a\x09\x09\x09\x09class: 'bar';\x0a\x09\x09\x09\x09style: 'width: 0%' ]",
+source: "renderContentOn: html\x0a\x09html span with: self label.\x0a\x09console log: 'progress bar: '; log: self label.\x0a\x09html div \x0a\x09\x09class: 'progress';\x0a\x09\x09with: [\x0a\x09\x09\x09bar := html div \x0a\x09\x09\x09\x09class: 'progress-bar';\x0a\x09\x09\x09\x09style: 'width: 0%' ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["with:", "span", "label", "class:", "div", "style:"]
+messageSends: ["with:", "span", "label", "log:", "class:", "div", "style:"]
 }),
 $globals.HLProgressBarWidget);
 
@@ -10035,7 +10040,7 @@ return $recv(aTab)._activate();
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,6)});
 //>>excludeEnd("ctx");
 }));
-$recv($recv($recv(li)._asJQuery())._get_((0)))._at_put_("tab-data",aTab);
+$recv($recv(li)._element())._at_put_("tab-data",aTab);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderTab:on:",{aTab:aTab,html:html,li:li},$globals.HLTabsWidget)});
@@ -10043,10 +10048,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aTab", "html"],
-source: "renderTab: aTab on: html\x0a\x09| li |\x0a\x09li := html li \x0a\x09\x09style: 'width: ', self tabWidth asString, 'px';\x0a\x09\x09class: (aTab isActive ifTrue: [ 'tab active' ] ifFalse: [ 'tab inactive' ]);\x0a\x09\x09with: [\x0a\x09\x09\x09html a\x0a\x09\x09\x09with: [\x0a\x09\x09\x09\x09((html tag: 'i') class: 'close')\x0a\x09\x09\x09\x09\x09onClick: [ self removeTab: aTab ].\x0a\x09\x09\x09\x09html span \x0a\x09\x09\x09\x09\x09class: aTab cssClass;\x0a\x09\x09\x09\x09\x09title: aTab label;\x0a\x09\x09\x09\x09\x09with: aTab label ];\x0a\x09\x09\x09at: 'role' put: 'tab'];\x0a\x09\x09onClick: [ aTab activate ].\x0a\x09\x0a\x09(li asJQuery get: 0) at: 'tab-data' put: aTab",
+source: "renderTab: aTab on: html\x0a\x09| li |\x0a\x09li := html li \x0a\x09\x09style: 'width: ', self tabWidth asString, 'px';\x0a\x09\x09class: (aTab isActive ifTrue: [ 'tab active' ] ifFalse: [ 'tab inactive' ]);\x0a\x09\x09with: [\x0a\x09\x09\x09html a\x0a\x09\x09\x09with: [\x0a\x09\x09\x09\x09((html tag: 'i') class: 'close')\x0a\x09\x09\x09\x09\x09onClick: [ self removeTab: aTab ].\x0a\x09\x09\x09\x09html span \x0a\x09\x09\x09\x09\x09class: aTab cssClass;\x0a\x09\x09\x09\x09\x09title: aTab label;\x0a\x09\x09\x09\x09\x09with: aTab label ];\x0a\x09\x09\x09at: 'role' put: 'tab'];\x0a\x09\x09onClick: [ aTab activate ].\x0a\x09\x0a\x09li element at: 'tab-data' put: aTab",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["style:", "li", ",", "asString", "tabWidth", "class:", "ifTrue:ifFalse:", "isActive", "with:", "a", "onClick:", "tag:", "removeTab:", "span", "cssClass", "title:", "label", "at:put:", "activate", "get:", "asJQuery"]
+messageSends: ["style:", "li", ",", "asString", "tabWidth", "class:", "ifTrue:ifFalse:", "isActive", "with:", "a", "onClick:", "tag:", "removeTab:", "span", "cssClass", "title:", "label", "at:put:", "activate", "element"]
 }),
 $globals.HLTabsWidget);
 

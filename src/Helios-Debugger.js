@@ -810,7 +810,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-$recv(self["@editor"])._setGutterMarker_gutter_value_(anInteger,"stops",$recv($recv("<div class=\x22stop\x22></stop>"._asJQuery())._toArray())._first());
+$recv(self["@editor"])._setGutterMarker_gutter_value_(anInteger,"stops",$recv($recv("<div class=\x22stop\x22></div>"._asJQuery())._toArray())._first());
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"addStopAt:",{anInteger:anInteger},$globals.HLDebuggerCodeWidget)});
@@ -818,7 +818,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anInteger"],
-source: "addStopAt: anInteger\x0a\x09editor\x0a\x09\x09setGutterMarker: anInteger\x0a\x09\x09gutter: 'stops'\x0a\x09\x09value: '<div class=\x22stop\x22></stop>' asJQuery toArray first",
+source: "addStopAt: anInteger\x0a\x09editor\x0a\x09\x09setGutterMarker: anInteger\x0a\x09\x09gutter: 'stops'\x0a\x09\x09value: '<div class=\x22stop\x22></div>' asJQuery toArray first",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["setGutterMarker:gutter:value:", "first", "toArray", "asJQuery"]

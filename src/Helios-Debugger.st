@@ -228,7 +228,7 @@ addStopAt: anInteger
 	editor
 		setGutterMarker: anInteger
 		gutter: 'stops'
-		value: '<div class="stop"></stop>' asJQuery toArray first
+		value: '<div class="stop"></div>' asJQuery toArray first
 !
 
 clearHighlight

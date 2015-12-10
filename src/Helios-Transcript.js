@@ -139,7 +139,7 @@ $1=self["@textarea"];
 if(($receiver = $1) == null || $receiver.isNil){
 $1;
 } else {
-$recv($recv(self["@textarea"])._asJQuery())._append_($recv(aString)._asString());
+$recv(self["@textarea"])._append_($recv(aString)._asString());
 };
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -148,10 +148,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aString"],
-source: "show: aString\x0a\x09textarea ifNotNil: [\x0a \x09\x09textarea asJQuery append: aString asString ]",
+source: "show: aString\x0a\x09textarea ifNotNil: [\x0a \x09\x09textarea append: aString asString ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["ifNotNil:", "append:", "asJQuery", "asString"]
+messageSends: ["ifNotNil:", "append:", "asString"]
 }),
 $globals.HLTranscript);
 

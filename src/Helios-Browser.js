@@ -2833,11 +2833,22 @@ selector: "renderItemLabel:level:on:",
 protocol: 'rendering',
 fn: function (aClass,anInteger,html){
 var self=this;
+var indent;
 function $String(){return $globals.String||(typeof String=="undefined"?nil:String)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-$recv($recv($recv(html)._span())._asJQuery())._html_($recv($String())._streamContents_((function(str){
+var $1;
+indent=$recv($String())._fromCharCode_((160));
+$1=$recv($recv(indent).__comma(indent)).__comma(indent);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx[","]=2;
+//>>excludeEnd("ctx");
+indent=$recv($1).__comma(indent);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx[","]=1;
+//>>excludeEnd("ctx");
+$recv($recv(html)._span())._with_($recv($String())._streamContents_((function(str){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -2845,7 +2856,7 @@ $recv(anInteger)._timesRepeat_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx3) {
 //>>excludeEnd("ctx");
-return $recv(str)._nextPutAll_("&nbsp;&nbsp;&nbsp;&nbsp;");
+return $recv(str)._nextPutAll_(indent);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx3.sendIdx["nextPutAll:"]=1;
 //>>excludeEnd("ctx");
@@ -2860,15 +2871,15 @@ return $recv(str)._nextPutAll_($recv(aClass)._name());
 })));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx1) {$ctx1.fill(self,"renderItemLabel:level:on:",{aClass:aClass,anInteger:anInteger,html:html},$globals.HLClassesListWidget)});
+}, function($ctx1) {$ctx1.fill(self,"renderItemLabel:level:on:",{aClass:aClass,anInteger:anInteger,html:html,indent:indent},$globals.HLClassesListWidget)});
 //>>excludeEnd("ctx");
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aClass", "anInteger", "html"],
-source: "renderItemLabel: aClass level: anInteger on: html\x0a\x09html span asJQuery html: (String streamContents: [ :str |\x0a\x09\x09anInteger timesRepeat: [\x0a\x09\x09\x09str nextPutAll: '&nbsp;&nbsp;&nbsp;&nbsp;' ].\x0a\x09\x09\x09str nextPutAll: aClass name ])",
+source: "renderItemLabel: aClass level: anInteger on: html\x0a\x09| indent |\x0a\x09indent := String fromCharCode: 160.\x0a\x09indent := indent, indent, indent, indent.\x0a\x09html span with: (String streamContents: [ :str |\x0a\x09\x09anInteger timesRepeat: [\x0a\x09\x09\x09str nextPutAll: indent ].\x0a\x09\x09\x09str nextPutAll: aClass name ])",
 referencedClasses: ["String"],
 //>>excludeEnd("ide");
-messageSends: ["html:", "asJQuery", "span", "streamContents:", "timesRepeat:", "nextPutAll:", "name"]
+messageSends: ["fromCharCode:", ",", "with:", "span", "streamContents:", "timesRepeat:", "nextPutAll:", "name"]
 }),
 $globals.HLClassesListWidget);
 

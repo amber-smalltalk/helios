@@ -2897,7 +2897,7 @@ return $recv($1)._updateProgress_($2);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
-}))._valueWithTimeout_((10));
+}))._fork();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"onResultAnnouncement:",{announcement:announcement},$globals.HLSUnitResults)});
@@ -2905,10 +2905,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["announcement"],
-source: "onResultAnnouncement: announcement\x0a\x09[self progressBarWidget \x0a\x09\x09updateProgress: (self model testResult runs / self model testResult total * 100) rounded] valueWithTimeout: 10",
+source: "onResultAnnouncement: announcement\x0a\x09[self progressBarWidget \x0a\x09\x09updateProgress: (self model testResult runs / self model testResult total * 100) rounded] fork",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["valueWithTimeout:", "updateProgress:", "progressBarWidget", "rounded", "*", "/", "runs", "testResult", "model", "total"]
+messageSends: ["fork", "updateProgress:", "progressBarWidget", "rounded", "*", "/", "runs", "testResult", "model", "total"]
 }),
 $globals.HLSUnitResults);
 

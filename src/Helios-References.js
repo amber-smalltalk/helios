@@ -1395,11 +1395,13 @@ function $HLSearchReferences(){return $globals.HLSearchReferences||(typeof HLSea
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
+var $1,$3,$2;
 self._updateCaches();
-$1=$recv($HLSearchReferences())._new();
-$recv($1)._searchString_(aString);
-$recv(self._announcer())._announce_($recv($1)._yourself());
+$1=self._announcer();
+$3=$recv($HLSearchReferences())._new();
+$recv($3)._searchString_(aString);
+$2=$recv($3)._yourself();
+$recv($1)._announce_($2);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"search:",{aString:aString},$globals.HLReferencesModel)});

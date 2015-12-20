@@ -1243,7 +1243,7 @@ function $HLDebuggerContextSelected(){return $globals.HLDebuggerContextSelected|
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
+var $1,$3,$2;
 self._withChangesDo_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
@@ -1253,9 +1253,11 @@ $recv(self._debugger())._context_(aContext);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["context:"]=1;
 //>>excludeEnd("ctx");
-$1=$recv($HLDebuggerContextSelected())._new();
-$recv($1)._context_(aContext);
-return $recv(self._announcer())._announce_($recv($1)._yourself());
+$1=self._announcer();
+$3=$recv($HLDebuggerContextSelected())._new();
+$recv($3)._context_(aContext);
+$2=$recv($3)._yourself();
+return $recv($1)._announce_($2);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
@@ -1439,7 +1441,7 @@ function $HLDebuggerContextSelected(){return $globals.HLDebuggerContextSelected|
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $2,$1,$3;
+var $2,$1,$3,$5,$4;
 self["@rootContext"]=self._currentContext();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["currentContext"]=1;
@@ -1450,9 +1452,11 @@ $ctx1.sendIdx["currentContext"]=2;
 //>>excludeEnd("ctx");
 $1=$recv($2)._method();
 self._selectedMethod_($1);
-$3=$recv($HLDebuggerContextSelected())._new();
-$recv($3)._context_(self._currentContext());
-$recv(self._announcer())._announce_($recv($3)._yourself());
+$3=self._announcer();
+$5=$recv($HLDebuggerContextSelected())._new();
+$recv($5)._context_(self._currentContext());
+$4=$recv($5)._yourself();
+$recv($3)._announce_($4);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"onStep",{},$globals.HLDebuggerModel)});
@@ -1503,12 +1507,14 @@ function $HLDebuggerStepped(){return $globals.HLDebuggerStepped||(typeof HLDebug
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
+var $1,$3,$2;
 $recv(self._debugger())._restart();
 self._onStep();
-$1=$recv($HLDebuggerStepped())._new();
-$recv($1)._context_(self._currentContext());
-$recv(self._announcer())._announce_($recv($1)._yourself());
+$1=self._announcer();
+$3=$recv($HLDebuggerStepped())._new();
+$recv($3)._context_(self._currentContext());
+$2=$recv($3)._yourself();
+$recv($1)._announce_($2);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"restart",{},$globals.HLDebuggerModel)});
@@ -1551,12 +1557,14 @@ function $HLDebuggerStepped(){return $globals.HLDebuggerStepped||(typeof HLDebug
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
+var $1,$3,$2;
 $recv(self._debugger())._stepOver();
 self._onStep();
-$1=$recv($HLDebuggerStepped())._new();
-$recv($1)._context_(self._currentContext());
-$recv(self._announcer())._announce_($recv($1)._yourself());
+$1=self._announcer();
+$3=$recv($HLDebuggerStepped())._new();
+$recv($3)._context_(self._currentContext());
+$2=$recv($3)._yourself();
+$recv($1)._announce_($2);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"stepOver",{},$globals.HLDebuggerModel)});

@@ -578,10 +578,11 @@ function $HLBindingAction(){return $globals.HLBindingAction||(typeof HLBindingAc
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv($HLBindingAction())._on_labelled_(anInteger,aString);
-$recv($1)._callback_(aBlock);
-self._add_($recv($1)._yourself());
+var $2,$1;
+$2=$recv($HLBindingAction())._on_labelled_(anInteger,aString);
+$recv($2)._callback_(aBlock);
+$1=$recv($2)._yourself();
+self._add_($1);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"addActionKey:labelled:callback:",{anInteger:anInteger,aString:aString,aBlock:aBlock},$globals.HLBindingGroup)});

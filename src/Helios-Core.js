@@ -199,14 +199,16 @@ function $HLChangeForbidden(){return $globals.HLChangeForbidden||(typeof HLChang
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
+var $1,$3,$2;
 $recv((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
-$1=$recv($HLAboutToChange())._new();
-$recv($1)._actionBlock_(aBlock);
-$recv(self._announcer())._announce_($recv($1)._yourself());
+$1=self._announcer();
+$3=$recv($HLAboutToChange())._new();
+$recv($3)._actionBlock_(aBlock);
+$2=$recv($3)._yourself();
+$recv($1)._announce_($2);
 return $recv(aBlock)._value();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
@@ -344,17 +346,19 @@ function $HLInstVarAdded(){return $globals.HLInstVarAdded||(typeof HLInstVarAdde
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$3;
+var $1,$2,$3,$5,$4;
 $1=self._environment();
 $2=self._selectedClass();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["selectedClass"]=1;
 //>>excludeEnd("ctx");
 $recv($1)._addInstVarNamed_to_(aString,$2);
-$3=$recv($HLInstVarAdded())._new();
-$recv($3)._theClass_(self._selectedClass());
-$recv($3)._variableName_(aString);
-$recv(self._announcer())._announce_($recv($3)._yourself());
+$3=self._announcer();
+$5=$recv($HLInstVarAdded())._new();
+$recv($5)._theClass_(self._selectedClass());
+$recv($5)._variableName_(aString);
+$4=$recv($5)._yourself();
+$recv($3)._announce_($4);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"addInstVarNamed:",{aString:aString},$globals.HLToolModel)});
@@ -852,10 +856,12 @@ function $HLCompileErrorRaised(){return $globals.HLCompileErrorRaised||(typeof H
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv($HLCompileErrorRaised())._new();
-$recv($1)._error_(anError);
-$recv(self._announcer())._announce_($recv($1)._yourself());
+var $1,$3,$2;
+$1=self._announcer();
+$3=$recv($HLCompileErrorRaised())._new();
+$recv($3)._error_(anError);
+$2=$recv($3)._yourself();
+$recv($1)._announce_($2);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"handleCompileError:",{anError:anError},$globals.HLToolModel)});
@@ -939,10 +945,12 @@ function $HLUnknownVariableErrorRaised(){return $globals.HLUnknownVariableErrorR
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv($HLUnknownVariableErrorRaised())._new();
-$recv($1)._error_(anError);
-$recv(self._announcer())._announce_($recv($1)._yourself());
+var $1,$3,$2;
+$1=self._announcer();
+$3=$recv($HLUnknownVariableErrorRaised())._new();
+$recv($3)._error_(anError);
+$2=$recv($3)._yourself();
+$recv($1)._announce_($2);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"handleUnkownVariableError:",{anError:anError},$globals.HLToolModel)});
@@ -2477,11 +2485,13 @@ function $HLTabLabelChanged(){return $globals.HLTabLabelChanged||(typeof HLTabLa
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1;
-$1=$recv($HLTabLabelChanged())._new();
-$recv($1)._widget_(self);
-$recv($1)._label_(aString);
-$recv($recv(self._manager())._announcer())._announce_($recv($1)._yourself());
+var $1,$3,$2;
+$1=$recv(self._manager())._announcer();
+$3=$recv($HLTabLabelChanged())._new();
+$recv($3)._widget_(self);
+$recv($3)._label_(aString);
+$2=$recv($3)._yourself();
+$recv($1)._announce_($2);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"setTabLabel:",{aString:aString},$globals.HLWidget)});

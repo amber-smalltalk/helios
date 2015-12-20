@@ -1255,16 +1255,18 @@ function $HLShowTemplate(){return $globals.HLShowTemplate||(typeof HLShowTemplat
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$receiver;
+var $1,$2,$4,$3,$receiver;
 $1=self._selectedPackage();
 if(($receiver = $1) == null || $receiver.isNil){
 $1;
 } else {
 var package_;
 package_=$receiver;
-$2=$recv($HLShowTemplate())._new();
-$recv($2)._template_($recv(package_)._classTemplate());
-$recv(self._announcer())._announce_($recv($2)._yourself());
+$2=self._announcer();
+$4=$recv($HLShowTemplate())._new();
+$recv($4)._template_($recv(package_)._classTemplate());
+$3=$recv($4)._yourself();
+$recv($2)._announce_($3);
 };
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -1439,16 +1441,18 @@ function $HLShowTemplate(){return $globals.HLShowTemplate||(typeof HLShowTemplat
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$receiver;
+var $1,$2,$4,$3,$receiver;
 $1=self._selectedClass();
 if(($receiver = $1) == null || $receiver.isNil){
 $1;
 } else {
 var theClass;
 theClass=$receiver;
-$2=$recv($HLShowTemplate())._new();
-$recv($2)._template_($recv(theClass)._methodTemplate());
-$recv(self._announcer())._announce_($recv($2)._yourself());
+$2=self._announcer();
+$4=$recv($HLShowTemplate())._new();
+$recv($4)._template_($recv(theClass)._methodTemplate());
+$3=$recv($4)._yourself();
+$recv($2)._announce_($3);
 };
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -3626,7 +3630,7 @@ function $Showdown(){return $globals.Showdown||(typeof Showdown=="undefined"?nil
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$4,$3,$5,$receiver;
+var $1,$2,$4,$3,$6,$5,$receiver;
 $1=self._selectedItem();
 if(($receiver = $1) == null || $receiver.isNil){
 $1;
@@ -3664,9 +3668,10 @@ return self._editDocumentation();
 $ctx1.sendIdx["with:"]=2;
 //>>excludeEnd("ctx");
 $3;
-$5=$recv(html)._div();
-$recv($5)._class_("markdown");
-$recv($recv($5)._asJQuery())._html_($recv($recv($recv($Showdown())._at_("converter"))._new())._makeHtml_(self._documentation()));
+$6=$recv(html)._div();
+$recv($6)._class_("markdown");
+$5=$recv($6)._asJQuery();
+$recv($5)._html_($recv($recv($recv($Showdown())._at_("converter"))._new())._makeHtml_(self._documentation()));
 };
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);

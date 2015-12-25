@@ -2404,7 +2404,8 @@ return $core.withContext(function($ctx1) {
 var $1;
 $1=$recv(html)._div();
 $recv($1)._class_(self._cssClass());
-self["@wrapper"]=$recv($1)._with_($recv((function(){
+self["@wrapper"]=$recv($1)._yourself();
+$recv(self["@wrapper"])._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -2412,7 +2413,7 @@ return self._renderContentOn_(html);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
-}))._yourself());
+}));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html},$globals.HLWidget)});
@@ -2420,10 +2421,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderOn: html\x0a\x09wrapper := html div\x0a\x09\x09class: self cssClass;\x0a\x09\x09with: [ self renderContentOn: html ]\x0a\x09\x09yourself",
+source: "renderOn: html\x0a\x09wrapper := html div\x0a\x09\x09class: self cssClass;\x0a\x09\x09yourself.\x0a\x09\x22must do this later, as renderContentOn may want to use self wrapper\x22\x0a\x09wrapper with: [ self renderContentOn: html ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "cssClass", "with:", "yourself", "renderContentOn:"]
+messageSends: ["class:", "div", "cssClass", "yourself", "with:", "renderContentOn:"]
 }),
 $globals.HLWidget);
 

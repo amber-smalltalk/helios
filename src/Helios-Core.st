@@ -637,8 +637,9 @@ renderContentOn: html
 renderOn: html
 	wrapper := html div
 		class: self cssClass;
-		with: [ self renderContentOn: html ]
-		yourself
+		yourself.
+	"must do this later, as renderContentOn may want to use self wrapper"
+	wrapper with: [ self renderContentOn: html ]
 ! !
 
 !HLWidget methodsFor: 'testing'!

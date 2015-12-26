@@ -766,7 +766,7 @@ return $core.withContext(function($ctx1) {
 var $1;
 $1=(
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.supercall = true, 
+$ctx1.supercall = true,
 //>>excludeEnd("ctx");
 ($globals.HLBindingGroup.superclass||$boot.dnu).fn.prototype._displayLabel.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -1893,7 +1893,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 (
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.supercall = true, 
+$ctx1.supercall = true,
 //>>excludeEnd("ctx");
 ($globals.HLKeyBinder.superclass||$boot.dnu).fn.prototype._initialize.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -2085,7 +2085,7 @@ $1=self["@current"];
 if(($receiver = $1) == null || $receiver.isNil){
 self["@current"]=(
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.supercall = true, 
+$ctx1.supercall = true,
 //>>excludeEnd("ctx");
 ($globals.HLKeyBinder.klass.superclass||$boot.dnu).fn.prototype._new.apply($recv(self), []));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);

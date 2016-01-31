@@ -13,7 +13,7 @@ function findAmberPath(options) {
 }
 
 module.exports = function (grunt) {
-    var helpers = require('amber-dev/lib/helpers');
+    var helpers = require('amber-dev').helpers;
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-execute');

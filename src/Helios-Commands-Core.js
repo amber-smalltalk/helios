@@ -11,12 +11,11 @@ selector: "asActionBinding",
 protocol: 'converting',
 fn: function (){
 var self=this;
-function $HLBindingAction(){return $globals.HLBindingAction||(typeof HLBindingAction=="undefined"?nil:HLBindingAction)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv($HLBindingAction())._on_labelled_(self._keyCode(),self._label());
+$1=$recv($globals.HLBindingAction)._on_labelled_(self._keyCode(),self._label());
 $recv($1)._command_(self);
 return $recv($1)._yourself();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -67,11 +66,10 @@ selector: "asGroupBinding",
 protocol: 'converting',
 fn: function (){
 var self=this;
-function $HLBindingGroup(){return $globals.HLBindingGroup||(typeof HLBindingGroup=="undefined"?nil:HLBindingGroup)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-return $recv($HLBindingGroup())._on_labelled_(self._keyCode(),self._label());
+return $recv($globals.HLBindingGroup)._on_labelled_(self._keyCode(),self._label());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"asGroupBinding",{},$globals.HLCommand)});
 //>>excludeEnd("ctx");
@@ -453,12 +451,11 @@ protocol: 'registration',
 fn: function (){
 var self=this;
 var classes;
-function $OrderedCollection(){return $globals.OrderedCollection||(typeof OrderedCollection=="undefined"?nil:OrderedCollection)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-classes=$recv($OrderedCollection())._new();
+classes=$recv($globals.OrderedCollection)._new();
 $1=self._isConcrete();
 if($core.assert($1)){
 $recv(classes)._add_(self);
@@ -677,11 +674,10 @@ selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-function $HLManager(){return $globals.HLManager||(typeof HLManager=="undefined"?nil:HLManager)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-$recv($recv($HLManager())._current())._removeActiveTab();
+$recv($recv($globals.HLManager)._current())._removeActiveTab();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLCloseTabCommand)});
@@ -916,11 +912,10 @@ selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-function $HLBrowser(){return $globals.HLBrowser||(typeof HLBrowser=="undefined"?nil:HLBrowser)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-return $recv($HLBrowser())._openAsTab();
+return $recv($globals.HLBrowser)._openAsTab();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLOpenBrowserCommand)});
 //>>excludeEnd("ctx");
@@ -979,11 +974,10 @@ selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-function $HLSUnit(){return $globals.HLSUnit||(typeof HLSUnit=="undefined"?nil:HLSUnit)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-return $recv($HLSUnit())._openAsTab();
+return $recv($globals.HLSUnit)._openAsTab();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLOpenSUnitCommand)});
 //>>excludeEnd("ctx");
@@ -1042,11 +1036,10 @@ selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-function $HLWorkspace(){return $globals.HLWorkspace||(typeof HLWorkspace=="undefined"?nil:HLWorkspace)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-return $recv($HLWorkspace())._openAsTab();
+return $recv($globals.HLWorkspace)._openAsTab();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"execute",{},$globals.HLOpenWorkspaceCommand)});
 //>>excludeEnd("ctx");
@@ -1106,7 +1099,6 @@ protocol: 'executing',
 fn: function (){
 var self=this;
 var activeTab;
-function $HLTabSelectionWidget(){return $globals.HLTabSelectionWidget||(typeof HLTabSelectionWidget=="undefined"?nil:HLTabSelectionWidget)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -1115,7 +1107,7 @@ activeTab=self._selectedTab();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["selectedTab"]=1;
 //>>excludeEnd("ctx");
-$1=$recv($HLTabSelectionWidget())._new();
+$1=$recv($globals.HLTabSelectionWidget)._new();
 $recv($1)._tabs_(self._tabs());
 $recv($1)._selectedTab_(self._selectedTab());
 $recv($1)._selectCallback_((function(tab){
@@ -1168,11 +1160,10 @@ selector: "selectedTab",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-function $HLManager(){return $globals.HLManager||(typeof HLManager=="undefined"?nil:HLManager)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-return $recv($recv($HLManager())._current())._activeTab();
+return $recv($recv($globals.HLManager)._current())._activeTab();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"selectedTab",{},$globals.HLSwitchTabCommand)});
 //>>excludeEnd("ctx");
@@ -1192,11 +1183,10 @@ selector: "tabs",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-function $HLManager(){return $globals.HLManager||(typeof HLManager=="undefined"?nil:HLManager)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-return $recv($recv($HLManager())._current())._tabs();
+return $recv($recv($globals.HLManager)._current())._tabs();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"tabs",{},$globals.HLSwitchTabCommand)});
 //>>excludeEnd("ctx");

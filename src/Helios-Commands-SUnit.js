@@ -15,11 +15,10 @@ selector: "isValidFor:",
 protocol: 'testing',
 fn: function (aModel){
 var self=this;
-function $HLSUnitModel(){return $globals.HLSUnitModel||(typeof HLSUnitModel=="undefined"?nil:HLSUnitModel)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-return $recv(aModel)._isKindOf_($HLSUnitModel());
+return $recv(aModel)._isKindOf_($globals.HLSUnitModel);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"isValidFor:",{aModel:aModel},$globals.HLSUnitCommand.klass)});
 //>>excludeEnd("ctx");

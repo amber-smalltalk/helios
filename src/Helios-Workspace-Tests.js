@@ -11,13 +11,11 @@ selector: "testKeyMap",
 protocol: 'tests',
 fn: function (){
 var self=this;
-function $HLCodeWidget(){return $globals.HLCodeWidget||(typeof HLCodeWidget=="undefined"?nil:HLCodeWidget)}
-function $HashedCollection(){return $globals.HashedCollection||(typeof HashedCollection=="undefined"?nil:HashedCollection)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv($recv($HLCodeWidget())._pcKeyMap())._isKindOf_($HashedCollection());
+$1=$recv($recv($globals.HLCodeWidget)._pcKeyMap())._isKindOf_($globals.HashedCollection);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["isKindOf:"]=1;
 //>>excludeEnd("ctx");
@@ -25,7 +23,7 @@ self._assert_($1);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["assert:"]=1;
 //>>excludeEnd("ctx");
-self._assert_($recv($recv($HLCodeWidget())._macKeyMap())._isKindOf_($HashedCollection()));
+self._assert_($recv($recv($globals.HLCodeWidget)._macKeyMap())._isKindOf_($globals.HashedCollection));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"testKeyMap",{},$globals.HLCodeWidgetTest)});

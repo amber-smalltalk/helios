@@ -70,11 +70,10 @@ selector: "register",
 protocol: 'registration',
 fn: function (){
 var self=this;
-function $HLTranscriptHandler(){return $globals.HLTranscriptHandler||(typeof HLTranscriptHandler=="undefined"?nil:HLTranscriptHandler)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-$recv($HLTranscriptHandler())._register_(self);
+$recv($globals.HLTranscriptHandler)._register_(self);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"register",{},$globals.HLTranscript)});
@@ -161,7 +160,6 @@ selector: "unregister",
 protocol: 'registration',
 fn: function (){
 var self=this;
-function $HLTranscriptHandler(){return $globals.HLTranscriptHandler||(typeof HLTranscriptHandler=="undefined"?nil:HLTranscriptHandler)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -173,7 +171,7 @@ $ctx1.supercall = true,
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
-$recv($HLTranscriptHandler())._unregister_(self);
+$recv($globals.HLTranscriptHandler)._unregister_(self);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"unregister",{},$globals.HLTranscript)});
@@ -322,14 +320,13 @@ selector: "transcripts",
 protocol: 'accessing',
 fn: function (){
 var self=this;
-function $OrderedCollection(){return $globals.OrderedCollection||(typeof OrderedCollection=="undefined"?nil:OrderedCollection)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$receiver;
 $1=self["@transcripts"];
 if(($receiver = $1) == null || $receiver.isNil){
-self["@transcripts"]=$recv($OrderedCollection())._new();
+self["@transcripts"]=$recv($globals.OrderedCollection)._new();
 return self["@transcripts"];
 } else {
 return $1;

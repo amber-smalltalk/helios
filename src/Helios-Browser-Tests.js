@@ -14,11 +14,10 @@ selector: "setUp",
 protocol: 'tests',
 fn: function (){
 var self=this;
-function $HLBrowserModel(){return $globals.HLBrowserModel||(typeof HLBrowserModel=="undefined"?nil:HLBrowserModel)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-self["@browser"]=$recv($HLBrowserModel())._new();
+self["@browser"]=$recv($globals.HLBrowserModel)._new();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"setUp",{},$globals.HLBrowserTest)});
@@ -39,7 +38,6 @@ selector: "testAllProtocolsSelectedWhenSelectingAClass",
 protocol: 'tests',
 fn: function (){
 var self=this;
-function $Object(){return $globals.Object||(typeof Object=="undefined"?nil:Object)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -50,7 +48,7 @@ $ctx1.sendIdx["selectedProtocol"]=1;
 //>>excludeEnd("ctx");
 $1=$recv($2)._isNil();
 self._assert_($1);
-$recv(self["@browser"])._selectedClass_($Object());
+$recv(self["@browser"])._selectedClass_($globals.Object);
 self._assert_equals_($recv(self["@browser"])._selectedProtocol(),$recv(self["@browser"])._allProtocol());
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -73,14 +71,11 @@ protocol: 'tests',
 fn: function (){
 var self=this;
 var protocolSelectedCalled;
-function $HLProtocolSelected(){return $globals.HLProtocolSelected||(typeof HLProtocolSelected=="undefined"?nil:HLProtocolSelected)}
-function $Object(){return $globals.Object||(typeof Object=="undefined"?nil:Object)}
-function $ProtoObject(){return $globals.ProtoObject||(typeof ProtoObject=="undefined"?nil:ProtoObject)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 protocolSelectedCalled=(0);
-$recv($recv(self["@browser"])._announcer())._on_do_for_($HLProtocolSelected(),(function(){
+$recv($recv(self["@browser"])._announcer())._on_do_for_($globals.HLProtocolSelected,(function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -90,7 +85,7 @@ return protocolSelectedCalled;
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,1)});
 //>>excludeEnd("ctx");
 }),self);
-$recv(self["@browser"])._selectedClass_($Object());
+$recv(self["@browser"])._selectedClass_($globals.Object);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["selectedClass:"]=1;
 //>>excludeEnd("ctx");
@@ -98,7 +93,7 @@ self._assert_equals_(protocolSelectedCalled,(1));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["assert:equals:"]=1;
 //>>excludeEnd("ctx");
-$recv(self["@browser"])._selectedClass_($ProtoObject());
+$recv(self["@browser"])._selectedClass_($globals.ProtoObject);
 self._assert_equals_(protocolSelectedCalled,(2));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);

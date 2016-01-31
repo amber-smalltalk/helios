@@ -281,12 +281,11 @@ selector: "buildPrefixDictionary",
 protocol: 'initialization',
 fn: function (){
 var self=this;
-function $Dictionary(){return $globals.Dictionary||(typeof Dictionary=="undefined"?nil:Dictionary)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-self["@prefixMapping"]=$recv($Dictionary())._new();
+self["@prefixMapping"]=$recv($globals.Dictionary)._new();
 $1=self["@prefixMapping"];
 $recv($1)._at_put_("test","tests");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -433,19 +432,17 @@ protocol: 'private',
 fn: function (){
 var self=this;
 var protocolBag,methods,protocolToUse,counter;
-function $Dictionary(){return $globals.Dictionary||(typeof Dictionary=="undefined"?nil:Dictionary)}
-function $HLReferencesModel(){return $globals.HLReferencesModel||(typeof HLReferencesModel=="undefined"?nil:HLReferencesModel)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$1,$4,$3,$5;
 var $early={};
 try {
-protocolBag=$recv($Dictionary())._new();
+protocolBag=$recv($globals.Dictionary)._new();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["new"]=1;
 //>>excludeEnd("ctx");
-methods=$recv($recv($HLReferencesModel())._new())._implementorsOf_($recv(self["@method"])._selector());
+methods=$recv($recv($globals.HLReferencesModel)._new())._implementorsOf_($recv(self["@method"])._selector());
 $recv(methods)._ifEmpty_ifNotEmpty_((function(){
 throw $early=[false];
 
@@ -607,7 +604,6 @@ selector: "initialize",
 protocol: 'initialization',
 fn: function (){
 var self=this;
-function $OrderedCollection(){return $globals.OrderedCollection||(typeof OrderedCollection=="undefined"?nil:OrderedCollection)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -619,7 +615,7 @@ $ctx1.supercall = true,
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
-self["@sourceCodes"]=$recv($OrderedCollection())._new();
+self["@sourceCodes"]=$recv($globals.OrderedCollection)._new();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"initialize",{},$globals.HLGenerationOutput)});
@@ -873,15 +869,11 @@ selector: "setupClassifiers",
 protocol: 'initialization',
 fn: function (){
 var self=this;
-function $HLImplementorClassifier(){return $globals.HLImplementorClassifier||(typeof HLImplementorClassifier=="undefined"?nil:HLImplementorClassifier)}
-function $HLPrefixClassifier(){return $globals.HLPrefixClassifier||(typeof HLPrefixClassifier=="undefined"?nil:HLPrefixClassifier)}
-function $HLSuperclassClassifier(){return $globals.HLSuperclassClassifier||(typeof HLSuperclassClassifier=="undefined"?nil:HLSuperclassClassifier)}
-function $HLAccessorClassifier(){return $globals.HLAccessorClassifier||(typeof HLAccessorClassifier=="undefined"?nil:HLAccessorClassifier)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$2,$3;
-$1=$recv($HLImplementorClassifier())._new();
+$1=$recv($globals.HLImplementorClassifier)._new();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["new"]=1;
 //>>excludeEnd("ctx");
@@ -889,7 +881,7 @@ self._addClassifier_($1);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["addClassifier:"]=1;
 //>>excludeEnd("ctx");
-$2=$recv($HLPrefixClassifier())._new();
+$2=$recv($globals.HLPrefixClassifier)._new();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["new"]=2;
 //>>excludeEnd("ctx");
@@ -897,7 +889,7 @@ self._addClassifier_($2);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["addClassifier:"]=2;
 //>>excludeEnd("ctx");
-$3=$recv($HLSuperclassClassifier())._new();
+$3=$recv($globals.HLSuperclassClassifier)._new();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["new"]=3;
 //>>excludeEnd("ctx");
@@ -905,7 +897,7 @@ self._addClassifier_($3);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["addClassifier:"]=3;
 //>>excludeEnd("ctx");
-self._addClassifier_($recv($HLAccessorClassifier())._new());
+self._addClassifier_($recv($globals.HLAccessorClassifier)._new());
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"setupClassifiers",{},$globals.HLMethodClassifier)});
@@ -986,7 +978,6 @@ selector: "initialize",
 protocol: 'initialization',
 fn: function (){
 var self=this;
-function $HLGenerationOutput(){return $globals.HLGenerationOutput||(typeof HLGenerationOutput=="undefined"?nil:HLGenerationOutput)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -998,7 +989,7 @@ $ctx1.supercall = true,
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
-self["@output"]=$recv($HLGenerationOutput())._new();
+self["@output"]=$recv($globals.HLGenerationOutput)._new();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"initialize",{},$globals.HLMethodGenerator)});
@@ -1068,12 +1059,11 @@ protocol: 'double-dispatch',
 fn: function (){
 var self=this;
 var sources;
-function $OrderedCollection(){return $globals.OrderedCollection||(typeof OrderedCollection=="undefined"?nil:OrderedCollection)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-sources=$recv($OrderedCollection())._new();
+sources=$recv($globals.OrderedCollection)._new();
 $recv($recv($recv($recv(self["@output"])._targetClass())._instanceVariableNames())._sorted())._do_((function(each){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
@@ -1144,15 +1134,13 @@ selector: "getterFor:",
 protocol: 'private',
 fn: function (anInstanceVariable){
 var self=this;
-function $HLMethodSourceCode(){return $globals.HLMethodSourceCode||(typeof HLMethodSourceCode=="undefined"?nil:HLMethodSourceCode)}
-function $String(){return $globals.String||(typeof String=="undefined"?nil:String)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv($HLMethodSourceCode())._new();
+$1=$recv($globals.HLMethodSourceCode)._new();
 $recv($1)._selector_(anInstanceVariable);
-return $recv($1)._sourceCode_($recv($String())._streamContents_((function(stream){
+return $recv($1)._sourceCode_($recv($globals.String)._streamContents_((function(stream){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -1188,15 +1176,13 @@ selector: "setterFor:",
 protocol: 'private',
 fn: function (anInstanceVariable){
 var self=this;
-function $HLMethodSourceCode(){return $globals.HLMethodSourceCode||(typeof HLMethodSourceCode=="undefined"?nil:HLMethodSourceCode)}
-function $String(){return $globals.String||(typeof String=="undefined"?nil:String)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$2;
-$1=$recv($HLMethodSourceCode())._new();
+$1=$recv($globals.HLMethodSourceCode)._new();
 $recv($1)._selector_($recv(anInstanceVariable).__comma(":"));
-return $recv($1)._sourceCode_($recv($String())._streamContents_((function(stream){
+return $recv($1)._sourceCode_($recv($globals.String)._streamContents_((function(stream){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -1277,12 +1263,11 @@ selector: "generateInitializeCodeForObject",
 protocol: 'private',
 fn: function (){
 var self=this;
-function $String(){return $globals.String||(typeof String=="undefined"?nil:String)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $2,$1,$3,$4,$5,$6,$7;
-return $recv($String())._streamContents_((function(str){
+return $recv($globals.String)._streamContents_((function(str){
 var instVars,size;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
@@ -1394,12 +1379,11 @@ selector: "initializeMethodForObject",
 protocol: 'private',
 fn: function (){
 var self=this;
-function $HLMethodSourceCode(){return $globals.HLMethodSourceCode||(typeof HLMethodSourceCode=="undefined"?nil:HLMethodSourceCode)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv($HLMethodSourceCode())._new();
+$1=$recv($globals.HLMethodSourceCode)._new();
 $recv($1)._selector_("initialize");
 $recv($1)._sourceCode_(self._generateInitializeCodeForObject());
 return $recv($1)._yourself();
@@ -1529,11 +1513,10 @@ selector: "commitPackage",
 protocol: 'actions',
 fn: function (){
 var self=this;
-function $HLCommitPackageCommand(){return $globals.HLCommitPackageCommand||(typeof HLCommitPackageCommand=="undefined"?nil:HLCommitPackageCommand)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-$recv($recv($HLCommitPackageCommand())._for_(self._model()))._execute();
+$recv($recv($globals.HLCommitPackageCommand)._for_(self._model()))._execute();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"commitPackage",{},$globals.HLPackageCommitErrorHelper)});
@@ -1639,12 +1622,11 @@ selector: "showHelp",
 protocol: 'actions',
 fn: function (){
 var self=this;
-function $HLConfirmationWidget(){return $globals.HLConfirmationWidget||(typeof HLConfirmationWidget=="undefined"?nil:HLConfirmationWidget)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$2;
-$1=$recv($HLConfirmationWidget())._new();
+$1=$recv($globals.HLConfirmationWidget)._new();
 $2=$recv("Commit failed for namespace \x22".__comma($recv($recv(self._package())._transport())._namespace())).__comma("\x22. Do you want to commit to another path?");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx[","]=1;
@@ -1682,12 +1664,11 @@ selector: "showNewCommitPath",
 protocol: 'actions',
 fn: function (){
 var self=this;
-function $HLRequestWidget(){return $globals.HLRequestWidget||(typeof HLRequestWidget=="undefined"?nil:HLRequestWidget)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv($HLRequestWidget())._new();
+$1=$recv($globals.HLRequestWidget)._new();
 $recv($1)._beSingleline();
 $recv($1)._confirmationString_("Set commit path");
 $recv($1)._actionBlock_((function(url){

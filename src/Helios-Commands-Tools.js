@@ -267,12 +267,11 @@ selector: "informSuccess",
 protocol: 'executing',
 fn: function (){
 var self=this;
-function $HLInformationWidget(){return $globals.HLInformationWidget||(typeof HLInformationWidget=="undefined"?nil:HLInformationWidget)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv($HLInformationWidget())._new();
+$1=$recv($globals.HLInformationWidget)._new();
 $recv($1)._informationString_("Commit successful!");
 $recv($1)._show();
 return self;
@@ -313,11 +312,10 @@ selector: "onPackageCommitError:",
 protocol: 'error handling',
 fn: function (anError){
 var self=this;
-function $HLPackageCommitErrorHelper(){return $globals.HLPackageCommitErrorHelper||(typeof HLPackageCommitErrorHelper=="undefined"?nil:HLPackageCommitErrorHelper)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-$recv($recv($HLPackageCommitErrorHelper())._on_(self._model()))._showHelp();
+$recv($recv($globals.HLPackageCommitErrorHelper)._on_(self._model()))._showHelp();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"onPackageCommitError:",{anError:anError},$globals.HLCommitPackageCommand)});
@@ -837,12 +835,11 @@ selector: "execute",
 protocol: 'executing',
 fn: function (){
 var self=this;
-function $HLReferences(){return $globals.HLReferences||(typeof HLReferences=="undefined"?nil:HLReferences)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1;
-$1=$recv($HLReferences())._new();
+$1=$recv($globals.HLReferences)._new();
 $recv($1)._openAsTab();
 $recv($1)._search_(self._input());
 return self;

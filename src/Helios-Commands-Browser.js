@@ -623,7 +623,6 @@ protocol: 'executing',
 fn: function (){
 var self=this;
 var targetClass,unclassified;
-function $HLMethodClassifier(){return $globals.HLMethodClassifier||(typeof HLMethodClassifier=="undefined"?nil:HLMethodClassifier)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -637,7 +636,7 @@ return $recv($recv(e)._protocol()).__eq("as yet unclassified");
 }, function($ctx2) {$ctx2.fillBlock({e:e},$ctx1,1)});
 //>>excludeEnd("ctx");
 }));
-$recv($recv($HLMethodClassifier())._new())._classifyAll_(unclassified);
+$recv($recv($globals.HLMethodClassifier)._new())._classifyAll_(unclassified);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"execute",{targetClass:targetClass,unclassified:unclassified},$globals.HLCategorizeUnclassifiedCommand)});
@@ -701,7 +700,6 @@ protocol: 'executing',
 fn: function (){
 var self=this;
 var targetClass,output,first;
-function $HLInitializeGenerator(){return $globals.HLInitializeGenerator||(typeof HLInitializeGenerator=="undefined"?nil:HLInitializeGenerator)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -711,7 +709,7 @@ $1=self._model();
 $ctx1.sendIdx["model"]=1;
 //>>excludeEnd("ctx");
 targetClass=$recv($1)._selectedClass();
-$2=$recv($HLInitializeGenerator())._new();
+$2=$recv($globals.HLInitializeGenerator)._new();
 $recv($2)._class_(targetClass);
 $recv($2)._generate();
 output=$recv($2)._output();
@@ -784,7 +782,6 @@ protocol: 'executing',
 fn: function (){
 var self=this;
 var targetClass,output;
-function $HLAccessorsGenerator(){return $globals.HLAccessorsGenerator||(typeof HLAccessorsGenerator=="undefined"?nil:HLAccessorsGenerator)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -794,7 +791,7 @@ $1=self._model();
 $ctx1.sendIdx["model"]=1;
 //>>excludeEnd("ctx");
 targetClass=$recv($1)._selectedClass();
-$2=$recv($HLAccessorsGenerator())._new();
+$2=$recv($globals.HLAccessorsGenerator)._new();
 $recv($2)._class_(targetClass);
 $recv($2)._generate();
 output=$recv($2)._output();

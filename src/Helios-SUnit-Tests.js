@@ -14,7 +14,6 @@ selector: "setUp",
 protocol: 'initializing',
 fn: function (){
 var self=this;
-function $HLSUnitModel(){return $globals.HLSUnitModel||(typeof HLSUnitModel=="undefined"?nil:HLSUnitModel)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -26,7 +25,7 @@ $ctx1.supercall = true,
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.supercall = false;
 //>>excludeEnd("ctx");;
-self["@model"]=$recv($HLSUnitModel())._new();
+self["@model"]=$recv($globals.HLSUnitModel)._new();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"setUp",{},$globals.HLSUnitModelTest)});
@@ -82,11 +81,10 @@ selector: "testEmptyTestResults",
 protocol: 'tests',
 fn: function (){
 var self=this;
-function $TestResult(){return $globals.TestResult||(typeof TestResult=="undefined"?nil:TestResult)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-self._assert_($recv($recv(self["@model"])._testResult())._isKindOf_($TestResult()));
+self._assert_($recv($recv(self["@model"])._testResult())._isKindOf_($globals.TestResult));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"testEmptyTestResults",{},$globals.HLSUnitModelTest)});
@@ -312,7 +310,6 @@ protocol: 'tests',
 fn: function (){
 var self=this;
 var announcementFired;
-function $HLClassSelected(){return $globals.HLClassSelected||(typeof HLClassSelected=="undefined"?nil:HLClassSelected)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -327,7 +324,7 @@ self._assert_($1);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["assert:"]=1;
 //>>excludeEnd("ctx");
-$recv($recv(self["@model"])._announcer())._on_do_for_($HLClassSelected(),(function(){
+$recv($recv(self["@model"])._announcer())._on_do_for_($globals.HLClassSelected,(function(){
 announcementFired=true;
 return announcementFired;
 
@@ -361,7 +358,6 @@ protocol: 'tests',
 fn: function (){
 var self=this;
 var announcementFired;
-function $HLPackageSelected(){return $globals.HLPackageSelected||(typeof HLPackageSelected=="undefined"?nil:HLPackageSelected)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -375,7 +371,7 @@ self._assert_($1);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["assert:"]=1;
 //>>excludeEnd("ctx");
-$recv($recv(self["@model"])._announcer())._on_do_for_($HLPackageSelected(),(function(){
+$recv($recv(self["@model"])._announcer())._on_do_for_($globals.HLPackageSelected,(function(){
 announcementFired=true;
 return announcementFired;
 
@@ -453,15 +449,13 @@ protocol: 'tests',
 fn: function (){
 var self=this;
 var notATestClass;
-function $Object(){return $globals.Object||(typeof Object=="undefined"?nil:Object)}
-function $Smalltalk(){return $globals.Smalltalk||(typeof Smalltalk=="undefined"?nil:Smalltalk)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-notATestClass=$recv($Object())._subclass_instanceVariableNames_package_("HLNotATestClass","",$recv(self._class())._category());
+notATestClass=$recv($globals.Object)._subclass_instanceVariableNames_package_("HLNotATestClass","",$recv(self._class())._category());
 $recv(self["@model"])._selectPackage_(self._thisPackage());
 self._deny_($recv($recv(self["@model"])._testClasses())._includes_(notATestClass));
-$recv($Smalltalk())._removeClass_(notATestClass);
+$recv($globals.Smalltalk)._removeClass_(notATestClass);
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"testTestClassHasOnlyTestClasses",{notATestClass:notATestClass},$globals.HLSUnitModelTest)});
@@ -525,7 +519,6 @@ protocol: 'tests',
 fn: function (){
 var self=this;
 var announcementFired;
-function $HLClassUnselected(){return $globals.HLClassUnselected||(typeof HLClassUnselected=="undefined"?nil:HLClassUnselected)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -537,7 +530,7 @@ $2=self._class();
 $ctx1.sendIdx["class"]=1;
 //>>excludeEnd("ctx");
 $recv($1)._selectClass_($2);
-$recv($recv(self["@model"])._announcer())._on_do_for_($HLClassUnselected(),(function(){
+$recv($recv(self["@model"])._announcer())._on_do_for_($globals.HLClassUnselected,(function(){
 announcementFired=true;
 return announcementFired;
 
@@ -569,7 +562,6 @@ protocol: 'tests',
 fn: function (){
 var self=this;
 var announcementFired;
-function $HLPackageUnselected(){return $globals.HLPackageUnselected||(typeof HLPackageUnselected=="undefined"?nil:HLPackageUnselected)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
@@ -580,7 +572,7 @@ $2=self._thisPackage();
 $ctx1.sendIdx["thisPackage"]=1;
 //>>excludeEnd("ctx");
 $recv($1)._selectPackage_($2);
-$recv($recv(self["@model"])._announcer())._on_do_for_($HLPackageUnselected(),(function(){
+$recv($recv(self["@model"])._announcer())._on_do_for_($globals.HLPackageUnselected,(function(){
 announcementFired=true;
 return announcementFired;
 

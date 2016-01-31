@@ -21,10 +21,12 @@
             require.baseUrl = base;
             require.paths['helios/app'] = require.paths['helios/index'].replace("index", "app");
             require.map["*"]["amber/Platform"] = "amber_core/Platform-Browser";
+            require.map["*"]["amber/compatibility"] = "amber/browser-compatibility";
             require.callback = function () {
               require(["helios/app"], function (amber) {
-                amber.initialize({'transport.defaultAmdNamespace': "amber_core"});
-                amber.globals.HLManager._setup();
+                amber.initialize({'transport.defaultAmdNamespace': "amber_core"}).then(function () {
+                  amber.globals.HLManager._setup();
+                });
               });
             };
             script = document.createElement("script");

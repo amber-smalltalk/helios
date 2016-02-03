@@ -1,7 +1,7 @@
 {
   "name": "helios",
   "description": "Helios IDE for Amber Smalltalk",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "ignore": [
     "**/.*",
     "node_modules",

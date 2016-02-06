@@ -19,8 +19,8 @@
     "MIT"
   ],
   "dependencies": {
-    "amber": ">0.14.17",
-    "amber-contrib-web": ">=0.1.0",
+    "amber": ">=0.15.0",
+    "amber-contrib-web": ">=0.3.0",
     "jquery-ui": ">=1.9.2",
     "bootstrap": "^3.3.4",
     "codemirror": "^5.10.0",

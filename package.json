@@ -2,7 +2,7 @@
   "name": "helios",
   "title": "Helios IDE for Amber",
   "description": "Helios IDE for Amber Smalltalk",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "homepage": "https://github.com/amber-smalltalk/helios",
   "repository": {
     "type": "git",

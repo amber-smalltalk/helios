@@ -2857,7 +2857,8 @@ return $recv($recv(self._wrapper())._asJQuery())._addClass_(self._focusClass());
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,2)});
 //>>excludeEnd("ctx");
 }));
-$recv($1)._with_((function(){
+self["@wrapper"]=$recv($1)._yourself();
+$recv(self["@wrapper"])._with_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
@@ -2866,7 +2867,6 @@ return self._renderContentOn_(html);
 }, function($ctx2) {$ctx2.fillBlock({},$ctx1,3)});
 //>>excludeEnd("ctx");
 }));
-self["@wrapper"]=$recv($1)._yourself();
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html},$globals.HLFocusableWidget)});
@@ -2874,10 +2874,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderOn: html\x0a    wrapper := html div \x0a    \x09class: self cssClass;\x0a\x09\x09at: 'tabindex' put: '0';\x0a\x09\x09onBlur: [ self wrapper asJQuery removeClass: self focusClass ];\x0a        onFocus: [ self wrapper asJQuery addClass: self focusClass ];\x0a\x09\x09with: [ self renderContentOn: html ];\x0a\x09\x09yourself",
+source: "renderOn: html\x0a    wrapper := html div\x0a    \x09class: self cssClass;\x0a\x09\x09at: 'tabindex' put: '0';\x0a\x09\x09onBlur: [ self wrapper asJQuery removeClass: self focusClass ];\x0a        onFocus: [ self wrapper asJQuery addClass: self focusClass ];\x0a\x09\x09yourself.\x0a\x09\x22must do this later, as renderContentOn may want to use self wrapper\x22\x09\x0a\x09wrapper with: [ self renderContentOn: html ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["class:", "div", "cssClass", "at:put:", "onBlur:", "removeClass:", "asJQuery", "wrapper", "focusClass", "onFocus:", "addClass:", "with:", "renderContentOn:", "yourself"]
+messageSends: ["class:", "div", "cssClass", "at:put:", "onBlur:", "removeClass:", "asJQuery", "wrapper", "focusClass", "onFocus:", "addClass:", "yourself", "with:", "renderContentOn:"]
 }),
 $globals.HLFocusableWidget);
 

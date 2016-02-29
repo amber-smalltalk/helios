@@ -719,13 +719,14 @@ renderContentOn: html
 !
 
 renderOn: html
-    wrapper := html div 
+    wrapper := html div
     	class: self cssClass;
 		at: 'tabindex' put: '0';
 		onBlur: [ self wrapper asJQuery removeClass: self focusClass ];
         onFocus: [ self wrapper asJQuery addClass: self focusClass ];
-		with: [ self renderContentOn: html ];
-		yourself
+		yourself.
+	"must do this later, as renderContentOn may want to use self wrapper"	
+	wrapper with: [ self renderContentOn: html ]
 ! !
 
 !HLFocusableWidget methodsFor: 'testing'!

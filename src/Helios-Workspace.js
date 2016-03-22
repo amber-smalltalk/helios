@@ -610,14 +610,14 @@ $1="helios.editorTheme"._settingValueIfAbsent_("default");
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["settingValueIfAbsent:"]=1;
 //>>excludeEnd("ctx");
-return $globals.HashedCollection._newFromPairs_(["theme",$1,"mode","text/x-stsrc","lineNumbers",true,"enterMode","flat","indentWithTabs",true,"indentUnit",(4),"matchBrackets",true,"electricChars",false,"keyMap","Amber","extraKeys",$recv($globals.HashedCollection)._with_($recv("helios.completionKey"._settingValueIfAbsent_("Shift-Space")).__minus_gt("autocomplete"))]);
+return $globals.HashedCollection._newFromPairs_(["theme",$1,"mode","text/x-stsrc","inputStyle","contenteditable","lineNumbers",true,"enterMode","flat","indentWithTabs",true,"indentUnit",(4),"matchBrackets",true,"electricChars",false,"keyMap","Amber","extraKeys",$recv($globals.HashedCollection)._with_($recv("helios.completionKey"._settingValueIfAbsent_("Shift-Space")).__minus_gt("autocomplete"))]);
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 }, function($ctx1) {$ctx1.fill(self,"editorOptions",{},$globals.HLCodeWidget)});
 //>>excludeEnd("ctx");
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "editorOptions\x0a\x09^ #{\x0a\x09\x09'theme' -> ('helios.editorTheme' settingValueIfAbsent: 'default').\x0a\x09\x09'mode' -> 'text/x-stsrc'.\x0a        'lineNumbers' -> true.\x0a        'enterMode' -> 'flat'.\x0a        'indentWithTabs' -> true.\x0a\x09\x09'indentUnit' -> 4.\x0a        'matchBrackets' -> true.\x0a        'electricChars' -> false.\x0a\x09\x09'keyMap' -> 'Amber'.\x0a\x09\x09'extraKeys' -> (HashedCollection with: ('helios.completionKey' settingValueIfAbsent: 'Shift-Space') -> 'autocomplete')\x0a\x09}",
+source: "editorOptions\x0a\x09^ #{\x0a\x09\x09'theme' -> ('helios.editorTheme' settingValueIfAbsent: 'default').\x0a\x09\x09'mode' -> 'text/x-stsrc'.\x0a\x09\x09'inputStyle' -> 'contenteditable'.\x0a        'lineNumbers' -> true.\x0a        'enterMode' -> 'flat'.\x0a        'indentWithTabs' -> true.\x0a\x09\x09'indentUnit' -> 4.\x0a        'matchBrackets' -> true.\x0a        'electricChars' -> false.\x0a\x09\x09'keyMap' -> 'Amber'.\x0a\x09\x09'extraKeys' -> (HashedCollection with: ('helios.completionKey' settingValueIfAbsent: 'Shift-Space') -> 'autocomplete')\x0a\x09}",
 referencedClasses: ["HashedCollection"],
 //>>excludeEnd("ide");
 messageSends: ["settingValueIfAbsent:", "with:", "->"]

@@ -98,6 +98,7 @@ editorOptions
 	^ #{
 		'theme' -> ('helios.editorTheme' settingValueIfAbsent: 'default').
 		'mode' -> 'text/x-stsrc'.
+		'inputStyle' -> 'contenteditable'.
         'lineNumbers' -> true.
         'enterMode' -> 'flat'.
         'indentWithTabs' -> true.

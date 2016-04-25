@@ -3,6 +3,34 @@ Helios
 
 Helios IDE for Amber Smalltalk
 
+MOVED
+====
+
+Helios is now at https://lolg.it/amber/helios.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+
 How to contribute
 ====
 
